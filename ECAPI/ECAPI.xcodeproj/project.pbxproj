@@ -37,7 +37,18 @@
 		EA32AC7D12F872680025F080 /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6912F872680025F080 /* ASINetworkQueue.h */; };
 		EA32AC7E12F872680025F080 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC6A12F872680025F080 /* ASINetworkQueue.m */; };
 		EA32AC7F12F872680025F080 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */; };
+		EA32AC9B12F874F00025F080 /* TestingTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC9A12F874F00025F080 /* TestingTestCase.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EA32AC9112F873970025F080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA32AC8612F873060025F080 /* ECAPITests */;
+			remoteInfo = ECAPITests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -71,6 +82,10 @@
 		EA32AC6912F872680025F080 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "../asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = SOURCE_ROOT; };
 		EA32AC6A12F872680025F080 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "../asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = SOURCE_ROOT; };
 		EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
+		EA32AC8712F873060025F080 /* ECAPITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECAPITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA32AC8812F873060025F080 /* ECAPITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ECAPITests-Info.plist"; sourceTree = "<group>"; };
+		EA32AC9912F874F00025F080 /* TestingTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingTestCase.h; sourceTree = "<group>"; };
+		EA32AC9A12F874F00025F080 /* TestingTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +103,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA32AC8412F873060025F080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AAC07E0554694100DB518D /* libECAPI.a */,
+				EA32AC8712F873060025F080 /* ECAPITests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				08FB77AEFE84172EC02AAC07 /* Classes */,
+				EA32AC9812F874DC0025F080 /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
@@ -136,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */,
+				EA32AC8812F873060025F080 /* ECAPITests-Info.plist */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -186,6 +211,15 @@
 			path = "../asi-http-request/External/Reachability";
 			sourceTree = SOURCE_ROOT;
 		};
+		EA32AC9812F874DC0025F080 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EA32AC9912F874F00025F080 /* TestingTestCase.h */,
+				EA32AC9A12F874F00025F080 /* TestingTestCase.m */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -224,11 +258,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				EA32AC9212F873970025F080 /* PBXTargetDependency */,
 			);
 			name = ECAPI;
 			productName = ECAPI;
 			productReference = D2AAC07E0554694100DB518D /* libECAPI.a */;
 			productType = "com.apple.product-type.library.static";
+		};
+		EA32AC8612F873060025F080 /* ECAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA32AC8B12F873070025F080 /* Build configuration list for PBXNativeTarget "ECAPITests" */;
+			buildPhases = (
+				EA32AC8212F873060025F080 /* Resources */,
+				EA32AC8312F873060025F080 /* Sources */,
+				EA32AC8412F873060025F080 /* Frameworks */,
+				EA32AC8512F873060025F080 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ECAPITests;
+			productName = ECAPITests;
+			productReference = EA32AC8712F873060025F080 /* ECAPITests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -254,9 +307,36 @@
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* ECAPI */,
+				EA32AC8612F873060025F080 /* ECAPITests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA32AC8212F873060025F080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EA32AC8512F873060025F080 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2AAC07B0554694100DB518D /* Sources */ = {
@@ -275,7 +355,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EA32AC8312F873060025F080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA32AC9B12F874F00025F080 /* TestingTestCase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EA32AC9212F873970025F080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA32AC8612F873060025F080 /* ECAPITests */;
+			targetProxy = EA32AC9112F873970025F080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
@@ -339,6 +435,60 @@
 			};
 			name = Release;
 		};
+		EA32AC8912F873070025F080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "ECAPITests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ECAPITests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		EA32AC8A12F873070025F080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "ECAPITests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = ECAPITests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -356,6 +506,15 @@
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,
 				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA32AC8B12F873070025F080 /* Build configuration list for PBXNativeTarget "ECAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA32AC8912F873070025F080 /* Debug */,
+				EA32AC8A12F873070025F080 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
