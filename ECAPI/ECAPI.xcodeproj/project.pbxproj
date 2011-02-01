@@ -45,7 +45,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = EA32AC8612F873060025F080 /* ECAPITests */;
+			remoteGlobalIDString = EA32AC8612F873060025F080;
 			remoteInfo = ECAPITests;
 		};
 /* End PBXContainerItemProxy section */
