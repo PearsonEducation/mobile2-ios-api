@@ -126,7 +126,6 @@
 		EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
 		EA32AC9912F874F00025F080 /* TestingTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingTestCase.h; sourceTree = "<group>"; };
 		EA32AC9A12F874F00025F080 /* TestingTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingTestCase.m; sourceTree = "<group>"; };
-		EABEE86712F8AA1B0028857E /* AuthenticationTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationTestCase.h; sourceTree = "<group>"; };
 		EABEE86812F8AA1B0028857E /* AuthenticationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationTestCase.m; sourceTree = "<group>"; };
 		EABEE87612F8AFB50028857E /* ECSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSession.h; sourceTree = "<group>"; };
 		EABEE87712F8AFB50028857E /* ECSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSession.m; sourceTree = "<group>"; };
@@ -301,7 +300,6 @@
 				EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */,
 				EA32AC9912F874F00025F080 /* TestingTestCase.h */,
 				EA32AC9A12F874F00025F080 /* TestingTestCase.m */,
-				EABEE86712F8AA1B0028857E /* AuthenticationTestCase.h */,
 				EABEE86812F8AA1B0028857E /* AuthenticationTestCase.m */,
 			);
 			name = Tests;
