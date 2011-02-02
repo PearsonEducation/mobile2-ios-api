@@ -12,7 +12,7 @@
 @implementation TestingTestCase
 
 - (void) testSimpleMath {
-	STAssertEquals(1,1, @"Math fails");
+	GHAssertEquals(1,1, @"Math fails");
 }
 
 @end

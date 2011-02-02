@@ -6,10 +6,7 @@
 //  Copyright 2011 EffectiveUI. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
-
-
-@interface TestingTestCase : SenTestCase {
+@interface TestingTestCase : GHTestCase {
 
 }
 

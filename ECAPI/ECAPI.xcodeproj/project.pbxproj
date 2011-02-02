@@ -37,7 +37,6 @@
 		EA32AC7D12F872680025F080 /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6912F872680025F080 /* ASINetworkQueue.h */; };
 		EA32AC7E12F872680025F080 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC6A12F872680025F080 /* ASINetworkQueue.m */; };
 		EA32AC7F12F872680025F080 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */; };
-		EA32AC9B12F874F00025F080 /* TestingTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC9A12F874F00025F080 /* TestingTestCase.m */; };
 		EABEE8CE12F8BC6F0028857E /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE8BB12F8BC6F0028857E /* JSON.h */; };
 		EABEE8CF12F8BC6F0028857E /* NSObject+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE8BC12F8BC6F0028857E /* NSObject+JSON.h */; };
 		EABEE8D012F8BC6F0028857E /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8BD12F8BC6F0028857E /* NSObject+JSON.m */; };
@@ -57,17 +56,41 @@
 		EABEE8DE12F8BC6F0028857E /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8CB12F8BC6F0028857E /* SBJsonTokeniser.m */; };
 		EABEE8DF12F8BC6F0028857E /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE8CC12F8BC6F0028857E /* SBJsonWriter.h */; };
 		EABEE8E012F8BC6F0028857E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8CD12F8BC6F0028857E /* SBJsonWriter.m */; };
+		EABEE8E712F8BE3E0028857E /* ECSession.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE87712F8AFB50028857E /* ECSession.m */; };
+		EABEEA8712F8CE620028857E /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABEEA8612F8CE620028857E /* GHUnitIOS.framework */; };
+		EABEEAA412F8CECA0028857E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		EABEEAA512F8CECA0028857E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC0D12F871190025F080 /* CoreGraphics.framework */; };
+		EABEEAA612F8CECA0028857E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC1312F871190025F080 /* UIKit.framework */; };
+		EABEEAA712F8CECA0028857E /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EABEEA8612F8CE620028857E /* GHUnitIOS.framework */; };
+		EABEEAB312F8D0590028857E /* Tests_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = EABEEAB112F8D02B0028857E /* Tests_Prefix.pch */; };
+		EABEEAB412F8D0690028857E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC0B12F871190025F080 /* CFNetwork.framework */; };
+		EABEEAB512F8D0690028857E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC0F12F871190025F080 /* MobileCoreServices.framework */; };
+		EABEEAB612F8D0690028857E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC1112F871190025F080 /* SystemConfiguration.framework */; };
+		EABEEAB712F8D0690028857E /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC1512F871190025F080 /* libz.1.2.3.dylib */; };
+		EABEEAB812F8D0780028857E /* TestingTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC9A12F874F00025F080 /* TestingTestCase.m */; };
+		EABEEAB912F8D0780028857E /* AuthenticationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE86812F8AA1B0028857E /* AuthenticationTestCase.m */; };
+		EABEEABA12F8D0880028857E /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8BD12F8BC6F0028857E /* NSObject+JSON.m */; };
+		EABEEABB12F8D0880028857E /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8BF12F8BC6F0028857E /* SBJsonParser.m */; };
+		EABEEABC12F8D0880028857E /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8C112F8BC6F0028857E /* SBJsonStreamParser.m */; };
+		EABEEABD12F8D0880028857E /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8C312F8BC6F0028857E /* SBJsonStreamParserAdapter.m */; };
+		EABEEABE12F8D0880028857E /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8C512F8BC6F0028857E /* SBJsonStreamParserState.m */; };
+		EABEEABF12F8D0880028857E /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8C712F8BC6F0028857E /* SBJsonStreamWriter.m */; };
+		EABEEAC012F8D0880028857E /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8C912F8BC6F0028857E /* SBJsonStreamWriterState.m */; };
+		EABEEAC112F8D0880028857E /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8CB12F8BC6F0028857E /* SBJsonTokeniser.m */; };
+		EABEEAC212F8D0880028857E /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8CD12F8BC6F0028857E /* SBJsonWriter.m */; };
+		EABEEAC312F8D09C0028857E /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC5912F872680025F080 /* ASIAuthenticationDialog.m */; };
+		EABEEAC412F8D09C0028857E /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC5C12F872680025F080 /* ASIDataCompressor.m */; };
+		EABEEAC512F8D09C0028857E /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC5E12F872680025F080 /* ASIDataDecompressor.m */; };
+		EABEEAC612F8D09C0028857E /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC6012F872680025F080 /* ASIDownloadCache.m */; };
+		EABEEAC712F8D09C0028857E /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC6212F872680025F080 /* ASIFormDataRequest.m */; };
+		EABEEAC812F8D09C0028857E /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC6412F872680025F080 /* ASIHTTPRequest.m */; };
+		EABEEAC912F8D09C0028857E /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC6812F872680025F080 /* ASIInputStream.m */; };
+		EABEEACA12F8D09C0028857E /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC6A12F872680025F080 /* ASINetworkQueue.m */; };
+		EABEEACB12F8D09C0028857E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC5112F8715E0025F080 /* Reachability.m */; };
+		EABEEAD612F8D12D0028857E /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */; };
+		EABEEAF712F8D3410028857E /* ECSession.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE87712F8AFB50028857E /* ECSession.m */; };
+		EABEEAF812F8D34B0028857E /* ECConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE89912F8B9450028857E /* ECConstants.h */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		EA32AC9112F873970025F080 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EA32AC8612F873060025F080;
-			remoteInfo = ECAPITests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -101,10 +124,13 @@
 		EA32AC6912F872680025F080 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "../asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = SOURCE_ROOT; };
 		EA32AC6A12F872680025F080 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "../asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = SOURCE_ROOT; };
 		EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
-		EA32AC8712F873060025F080 /* ECAPITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ECAPITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA32AC8812F873060025F080 /* ECAPITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ECAPITests-Info.plist"; sourceTree = "<group>"; };
 		EA32AC9912F874F00025F080 /* TestingTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingTestCase.h; sourceTree = "<group>"; };
 		EA32AC9A12F874F00025F080 /* TestingTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingTestCase.m; sourceTree = "<group>"; };
+		EABEE86712F8AA1B0028857E /* AuthenticationTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationTestCase.h; sourceTree = "<group>"; };
+		EABEE86812F8AA1B0028857E /* AuthenticationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationTestCase.m; sourceTree = "<group>"; };
+		EABEE87612F8AFB50028857E /* ECSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSession.h; sourceTree = "<group>"; };
+		EABEE87712F8AFB50028857E /* ECSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSession.m; sourceTree = "<group>"; };
+		EABEE89912F8B9450028857E /* ECConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECConstants.h; sourceTree = "<group>"; };
 		EABEE8BB12F8BC6F0028857E /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSON.h; path = "../json-framework/Classes/JSON.h"; sourceTree = SOURCE_ROOT; };
 		EABEE8BC12F8BC6F0028857E /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+JSON.h"; path = "../json-framework/Classes/NSObject+JSON.h"; sourceTree = SOURCE_ROOT; };
 		EABEE8BD12F8BC6F0028857E /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+JSON.m"; path = "../json-framework/Classes/NSObject+JSON.m"; sourceTree = SOURCE_ROOT; };
@@ -124,6 +150,11 @@
 		EABEE8CB12F8BC6F0028857E /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonTokeniser.m; path = "../json-framework/Classes/SBJsonTokeniser.m"; sourceTree = SOURCE_ROOT; };
 		EABEE8CC12F8BC6F0028857E /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SBJsonWriter.h; path = "../json-framework/Classes/SBJsonWriter.h"; sourceTree = SOURCE_ROOT; };
 		EABEE8CD12F8BC6F0028857E /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SBJsonWriter.m; path = "../json-framework/Classes/SBJsonWriter.m"; sourceTree = SOURCE_ROOT; };
+		EABEEA8012F8CBE40028857E /* Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tests.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EABEEA8212F8CBE50028857E /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
+		EABEEA8612F8CE620028857E /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../frameworks/GHUnitIOS.framework; sourceTree = SOURCE_ROOT; };
+		EABEEAB112F8D02B0028857E /* Tests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests_Prefix.pch; sourceTree = "<group>"; };
+		EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = ../frameworks/GHUnitIOSTestMain.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,13 +169,22 @@
 				EA32AC1212F871190025F080 /* SystemConfiguration.framework in Frameworks */,
 				EA32AC1412F871190025F080 /* UIKit.framework in Frameworks */,
 				EA32AC1612F871190025F080 /* libz.1.2.3.dylib in Frameworks */,
+				EABEEA8712F8CE620028857E /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA32AC8412F873060025F080 /* Frameworks */ = {
+		EABEEA7E12F8CBE40028857E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EABEEAA412F8CECA0028857E /* Foundation.framework in Frameworks */,
+				EABEEAB412F8D0690028857E /* CFNetwork.framework in Frameworks */,
+				EABEEAA512F8CECA0028857E /* CoreGraphics.framework in Frameworks */,
+				EABEEAB512F8D0690028857E /* MobileCoreServices.framework in Frameworks */,
+				EABEEAB612F8D0690028857E /* SystemConfiguration.framework in Frameworks */,
+				EABEEAA612F8CECA0028857E /* UIKit.framework in Frameworks */,
+				EABEEAB712F8D0690028857E /* libz.1.2.3.dylib in Frameworks */,
+				EABEEAA712F8CECA0028857E /* GHUnitIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				D2AAC07E0554694100DB518D /* libECAPI.a */,
-				EA32AC8712F873060025F080 /* ECAPITests.octest */,
+				EABEEA8012F8CBE40028857E /* Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +224,7 @@
 				EA32AC1112F871190025F080 /* SystemConfiguration.framework */,
 				EA32AC1312F871190025F080 /* UIKit.framework */,
 				EA32AC1512F871190025F080 /* libz.1.2.3.dylib */,
+				EABEEA8612F8CE620028857E /* GHUnitIOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,6 +232,9 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EABEE87612F8AFB50028857E /* ECSession.h */,
+				EABEE87712F8AFB50028857E /* ECSession.m */,
+				EABEE89912F8B9450028857E /* ECConstants.h */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -199,7 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */,
-				EA32AC8812F873060025F080 /* ECAPITests-Info.plist */,
+				EABEEAB112F8D02B0028857E /* Tests_Prefix.pch */,
+				EABEEA8212F8CBE50028857E /* Tests-Info.plist */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -253,8 +298,11 @@
 		EA32AC9812F874DC0025F080 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */,
 				EA32AC9912F874F00025F080 /* TestingTestCase.h */,
 				EA32AC9A12F874F00025F080 /* TestingTestCase.m */,
+				EABEE86712F8AA1B0028857E /* AuthenticationTestCase.h */,
+				EABEE86812F8AA1B0028857E /* AuthenticationTestCase.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -319,6 +367,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EABEEAD312F8D0A80028857E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EABEEAF812F8D34B0028857E /* ECConstants.h in Headers */,
+				EABEEAB312F8D0590028857E /* Tests_Prefix.pch in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -333,30 +390,30 @@
 			buildRules = (
 			);
 			dependencies = (
-				EA32AC9212F873970025F080 /* PBXTargetDependency */,
 			);
 			name = ECAPI;
 			productName = ECAPI;
 			productReference = D2AAC07E0554694100DB518D /* libECAPI.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		EA32AC8612F873060025F080 /* ECAPITests */ = {
+		EABEEA7F12F8CBE40028857E /* Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA32AC8B12F873070025F080 /* Build configuration list for PBXNativeTarget "ECAPITests" */;
+			buildConfigurationList = EABEEA8512F8CBE50028857E /* Build configuration list for PBXNativeTarget "Tests" */;
 			buildPhases = (
-				EA32AC8212F873060025F080 /* Resources */,
-				EA32AC8312F873060025F080 /* Sources */,
-				EA32AC8412F873060025F080 /* Frameworks */,
-				EA32AC8512F873060025F080 /* ShellScript */,
+				EABEEA7C12F8CBE40028857E /* Resources */,
+				EABEEAD312F8D0A80028857E /* Headers */,
+				EABEEA7D12F8CBE40028857E /* Sources */,
+				EABEEA7E12F8CBE40028857E /* Frameworks */,
+				EABEEB1012F8D5150028857E /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ECAPITests;
-			productName = ECAPITests;
-			productReference = EA32AC8712F873060025F080 /* ECAPITests.octest */;
-			productType = "com.apple.product-type.bundle";
+			name = Tests;
+			productName = Tests;
+			productReference = EABEEA8012F8CBE40028857E /* Tests.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -382,13 +439,13 @@
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* ECAPI */,
-				EA32AC8612F873060025F080 /* ECAPITests */,
+				EABEEA7F12F8CBE40028857E /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		EA32AC8212F873060025F080 /* Resources */ = {
+		EABEEA7C12F8CBE40028857E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,7 +455,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		EA32AC8512F873060025F080 /* ShellScript */ = {
+		EABEEB1012F8D5150028857E /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -409,7 +466,8 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			shellScript = "sh RunTests.sh";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -436,26 +494,40 @@
 				EABEE8DC12F8BC6F0028857E /* SBJsonStreamWriterState.m in Sources */,
 				EABEE8DE12F8BC6F0028857E /* SBJsonTokeniser.m in Sources */,
 				EABEE8E012F8BC6F0028857E /* SBJsonWriter.m in Sources */,
+				EABEE8E712F8BE3E0028857E /* ECSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA32AC8312F873060025F080 /* Sources */ = {
+		EABEEA7D12F8CBE40028857E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA32AC9B12F874F00025F080 /* TestingTestCase.m in Sources */,
+				EABEEAF712F8D3410028857E /* ECSession.m in Sources */,
+				EABEEAC312F8D09C0028857E /* ASIAuthenticationDialog.m in Sources */,
+				EABEEAC412F8D09C0028857E /* ASIDataCompressor.m in Sources */,
+				EABEEAC512F8D09C0028857E /* ASIDataDecompressor.m in Sources */,
+				EABEEAC612F8D09C0028857E /* ASIDownloadCache.m in Sources */,
+				EABEEAC712F8D09C0028857E /* ASIFormDataRequest.m in Sources */,
+				EABEEAC812F8D09C0028857E /* ASIHTTPRequest.m in Sources */,
+				EABEEAC912F8D09C0028857E /* ASIInputStream.m in Sources */,
+				EABEEACA12F8D09C0028857E /* ASINetworkQueue.m in Sources */,
+				EABEEACB12F8D09C0028857E /* Reachability.m in Sources */,
+				EABEEABA12F8D0880028857E /* NSObject+JSON.m in Sources */,
+				EABEEABB12F8D0880028857E /* SBJsonParser.m in Sources */,
+				EABEEABC12F8D0880028857E /* SBJsonStreamParser.m in Sources */,
+				EABEEABD12F8D0880028857E /* SBJsonStreamParserAdapter.m in Sources */,
+				EABEEABE12F8D0880028857E /* SBJsonStreamParserState.m in Sources */,
+				EABEEABF12F8D0880028857E /* SBJsonStreamWriter.m in Sources */,
+				EABEEAC012F8D0880028857E /* SBJsonStreamWriterState.m in Sources */,
+				EABEEAC112F8D0880028857E /* SBJsonTokeniser.m in Sources */,
+				EABEEAC212F8D0880028857E /* SBJsonWriter.m in Sources */,
+				EABEEAB812F8D0780028857E /* TestingTestCase.m in Sources */,
+				EABEEAB912F8D0780028857E /* AuthenticationTestCase.m in Sources */,
+				EABEEAD612F8D12D0028857E /* GHUnitIOSTestMain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		EA32AC9212F873970025F080 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = EA32AC8612F873060025F080 /* ECAPITests */;
-			targetProxy = EA32AC9112F873970025F080 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
@@ -465,6 +537,10 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				DSTROOT = /tmp/ECAPI.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = G5;
@@ -482,6 +558,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				DSTROOT = /tmp/ECAPI.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../frameworks\"",
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ECAPI_Prefix.pch;
@@ -519,56 +599,63 @@
 			};
 			name = Release;
 		};
-		EA32AC8912F873070025F080 /* Debug */ = {
+		EABEEA8312F8CBE50028857E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../frameworks\"",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "ECAPITests-Info.plist";
-				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				GCC_PREFIX_HEADER = Tests_Prefix.pch;
+				INFOPLIST_FILE = "Tests-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
 					"-framework",
 					Foundation,
 					"-framework",
-					SenTestingKit,
+					UIKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = ECAPITests;
-				WRAPPER_EXTENSION = octest;
+				PRODUCT_NAME = Tests;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
-		EA32AC8A12F873070025F080 /* Release */ = {
+		EABEEA8412F8CBE50028857E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../frameworks\"",
+				);
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "";
-				INFOPLIST_FILE = "ECAPITests-Info.plist";
-				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				GCC_PREFIX_HEADER = Tests_Prefix.pch;
+				INFOPLIST_FILE = "Tests-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
 				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
 					"-framework",
 					Foundation,
 					"-framework",
-					SenTestingKit,
+					UIKit,
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = ECAPITests;
-				WRAPPER_EXTENSION = octest;
+				PRODUCT_NAME = Tests;
+				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -594,11 +681,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA32AC8B12F873070025F080 /* Build configuration list for PBXNativeTarget "ECAPITests" */ = {
+		EABEEA8512F8CBE50028857E /* Build configuration list for PBXNativeTarget "Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EA32AC8912F873070025F080 /* Debug */,
-				EA32AC8A12F873070025F080 /* Release */,
+				EABEEA8312F8CBE50028857E /* Debug */,
+				EABEEA8412F8CBE50028857E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
