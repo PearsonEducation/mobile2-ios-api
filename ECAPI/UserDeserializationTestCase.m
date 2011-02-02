@@ -9,7 +9,7 @@
 #import "User.h"
 #import "SBJsonParser.h"
 
-@interface UserDeserializationTestCase : GHTest { }
+@interface UserDeserializationTestCase : GHTestCase { }
 @end
 
 @implementation UserDeserializationTestCase
@@ -19,13 +19,13 @@
 	SBJsonParser *parser = [[[SBJsonParser alloc] init] autorelease];
 	NSDictionary *meDictionary = (NSDictionary *)[parser objectWithString:meJSON];
 	
-	User *user = [User userFromDictionary:meDictionary];
-	GHAssertEquals(user.userId, @"7520378", @"Expected user id to equal 7520378");
-	GHAssertEquals(user.userName, @"manderson", @"Expected userName to equal manderson");
-	GHAssertEquals(user.firstName, @"Mary", @"Expected firstName to equal Mary");
-	GHAssertEquals(user.lastName, @"Anderson", @"Expected lastName to equal Anderson");
-	GHAssertEquals(user.emailAddress, @"maryanderson@ecollege.com", @"Expected emailAddress to equal maryanderson@ecollege.com");
-	GHAssertEquals(user.clientString, @"sandbox", @"Expected clientString to equal sandbox");
+	User *user = [User userFromDictionary:[meDictionary objectForKey:@"me"]];
+	GHAssertEqualObjects(user.userId, [NSNumber numberWithInt:7520378], @"Expected user id to equal 7520378");
+	GHAssertEqualObjects(user.userName, @"manderson", @"Expected userName to equal manderson");
+	GHAssertEqualObjects(user.firstName, @"Mary", @"Expected firstName to equal Mary");
+	GHAssertEqualObjects(user.lastName, @"Anderson", @"Expected lastName to equal Anderson");
+	GHAssertEqualObjects(user.emailAddress, @"maryanderson@ecollege.com", @"Expected emailAddress to equal maryanderson@ecollege.com");
+	GHAssertEqualObjects(user.clientString, @"sandbox", @"Expected clientString to equal sandbox");
 }
 
 @end
