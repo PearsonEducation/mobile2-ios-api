@@ -67,7 +67,6 @@
 		EABEEAB512F8D0690028857E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC0F12F871190025F080 /* MobileCoreServices.framework */; };
 		EABEEAB612F8D0690028857E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC1112F871190025F080 /* SystemConfiguration.framework */; };
 		EABEEAB712F8D0690028857E /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC1512F871190025F080 /* libz.1.2.3.dylib */; };
-		EABEEAB812F8D0780028857E /* TestingTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC9A12F874F00025F080 /* TestingTestCase.m */; };
 		EABEEAB912F8D0780028857E /* AuthenticationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE86812F8AA1B0028857E /* AuthenticationTestCase.m */; };
 		EABEEABA12F8D0880028857E /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8BD12F8BC6F0028857E /* NSObject+JSON.m */; };
 		EABEEABB12F8D0880028857E /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8BF12F8BC6F0028857E /* SBJsonParser.m */; };
@@ -124,8 +123,6 @@
 		EA32AC6912F872680025F080 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "../asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = SOURCE_ROOT; };
 		EA32AC6A12F872680025F080 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "../asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = SOURCE_ROOT; };
 		EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
-		EA32AC9912F874F00025F080 /* TestingTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestingTestCase.h; sourceTree = "<group>"; };
-		EA32AC9A12F874F00025F080 /* TestingTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestingTestCase.m; sourceTree = "<group>"; };
 		EABEE86812F8AA1B0028857E /* AuthenticationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationTestCase.m; sourceTree = "<group>"; };
 		EABEE87612F8AFB50028857E /* ECSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSession.h; sourceTree = "<group>"; };
 		EABEE87712F8AFB50028857E /* ECSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSession.m; sourceTree = "<group>"; };
@@ -298,8 +295,6 @@
 			isa = PBXGroup;
 			children = (
 				EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */,
-				EA32AC9912F874F00025F080 /* TestingTestCase.h */,
-				EA32AC9A12F874F00025F080 /* TestingTestCase.m */,
 				EABEE86812F8AA1B0028857E /* AuthenticationTestCase.m */,
 			);
 			name = Tests;
@@ -519,7 +514,6 @@
 				EABEEAC012F8D0880028857E /* SBJsonStreamWriterState.m in Sources */,
 				EABEEAC112F8D0880028857E /* SBJsonTokeniser.m in Sources */,
 				EABEEAC212F8D0880028857E /* SBJsonWriter.m in Sources */,
-				EABEEAB812F8D0780028857E /* TestingTestCase.m in Sources */,
 				EABEEAB912F8D0780028857E /* AuthenticationTestCase.m in Sources */,
 				EABEEAD612F8D12D0028857E /* GHUnitIOSTestMain.m in Sources */,
 			);
