@@ -309,12 +309,11 @@
 		EA32AC9812F874DC0025F080 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				EAADEE4512F9F1CE00899C75 /* Live API Tests */,
 				EAADEE2E12F9E35600899C75 /* Model Tests */,
 				EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */,
 				EAADEE0212F9D5EC00899C75 /* TestCaseWithAuthentication.h */,
 				EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */,
-				EABEE86812F8AA1B0028857E /* ECSessionTestCase.m */,
-				EAADEE0612F9D76C00899C75 /* UserTestCase.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -334,6 +333,15 @@
 				EAADEE3312F9E43A00899C75 /* User.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		EAADEE4512F9F1CE00899C75 /* Live API Tests */ = {
+			isa = PBXGroup;
+			children = (
+				EABEE86812F8AA1B0028857E /* ECSessionTestCase.m */,
+				EAADEE0612F9D76C00899C75 /* UserTestCase.m */,
+			);
+			name = "Live API Tests";
 			sourceTree = "<group>";
 		};
 		EABEE8B512F8BC370028857E /* json-framework */ = {
