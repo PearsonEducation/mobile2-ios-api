@@ -36,5 +36,6 @@
 + (ECSession *) sharedSession;
 
 - (void) authenticateWithClientId:(NSString *)clientId clientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password;
+- (void) forgetCredentials;
 
 @end

@@ -10,11 +10,6 @@
 #import "ASIFormDataRequest.h"
 #import "JSON.h"
 
-@interface ECSession (Private)
-- (void) forgetCredentials;
-@end
-
-
 @implementation ECSession
 static ECSession *sharedSession = nil;
 @synthesize authenticationDelegate, clientString, username, accessToken;
