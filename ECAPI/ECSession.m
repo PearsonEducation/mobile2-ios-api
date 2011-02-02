@@ -101,7 +101,7 @@ static ECSession *sharedSession = nil;
 	SBJsonParser *sbjson = [[SBJsonParser alloc] init];
 	// TODO: handle errors
 	NSDictionary *responseDictionary = (NSDictionary *)[sbjson objectWithString:jsonString error:NULL];
-	accessToken = [responseDictionary objectForKey:@"access_token"];
+	accessToken = [[responseDictionary objectForKey:@"access_token"] copy];
 
 	[authenticationRequest release]; authenticationRequest = nil;
 	[self.authenticationDelegate sessionDidAuthenticate:self];
