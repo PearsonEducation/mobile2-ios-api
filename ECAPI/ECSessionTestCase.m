@@ -13,6 +13,10 @@
 
 @implementation ECSessionTestCase
 
+- (void) tearDownClass {
+	[[ECSession sharedSession] forgetCredentials];
+}
+
 - (void) testAuthentication {
 	[self prepare];
 	
