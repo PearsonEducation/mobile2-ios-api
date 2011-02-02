@@ -37,6 +37,9 @@
 		EA32AC7D12F872680025F080 /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6912F872680025F080 /* ASINetworkQueue.h */; };
 		EA32AC7E12F872680025F080 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC6A12F872680025F080 /* ASINetworkQueue.m */; };
 		EA32AC7F12F872680025F080 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */; };
+		EAADEE0412F9D5EC00899C75 /* TestCaseWithAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE0212F9D5EC00899C75 /* TestCaseWithAuthentication.h */; };
+		EAADEE0512F9D5EC00899C75 /* TestCaseWithAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */; };
+		EAADEE0712F9D76C00899C75 /* UserTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE0612F9D76C00899C75 /* UserTestCase.m */; };
 		EAADEE3012F9E37400899C75 /* UserDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE2F12F9E37400899C75 /* UserDeserializationTestCase.m */; };
 		EAADEE3412F9E43A00899C75 /* User.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE3212F9E43A00899C75 /* User.h */; };
 		EAADEE3512F9E43A00899C75 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE3312F9E43A00899C75 /* User.m */; };
@@ -128,6 +131,8 @@
 		EA32AC6912F872680025F080 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "../asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = SOURCE_ROOT; };
 		EA32AC6A12F872680025F080 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "../asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = SOURCE_ROOT; };
 		EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
+		EAADEE0212F9D5EC00899C75 /* TestCaseWithAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseWithAuthentication.h; sourceTree = "<group>"; };
+		EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseWithAuthentication.m; sourceTree = "<group>"; };
 		EAADEE0612F9D76C00899C75 /* UserTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTestCase.m; sourceTree = "<group>"; };
 		EAADEE2F12F9E37400899C75 /* UserDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDeserializationTestCase.m; sourceTree = "<group>"; };
 		EAADEE3212F9E43A00899C75 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
@@ -306,7 +311,10 @@
 			children = (
 				EAADEE2E12F9E35600899C75 /* Model Tests */,
 				EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */,
+				EAADEE0212F9D5EC00899C75 /* TestCaseWithAuthentication.h */,
+				EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */,
 				EABEE86812F8AA1B0028857E /* ECSessionTestCase.m */,
+				EAADEE0612F9D76C00899C75 /* UserTestCase.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -395,6 +403,7 @@
 			files = (
 				EABEEAF812F8D34B0028857E /* ECConstants.h in Headers */,
 				EABEEAB312F8D0590028857E /* Tests_Prefix.pch in Headers */,
+				EAADEE0412F9D5EC00899C75 /* TestCaseWithAuthentication.h in Headers */,
 				EAADEE3412F9E43A00899C75 /* User.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +556,8 @@
 				EABEEAC212F8D0880028857E /* SBJsonWriter.m in Sources */,
 				EABEEAB912F8D0780028857E /* ECSessionTestCase.m in Sources */,
 				EABEEAD612F8D12D0028857E /* GHUnitIOSTestMain.m in Sources */,
+				EAADEE0512F9D5EC00899C75 /* TestCaseWithAuthentication.m in Sources */,
+				EAADEE0712F9D76C00899C75 /* UserTestCase.m in Sources */,
 				EAADEE3012F9E37400899C75 /* UserDeserializationTestCase.m in Sources */,
 				EAADEE3512F9E43A00899C75 /* User.m in Sources */,
 			);
