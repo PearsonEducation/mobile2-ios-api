@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class ASIHTTPRequest;
+@class ASIFormDataRequest;
 
 @protocol ECSessionAuthenticationDelegate<NSObject>
 @required
@@ -20,7 +20,7 @@
 	NSString *clientString;
 	NSString *username;
 	NSString *accessToken;
-	ASIHTTPRequest *authenticationRequest;
+	ASIFormDataRequest *authenticationRequest;
 	
 @private
 	NSString *_password;

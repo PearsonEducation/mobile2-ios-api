@@ -7,7 +7,7 @@
 //
 
 #import "ECSession.h"
-#import "ASIHTTPRequest.h"
+#import "ASIFormDataRequest.h"
 #import "JSON.h"
 
 @implementation ECSession
@@ -32,7 +32,13 @@
 }
 
 - (void) authenticate {
-	authenticationRequest = [[ASIHTTPRequest alloc] initWithURL:[NSURL URLWithString:M_API_URL]];
+	authenticationRequest = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/token", M_API_URL]]];
+	[authenticationRequest addRequestHeader:@"Accept" value:@"application/json"];
+	[authenticationRequest setPostValue:@"password" forKey:@"grant_type"];
+	[authenticationRequest setPostValue:_password forKey:@"password"];
+	[authenticationRequest setPostValue:[NSString stringWithFormat:@"%@\\%@", clientString, username] forKey:@"username"];
+	[authenticationRequest setPostValue:@"30bb1d4f-2677-45d1-be13-339174404402" forKey:@"client_id"];
+	
 	authenticationRequest.delegate = self;
 	[authenticationRequest startAsynchronous];
 }
