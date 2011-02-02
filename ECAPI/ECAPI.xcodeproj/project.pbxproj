@@ -39,12 +39,24 @@
 		EA32AC7F12F872680025F080 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */; };
 		EAADEE0412F9D5EC00899C75 /* TestCaseWithAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE0212F9D5EC00899C75 /* TestCaseWithAuthentication.h */; };
 		EAADEE0512F9D5EC00899C75 /* TestCaseWithAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */; };
-		EAADEE0712F9D76C00899C75 /* UserTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE0612F9D76C00899C75 /* UserTestCase.m */; };
+		EAADEE0712F9D76C00899C75 /* UserFetcherTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE0612F9D76C00899C75 /* UserFetcherTestCase.m */; };
 		EAADEE3012F9E37400899C75 /* UserDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE2F12F9E37400899C75 /* UserDeserializationTestCase.m */; };
 		EAADEE3412F9E43A00899C75 /* User.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE3212F9E43A00899C75 /* User.h */; };
 		EAADEE3512F9E43A00899C75 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE3312F9E43A00899C75 /* User.m */; };
 		EAADEE3612F9E43A00899C75 /* User.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE3212F9E43A00899C75 /* User.h */; };
 		EAADEE3712F9E43A00899C75 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE3312F9E43A00899C75 /* User.m */; };
+		EAADEE5312F9F4FF00899C75 /* UserFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE5112F9F4FF00899C75 /* UserFetcher.h */; };
+		EAADEE5412F9F4FF00899C75 /* UserFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE5212F9F4FF00899C75 /* UserFetcher.m */; };
+		EAADEE5512F9F4FF00899C75 /* UserFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE5112F9F4FF00899C75 /* UserFetcher.h */; };
+		EAADEE5612F9F4FF00899C75 /* UserFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE5212F9F4FF00899C75 /* UserFetcher.m */; };
+		EAADEE5912F9F8EA00899C75 /* ECAuthenticatedFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE5712F9F8EA00899C75 /* ECAuthenticatedFetcher.h */; };
+		EAADEE5A12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE5812F9F8EA00899C75 /* ECAuthenticatedFetcher.m */; };
+		EAADEE5B12F9F8EA00899C75 /* ECAuthenticatedFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE5712F9F8EA00899C75 /* ECAuthenticatedFetcher.h */; };
+		EAADEE5C12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE5812F9F8EA00899C75 /* ECAuthenticatedFetcher.m */; };
+		EAADEEA212FA1CC800899C75 /* ECUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEEA012FA1CC800899C75 /* ECUtils.h */; };
+		EAADEEA312FA1CC800899C75 /* ECUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEEA112FA1CC800899C75 /* ECUtils.m */; };
+		EAADEEA412FA1CC800899C75 /* ECUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEEA012FA1CC800899C75 /* ECUtils.h */; };
+		EAADEEA512FA1CC800899C75 /* ECUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEEA112FA1CC800899C75 /* ECUtils.m */; };
 		EABEE8CE12F8BC6F0028857E /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE8BB12F8BC6F0028857E /* JSON.h */; };
 		EABEE8CF12F8BC6F0028857E /* NSObject+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE8BC12F8BC6F0028857E /* NSObject+JSON.h */; };
 		EABEE8D012F8BC6F0028857E /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE8BD12F8BC6F0028857E /* NSObject+JSON.m */; };
@@ -133,10 +145,16 @@
 		EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
 		EAADEE0212F9D5EC00899C75 /* TestCaseWithAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseWithAuthentication.h; sourceTree = "<group>"; };
 		EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseWithAuthentication.m; sourceTree = "<group>"; };
-		EAADEE0612F9D76C00899C75 /* UserTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTestCase.m; sourceTree = "<group>"; };
+		EAADEE0612F9D76C00899C75 /* UserFetcherTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFetcherTestCase.m; sourceTree = "<group>"; };
 		EAADEE2F12F9E37400899C75 /* UserDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDeserializationTestCase.m; sourceTree = "<group>"; };
 		EAADEE3212F9E43A00899C75 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		EAADEE3312F9E43A00899C75 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		EAADEE5112F9F4FF00899C75 /* UserFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFetcher.h; sourceTree = "<group>"; };
+		EAADEE5212F9F4FF00899C75 /* UserFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFetcher.m; sourceTree = "<group>"; };
+		EAADEE5712F9F8EA00899C75 /* ECAuthenticatedFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAuthenticatedFetcher.h; sourceTree = "<group>"; };
+		EAADEE5812F9F8EA00899C75 /* ECAuthenticatedFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECAuthenticatedFetcher.m; sourceTree = "<group>"; };
+		EAADEEA012FA1CC800899C75 /* ECUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECUtils.h; sourceTree = "<group>"; };
+		EAADEEA112FA1CC800899C75 /* ECUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECUtils.m; sourceTree = "<group>"; };
 		EABEE86812F8AA1B0028857E /* ECSessionTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSessionTestCase.m; sourceTree = "<group>"; };
 		EABEE87612F8AFB50028857E /* ECSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECSession.h; sourceTree = "<group>"; };
 		EABEE87712F8AFB50028857E /* ECSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSession.m; sourceTree = "<group>"; };
@@ -243,9 +261,12 @@
 			isa = PBXGroup;
 			children = (
 				EAADEE3112F9E41700899C75 /* Models */,
+				EAADEE5012F9F4E900899C75 /* Fetchers */,
 				EABEE87612F8AFB50028857E /* ECSession.h */,
 				EABEE87712F8AFB50028857E /* ECSession.m */,
 				EABEE89912F8B9450028857E /* ECConstants.h */,
+				EAADEEA012FA1CC800899C75 /* ECUtils.h */,
+				EAADEEA112FA1CC800899C75 /* ECUtils.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -339,9 +360,20 @@
 			isa = PBXGroup;
 			children = (
 				EABEE86812F8AA1B0028857E /* ECSessionTestCase.m */,
-				EAADEE0612F9D76C00899C75 /* UserTestCase.m */,
+				EAADEE0612F9D76C00899C75 /* UserFetcherTestCase.m */,
 			);
 			name = "Live API Tests";
+			sourceTree = "<group>";
+		};
+		EAADEE5012F9F4E900899C75 /* Fetchers */ = {
+			isa = PBXGroup;
+			children = (
+				EAADEE5712F9F8EA00899C75 /* ECAuthenticatedFetcher.h */,
+				EAADEE5812F9F8EA00899C75 /* ECAuthenticatedFetcher.m */,
+				EAADEE5112F9F4FF00899C75 /* UserFetcher.h */,
+				EAADEE5212F9F4FF00899C75 /* UserFetcher.m */,
+			);
+			name = Fetchers;
 			sourceTree = "<group>";
 		};
 		EABEE8B512F8BC370028857E /* json-framework */ = {
@@ -402,6 +434,9 @@
 				EABEE8DD12F8BC6F0028857E /* SBJsonTokeniser.h in Headers */,
 				EABEE8DF12F8BC6F0028857E /* SBJsonWriter.h in Headers */,
 				EAADEE3612F9E43A00899C75 /* User.h in Headers */,
+				EAADEE5312F9F4FF00899C75 /* UserFetcher.h in Headers */,
+				EAADEE5B12F9F8EA00899C75 /* ECAuthenticatedFetcher.h in Headers */,
+				EAADEEA212FA1CC800899C75 /* ECUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +448,9 @@
 				EABEEAB312F8D0590028857E /* Tests_Prefix.pch in Headers */,
 				EAADEE0412F9D5EC00899C75 /* TestCaseWithAuthentication.h in Headers */,
 				EAADEE3412F9E43A00899C75 /* User.h in Headers */,
+				EAADEE5512F9F4FF00899C75 /* UserFetcher.h in Headers */,
+				EAADEE5912F9F8EA00899C75 /* ECAuthenticatedFetcher.h in Headers */,
+				EAADEEA412FA1CC800899C75 /* ECUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +574,9 @@
 				EABEE8E012F8BC6F0028857E /* SBJsonWriter.m in Sources */,
 				EABEE8E712F8BE3E0028857E /* ECSession.m in Sources */,
 				EAADEE3712F9E43A00899C75 /* User.m in Sources */,
+				EAADEE5412F9F4FF00899C75 /* UserFetcher.m in Sources */,
+				EAADEE5C12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */,
+				EAADEEA312FA1CC800899C75 /* ECUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,9 +606,12 @@
 				EABEEAB912F8D0780028857E /* ECSessionTestCase.m in Sources */,
 				EABEEAD612F8D12D0028857E /* GHUnitIOSTestMain.m in Sources */,
 				EAADEE0512F9D5EC00899C75 /* TestCaseWithAuthentication.m in Sources */,
-				EAADEE0712F9D76C00899C75 /* UserTestCase.m in Sources */,
+				EAADEE0712F9D76C00899C75 /* UserFetcherTestCase.m in Sources */,
 				EAADEE3012F9E37400899C75 /* UserDeserializationTestCase.m in Sources */,
 				EAADEE3512F9E43A00899C75 /* User.m in Sources */,
+				EAADEE5612F9F4FF00899C75 /* UserFetcher.m in Sources */,
+				EAADEE5A12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */,
+				EAADEEA512FA1CC800899C75 /* ECUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
