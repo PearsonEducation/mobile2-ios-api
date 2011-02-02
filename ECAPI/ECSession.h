@@ -17,6 +17,7 @@
 
 @interface ECSession : NSObject {
 	id<ECSessionAuthenticationDelegate> authenticationDelegate;
+	NSString *clientId;
 	NSString *clientString;
 	NSString *username;
 	NSString *accessToken;
@@ -30,9 +31,10 @@
 @property(nonatomic, readonly) NSString *clientString;
 @property(nonatomic, readonly) NSString *username;
 @property(nonatomic, readonly) NSString *accessToken;
+@property(nonatomic, readonly) BOOL isAuthenticated;
 
-- (id) initWithClientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password;
++ (ECSession *) sharedSession;
 
-- (void) authenticate;
+- (void) authenticateWithClientId:(NSString *)clientId clientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password;
 
 @end

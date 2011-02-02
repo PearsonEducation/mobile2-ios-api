@@ -10,37 +10,86 @@
 #import "ASIFormDataRequest.h"
 #import "JSON.h"
 
+@interface ECSession (Private)
+- (void) forgetCredentials;
+@end
+
+
 @implementation ECSession
+static ECSession *sharedSession = nil;
 @synthesize authenticationDelegate, clientString, username, accessToken;
 
-- (id) initWithClientString:(NSString *)cs username:(NSString *)un password:(NSString *)pw {
-	if (self == [super init]) {
-		clientString = cs;
-		username = un;
-		_password = [pw retain];
+#pragma mark -
+#pragma mark Singleton Implementation
+
++ (ECSession *) sharedSession {
+	if (sharedSession == nil) {
+		sharedSession = [[super allocWithZone:NULL] init];
 	}
+	return sharedSession;
+}
+
++ (id) allocWithZone:(NSZone *)zone {
+	return [[self sharedSession] retain];
+}
+
+- (id) copyWithZone:(NSZone *)zone {
 	return self;
 }
 
-- (void) dealloc {
-	self.authenticationDelegate = nil;
-	[clientString release]; clientString = nil;
-	[username release]; username = nil;
-	[accessToken release]; accessToken = nil;
-	[_password release]; _password = nil;
-	[authenticationRequest release]; authenticationRequest = nil;
+- (id) retain {
+    return self;
 }
 
-- (void) authenticate {
+- (NSUInteger) retainCount {
+    return NSUIntegerMax;  //denotes an object that cannot be released
+}
+
+- (void) release {
+    //do nothing -> singleton
+}
+
+- (id) autorelease {
+    return self;
+}
+
+#pragma mark -
+#pragma mark Shared Session Implementation
+
+- (void) dealloc {
+	[self forgetCredentials];
+	self.authenticationDelegate = nil;
+	[authenticationRequest release]; authenticationRequest = nil;
+	[super dealloc];
+}
+
+- (void) authenticateWithClientId:(NSString *)cid clientString:(NSString *)cs username:(NSString *)un password:(NSString *)pw {
+	[self forgetCredentials];
+	clientId = [cid retain];
+	clientString = [cs retain];
+	username = [un retain];
+	_password = [pw retain];
 	authenticationRequest = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/token", M_API_URL]]];
 	[authenticationRequest addRequestHeader:@"Accept" value:@"application/json"];
 	[authenticationRequest setPostValue:@"password" forKey:@"grant_type"];
 	[authenticationRequest setPostValue:_password forKey:@"password"];
 	[authenticationRequest setPostValue:[NSString stringWithFormat:@"%@\\%@", clientString, username] forKey:@"username"];
-	[authenticationRequest setPostValue:@"30bb1d4f-2677-45d1-be13-339174404402" forKey:@"client_id"];
+	[authenticationRequest setPostValue:clientId forKey:@"client_id"];
 	
 	authenticationRequest.delegate = self;
 	[authenticationRequest startAsynchronous];
+}
+
+- (BOOL) isAuthenticated {
+	return (accessToken != nil);
+}
+
+- (void) forgetCredentials {
+	[clientId release]; clientId = nil;
+	[clientString release]; clientString = nil;
+	[username release]; username = nil;
+	[accessToken release]; accessToken = nil;
+	[_password release]; _password = nil;
 }
 
 #pragma mark -
