@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AA747D9F0F9514B9006C5449 /* ECAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */; };
 		EA32AC0C12F871190025F080 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC0B12F871190025F080 /* CFNetwork.framework */; };
 		EA32AC0E12F871190025F080 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC0D12F871190025F080 /* CoreGraphics.framework */; };
 		EA32AC1012F871190025F080 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC0F12F871190025F080 /* MobileCoreServices.framework */; };
@@ -115,6 +116,7 @@
 		AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libECAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDeserializationTestCase.m; sourceTree = "<group>"; };
 		EA32AC0B12F871190025F080 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EA32AC0D12F871190025F080 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EA32AC0F12F871190025F080 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -343,6 +345,7 @@
 			isa = PBXGroup;
 			children = (
 				EAADEE2F12F9E37400899C75 /* UserDeserializationTestCase.m */,
+				EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */,
 			);
 			name = "Model Tests";
 			sourceTree = "<group>";
@@ -612,6 +615,7 @@
 				EAADEE5612F9F4FF00899C75 /* UserFetcher.m in Sources */,
 				EAADEE5A12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */,
 				EAADEEA512FA1CC800899C75 /* ECUtils.m in Sources */,
+				EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
