@@ -17,6 +17,11 @@
 	[self loadDataFromURLString:urlString];
 }
 
+- (void) getUserById:(NSNumber *)userId {
+	NSString *urlString = [NSString stringWithFormat:@"%@/users/%d.json", M_API_URL, [userId intValue]];
+	[self loadDataFromURLString:urlString];
+}
+
 - (void) dataDidFinishLoading {
 	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
@@ -26,7 +31,8 @@
 	if ([parsedDictionary objectForKey:@"me"]) {
 		typedObject = [User userFromDictionary:[parsedDictionary objectForKey:@"me"]];
 	} else if ([parsedDictionary objectForKey:@"users"]) {
-		//typedObject = [User userFromDictionary:[parsedDictionary objectForKey:@"me"]];
+		NSArray *array = [parsedDictionary objectForKey:@"users"];
+		typedObject = [User userFromDictionary:[array objectAtIndex:0]];
 	}
 
 	[parser release];
