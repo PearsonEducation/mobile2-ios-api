@@ -18,7 +18,7 @@
 	NSString *clientString;
 }
 
-@property(nonatomic, assign) NSNumber *userId;
+@property(nonatomic, retain) NSNumber *userId;
 @property(nonatomic, retain) NSString *userName;
 @property(nonatomic, retain) NSString *firstName;
 @property(nonatomic, retain) NSString *lastName;
