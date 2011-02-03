@@ -10,6 +10,10 @@
 		AA747D9F0F9514B9006C5449 /* ECAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */; };
+		EA15EE5112FB5EF100D60A83 /* Course.h in Headers */ = {isa = PBXBuildFile; fileRef = EA15EE4F12FB5EF100D60A83 /* Course.h */; };
+		EA15EE5212FB5EF100D60A83 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15EE5012FB5EF100D60A83 /* Course.m */; };
+		EA15EE5312FB5EF100D60A83 /* Course.h in Headers */ = {isa = PBXBuildFile; fileRef = EA15EE4F12FB5EF100D60A83 /* Course.h */; };
+		EA15EE5412FB5EF100D60A83 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15EE5012FB5EF100D60A83 /* Course.m */; };
 		EA32AC0C12F871190025F080 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC0B12F871190025F080 /* CFNetwork.framework */; };
 		EA32AC0E12F871190025F080 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC0D12F871190025F080 /* CoreGraphics.framework */; };
 		EA32AC1012F871190025F080 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA32AC0F12F871190025F080 /* MobileCoreServices.framework */; };
@@ -117,6 +121,8 @@
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libECAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDeserializationTestCase.m; sourceTree = "<group>"; };
+		EA15EE4F12FB5EF100D60A83 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		EA15EE5012FB5EF100D60A83 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		EA32AC0B12F871190025F080 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		EA32AC0D12F871190025F080 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EA32AC0F12F871190025F080 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -355,6 +361,8 @@
 			children = (
 				EAADEE3212F9E43A00899C75 /* User.h */,
 				EAADEE3312F9E43A00899C75 /* User.m */,
+				EA15EE4F12FB5EF100D60A83 /* Course.h */,
+				EA15EE5012FB5EF100D60A83 /* Course.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -440,6 +448,7 @@
 				EAADEE5312F9F4FF00899C75 /* UserFetcher.h in Headers */,
 				EAADEE5B12F9F8EA00899C75 /* ECAuthenticatedFetcher.h in Headers */,
 				EAADEEA212FA1CC800899C75 /* ECUtils.h in Headers */,
+				EA15EE5312FB5EF100D60A83 /* Course.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +463,7 @@
 				EAADEE5512F9F4FF00899C75 /* UserFetcher.h in Headers */,
 				EAADEE5912F9F8EA00899C75 /* ECAuthenticatedFetcher.h in Headers */,
 				EAADEEA412FA1CC800899C75 /* ECUtils.h in Headers */,
+				EA15EE5112FB5EF100D60A83 /* Course.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +590,7 @@
 				EAADEE5412F9F4FF00899C75 /* UserFetcher.m in Sources */,
 				EAADEE5C12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */,
 				EAADEEA312FA1CC800899C75 /* ECUtils.m in Sources */,
+				EA15EE5412FB5EF100D60A83 /* Course.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +627,7 @@
 				EAADEE5A12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */,
 				EAADEEA512FA1CC800899C75 /* ECUtils.m in Sources */,
 				EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */,
+				EA15EE5212FB5EF100D60A83 /* Course.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
