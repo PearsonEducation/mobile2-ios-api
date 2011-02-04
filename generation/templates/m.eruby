@@ -1,0 +1,33 @@
+//
+//  <%= class_name %>.m
+//  ECAPI
+//
+//  Created by Tony Hillerson on 2/2/11.
+//  Copyright 2011 EffectiveUI. All rights reserved.
+//
+
+#import "<%= class_name %>.h"
+#import "ECUtils.h"
+
+@implementation <%= class_name %>
+<% vars.each do |var| %>
+@synthesize <%= var[:name] %>;
+<% end %>
+
++ (<%= class_name %> *) <%= little_class_name %>FromDictionary:(NSDictionary *)dictionary {
+  <%= class_name %> *<%= little_class_name %> = [[<%= class_name %> alloc] init];
+<% vars.each do |var| %>
+  <%= little_class_name %>.<%= var[:name] %> = [dictionary objectForKey:@"<%= var[:json_key] %>"];
+<% end %>
+
+  return <%= little_class_name %>;
+}
+
+- (void) dealloc {
+<% vars.each do |var| %>
+   self.<%= var[:name] %> = nil;
+<% end %>
+   [super dealloc];
+}
+
+@end

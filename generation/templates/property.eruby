@@ -1,0 +1,1 @@
+@property(nonatomic, retain) <%= class_name %> *<%= name %>;

@@ -1,0 +1,24 @@
+//
+//  <%= class_name %>.h
+//  ECAPI
+//
+//  Created by Tony Hillerson on 2/2/11.
+//  Copyright 2011 EffectiveUI. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+
+@interface <%= class_name %>: NSObject {
+<% for var in vars %>
+   <%= var[:class_name] %> *<%= var[:name] %>;
+<% end %>
+}
+
+<% for property in properties %>
+<%= property.chomp %>
+<% end %>
+
++ (<%= class_name %> *) <%= little_class_name %>FromDictionary:(NSDictionary *)dictionary;
+
+@end
