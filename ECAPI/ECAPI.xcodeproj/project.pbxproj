@@ -42,6 +42,7 @@
 		EA32AC7D12F872680025F080 /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6912F872680025F080 /* ASINetworkQueue.h */; };
 		EA32AC7E12F872680025F080 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC6A12F872680025F080 /* ASINetworkQueue.m */; };
 		EA32AC7F12F872680025F080 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */; };
+		EA9FC09012FC6224009AA1FF /* CourseItemDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9FC08F12FC6224009AA1FF /* CourseItemDeserializationTestCase.m */; };
 		EAADEE0412F9D5EC00899C75 /* TestCaseWithAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE0212F9D5EC00899C75 /* TestCaseWithAuthentication.h */; };
 		EAADEE0512F9D5EC00899C75 /* TestCaseWithAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */; };
 		EAADEE0712F9D76C00899C75 /* UserFetcherTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE0612F9D76C00899C75 /* UserFetcherTestCase.m */; };
@@ -151,6 +152,7 @@
 		EA32AC6912F872680025F080 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "../asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = SOURCE_ROOT; };
 		EA32AC6A12F872680025F080 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "../asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = SOURCE_ROOT; };
 		EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
+		EA9FC08F12FC6224009AA1FF /* CourseItemDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseItemDeserializationTestCase.m; sourceTree = "<group>"; };
 		EAADEE0212F9D5EC00899C75 /* TestCaseWithAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseWithAuthentication.h; sourceTree = "<group>"; };
 		EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseWithAuthentication.m; sourceTree = "<group>"; };
 		EAADEE0612F9D76C00899C75 /* UserFetcherTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFetcherTestCase.m; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			children = (
 				EAADEE2F12F9E37400899C75 /* UserDeserializationTestCase.m */,
 				EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */,
+				EA9FC08F12FC6224009AA1FF /* CourseItemDeserializationTestCase.m */,
 			);
 			name = "Model Tests";
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				EAADEEA512FA1CC800899C75 /* ECUtils.m in Sources */,
 				EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */,
 				EA15EE5212FB5EF100D60A83 /* Course.m in Sources */,
+				EA9FC09012FC6224009AA1FF /* CourseItemDeserializationTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

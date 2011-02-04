@@ -46,7 +46,7 @@
 #pragma mark Setup and Teardown
 
 - (id) initWithDelegate:(id)del responseSelector:(SEL)rcb errorSelector:(SEL)ecb {
-	if (self = [super init]) {
+	if ((self = [super init])) {
 		delegate = del; // weak reference
 		responseCallback = rcb;
 		errorCallback = ecb;
