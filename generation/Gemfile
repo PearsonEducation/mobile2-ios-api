@@ -3,6 +3,3 @@ source :rubygems
 gem "json"
 gem "erubis"
 
-Dir.new("test_data").entries.each do |file|
-  puts file
-end
