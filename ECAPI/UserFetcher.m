@@ -14,12 +14,12 @@
 
 - (void) fetchMe {
 	NSString *urlString = [NSString stringWithFormat:@"%@/me.json", M_API_URL];
-	[self loadDataFromURLString:urlString];
+	[self performSelectorInBackground:@selector(loadDataFromURLString:) withObject:urlString];
 }
 
 - (void) getUserById:(NSNumber *)userId {
 	NSString *urlString = [NSString stringWithFormat:@"%@/users/%d.json", M_API_URL, [userId intValue]];
-	[self loadDataFromURLString:urlString];
+	[self performSelectorInBackground:@selector(loadDataFromURLString:) withObject:urlString];
 }
 
 - (void) dataDidFinishLoading {
@@ -37,7 +37,7 @@
 
 	[parser release];
 	[jsonString release];
-	[self informDelegateOfSuccess:typedObject];
+	[self performSelectorOnMainThread:@selector(informDelegateOfSuccess:) withObject:typedObject waitUntilDone:NO];
 }
 
 @end
