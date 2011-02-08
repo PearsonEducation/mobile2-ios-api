@@ -115,6 +115,16 @@
 		EABEEAD612F8D12D0028857E /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */; };
 		EABEEAF712F8D3410028857E /* ECSession.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE87712F8AFB50028857E /* ECSession.m */; };
 		EABEEAF812F8D34B0028857E /* ECConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE89912F8B9450028857E /* ECConstants.h */; };
+		EAC052B41301FBA40002B434 /* JSONUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = EAC052AF1301FBA40002B434 /* JSONUnarchiver.h */; };
+		EAC052B51301FBA40002B434 /* JSONUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = EAC052AF1301FBA40002B434 /* JSONUnarchiver.h */; };
+		EAC052B61301FBA40002B434 /* JSONUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC052B01301FBA40002B434 /* JSONUnarchiver.m */; };
+		EAC052B71301FBA40002B434 /* JSONUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC052B01301FBA40002B434 /* JSONUnarchiver.m */; };
+		EAC052B81301FBA40002B434 /* WebCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = EAC052B11301FBA40002B434 /* WebCoder.h */; };
+		EAC052B91301FBA40002B434 /* WebCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = EAC052B11301FBA40002B434 /* WebCoder.h */; };
+		EAC052BA1301FBA40002B434 /* XMLUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = EAC052B21301FBA40002B434 /* XMLUnarchiver.h */; };
+		EAC052BB1301FBA40002B434 /* XMLUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = EAC052B21301FBA40002B434 /* XMLUnarchiver.h */; };
+		EAC052BC1301FBA40002B434 /* XMLUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC052B31301FBA40002B434 /* XMLUnarchiver.m */; };
+		EAC052BD1301FBA40002B434 /* XMLUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = EAC052B31301FBA40002B434 /* XMLUnarchiver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,6 +203,11 @@
 		EABEEA8612F8CE620028857E /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../frameworks/GHUnitIOS.framework; sourceTree = SOURCE_ROOT; };
 		EABEEAB112F8D02B0028857E /* Tests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests_Prefix.pch; sourceTree = "<group>"; };
 		EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = ../frameworks/GHUnitIOSTestMain.m; sourceTree = SOURCE_ROOT; };
+		EAC052AF1301FBA40002B434 /* JSONUnarchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONUnarchiver.h; path = ../WebCoder/Classes/WebCoder/JSONUnarchiver.h; sourceTree = "<group>"; };
+		EAC052B01301FBA40002B434 /* JSONUnarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONUnarchiver.m; path = ../WebCoder/Classes/WebCoder/JSONUnarchiver.m; sourceTree = "<group>"; };
+		EAC052B11301FBA40002B434 /* WebCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WebCoder.h; path = ../WebCoder/Classes/WebCoder/WebCoder.h; sourceTree = "<group>"; };
+		EAC052B21301FBA40002B434 /* XMLUnarchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XMLUnarchiver.h; path = ../WebCoder/Classes/WebCoder/XMLUnarchiver.h; sourceTree = "<group>"; };
+		EAC052B31301FBA40002B434 /* XMLUnarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XMLUnarchiver.m; path = ../WebCoder/Classes/WebCoder/XMLUnarchiver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +268,7 @@
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EAC052AE1301FB700002B434 /* WebCoder */,
 				EABEE8B512F8BC370028857E /* json-framework */,
 				EA32AC2112F871220025F080 /* asi-http-request */,
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
@@ -416,6 +432,18 @@
 			name = "json-framework";
 			sourceTree = "<group>";
 		};
+		EAC052AE1301FB700002B434 /* WebCoder */ = {
+			isa = PBXGroup;
+			children = (
+				EAC052AF1301FBA40002B434 /* JSONUnarchiver.h */,
+				EAC052B01301FBA40002B434 /* JSONUnarchiver.m */,
+				EAC052B11301FBA40002B434 /* WebCoder.h */,
+				EAC052B21301FBA40002B434 /* XMLUnarchiver.h */,
+				EAC052B31301FBA40002B434 /* XMLUnarchiver.m */,
+			);
+			name = WebCoder;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -452,6 +480,9 @@
 				EAADEE5B12F9F8EA00899C75 /* ECAuthenticatedFetcher.h in Headers */,
 				EAADEEA212FA1CC800899C75 /* ECUtils.h in Headers */,
 				EA15EE5312FB5EF100D60A83 /* Course.h in Headers */,
+				EAC052B41301FBA40002B434 /* JSONUnarchiver.h in Headers */,
+				EAC052B81301FBA40002B434 /* WebCoder.h in Headers */,
+				EAC052BA1301FBA40002B434 /* XMLUnarchiver.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +498,9 @@
 				EAADEE5912F9F8EA00899C75 /* ECAuthenticatedFetcher.h in Headers */,
 				EAADEEA412FA1CC800899C75 /* ECUtils.h in Headers */,
 				EA15EE5112FB5EF100D60A83 /* Course.h in Headers */,
+				EAC052B51301FBA40002B434 /* JSONUnarchiver.h in Headers */,
+				EAC052B91301FBA40002B434 /* WebCoder.h in Headers */,
+				EAC052BB1301FBA40002B434 /* XMLUnarchiver.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +628,8 @@
 				EAADEE5C12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */,
 				EAADEEA312FA1CC800899C75 /* ECUtils.m in Sources */,
 				EA15EE5412FB5EF100D60A83 /* Course.m in Sources */,
+				EAC052B61301FBA40002B434 /* JSONUnarchiver.m in Sources */,
+				EAC052BC1301FBA40002B434 /* XMLUnarchiver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +668,8 @@
 				EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */,
 				EA15EE5212FB5EF100D60A83 /* Course.m in Sources */,
 				EA9FC09012FC6224009AA1FF /* CourseItemDeserializationTestCase.m in Sources */,
+				EAC052B71301FBA40002B434 /* JSONUnarchiver.m in Sources */,
+				EAC052BD1301FBA40002B434 /* XMLUnarchiver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
