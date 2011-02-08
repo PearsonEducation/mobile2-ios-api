@@ -1,0 +1,34 @@
+{
+   "userannouncements":[
+      {
+         "id":"7520378-16679287",
+         "markedAsRead":false,
+         "announcement":{
+            "links":[
+               {
+                  "href":"http://m-api.ecollege.com/courses/4747489/announcements/16679287",
+                  "rel":"self"
+               }
+            ],
+            "id":16679287,
+            "subject":"Remember to use the Mobile site",
+            "text":"Take a look at the login page and you will see the mobile website for our class.&nbsp; Be sure to use it on the go!",
+            "submitter":"Dr. Ingrid Wells",
+            "startDisplayDate":"2011-01-25T07:00:00Z",
+            "endDisplayDate":"2015-11-16T06:59:00Z",
+            "announcementScopes":[
+               {
+                  "links":[
+                     {
+                        "href":"http://announcements-api.ecollege.com/courses/4747489",
+                        "rel":"related"
+                     }
+                  ],
+                  "scopeTargetId":4747489,
+                  "scopeTargetType":"course"
+               }
+            ]
+         }
+      }
+   ]
+}

@@ -1,0 +1,29 @@
+{
+   "currentCourses":[
+      {
+         "id":3433672,
+         "title":"Student Orientation Tutorial",
+         "displayCourseCode":"SOT"
+      },
+      {
+         "id":4747489,
+         "title":"Sociology&#58; The Basics",
+         "displayCourseCode":"SOC320"
+      },
+      {
+         "id":4855840,
+         "title":"Accounting I &#40;A&#41;",
+         "displayCourseCode":"ACC 102"
+      },
+      {
+         "id":4855843,
+         "title":"Introduction to Business",
+         "displayCourseCode":"BUS-101"
+      },
+      {
+         "id":4855844,
+         "title":"Nursing Neighborhood 2011",
+         "displayCourseCode":"NUR 101"
+      }
+   ]
+}
