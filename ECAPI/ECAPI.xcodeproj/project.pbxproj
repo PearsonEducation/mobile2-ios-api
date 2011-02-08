@@ -259,13 +259,13 @@
 				08FB77AEFE84172EC02AAC07 /* Classes */,
 				EA32AC9812F874DC0025F080 /* Tests */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
-				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				0867D69AFE84028FC02AAC07 /* Frameworks and Libraries */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = ECAPI;
 			sourceTree = "<group>";
 		};
-		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+		0867D69AFE84028FC02AAC07 /* Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				EAC052AE1301FB700002B434 /* WebCoder */,
@@ -280,7 +280,7 @@
 				EA32AC1512F871190025F080 /* libz.1.2.3.dylib */,
 				EABEEA8612F8CE620028857E /* GHUnitIOS.framework */,
 			);
-			name = Frameworks;
+			name = "Frameworks and Libraries";
 			sourceTree = "<group>";
 		};
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
