@@ -42,6 +42,12 @@
 		EA32AC7D12F872680025F080 /* ASINetworkQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6912F872680025F080 /* ASINetworkQueue.h */; };
 		EA32AC7E12F872680025F080 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC6A12F872680025F080 /* ASINetworkQueue.m */; };
 		EA32AC7F12F872680025F080 /* ASIProgressDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */; };
+		EA9CF47413020E8E00108C6C /* ECCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9CF47213020E8E00108C6C /* ECCoder.h */; };
+		EA9CF47513020E8E00108C6C /* ECCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9CF47213020E8E00108C6C /* ECCoder.h */; };
+		EA9CF47A13020EF300108C6C /* ECJSONUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9CF47813020EF300108C6C /* ECJSONUnarchiver.h */; };
+		EA9CF47B13020EF300108C6C /* ECJSONUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9CF47813020EF300108C6C /* ECJSONUnarchiver.h */; };
+		EA9CF47C13020EF300108C6C /* ECJSONUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9CF47913020EF300108C6C /* ECJSONUnarchiver.m */; };
+		EA9CF47D13020EF300108C6C /* ECJSONUnarchiver.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9CF47913020EF300108C6C /* ECJSONUnarchiver.m */; };
 		EA9FC09012FC6224009AA1FF /* CourseItemDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA9FC08F12FC6224009AA1FF /* CourseItemDeserializationTestCase.m */; };
 		EAADEE0412F9D5EC00899C75 /* TestCaseWithAuthentication.h in Headers */ = {isa = PBXBuildFile; fileRef = EAADEE0212F9D5EC00899C75 /* TestCaseWithAuthentication.h */; };
 		EAADEE0512F9D5EC00899C75 /* TestCaseWithAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */; };
@@ -152,6 +158,9 @@
 		EA32AC6912F872680025F080 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = "../asi-http-request/Classes/ASINetworkQueue.h"; sourceTree = SOURCE_ROOT; };
 		EA32AC6A12F872680025F080 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = "../asi-http-request/Classes/ASINetworkQueue.m"; sourceTree = SOURCE_ROOT; };
 		EA32AC6B12F872680025F080 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = "../asi-http-request/Classes/ASIProgressDelegate.h"; sourceTree = SOURCE_ROOT; };
+		EA9CF47213020E8E00108C6C /* ECCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoder.h; sourceTree = "<group>"; };
+		EA9CF47813020EF300108C6C /* ECJSONUnarchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECJSONUnarchiver.h; sourceTree = "<group>"; };
+		EA9CF47913020EF300108C6C /* ECJSONUnarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECJSONUnarchiver.m; sourceTree = "<group>"; };
 		EA9FC08F12FC6224009AA1FF /* CourseItemDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseItemDeserializationTestCase.m; sourceTree = "<group>"; };
 		EAADEE0212F9D5EC00899C75 /* TestCaseWithAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestCaseWithAuthentication.h; sourceTree = "<group>"; };
 		EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestCaseWithAuthentication.m; sourceTree = "<group>"; };
@@ -270,6 +279,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EA9CF47113020E5900108C6C /* Unarchiver */,
 				EAADEE3112F9E41700899C75 /* Models */,
 				EAADEE5012F9F4E900899C75 /* Fetchers */,
 				EABEE87612F8AFB50028857E /* ECSession.h */,
@@ -347,6 +357,16 @@
 				EAADEE0312F9D5EC00899C75 /* TestCaseWithAuthentication.m */,
 			);
 			name = Tests;
+			sourceTree = "<group>";
+		};
+		EA9CF47113020E5900108C6C /* Unarchiver */ = {
+			isa = PBXGroup;
+			children = (
+				EA9CF47213020E8E00108C6C /* ECCoder.h */,
+				EA9CF47813020EF300108C6C /* ECJSONUnarchiver.h */,
+				EA9CF47913020EF300108C6C /* ECJSONUnarchiver.m */,
+			);
+			name = Unarchiver;
 			sourceTree = "<group>";
 		};
 		EAADEE2E12F9E35600899C75 /* Model Tests */ = {
@@ -452,6 +472,8 @@
 				EAADEE5B12F9F8EA00899C75 /* ECAuthenticatedFetcher.h in Headers */,
 				EAADEEA212FA1CC800899C75 /* ECUtils.h in Headers */,
 				EA15EE5312FB5EF100D60A83 /* Course.h in Headers */,
+				EA9CF47413020E8E00108C6C /* ECCoder.h in Headers */,
+				EA9CF47A13020EF300108C6C /* ECJSONUnarchiver.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,6 +489,8 @@
 				EAADEE5912F9F8EA00899C75 /* ECAuthenticatedFetcher.h in Headers */,
 				EAADEEA412FA1CC800899C75 /* ECUtils.h in Headers */,
 				EA15EE5112FB5EF100D60A83 /* Course.h in Headers */,
+				EA9CF47513020E8E00108C6C /* ECCoder.h in Headers */,
+				EA9CF47B13020EF300108C6C /* ECJSONUnarchiver.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +618,7 @@
 				EAADEE5C12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */,
 				EAADEEA312FA1CC800899C75 /* ECUtils.m in Sources */,
 				EA15EE5412FB5EF100D60A83 /* Course.m in Sources */,
+				EA9CF47C13020EF300108C6C /* ECJSONUnarchiver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +657,7 @@
 				EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */,
 				EA15EE5212FB5EF100D60A83 /* Course.m in Sources */,
 				EA9FC09012FC6224009AA1FF /* CourseItemDeserializationTestCase.m in Sources */,
+				EA9CF47D13020EF300108C6C /* ECJSONUnarchiver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
