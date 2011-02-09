@@ -12,10 +12,15 @@
 
 @interface ECAuthenticatedFetcher : NSObject {
 	ASIHTTPRequest *request;
+	NSInteger responseStatusCode;
+	NSDictionary *responseHeaders;
 	NSMutableData *data;
 	SEL responseCallback;
 	id delegate;
 }
+
+@property(nonatomic,retain) NSDictionary *responseHeaders;
+@property(nonatomic,assign) NSInteger responseStatusCode;
 
 + (ASIHTTPRequest *) newAuthenticatedGETRequestWithURL:(NSURL *)earl;
 + (ASIFormDataRequest *) newAuthenticatedPOSTRequestWithURL:(NSURL *)earl;

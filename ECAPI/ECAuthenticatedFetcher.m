@@ -16,6 +16,7 @@
 @end
 
 @implementation ECAuthenticatedFetcher
+@synthesize responseHeaders, responseStatusCode;
 
 #pragma mark -
 #pragma mark Request Factory Methods
@@ -54,6 +55,7 @@
 }
 
 -(void) dealloc {
+	self.responseHeaders = nil;
 	[request release]; request = nil;
 	[data release]; data = nil;
 	[super dealloc];
@@ -99,7 +101,10 @@
 #pragma mark ASIHTTPRequest Callbacks
 
 - (void)requestFinished:(ASIHTTPRequest *)aRequest {
+	[data release]; [responseHeaders release];
 	data = [[aRequest responseData] mutableCopy]; // retain count of +1
+	responseStatusCode = [aRequest responseStatusCode];
+	responseHeaders = [[aRequest responseHeaders] copy];
 	[request release]; request = nil;
 	[self dataDidFinishLoading];
 }
