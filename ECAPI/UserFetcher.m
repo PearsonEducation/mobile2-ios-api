@@ -18,8 +18,8 @@
 	[self performSelectorInBackground:@selector(loadDataFromURLString:) withObject:urlString];
 }
 
-- (void) getUserById:(NSNumber *)userId {
-	NSString *urlString = [NSString stringWithFormat:@"%@/users/%d.json", M_API_URL, [userId intValue]];
+- (void) getUserById:(NSInteger)userId {
+	NSString *urlString = [NSString stringWithFormat:@"%@/users/%d.json", M_API_URL, userId];
 	[self performSelectorInBackground:@selector(loadDataFromURLString:) withObject:urlString];
 }
 
