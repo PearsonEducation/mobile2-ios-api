@@ -18,8 +18,8 @@
 - (void) testDeserializeUserFromMeJSON {
 	NSString *meJSON = @"{\"me\":{\"id\":7520378,\"userName\":\"manderson\",\"firstName\":\"Mary\",\"lastName\":\"Anderson\",\"emailAddress\":\"maryanderson@ecollege.com\",\"clientString\":\"sandbox\"}}";
 	SBJsonParser *parser = [[[SBJsonParser alloc] init] autorelease];
-	NSDictionary *meDictionary = (NSDictionary *)[parser objectWithString:meJSON];
-	ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:meDictionary];
+	NSDictionary *userDictionary = (NSDictionary *)[parser objectWithString:meJSON];
+	ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:[userDictionary objectForKey:@"me"]];
     
 	User *user = [[[User alloc] initWithCoder:unarchiver] autorelease];
 	GHAssertEquals(user.userId, 7520378, @"Expected user id to equal 7520378");
