@@ -89,7 +89,7 @@
 	// abstract
 }
 
-- (void) informDelegateOfSuccess:(id)object {
+- (void) informDelegateOfResponse:(id)object {
 	[delegate performSelector:responseCallback withObject:object];
 }
 

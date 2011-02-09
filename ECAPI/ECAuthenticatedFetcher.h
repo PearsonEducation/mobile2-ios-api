@@ -29,7 +29,7 @@
 - (void) loadDataFromURLString:(NSString *)urlString;
 - (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString;
 - (void) dataDidFinishLoading;
-- (void) informDelegateOfSuccess:(id)object;
+- (void) informDelegateOfResponse:(id)object;
 - (void) cancel;
 
 @end

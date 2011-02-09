@@ -46,7 +46,7 @@
 
 	[parser release];
 	[jsonString release];
-	[self performSelectorOnMainThread:@selector(informDelegateOfSuccess:) withObject:typedObject waitUntilDone:NO];
+	[self performSelectorOnMainThread:@selector(informDelegateOfResponse:) withObject:typedObject waitUntilDone:NO];
 }
 
 @end
