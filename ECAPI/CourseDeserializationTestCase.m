@@ -8,6 +8,7 @@
 
 #import "Course.h"
 #import "SBJsonParser.h"
+#import "ECJSONUnarchiver.h"
 
 @interface CourseDeserializationTestCase : GHTestCase { }
 @end
@@ -20,10 +21,11 @@
 	NSDictionary *coursesDictionary = (NSDictionary *)[[parser objectWithString:unexpandedCourseJSON] retain];
 	NSArray *firstCourse = [coursesDictionary objectForKey:@"courses"];
 	NSDictionary *courseDictionary = (NSDictionary *)[firstCourse objectAtIndex:0];
+	ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:courseDictionary];
 	
 	// TODO: Add tests for the unexpanded link properties
-	Course *course = [Course courseFromDictionary:courseDictionary];
-	GHAssertEqualObjects(course.courseId, [NSNumber numberWithInt:3433672], @"Expected course id to equal 3433672");
+	Course *course = [[[Course alloc] initWithCoder:unarchiver] autorelease];
+	GHAssertEquals(course.courseId, 3433672, @"Expected course id to equal 3433672");
 	GHAssertEqualObjects(course.displayCourseCode, @"SOT", @"Expected course displayCourseCode to equal SOT");
 	GHAssertEqualObjects(course.title, @"Student Orientation Tutorial", @"Expected course title to equal Student Orientation Tutorial");
 	[coursesDictionary release];

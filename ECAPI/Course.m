@@ -7,18 +7,19 @@
 //
 
 #import "Course.h"
-#import "ECUtils.h"
+#import "ECCoder.h"
 
 @implementation Course
 @synthesize courseId, displayCourseCode, title, callNumbers, instructors, teachingAssistants, students;
 
 
-+ (Course *) courseFromDictionary:(NSDictionary *)courseDictionary {
-	Course *course = [[[Course alloc] init] autorelease];
-	course.courseId = [courseDictionary objectForKey:@"id"];
-	course.displayCourseCode = [ECUtils stringOrEmptyStringFromStringOrNull:[courseDictionary objectForKey:@"displayCourseCode"]];
-	course.title = [ECUtils stringOrEmptyStringFromStringOrNull:[courseDictionary objectForKey:@"title"]];
-	return course;
+- (id) initWithCoder:(NSCoder<ECCoder> *)coder {
+	if ((self = [super init])) {
+		self.courseId = [coder decodeIntegerForKey:@"id"];
+		self.displayCourseCode = [coder decodeObjectForKey:@"displayCourseCode"];
+		self.title = [coder decodeObjectForKey:@"title"];
+	}
+	return self;
 }
 
 @end

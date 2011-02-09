@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Course : NSObject {
-	NSNumber *courseId;
+	NSInteger courseId;
 	NSString *displayCourseCode;
 	NSString *title;
 	
@@ -23,9 +23,9 @@
 	// TODO: Links? Term seems to be one
 }
 
-@property(nonatomic, retain) NSNumber *courseId;
-@property(nonatomic, retain) NSString *displayCourseCode;
-@property(nonatomic, retain) NSString *title;
+@property(nonatomic, assign) NSInteger courseId;
+@property(nonatomic, copy) NSString *displayCourseCode;
+@property(nonatomic, copy) NSString *title;
 
 @property(nonatomic, retain) NSArray *callNumbers;
 
@@ -33,7 +33,5 @@
 @property(nonatomic, retain) NSArray *instructors;
 @property(nonatomic, retain) NSArray *teachingAssistants;
 @property(nonatomic, retain) NSArray *students;
-
-+ (Course *) courseFromDictionary:(NSDictionary *)courseDictionary;
 
 @end
