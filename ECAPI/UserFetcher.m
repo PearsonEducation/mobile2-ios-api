@@ -8,6 +8,7 @@
 
 #import "UserFetcher.h"
 #import "User.h"
+#import "ECConstants.h"
 #import "SBJsonParser.h"
 #import "ECJSONUnarchiver.h"
 
@@ -24,29 +25,38 @@
 }
 
 - (void) dataDidFinishLoading {
+	NSError *deserializationError = nil;
 	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
-	// TODO: handle parse errors
-	NSDictionary *parsedDictionary = (NSDictionary *)[parser objectWithString:jsonString error:NULL];
-	// TODO: handle domain errors
-    
+	NSDictionary *parsedDictionary = (NSDictionary *)[parser objectWithString:jsonString error:&deserializationError];
+	
 	id typedObject;
 	ECJSONUnarchiver *unarchiver;
 	NSDictionary *targetDictionary;
-	if ([parsedDictionary objectForKey:@"me"]) {
-		targetDictionary = [parsedDictionary objectForKey:@"me"];
-		unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
-		typedObject = [[[User alloc] initWithCoder:unarchiver] autorelease];
-	} else if ([parsedDictionary objectForKey:@"users"]) {
-		NSArray *array = [parsedDictionary objectForKey:@"users"];
-		targetDictionary = [array objectAtIndex:0];
+	if (deserializationError) {
+		typedObject = deserializationError;
+	} else if ([parsedDictionary objectForKey:@"error"]) {
+		targetDictionary = [parsedDictionary objectForKey:@"error"];
+		NSString *errorMessage = [targetDictionary objectForKey:@"message"];
+		NSDictionary *info = [NSDictionary dictionaryWithObject:errorMessage forKey:@"message"];
+		typedObject = [NSError errorWithDomain:EC_API_ERROR_DOMAIN code:responseStatusCode userInfo:info];
+	} else {
+		if ([parsedDictionary objectForKey:@"me"]) {
+			targetDictionary = [parsedDictionary objectForKey:@"me"];
+		} else if ([parsedDictionary objectForKey:@"users"]) {
+			NSArray *array = [parsedDictionary objectForKey:@"users"];
+			targetDictionary = [array objectAtIndex:0];
+		}
 		unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
 		typedObject = [[[User alloc] initWithCoder:unarchiver] autorelease];
 	}
+    
 
 	[parser release];
 	[jsonString release];
-	[self performSelectorOnMainThread:@selector(informDelegateOfResponse:) withObject:typedObject waitUntilDone:NO];
+	[self performSelectorOnMainThread:@selector(informDelegateOfResponse:)
+						   withObject:typedObject
+						waitUntilDone:NO];
 }
 
 @end
