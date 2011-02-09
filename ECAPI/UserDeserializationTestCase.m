@@ -8,6 +8,7 @@
 
 #import "User.h"
 #import "SBJsonParser.h"
+#import "ECJSONUnarchiver.h"
 
 @interface UserDeserializationTestCase : GHTestCase { }
 @end
@@ -18,9 +19,10 @@
 	NSString *meJSON = @"{\"me\":{\"id\":7520378,\"userName\":\"manderson\",\"firstName\":\"Mary\",\"lastName\":\"Anderson\",\"emailAddress\":\"maryanderson@ecollege.com\",\"clientString\":\"sandbox\"}}";
 	SBJsonParser *parser = [[[SBJsonParser alloc] init] autorelease];
 	NSDictionary *meDictionary = (NSDictionary *)[parser objectWithString:meJSON];
-	
-	User *user = [User userFromDictionary:[meDictionary objectForKey:@"me"]];
-	GHAssertEqualObjects(user.userId, [NSNumber numberWithInt:7520378], @"Expected user id to equal 7520378");
+	ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:meDictionary];
+    
+	User *user = [[[User alloc] initWithCoder:unarchiver] autorelease];
+	GHAssertEquals(user.userId, 7520378, @"Expected user id to equal 7520378");
 	GHAssertEqualObjects(user.userName, @"manderson", @"Expected userName to equal manderson");
 	GHAssertEqualObjects(user.firstName, @"Mary", @"Expected firstName to equal Mary");
 	GHAssertEqualObjects(user.lastName, @"Anderson", @"Expected lastName to equal Anderson");

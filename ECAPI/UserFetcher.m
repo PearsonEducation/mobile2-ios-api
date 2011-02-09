@@ -9,6 +9,7 @@
 #import "UserFetcher.h"
 #import "User.h"
 #import "SBJsonParser.h"
+#import "ECJSONUnarchiver.h"
 
 @implementation UserFetcher
 
@@ -25,14 +26,22 @@
 - (void) dataDidFinishLoading {
 	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
-	// TODO: handle errors
+	// TODO: handle parse errors
 	NSDictionary *parsedDictionary = (NSDictionary *)[parser objectWithString:jsonString error:NULL];
+    // TODO: handle domain errors
+    
 	id typedObject;
+    ECJSONUnarchiver *unarchiver;
+    NSDictionary *targetDictionary;
 	if ([parsedDictionary objectForKey:@"me"]) {
-		typedObject = [User userFromDictionary:[parsedDictionary objectForKey:@"me"]];
+        targetDictionary = [parsedDictionary objectForKey:@"me"];
+        unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
+		typedObject = [[[User alloc] initWithCoder:unarchiver] autorelease];
 	} else if ([parsedDictionary objectForKey:@"users"]) {
 		NSArray *array = [parsedDictionary objectForKey:@"users"];
-		typedObject = [User userFromDictionary:[array objectAtIndex:0]];
+        targetDictionary = [array objectAtIndex:0];
+        unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
+		typedObject = [[[User alloc] initWithCoder:unarchiver] autorelease];
 	}
 
 	[parser release];

@@ -7,20 +7,30 @@
 //
 
 #import "User.h"
-#import "ECUtils.h"
+#import "ECCoder.h"
 
 @implementation User
 @synthesize userId, userName, firstName, lastName, emailAddress, clientString;
 
-+ (User *) userFromDictionary:(NSDictionary *)dictionary {
-	User *user = [[[User alloc] init] autorelease];
-	user.userId = [dictionary objectForKey:@"id"];
-	user.userName = [ECUtils stringOrEmptyStringFromStringOrNull:[dictionary objectForKey:@"userName"]];
-	user.firstName = [ECUtils stringOrEmptyStringFromStringOrNull:[dictionary objectForKey:@"firstName"]];
-	user.lastName = [ECUtils stringOrEmptyStringFromStringOrNull:[dictionary objectForKey:@"lastName"]];
-	user.emailAddress = [ECUtils stringOrEmptyStringFromStringOrNull:[dictionary objectForKey:@"emailAddress"]];
-	user.clientString = [ECUtils stringOrEmptyStringFromStringOrNull:[dictionary objectForKey:@"clientString"]];
-	return user;
+- (id) initWithCoder:(NSCoder<ECCoder> *)coder {
+	if ((self == [super init])) {
+        self.userId         = [coder decodeIntegerForKey:@"id"];
+        self.userName       = [coder decodeObjectForKey:@"userName"];
+        self.firstName      = [coder decodeObjectForKey:@"firstName"];
+        self.lastName       = [coder decodeObjectForKey:@"lastName"];
+        self.emailAddress   = [coder decodeObjectForKey:@"emailAddress"];
+        self.clientString   = [coder decodeObjectForKey:@"clientString"];
+    }
+	return self;
+}
+
+- (void) dealloc {
+    self.userName = nil;
+    self.firstName = nil;
+    self.lastName = nil;
+    self.emailAddress = nil;
+    self.clientString = nil;
+    [super dealloc];
 }
 
 @end
