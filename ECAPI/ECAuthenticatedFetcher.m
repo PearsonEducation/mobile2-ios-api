@@ -18,7 +18,7 @@
 @implementation ECAuthenticatedFetcher
 
 #pragma mark -
-#pragma mark Request Constructors
+#pragma mark Request Factory Methods
 
 + (ASIHTTPRequest *) newAuthenticatedGETRequestWithURL:(NSURL *)earl {
 	ASIHTTPRequest *request = [[ASIHTTPRequest alloc] initWithURL:earl]; // retain count +1
@@ -45,11 +45,10 @@
 #pragma mark -
 #pragma mark Setup and Teardown
 
-- (id) initWithDelegate:(id)del responseSelector:(SEL)rcb errorSelector:(SEL)ecb {
+- (id) initWithDelegate:(id)del responseSelector:(SEL)rcb {
 	if ((self = [super init])) {
 		delegate = del; // weak reference
 		responseCallback = rcb;
-		errorCallback = ecb;
 	}
 	return self;
 }
@@ -107,10 +106,12 @@
 
 - (void)requestFailed:(ASIHTTPRequest *)aRequest {
 	[request release]; request = nil;
+	NSError *error;
 	if ([aRequest responseStatusCode] == 401 && [delegate respondsToSelector:@selector(authenticationFailed)]) {
 		[delegate performSelector:@selector(authenticationFailed)];
 	} else {
-		[delegate performSelector:errorCallback];
+		// construct error here
+		[delegate performSelector:responseCallback withObject:error];
 	}
 }
 

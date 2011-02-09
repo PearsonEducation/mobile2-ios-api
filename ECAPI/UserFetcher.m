@@ -28,19 +28,19 @@
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
 	// TODO: handle parse errors
 	NSDictionary *parsedDictionary = (NSDictionary *)[parser objectWithString:jsonString error:NULL];
-    // TODO: handle domain errors
+	// TODO: handle domain errors
     
 	id typedObject;
-    ECJSONUnarchiver *unarchiver;
-    NSDictionary *targetDictionary;
+	ECJSONUnarchiver *unarchiver;
+	NSDictionary *targetDictionary;
 	if ([parsedDictionary objectForKey:@"me"]) {
-        targetDictionary = [parsedDictionary objectForKey:@"me"];
-        unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
+		targetDictionary = [parsedDictionary objectForKey:@"me"];
+		unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
 		typedObject = [[[User alloc] initWithCoder:unarchiver] autorelease];
 	} else if ([parsedDictionary objectForKey:@"users"]) {
 		NSArray *array = [parsedDictionary objectForKey:@"users"];
-        targetDictionary = [array objectAtIndex:0];
-        unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
+		targetDictionary = [array objectAtIndex:0];
+		unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
 		typedObject = [[[User alloc] initWithCoder:unarchiver] autorelease];
 	}
 

@@ -21,42 +21,30 @@
 	[userFetcher release]; userFetcher = nil;
 }
 
-- (void) testGetMeResource {
-	userFetcher = [[UserFetcher alloc] initWithDelegate:self
-									   responseSelector:@selector(fetchMeSuccess:)
-										  errorSelector:@selector(fetchMeFailedWithMessage:)];
+- (void) testGetMeResourceSuccess {
+	userFetcher = [[UserFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchMeResponse:)];
 	[self prepare];
 	[userFetcher fetchMe];
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 
-- (void) testGetUserResource {
-	userFetcher = [[UserFetcher alloc] initWithDelegate:self
-									   responseSelector:@selector(fetchUserByIdSuccess:)
-										  errorSelector:@selector(fetchUserByIdFailedWithMessage:)];
+- (void) testGetUserResourceSuccess {
+	userFetcher = [[UserFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchUserByIdResponse:)];
 	[self prepare];
 	[userFetcher getUserById:[NSNumber numberWithInt:7520378]];
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 
-- (void) fetchMeSuccess:(User *)me {
+- (void) fetchMeResponse:(User *)me {
 	// Assuming me is the manderson user from the standard authentication
 	GHAssertEqualObjects(me.userName, @"manderson", @"Expected the me resource user's userName to be manderson");
-	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetMeResource)];
+	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetMeResourceSuccess)];
 }
 
-- (void) fetchUserByIdSuccess:(User *)user {
+- (void) fetchUserByIdResponse:(User *)user {
 	// Assuming user is the manderson user from the standard authentication
 	GHAssertEqualObjects(user.userName, @"manderson", @"Expected the user resource user's userName to be manderson");
-	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetUserResource)];
-}
-
-- (void) fetchMeFailedWithMessage:(NSString *)errorMessage {
-	
-}
-
-- (void) fetchUserByIdFailedWithMessage:(NSString *)errorMessage {
-	
+	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetUserResourceSuccess)];
 }
 
 @end

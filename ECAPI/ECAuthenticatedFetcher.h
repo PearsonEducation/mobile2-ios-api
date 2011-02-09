@@ -13,14 +13,14 @@
 @interface ECAuthenticatedFetcher : NSObject {
 	ASIHTTPRequest *request;
 	NSMutableData *data;
-	SEL responseCallback, errorCallback;
+	SEL responseCallback;
 	id delegate;
 }
 
 + (ASIHTTPRequest *) newAuthenticatedGETRequestWithURL:(NSURL *)earl;
 + (ASIFormDataRequest *) newAuthenticatedPOSTRequestWithURL:(NSURL *)earl;
 
-- (id) initWithDelegate:(id)delegate responseSelector:(SEL)responseCallback errorSelector:(SEL)errorCallback;
+- (id) initWithDelegate:(id)delegate responseSelector:(SEL)responseCallback;
 - (void) loadDataFromURLString:(NSString *)urlString;
 - (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString;
 - (void) dataDidFinishLoading;
