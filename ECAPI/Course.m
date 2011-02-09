@@ -22,4 +22,13 @@
 	return self;
 }
 
+- (void) dealloc {
+	self.displayCourseCode = nil;
+	self.title = nil;
+	self.callNumbers = nil;
+	self.instructors = nil;
+	self.teachingAssistants = nil;
+	self.students = nil;
+}
+
 @end
