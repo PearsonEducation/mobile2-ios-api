@@ -15,24 +15,24 @@
 @implementation UserFetcher
 
 - (void) fetchMe {
-	NSString *urlString = [NSString stringWithFormat:@"%@/me.json", M_API_URL];
-	[self performSelectorInBackground:@selector(loadDataFromURLString:) withObject:urlString];
+	NSString *url = [NSString stringWithFormat:@"%@/me.json", M_API_URL];
+	[self loadDataFromURLString:url];
 }
 
 - (void) getUserById:(NSInteger)userId {
-	NSString *urlString = [NSString stringWithFormat:@"%@/users/%d.json", M_API_URL, userId];
-	[self performSelectorInBackground:@selector(loadDataFromURLString:) withObject:urlString];
+	NSString *url = [NSString stringWithFormat:@"%@/users/%d.json", M_API_URL, userId];
+	[self loadDataFromURLString:url];
 }
 
-- (void) dataDidFinishLoading {
+- (id) parseReturnedData {
 	NSError *deserializationError = nil;
 	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
 	NSDictionary *parsedDictionary = (NSDictionary *)[parser objectWithString:jsonString error:&deserializationError];
 	
 	id typedObject;
-	ECJSONUnarchiver *unarchiver;
-	NSDictionary *targetDictionary;
+	ECJSONUnarchiver *unarchiver = nil;
+	NSDictionary *targetDictionary = nil;
 	if (deserializationError) {
 		typedObject = deserializationError;
 	} else if ([parsedDictionary objectForKey:@"error"]) {
@@ -54,9 +54,7 @@
 
 	[parser release];
 	[jsonString release];
-	[self performSelectorOnMainThread:@selector(informDelegateOfResponse:)
-						   withObject:typedObject
-						waitUntilDone:NO];
+	return typedObject;
 }
 
 @end

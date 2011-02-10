@@ -11,6 +11,8 @@
 @class ASIHTTPRequest, ASIFormDataRequest;
 
 @interface ECAuthenticatedFetcher : NSObject {
+    NSString *urlString;
+    NSAutoreleasePool *autoreleasePool;
 	ASIHTTPRequest *request;
 	NSInteger responseStatusCode;
 	NSDictionary *responseHeaders;
@@ -28,8 +30,7 @@
 - (id) initWithDelegate:(id)delegate responseSelector:(SEL)responseCallback;
 - (void) loadDataFromURLString:(NSString *)urlString;
 - (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString;
-- (void) dataDidFinishLoading;
-- (void) informDelegateOfResponse:(id)object;
+- (id) parseReturnedData;
 - (void) cancel;
 
 @end

@@ -15,11 +15,11 @@
 @implementation CourseFetcher
 
 - (void) fetchMyCurrentCourses {
-    NSString *urlString = [NSString stringWithFormat:@"%@/me/currentcourses_moby", M_API_URL];
-    [self performSelectorInBackground:@selector(loadDataFromURLString:) withObject:urlString];
+    NSString *url = [NSString stringWithFormat:@"%@/me/currentcourses_moby", M_API_URL];
+    [self loadDataFromURLString:url];
 }
 
-- (void) dataDidFinishLoading {
+- (id) parseReturnedData {
 	NSError *deserializationError = nil;
 	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	SBJsonParser *parser = [[SBJsonParser alloc] init];
@@ -50,9 +50,7 @@
     
 	[parser release];
 	[jsonString release];
-	[self performSelectorOnMainThread:@selector(informDelegateOfResponse:)
-						   withObject:typedObject
-						waitUntilDone:NO];
+	return typedObject;
 }
 
 @end

@@ -56,6 +56,7 @@
 
 -(void) dealloc {
 	self.responseHeaders = nil;
+    [urlString release]; urlString = nil;
 	[request release]; request = nil;
 	[data release]; data = nil;
 	[super dealloc];
@@ -64,12 +65,35 @@
 #pragma mark -
 #pragma mark Git R Dun
 
-- (void) loadDataFromURLString:(NSString *)urlString {
-	NSURL *earl = [NSURL URLWithString:urlString];
+- (void) loadDataFromURLString:(NSString *)us {
+    urlString = [us copy];
+    [self performSelectorInBackground:@selector(loadDataInBackground) withObject:nil];
+}
+
+- (void) loadDataInBackground {
+    autoreleasePool = [[NSAutoreleasePool alloc] init];
+    NSURL *earl = [NSURL URLWithString:urlString];
 	
 	request = [ECAuthenticatedFetcher newAuthenticatedGETRequestWithURL:earl];
-	[request setDelegate:self];
-	[request startAsynchronous];
+	[request startSynchronous];
+    NSError *error = [request error];
+    id returnedData = nil;
+    if (error) {
+        if ([request responseStatusCode] == 401 && [delegate respondsToSelector:@selector(authenticationFailed)]) {
+            [delegate performSelectorOnMainThread:@selector(authenticationFailed) withObject:error waitUntilDone:NO];
+        } else {
+            [delegate performSelectorOnMainThread:responseCallback withObject:error waitUntilDone:NO];
+        }
+    } else {
+        [data release]; [responseHeaders release];
+        data = [[request responseData] mutableCopy]; // retain count of +1
+        responseStatusCode = [request responseStatusCode];
+        responseHeaders = [[request responseHeaders] copy];
+        returnedData = [self parseReturnedData];
+        [delegate performSelectorOnMainThread:responseCallback withObject:returnedData waitUntilDone:NO];
+    }
+    [request release]; request = nil;
+    [autoreleasePool release];
 }
 
 - (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString {
@@ -85,39 +109,13 @@
 	[request startAsynchronous];
 }
 
-- (void) dataDidFinishLoading {
+- (id) parseReturnedData {
 	// abstract
-}
-
-- (void) informDelegateOfResponse:(id)object {
-	[delegate performSelector:responseCallback withObject:object];
+    return nil;
 }
 
 - (void) cancel {
 	[request cancel];
-}
-
-#pragma mark -
-#pragma mark ASIHTTPRequest Callbacks
-
-- (void)requestFinished:(ASIHTTPRequest *)aRequest {
-	[data release]; [responseHeaders release];
-	data = [[aRequest responseData] mutableCopy]; // retain count of +1
-	responseStatusCode = [aRequest responseStatusCode];
-	responseHeaders = [[aRequest responseHeaders] copy];
-	[request release]; request = nil;
-	[self dataDidFinishLoading];
-}
-
-- (void)requestFailed:(ASIHTTPRequest *)aRequest {
-	[request release]; request = nil;
-	NSError *error;
-	if ([aRequest responseStatusCode] == 401 && [delegate respondsToSelector:@selector(authenticationFailed)]) {
-		[delegate performSelector:@selector(authenticationFailed)];
-	} else {
-		// construct error here
-		[delegate performSelector:responseCallback withObject:error];
-	}
 }
 
 @end
