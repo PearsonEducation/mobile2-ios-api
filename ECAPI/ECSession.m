@@ -99,6 +99,8 @@ static ECSession *sharedSession = nil;
 	accessToken = [[responseDictionary objectForKey:@"access_token"] copy];
 
 	[authenticationRequest release]; authenticationRequest = nil;
+    [jsonString release]; jsonString = nil;
+    [sbjson release]; sbjson = nil;
 	[self.authenticationDelegate sessionDidAuthenticate:self];
 }
 
