@@ -1,5 +1,5 @@
 //
-//  UserTestCase.m
+//  UserFetcherTestCase.m
 //  ECAPI
 //
 //  Created by Tony Hillerson on 2/1/11.
