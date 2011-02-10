@@ -13,6 +13,7 @@
 
 @interface ECAuthenticatedFetcher (PrivateMethods)
 + (void) setCommonHeadersForAuthenticatedRequest:(ASIHTTPRequest *)request;
+- (void) loadDataInBackground;
 @end
 
 @implementation ECAuthenticatedFetcher
@@ -56,7 +57,6 @@
 
 -(void) dealloc {
 	self.responseHeaders = nil;
-    [urlString release]; urlString = nil;
 	[request release]; request = nil;
 	[data release]; data = nil;
 	[super dealloc];
@@ -65,16 +65,26 @@
 #pragma mark -
 #pragma mark Git R Dun
 
-- (void) loadDataFromURLString:(NSString *)us {
-    urlString = [us copy];
+- (void) loadDataFromURLString:(NSString *)urlString {
+    NSURL *earl = [NSURL URLWithString:urlString];
+	request = [ECAuthenticatedFetcher newAuthenticatedGETRequestWithURL:earl];
+    [self performSelectorInBackground:@selector(loadDataInBackground) withObject:nil];
+}
+
+- (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString {
+	NSURL *earl = [NSURL URLWithString:urlString];
+	ASIFormDataRequest *formRequest = [ECAuthenticatedFetcher newAuthenticatedPOSTRequestWithURL:earl];
+	
+	for (id key in params) {
+		[formRequest setPostValue:[params objectForKey:key] forKey:key];
+	}
+	
+	request = formRequest;
     [self performSelectorInBackground:@selector(loadDataInBackground) withObject:nil];
 }
 
 - (void) loadDataInBackground {
     autoreleasePool = [[NSAutoreleasePool alloc] init];
-    NSURL *earl = [NSURL URLWithString:urlString];
-	
-	request = [ECAuthenticatedFetcher newAuthenticatedGETRequestWithURL:earl];
 	[request startSynchronous];
     NSError *error = [request error];
     id returnedData = nil;
@@ -94,19 +104,6 @@
     }
     [request release]; request = nil;
     [autoreleasePool release];
-}
-
-- (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString {
-	NSURL *earl = [NSURL URLWithString:urlString];
-	ASIFormDataRequest *formRequest = [ECAuthenticatedFetcher newAuthenticatedPOSTRequestWithURL:earl];
-	
-	for (id key in params) {
-		[formRequest setPostValue:[params objectForKey:key] forKey:key];
-	}
-	
-	request = formRequest;
-	[request setDelegate:self];
-	[request startAsynchronous];
 }
 
 - (id) parseReturnedData {
