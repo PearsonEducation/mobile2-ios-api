@@ -37,12 +37,12 @@
 - (void) testGetUserResourceSuccess {
 	userFetcher = [[UserFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchUserByIdResponse:)];
 	[self prepare];
-	[userFetcher getUserById:4822784];
+	[userFetcher fetchUserById:4822784];
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 
 - (void) fetchUserByIdResponse:(User *)user {
-	// Assuming user is the manderson user from the standard authentication
+	// Assuming user is the veronicastudent3 user from the standard authentication
 	GHAssertEqualObjects(user.userName, @"veronicastudent3", @"Expected the user resource user's userName to be veronicastudent3");
 	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetUserResourceSuccess)];
 }
@@ -50,7 +50,7 @@
 - (void) testGetUserResourceFailure {
 	userFetcher = [[UserFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchUserByIdFailureResponse:)];
 	[self prepare];
-	[userFetcher getUserById:0]; // <- should be "not found"
+	[userFetcher fetchUserById:0]; // <- should be "not found"
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 

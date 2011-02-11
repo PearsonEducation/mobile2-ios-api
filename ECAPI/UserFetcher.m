@@ -19,7 +19,7 @@
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeMe:)];
 }
 
-- (void) getUserById:(NSInteger)userId {
+- (void) fetchUserById:(NSInteger)userId {
 	NSString *url = [NSString stringWithFormat:@"%@/users/%d.json", M_API_URL, userId];
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeSingleUserFromArray:)];
 }

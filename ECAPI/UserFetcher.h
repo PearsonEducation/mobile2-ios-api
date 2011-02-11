@@ -14,6 +14,6 @@
 }
 
 - (void) fetchMe;
-- (void) getUserById:(NSInteger)userId;
+- (void) fetchUserById:(NSInteger)userId;
 
 @end
