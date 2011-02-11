@@ -84,7 +84,7 @@
 }
 
 - (void) loadDataInBackground {
-    autoreleasePool = [[NSAutoreleasePool alloc] init];
+    NSAutoreleasePool *autoreleasePool = [[NSAutoreleasePool alloc] init];
 	[request startSynchronous];
     NSError *error = [request error];
     id returnedData = nil;

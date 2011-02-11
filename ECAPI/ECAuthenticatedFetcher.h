@@ -11,7 +11,6 @@
 @class ASIHTTPRequest, ASIFormDataRequest;
 
 @interface ECAuthenticatedFetcher : NSObject {
-    NSAutoreleasePool *autoreleasePool;
 	ASIHTTPRequest *request;
 	NSInteger responseStatusCode;
 	NSDictionary *responseHeaders;
