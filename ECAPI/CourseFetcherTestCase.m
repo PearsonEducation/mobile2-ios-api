@@ -9,6 +9,7 @@
 #import "TestCaseWithAuthentication.h"
 #import "Course.h"
 #import "CourseFetcher.h"
+#import "User.h"
 
 @interface CourseFetcherTestCase : TestCaseWithAuthentication {
 	CourseFetcher *courseFetcher;
@@ -51,12 +52,47 @@
 	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetMyCurrentCoursesSuccess)];
 }
 
-//- (void) testFetchInstructorsForCourseSuccess {
-//    courseFetcher = [[CourseFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchInstructorsForCourseSuccess:)];
-//    [self prepare];
-//    [courseFetcher fetchInstructorsForCourseWithId:2809780];
-//    [self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
-//}
+- (void) testFetchInstructorsForCourseSuccess {
+	courseFetcher = [[CourseFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchInstructorsForCourseResponse:)];
+	[self prepare];
+	[courseFetcher fetchInstructorsForCourseWithId:2809780];
+	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
+}
 
+- (void) fetchInstructorsForCourseResponse:(NSArray *)instructors {
+	NSInteger count = [instructors count];
+	GHAssertEquals(1, count, @"Expecting 1 instructor for course");
+	User *instructor = [instructors objectAtIndex:0];
+	GHAssertEqualStrings(instructor.firstName, @"Veronica", @"Expecting first instructor's name to be Veronica");
+	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchInstructorsForCourseSuccess)];
+}
+
+- (void) testFetchTeachingAssistantsForCourseSuccess {
+	courseFetcher = [[CourseFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTeachingAssistantsForCourseResponse:)];
+	[self prepare];
+	[courseFetcher fetchTeachingAssistantsForCourseWithId:2809780];
+	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
+}
+
+- (void) fetchTeachingAssistantsForCourseResponse:(NSArray *)teachingAssistants {
+	NSInteger count = [teachingAssistants count];
+	GHAssertEquals(0, count, @"Expecting 0 teaching assistants for course");
+	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchTeachingAssistantsForCourseSuccess)];
+}
+
+- (void) testFetchStudentsForCourseFailureDueToUnauthorized {
+	courseFetcher = [[CourseFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchStudentsForCourseResponse:)];
+	[self prepare];
+	[courseFetcher fetchStudentsForCourseWithId:2809780];
+	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
+}
+
+- (void) fetchStudentsForCourseResponse:(NSArray *)students {
+	GHAssertTrue(([students isKindOfClass:[NSError class]]), @"Expecting fetching list of students to return an error"); //<- expecting an unauthorized access error
+	NSError *error = (NSError *)students;
+	NSString *message = (NSString *)[error.userInfo objectForKey:@"message"];
+	GHAssertEqualStrings(message, @"Access to the requested resource is denied.", @"Expecting error message to be 'Access to the requested resource is denied.'");
+	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchStudentsForCourseFailureDueToUnauthorized)];
+}
 
 @end
