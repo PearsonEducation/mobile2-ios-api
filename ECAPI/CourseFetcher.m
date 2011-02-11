@@ -13,6 +13,10 @@
 #import "SBJsonParser.h"
 #import "ECJSONUnarchiver.h"
 
+@interface CourseFetcher (Private)
+- (NSArray *) deserializeListOfUsersFromArray:(NSArray *)list;
+@end
+
 @implementation CourseFetcher
 
 - (void) fetchCourseById:(NSInteger)courseId {
@@ -61,14 +65,8 @@
 - (id) deserializeListOfInstructors:(id)parsedData {
 	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
 	if ([parsedDictionary objectForKey:@"instructors"]) {
-		ECJSONUnarchiver *unarchiver = nil;
 		NSArray *targetArray = [parsedDictionary objectForKey:@"instructors"];
-		NSMutableArray *instructorsArray = [NSMutableArray arrayWithCapacity:[targetArray count]];
-		for (NSDictionary *instructorDictionary in targetArray) {
-			unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:instructorDictionary];
-			[instructorsArray addObject:[[[User alloc] initWithCoder:unarchiver] autorelease]];
-		}
-		return [NSArray arrayWithArray:instructorsArray];
+		return [self deserializeListOfUsersFromArray:targetArray];
 	} else {
 		return nil;
 	}
@@ -82,14 +80,8 @@
 - (id) deserializeListOfTeachingAssistants:(id)parsedData {
 	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
 	if ([parsedDictionary objectForKey:@"teachingAssistants"]) {
-		ECJSONUnarchiver *unarchiver = nil;
 		NSArray *targetArray = [parsedDictionary objectForKey:@"teachingAssistants"];
-		NSMutableArray *assistantsArray = [NSMutableArray arrayWithCapacity:[targetArray count]];
-		for (NSDictionary *assistantDictionary in targetArray) {
-			unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:assistantDictionary];
-			[assistantsArray addObject:[[[User alloc] initWithCoder:unarchiver] autorelease]];
-		}
-		return [NSArray arrayWithArray:assistantsArray];
+		return [self deserializeListOfUsersFromArray:targetArray];
 	} else {
 		return nil;
 	}
@@ -103,17 +95,21 @@
 - (id) deserializeListOfStudents:(id)parsedData {
 	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
 	if ([parsedDictionary objectForKey:@"students"]) {
-		ECJSONUnarchiver *unarchiver = nil;
 		NSArray *targetArray = [parsedDictionary objectForKey:@"students"];
-		NSMutableArray *studentsArray = [NSMutableArray arrayWithCapacity:[targetArray count]];
-		for (NSDictionary *studentDictionary in targetArray) {
-			unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:studentDictionary];
-			[studentsArray addObject:[[[User alloc] initWithCoder:unarchiver] autorelease]];
-		}
-		return [NSArray arrayWithArray:studentsArray];
+		return [self deserializeListOfUsersFromArray:targetArray];
 	} else {
 		return nil;
 	}
+}
+
+- (NSArray *) deserializeListOfUsersFromArray:(NSArray *)list {
+	NSMutableArray *usersArray = [NSMutableArray arrayWithCapacity:[list count]];
+	ECJSONUnarchiver *unarchiver = nil;
+	for (NSDictionary *userDictionary in list) {
+		unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:userDictionary];
+		[usersArray addObject:[[[User alloc] initWithCoder:unarchiver] autorelease]];
+	}
+	return [NSArray arrayWithArray:usersArray];
 }
 
 @end
