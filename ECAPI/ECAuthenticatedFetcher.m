@@ -10,6 +10,7 @@
 #import "ECSession.h"
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import "SBJsonParser.h"
 
 @interface ECAuthenticatedFetcher (PrivateMethods)
 + (void) setCommonHeadersForAuthenticatedRequest:(ASIHTTPRequest *)request;
@@ -65,13 +66,15 @@
 #pragma mark -
 #pragma mark Git R Dun
 
-- (void) loadDataFromURLString:(NSString *)urlString {
+- (void) loadDataFromURLString:(NSString *)urlString withDeserializationSelector:(SEL)ds {
+	deserializeSelector = ds;
     NSURL *earl = [NSURL URLWithString:urlString];
 	request = [ECAuthenticatedFetcher newAuthenticatedGETRequestWithURL:earl];
     [self performSelectorInBackground:@selector(loadDataInBackground) withObject:nil];
 }
 
-- (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString {
+- (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString withDeserializationSelector:(SEL)ds {
+	deserializeSelector = ds;
 	NSURL *earl = [NSURL URLWithString:urlString];
 	ASIFormDataRequest *formRequest = [ECAuthenticatedFetcher newAuthenticatedPOSTRequestWithURL:earl];
 	
@@ -87,7 +90,7 @@
     NSAutoreleasePool *autoreleasePool = [[NSAutoreleasePool alloc] init];
 	[request startSynchronous];
     NSError *error = [request error];
-    id returnedData = nil;
+    id parsedData = nil;
     if (error) {
         if ([request responseStatusCode] == 401 && [delegate respondsToSelector:@selector(authenticationFailed)]) {
             [delegate performSelectorOnMainThread:@selector(authenticationFailed) withObject:error waitUntilDone:NO];
@@ -99,16 +102,37 @@
         data = [[request responseData] mutableCopy]; // retain count of +1
         responseStatusCode = [request responseStatusCode];
         responseHeaders = [[request responseHeaders] copy];
-        returnedData = [self parseReturnedData];
-        [delegate performSelectorOnMainThread:responseCallback withObject:returnedData waitUntilDone:NO];
+        parsedData = [self parseReturnedData];
+		id objectToReturn = parsedData;
+		if (!([parsedData isKindOfClass:[NSError class]])) {
+			objectToReturn = [self performSelector:deserializeSelector withObject:parsedData];
+		}
+        [delegate performSelectorOnMainThread:responseCallback withObject:objectToReturn waitUntilDone:NO];
     }
     [request release]; request = nil;
     [autoreleasePool release];
 }
 
 - (id) parseReturnedData {
-	// abstract
-    return nil;
+	NSError *deserializationError = nil;
+	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	SBJsonParser *parser = [[SBJsonParser alloc] init];
+	NSDictionary *parsedDictionary = (NSDictionary *)[parser objectWithString:jsonString error:&deserializationError];
+	
+	id objectToReturn = parsedDictionary;
+	if (deserializationError) {
+		objectToReturn = deserializationError;
+	} else if ([parsedDictionary objectForKey:@"error"]) {
+		NSDictionary *targetDictionary = [parsedDictionary objectForKey:@"error"];
+		NSString *errorMessage = [targetDictionary objectForKey:@"message"];
+		NSDictionary *info = [NSDictionary dictionaryWithObject:errorMessage forKey:@"message"];
+		objectToReturn = [NSError errorWithDomain:EC_API_ERROR_DOMAIN code:responseStatusCode userInfo:info];
+	}
+    
+    
+	[parser release];
+	[jsonString release];
+	return objectToReturn;
 }
 
 - (void) cancel {

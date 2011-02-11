@@ -14,43 +14,44 @@
 
 @implementation CourseFetcher
 
-- (void) fetchMyCurrentCourses {
-    NSString *url = [NSString stringWithFormat:@"%@/me/currentcourses_moby", M_API_URL];
-    [self loadDataFromURLString:url];
+- (void) fetchCourseById:(NSInteger)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%d.json", M_API_URL, courseId];
+    [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeSingleCourseFromArray:)];
 }
 
-- (id) parseReturnedData {
-	NSError *deserializationError = nil;
-	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	SBJsonParser *parser = [[SBJsonParser alloc] init];
-	NSDictionary *parsedDictionary = (NSDictionary *)[parser objectWithString:jsonString error:&deserializationError];
-	
-	id typedObject = nil;
-	ECJSONUnarchiver *unarchiver = nil;
-    NSArray *targetArray = nil;
-	if (deserializationError) {
-		typedObject = deserializationError;
-	} else if ([parsedDictionary objectForKey:@"error"]) {
-		NSDictionary *targetDictionary = [parsedDictionary objectForKey:@"error"];
-		NSString *errorMessage = [targetDictionary objectForKey:@"message"];
-		NSDictionary *info = [NSDictionary dictionaryWithObject:errorMessage forKey:@"message"];
-		typedObject = [NSError errorWithDomain:EC_API_ERROR_DOMAIN code:responseStatusCode userInfo:info];
-	} else {
-		if ([parsedDictionary objectForKey:@"currentCourses"]) {
-			targetArray = [parsedDictionary objectForKey:@"currentCourses"];
-            NSMutableArray *courseArray = [NSMutableArray arrayWithCapacity:[targetArray count]];
-            for (NSDictionary *courseDictionary in targetArray) {
-                unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:courseDictionary];
-                [courseArray addObject:[[[Course alloc] initWithCoder:unarchiver] autorelease]];
-            }
-            typedObject = [NSArray arrayWithArray:courseArray];
-		}
-	}
-    
-    
-	[parser release];
-	[jsonString release];
-	return typedObject;
+- (void) fetchMyCurrentCourses {
+    NSString *url = [NSString stringWithFormat:@"%@/me/currentcourses_moby", M_API_URL];
+    [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeListOfCurrentCourses:)];
 }
+
+- (id) deserializeSingleCourseFromArray:(id)parsedData {
+	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
+	if ([parsedDictionary objectForKey:@"courses"]) {
+		NSArray *courses = [parsedDictionary objectForKey:@"courses"];
+		NSDictionary *courseDictionary = [courses objectAtIndex:0];
+		ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:courseDictionary];
+		return [[[Course alloc] initWithCoder:unarchiver] autorelease];
+	} else {
+		return nil;
+	}
+}
+
+- (id) deserializeListOfCurrentCourses:(id)parsedData {
+	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
+	if ([parsedDictionary objectForKey:@"currentCourses"]) {
+		ECJSONUnarchiver *unarchiver = nil;
+		NSArray *targetArray = [parsedDictionary objectForKey:@"currentCourses"];
+		NSMutableArray *courseArray = [NSMutableArray arrayWithCapacity:[targetArray count]];
+		for (NSDictionary *courseDictionary in targetArray) {
+			unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:courseDictionary];
+			[courseArray addObject:[[[Course alloc] initWithCoder:unarchiver] autorelease]];
+		}
+		return [NSArray arrayWithArray:courseArray];
+	} else {
+		return nil;
+	}
+}
+
+
 
 @end

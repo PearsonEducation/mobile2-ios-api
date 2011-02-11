@@ -13,6 +13,7 @@
     
 }
 
+- (void) fetchCourseById:(NSInteger)courseId;
 - (void) fetchMyCurrentCourses;
 
 @end

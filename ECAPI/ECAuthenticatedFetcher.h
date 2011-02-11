@@ -15,8 +15,8 @@
 	NSInteger responseStatusCode;
 	NSDictionary *responseHeaders;
 	NSMutableData *data;
-	SEL responseCallback;
 	id delegate;
+	SEL responseCallback, deserializeSelector;
 }
 
 @property(nonatomic,retain) NSDictionary *responseHeaders;
@@ -26,8 +26,8 @@
 + (ASIFormDataRequest *) newAuthenticatedPOSTRequestWithURL:(NSURL *)earl;
 
 - (id) initWithDelegate:(id)delegate responseSelector:(SEL)responseCallback;
-- (void) loadDataFromURLString:(NSString *)urlString;
-- (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString;
+- (void) loadDataFromURLString:(NSString *)urlString withDeserializationSelector:(SEL)deserializationSelector;
+- (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString withDeserializationSelector:(SEL)deserializationSelector;
 - (id) parseReturnedData;
 - (void) cancel;
 
