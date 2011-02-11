@@ -32,10 +32,14 @@
 	// Assuming me is the manderson user from the standard authentication
     // This is a brittle test, but it's mostly for bootstrapping the API
     NSInteger count = [currentCourses count];
-	GHAssertEquals(5, count, @"Expected the current course list size to be 5");
+	GHAssertEquals(3, count, @"Expected the current course list count for veronicastudent3 to be 3");
     Course *firstCourse = (Course *)[currentCourses objectAtIndex:0];
     GHAssertTrue(([firstCourse isKindOfClass:[Course class]]), @"Expected first object in course list to be a Course");
 	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetMyCurrentCoursesSuccess)];
+}
+
+- (void) testFetchInstructorsForCourseSuccess {
+	
 }
 
 

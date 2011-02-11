@@ -29,21 +29,21 @@
 }
 
 - (void) fetchMeResponse:(User *)me {
-	// Assuming me is the manderson user from the standard authentication
-	GHAssertEqualObjects(me.userName, @"manderson", @"Expected the me resource user's userName to be manderson");
+	// Assuming me is the veronicastudent3 user from the inherited test case
+	GHAssertEqualObjects(me.userName, @"veronicastudent3", @"Expected the me resource user's userName to be veronicastudent3");
 	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetMeResourceSuccess)];
 }
 
 - (void) testGetUserResourceSuccess {
 	userFetcher = [[UserFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchUserByIdResponse:)];
 	[self prepare];
-	[userFetcher getUserById:7520378];
+	[userFetcher getUserById:4822784];
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 
 - (void) fetchUserByIdResponse:(User *)user {
 	// Assuming user is the manderson user from the standard authentication
-	GHAssertEqualObjects(user.userName, @"manderson", @"Expected the user resource user's userName to be manderson");
+	GHAssertEqualObjects(user.userName, @"veronicastudent3", @"Expected the user resource user's userName to be veronicastudent3");
 	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testGetUserResourceSuccess)];
 }
 

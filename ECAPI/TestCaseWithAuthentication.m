@@ -17,9 +17,9 @@
 	session.authenticationDelegate = self;
 	GHAssertFalse(session.isAuthenticated, @"Expected session to be unauthenticated at this point");
 	[session authenticateWithClientId:@"30bb1d4f-2677-45d1-be13-339174404402"
-						 clientString:@"sandbox"
-							 username:@"manderson"
-							 password:@"manderson"];
+						 clientString:@"ctstate"
+							 username:@"veronicastudent3"
+							 password:@"veronicastudent3"];
 	
 	[self waitForTimeout:3.0];
 }
