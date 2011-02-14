@@ -18,5 +18,6 @@
 - (void) fetchInstructorsForCourseWithId:(NSInteger)courseId;
 - (void) fetchTeachingAssistantsForCourseWithId:(NSInteger)courseId;
 - (void) fetchStudentsForCourseWithId:(NSInteger)courseId;
+- (void) fetchMyGradeToDateForCourseWithId:(NSInteger)courseId;
 
 @end

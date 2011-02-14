@@ -9,6 +9,7 @@
 #import "CourseFetcher.h"
 #import "Course.h"
 #import "User.h"
+#import "Grade.h"
 #import "ECConstants.h"
 #import "SBJsonParser.h"
 #import "ECJSONUnarchiver.h"
@@ -97,6 +98,21 @@
 	if ([parsedDictionary objectForKey:@"students"]) {
 		NSArray *targetArray = [parsedDictionary objectForKey:@"students"];
 		return [self deserializeListOfUsersFromArray:targetArray];
+	} else {
+		return nil;
+	}
+}
+
+- (void) fetchMyGradeToDateForCourseWithId:(NSInteger)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/me/courses/%d/coursegradetodate.json", M_API_URL, courseId];
+    [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeGradeToDate:)];
+}
+
+- (id) deserializeGradeToDate:(id)parsedData {
+	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
+	if ([parsedDictionary objectForKey:@"courseGradeToDate"]) {
+		ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:[parsedDictionary objectForKey:@"courseGradeToDate"]];
+		return [[[Grade alloc] initWithCoder:unarchiver] autorelease];
 	} else {
 		return nil;
 	}

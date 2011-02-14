@@ -126,6 +126,12 @@
 		EABEEAD612F8D12D0028857E /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */; };
 		EABEEAF712F8D3410028857E /* ECSession.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE87712F8AFB50028857E /* ECSession.m */; };
 		EABEEAF812F8D34B0028857E /* ECConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE89912F8B9450028857E /* ECConstants.h */; };
+		EAD9ECBE1305FEEB00BA7297 /* GradeDeserializationTestCase.m in Resources */ = {isa = PBXBuildFile; fileRef = EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */; };
+		EAD9ECC11306007C00BA7297 /* Grade.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD9ECBF1306007C00BA7297 /* Grade.h */; };
+		EAD9ECC21306007C00BA7297 /* Grade.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD9ECBF1306007C00BA7297 /* Grade.h */; };
+		EAD9ECC31306007C00BA7297 /* Grade.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD9ECC01306007C00BA7297 /* Grade.m */; };
+		EAD9ECC41306007C00BA7297 /* Grade.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD9ECC01306007C00BA7297 /* Grade.m */; };
+		EAD9ECC51306037C00BA7297 /* GradeDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -210,6 +216,9 @@
 		EABEEA8612F8CE620028857E /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../frameworks/GHUnitIOS.framework; sourceTree = SOURCE_ROOT; };
 		EABEEAB112F8D02B0028857E /* Tests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests_Prefix.pch; sourceTree = "<group>"; };
 		EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = ../frameworks/GHUnitIOSTestMain.m; sourceTree = SOURCE_ROOT; };
+		EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeDeserializationTestCase.m; sourceTree = "<group>"; };
+		EAD9ECBF1306007C00BA7297 /* Grade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grade.h; sourceTree = "<group>"; };
+		EAD9ECC01306007C00BA7297 /* Grade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grade.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -383,6 +392,7 @@
 				EAADEE2F12F9E37400899C75 /* UserDeserializationTestCase.m */,
 				EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */,
 				EA9FC08F12FC6224009AA1FF /* CourseItemDeserializationTestCase.m */,
+				EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */,
 			);
 			name = "Model Tests";
 			sourceTree = "<group>";
@@ -394,6 +404,8 @@
 				EAADEE3312F9E43A00899C75 /* User.m */,
 				EA15EE4F12FB5EF100D60A83 /* Course.h */,
 				EA15EE5012FB5EF100D60A83 /* Course.m */,
+				EAD9ECBF1306007C00BA7297 /* Grade.h */,
+				EAD9ECC01306007C00BA7297 /* Grade.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -486,6 +498,7 @@
 				EA9CF47413020E8E00108C6C /* ECCoder.h in Headers */,
 				EA9CF47A13020EF300108C6C /* ECJSONUnarchiver.h in Headers */,
 				EA6E087713046A69001016B8 /* CourseFetcher.h in Headers */,
+				EAD9ECC11306007C00BA7297 /* Grade.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +517,7 @@
 				EA9CF47513020E8E00108C6C /* ECCoder.h in Headers */,
 				EA9CF47B13020EF300108C6C /* ECJSONUnarchiver.h in Headers */,
 				EA6E087813046A69001016B8 /* CourseFetcher.h in Headers */,
+				EAD9ECC21306007C00BA7297 /* Grade.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,6 +594,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAD9ECBE1305FEEB00BA7297 /* GradeDeserializationTestCase.m in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +648,7 @@
 				EA15EE5412FB5EF100D60A83 /* Course.m in Sources */,
 				EA9CF47C13020EF300108C6C /* ECJSONUnarchiver.m in Sources */,
 				EA6E087913046A69001016B8 /* CourseFetcher.m in Sources */,
+				EAD9ECC31306007C00BA7297 /* Grade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,11 +685,13 @@
 				EAADEE5A12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */,
 				EAADEEA512FA1CC800899C75 /* ECUtils.m in Sources */,
 				EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */,
+				EAD9ECC51306037C00BA7297 /* GradeDeserializationTestCase.m in Sources */,
 				EA15EE5212FB5EF100D60A83 /* Course.m in Sources */,
 				EA9FC09012FC6224009AA1FF /* CourseItemDeserializationTestCase.m in Sources */,
 				EA9CF47D13020EF300108C6C /* ECJSONUnarchiver.m in Sources */,
 				EA6E0874130467E3001016B8 /* CourseFetcherTestCase.m in Sources */,
 				EA6E087A13046A69001016B8 /* CourseFetcher.m in Sources */,
+				EAD9ECC41306007C00BA7297 /* Grade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
