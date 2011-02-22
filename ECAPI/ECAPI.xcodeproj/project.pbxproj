@@ -47,6 +47,8 @@
 		EA6E087813046A69001016B8 /* CourseFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EA6E087513046A69001016B8 /* CourseFetcher.h */; };
 		EA6E087913046A69001016B8 /* CourseFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E087613046A69001016B8 /* CourseFetcher.m */; };
 		EA6E087A13046A69001016B8 /* CourseFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E087613046A69001016B8 /* CourseFetcher.m */; };
+		EA7A9F63131470AD00D9EC6A /* ECSession.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE87612F8AFB50028857E /* ECSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA7A9F65131470D600D9EC6A /* ECConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE89912F8B9450028857E /* ECConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA9CF47413020E8E00108C6C /* ECCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9CF47213020E8E00108C6C /* ECCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA9CF47513020E8E00108C6C /* ECCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9CF47213020E8E00108C6C /* ECCoder.h */; };
 		EA9CF47A13020EF300108C6C /* ECJSONUnarchiver.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9CF47813020EF300108C6C /* ECJSONUnarchiver.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -475,6 +477,8 @@
 				EA9CF47A13020EF300108C6C /* ECJSONUnarchiver.h in Headers */,
 				EA6E087713046A69001016B8 /* CourseFetcher.h in Headers */,
 				EAD9ECC11306007C00BA7297 /* Grade.h in Headers */,
+				EA7A9F63131470AD00D9EC6A /* ECSession.h in Headers */,
+				EA7A9F65131470D600D9EC6A /* ECConstants.h in Headers */,
 				AA747D9F0F9514B9006C5449 /* ECAPI_Prefix.pch in Headers */,
 				EA32AC5212F8715E0025F080 /* Reachability.h in Headers */,
 				EA32AC6C12F872680025F080 /* ASIAuthenticationDialog.h in Headers */,
