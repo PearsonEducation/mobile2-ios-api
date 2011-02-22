@@ -10,7 +10,7 @@ tramp
 *.un~
 
 # Mac
-.DS_Store?
+.DS_Store
 Icon?
 
 # Thumbnails
