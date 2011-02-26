@@ -33,13 +33,19 @@
 
 - (void) saveInDictionary:(NSMutableDictionary *)dictionary {
 	[dictionary setObject:self.accessToken forKey:@"accessToken"];
-	[dictionary setObject:self.refreshToken forKey:@"refreshToken"];
+	if (self.refreshToken) {
+		[dictionary setObject:self.refreshToken forKey:@"refreshToken"];
+	}
 	[dictionary setObject:self.expiresAt forKey:@"expiresAt"];
 }
 
 - (BOOL) isExpired {
 	NSDate *now = [NSDate date];
 	return ([now timeIntervalSince1970] >= [self.expiresAt timeIntervalSince1970]);
+}
+
+- (NSString *) description {
+	return [NSString stringWithFormat:@"<AccessToken accessToken:%@ refreshToken:%@ expiresAt:%@>", self.accessToken, self.refreshToken, self.expiresAt];
 }
 
 

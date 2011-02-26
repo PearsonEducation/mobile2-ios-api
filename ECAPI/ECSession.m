@@ -80,7 +80,11 @@ static ECSession *sharedSession = nil;
 }
 
 - (void) saveCurrentGrantToken {
-	
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSMutableDictionary *grantKeyDictionary = [NSMutableDictionary dictionaryWithCapacity:3];
+	[currentGrantToken saveInDictionary:grantKeyDictionary];
+	[defaults setObject:grantKeyDictionary forKey:@"currentGrantToken"];
+	[defaults synchronize];
 }
 
 - (BOOL) hasUnexpiredGrantToken {
@@ -111,6 +115,7 @@ static ECSession *sharedSession = nil;
 }
 
 - (void) authenticateWithRememberedCredentialsAndDelegate:(id)delegate callback:(SEL)callbackSelector {
+	[currentAccessToken release]; currentAccessToken = nil;
 	if (nil == currentGrantToken) {
 		[self loadCurrentGrantToken];
 	}
