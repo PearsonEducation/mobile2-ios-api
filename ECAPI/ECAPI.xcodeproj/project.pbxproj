@@ -128,11 +128,17 @@
 		EABEEAD612F8D12D0028857E /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */; };
 		EABEEAF712F8D3410028857E /* ECSession.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE87712F8AFB50028857E /* ECSession.m */; };
 		EABEEAF812F8D34B0028857E /* ECConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE89912F8B9450028857E /* ECConstants.h */; };
+		EAD2DFFC1318239700A4D89C /* ECTokenFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD2DFFA1318239700A4D89C /* ECTokenFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAD2DFFD1318239700A4D89C /* ECTokenFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD2DFFA1318239700A4D89C /* ECTokenFetcher.h */; };
+		EAD2DFFE1318239700A4D89C /* ECTokenFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD2DFFB1318239700A4D89C /* ECTokenFetcher.m */; };
+		EAD2DFFF1318239700A4D89C /* ECTokenFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD2DFFB1318239700A4D89C /* ECTokenFetcher.m */; };
 		EAD2E00313184CFD00A4D89C /* AccessToken.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD2E00113184CFD00A4D89C /* AccessToken.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAD2E00413184CFD00A4D89C /* AccessToken.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD2E00113184CFD00A4D89C /* AccessToken.h */; };
 		EAD2E00513184CFD00A4D89C /* AccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD2E00213184CFD00A4D89C /* AccessToken.m */; };
 		EAD2E00613184CFD00A4D89C /* AccessToken.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD2E00213184CFD00A4D89C /* AccessToken.m */; };
 		EAD2E00813184F3600A4D89C /* AccessTokenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD2E00713184F3600A4D89C /* AccessTokenTestCase.m */; };
+		EAD2E02F13186C6400A4D89C /* ECSessionTokenTestCase.m in Resources */ = {isa = PBXBuildFile; fileRef = EAD2E02E13186C6400A4D89C /* ECSessionTokenTestCase.m */; };
+		EAD2E03013187F8300A4D89C /* ECSessionTokenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD2E02E13186C6400A4D89C /* ECSessionTokenTestCase.m */; };
 		EAD9ECBE1305FEEB00BA7297 /* GradeDeserializationTestCase.m in Resources */ = {isa = PBXBuildFile; fileRef = EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */; };
 		EAD9ECC11306007C00BA7297 /* Grade.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD9ECBF1306007C00BA7297 /* Grade.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAD9ECC21306007C00BA7297 /* Grade.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD9ECBF1306007C00BA7297 /* Grade.h */; };
@@ -223,9 +229,12 @@
 		EABEEA8612F8CE620028857E /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = ../frameworks/GHUnitIOS.framework; sourceTree = SOURCE_ROOT; };
 		EABEEAB112F8D02B0028857E /* Tests_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tests_Prefix.pch; sourceTree = "<group>"; };
 		EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GHUnitIOSTestMain.m; path = ../frameworks/GHUnitIOSTestMain.m; sourceTree = SOURCE_ROOT; };
+		EAD2DFFA1318239700A4D89C /* ECTokenFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECTokenFetcher.h; sourceTree = "<group>"; };
+		EAD2DFFB1318239700A4D89C /* ECTokenFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECTokenFetcher.m; sourceTree = "<group>"; };
 		EAD2E00113184CFD00A4D89C /* AccessToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccessToken.h; sourceTree = "<group>"; };
 		EAD2E00213184CFD00A4D89C /* AccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessToken.m; sourceTree = "<group>"; };
 		EAD2E00713184F3600A4D89C /* AccessTokenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessTokenTestCase.m; sourceTree = "<group>"; };
+		EAD2E02E13186C6400A4D89C /* ECSessionTokenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSessionTokenTestCase.m; sourceTree = "<group>"; };
 		EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeDeserializationTestCase.m; sourceTree = "<group>"; };
 		EAD9ECBF1306007C00BA7297 /* Grade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grade.h; sourceTree = "<group>"; };
 		EAD9ECC01306007C00BA7297 /* Grade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grade.m; sourceTree = "<group>"; };
@@ -404,6 +413,7 @@
 				EA9FC08F12FC6224009AA1FF /* CourseItemDeserializationTestCase.m */,
 				EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */,
 				EAD2E00713184F3600A4D89C /* AccessTokenTestCase.m */,
+				EAD2E02E13186C6400A4D89C /* ECSessionTokenTestCase.m */,
 			);
 			name = "Model Tests";
 			sourceTree = "<group>";
@@ -442,6 +452,8 @@
 				EAADEE5212F9F4FF00899C75 /* UserFetcher.m */,
 				EA6E087513046A69001016B8 /* CourseFetcher.h */,
 				EA6E087613046A69001016B8 /* CourseFetcher.m */,
+				EAD2DFFA1318239700A4D89C /* ECTokenFetcher.h */,
+				EAD2DFFB1318239700A4D89C /* ECTokenFetcher.m */,
 			);
 			name = Fetchers;
 			sourceTree = "<group>";
@@ -489,6 +501,7 @@
 				EA6E087713046A69001016B8 /* CourseFetcher.h in Headers */,
 				EAD9ECC11306007C00BA7297 /* Grade.h in Headers */,
 				EA7A9F63131470AD00D9EC6A /* ECSession.h in Headers */,
+				EAD2DFFC1318239700A4D89C /* ECTokenFetcher.h in Headers */,
 				EAD2E00313184CFD00A4D89C /* AccessToken.h in Headers */,
 				EA7A9F65131470D600D9EC6A /* ECConstants.h in Headers */,
 				AA747D9F0F9514B9006C5449 /* ECAPI_Prefix.pch in Headers */,
@@ -534,6 +547,7 @@
 				EA9CF47B13020EF300108C6C /* ECJSONUnarchiver.h in Headers */,
 				EA6E087813046A69001016B8 /* CourseFetcher.h in Headers */,
 				EAD9ECC21306007C00BA7297 /* Grade.h in Headers */,
+				EAD2DFFD1318239700A4D89C /* ECTokenFetcher.h in Headers */,
 				EAD2E00413184CFD00A4D89C /* AccessToken.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +626,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EAD9ECBE1305FEEB00BA7297 /* GradeDeserializationTestCase.m in Resources */,
+				EAD2E02F13186C6400A4D89C /* ECSessionTokenTestCase.m in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +681,7 @@
 				EA9CF47C13020EF300108C6C /* ECJSONUnarchiver.m in Sources */,
 				EA6E087913046A69001016B8 /* CourseFetcher.m in Sources */,
 				EAD9ECC31306007C00BA7297 /* Grade.m in Sources */,
+				EAD2DFFE1318239700A4D89C /* ECTokenFetcher.m in Sources */,
 				EAD2E00513184CFD00A4D89C /* AccessToken.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -710,7 +726,9 @@
 				EA6E0874130467E3001016B8 /* CourseFetcherTestCase.m in Sources */,
 				EA6E087A13046A69001016B8 /* CourseFetcher.m in Sources */,
 				EAD9ECC41306007C00BA7297 /* Grade.m in Sources */,
+				EAD2DFFF1318239700A4D89C /* ECTokenFetcher.m in Sources */,
 				EAD2E00613184CFD00A4D89C /* AccessToken.m in Sources */,
+				EAD2E03013187F8300A4D89C /* ECSessionTokenTestCase.m in Sources */,
 				EAD2E00813184F3600A4D89C /* AccessTokenTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

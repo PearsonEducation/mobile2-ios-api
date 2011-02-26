@@ -8,34 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-@class ASIFormDataRequest;
-
-@protocol ECSessionAuthenticationDelegate<NSObject>
-@required
-- (void) sessionDidAuthenticate:(id)session;
-@end
+@class ASIFormDataRequest, AccessToken, ECTokenFetcher;
 
 @interface ECSession : NSObject {
-	id<ECSessionAuthenticationDelegate> authenticationDelegate;
-	NSString *clientId;
-	NSString *clientString;
-	NSString *username;
-	NSString *accessToken;
-	ASIFormDataRequest *authenticationRequest;
-	
-@private
-	NSString *_password;
+	id currentAuthenticationDelegate;
+	SEL currentAuthenticationCallback;
+	AccessToken *currentGrantToken;
+	AccessToken *currentAccessToken;
+	ECTokenFetcher *tokenFetcher;
+	ECTokenFetcher *grantTokenFetcher;
 }
 
-@property(nonatomic, retain) id<ECSessionAuthenticationDelegate> authenticationDelegate;
-@property(nonatomic, readonly) NSString *clientString;
-@property(nonatomic, readonly) NSString *username;
-@property(nonatomic, readonly) NSString *accessToken;
-@property(nonatomic, readonly) BOOL isAuthenticated;
+@property(nonatomic, readonly) AccessToken *currentGrantToken;
+@property(nonatomic, readonly) AccessToken *currentAccessToken;
 
 + (ECSession *) sharedSession;
 
-- (void) authenticateWithClientId:(NSString *)clientId clientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password;
+- (BOOL) hasUnexpiredAccessToken;
+- (BOOL) hasUnexpiredGrantToken;
+- (void) authenticateWithClientId:(NSString *)clientId clientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password keepUserLoggedIn:(BOOL)keepUserLoggedIn delegate:(id)delegate callback:(SEL)callbackSelector;
+- (void) authenticateWithCurrentGrantTokenAndDelegate:(id)delegate callback:(SEL)callbackSelector;
+
 - (void) forgetCredentials;
 
 @end

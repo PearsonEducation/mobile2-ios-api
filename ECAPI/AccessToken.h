@@ -15,8 +15,12 @@
 	NSDate *expiresAt;
 }
 
-@property(nonatomic, assign) NSString *accessToken;
-@property(nonatomic, assign) NSString *refreshToken;
-@property(nonatomic, assign) NSDate *expiresAt;
+@property(nonatomic, copy) NSString *accessToken;
+@property(nonatomic, copy) NSString *refreshToken;
+@property(nonatomic, retain) NSDate *expiresAt;
+
+- (id) initWithDictionary:(NSMutableDictionary *)dictionary;
+- (void) saveInDictionary:(NSMutableDictionary *)dictionary;
+- (BOOL) isExpired;
 
 @end

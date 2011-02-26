@@ -11,6 +11,7 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "SBJsonParser.h"
+#import "AccessToken.h"
 
 @interface ECAuthenticatedFetcher (PrivateMethods)
 + (void) setCommonHeadersForAuthenticatedRequest:(ASIHTTPRequest *)request;
@@ -41,7 +42,8 @@
 	
 	//TODO: Throw an error if session is not authenticated?
 	ECSession *session = [ECSession sharedSession];
-	NSString *accessTokenHeaderValue = [NSString stringWithFormat:@"Access_Token access_token=%@", session.accessToken];
+	AccessToken *token = session.currentAccessToken;
+	NSString *accessTokenHeaderValue = [NSString stringWithFormat:@"Access_Token access_token=%@", token.accessToken];
 	[request addRequestHeader:@"X-Authorization" value:accessTokenHeaderValue];
 }
 
@@ -123,8 +125,14 @@
 	if (deserializationError) {
 		objectToReturn = deserializationError;
 	} else if ([parsedDictionary objectForKey:@"error"]) {
-		NSDictionary *targetDictionary = [parsedDictionary objectForKey:@"error"];
-		NSString *errorMessage = [targetDictionary objectForKey:@"message"];
+		id targetObject = [parsedDictionary objectForKey:@"error"];
+		NSString *errorMessage = nil;
+		if ([targetObject isKindOfClass:[NSDictionary class]]) {
+			NSDictionary *targetDictionary = (NSDictionary *)targetObject;
+			errorMessage = [targetDictionary objectForKey:@"message"];
+		} else {
+			errorMessage = (NSString *)targetObject;
+		}
 		NSDictionary *info = [NSDictionary dictionaryWithObject:errorMessage forKey:@"message"];
 		objectToReturn = [NSError errorWithDomain:EC_API_ERROR_DOMAIN code:responseStatusCode userInfo:info];
 	}

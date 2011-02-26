@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ECAuthenticatedFetcher.h"
 
-
-@interface ECTokenFetcher : NSObject {
+@interface ECTokenFetcher : ECAuthenticatedFetcher {
     
 }
+
+- (void) fetchAccessTokenForClientId:(NSString *)clientId clientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password;
+- (void) fetchAccessGrantForClientId:(NSString *)clientId clientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password;
+- (void) fetchAccessTokenWithAccessGrant:(NSString *)accessGrantToken;
+
 
 @end

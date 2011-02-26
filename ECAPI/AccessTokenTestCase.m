@@ -27,4 +27,14 @@
 	GHAssertEqualsWithAccuracy([grant.expiresAt timeIntervalSince1970], [oneEightyDaysFromNow timeIntervalSince1970], 1, @"Expected expire date to be 180 days out");
 }
 
+- (void) testExpired {
+	NSDictionary *expiredTokenDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSDate dateWithTimeIntervalSinceNow:-3600.0], @"expiresAt", nil];    
+	AccessToken *expiredGrant = [[[AccessToken alloc] initWithDictionary:expiredTokenDictionary] autorelease];
+	GHAssertTrue([expiredGrant isExpired], @"expected expired dictionary to produce a token that is expired");
+
+	NSDictionary *unexpiredTokenDictionary = [NSDictionary dictionaryWithObjectsAndKeys:[NSDate dateWithTimeIntervalSinceNow:3600.0], @"expiresAt", nil];    
+	AccessToken *unexpiredGrant = [[[AccessToken alloc] initWithDictionary:unexpiredTokenDictionary] autorelease];
+	GHAssertFalse([unexpiredGrant isExpired], @"expected unexpired dictionary to produce a token that is unexpired");
+}
+
 @end

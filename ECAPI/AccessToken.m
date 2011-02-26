@@ -22,5 +22,25 @@
 	return self;
 }
 
+- (id) initWithDictionary:(NSDictionary *)dictionary {
+	if ((self == [super init])) {
+        self.accessToken	= [dictionary objectForKey:@"accessToken"];
+        self.refreshToken	= [dictionary objectForKey:@"refreshToken"];
+        self.expiresAt		= [dictionary objectForKey:@"expiresAt"];
+    }
+	return self;
+}
+
+- (void) saveInDictionary:(NSMutableDictionary *)dictionary {
+	[dictionary setObject:self.accessToken forKey:@"accessToken"];
+	[dictionary setObject:self.refreshToken forKey:@"refreshToken"];
+	[dictionary setObject:self.expiresAt forKey:@"expiresAt"];
+}
+
+- (BOOL) isExpired {
+	NSDate *now = [NSDate date];
+	return ([now timeIntervalSince1970] >= [self.expiresAt timeIntervalSince1970]);
+}
+
 
 @end

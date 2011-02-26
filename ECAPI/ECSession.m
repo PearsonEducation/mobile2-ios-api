@@ -9,10 +9,17 @@
 #import "ECSession.h"
 #import "ASIFormDataRequest.h"
 #import "JSON.h"
+#import "ECTokenFetcher.h"
+#import "AccessToken.h"
+
+@interface ECSession (Private)
+- (void) loadCurrentGrantToken;
+- (void) saveCurrentGrantToken;
+@end
 
 @implementation ECSession
 static ECSession *sharedSession = nil;
-@synthesize authenticationDelegate, clientString, username, accessToken;
+@synthesize currentAccessToken, currentGrantToken;
 
 #pragma mark -
 #pragma mark Singleton Implementation
@@ -52,62 +59,89 @@ static ECSession *sharedSession = nil;
 #pragma mark Shared Session Implementation
 
 - (void) dealloc {
-	[self forgetCredentials];
-	self.authenticationDelegate = nil;
-	[authenticationRequest release]; authenticationRequest = nil;
+	[currentGrantToken release]; currentGrantToken = nil;
+	[currentAccessToken release]; currentAccessToken = nil;
+	[tokenFetcher release]; tokenFetcher = nil;
+	[grantTokenFetcher release]; grantTokenFetcher = nil;
 	[super dealloc];
 }
 
-- (void) authenticateWithClientId:(NSString *)cid clientString:(NSString *)cs username:(NSString *)un password:(NSString *)pw {
-	[self forgetCredentials];
-	clientId = [cid retain];
-	clientString = [cs retain];
-	username = [un retain];
-	_password = [pw retain];
-	authenticationRequest = [[ASIFormDataRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@/token", M_API_URL]]];
-	[authenticationRequest addRequestHeader:@"Accept" value:@"application/json"];
-	[authenticationRequest setPostValue:@"password" forKey:@"grant_type"];
-	[authenticationRequest setPostValue:_password forKey:@"password"];
-	[authenticationRequest setPostValue:[NSString stringWithFormat:@"%@\\%@", clientString, username] forKey:@"username"];
-	[authenticationRequest setPostValue:clientId forKey:@"client_id"];
-	
-	authenticationRequest.delegate = self;
-	[authenticationRequest startAsynchronous];
+- (BOOL) hasUnexpiredAccessToken {
+	return (currentAccessToken != nil && ![currentAccessToken isExpired]);
 }
 
-- (BOOL) isAuthenticated {
-	return (accessToken != nil);
+- (void) loadCurrentGrantToken {
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	NSDictionary *grantKeyDictionary = [defaults objectForKey:@"currentGrantToken"];
+	if (grantKeyDictionary) {
+		AccessToken *grantToken = [[AccessToken alloc] initWithDictionary:grantKeyDictionary];
+		currentGrantToken = grantToken;
+	}	
+}
+
+- (void) saveCurrentGrantToken {
+	
+}
+
+- (BOOL) hasUnexpiredGrantToken {
+	if (currentGrantToken == nil) {
+		[self loadCurrentGrantToken];
+	}
+	if (currentGrantToken == nil) {
+		return NO;
+	} else {
+		BOOL expired = [currentGrantToken isExpired];
+		return !expired;
+	}
+}
+
+- (void) authenticateWithClientId:(NSString *)cid clientString:(NSString *)cs username:(NSString *)un password:(NSString *)pw keepUserLoggedIn:(BOOL)keepUserLoggedIn delegate:(id)delegate callback:(SEL)callbackSelector {
+	[self forgetCredentials];
+	//TODO: Determine if thread safety is a requirement, because this is not thread safe
+	currentAuthenticationDelegate = delegate;
+	currentAuthenticationCallback = callbackSelector;
+	if (keepUserLoggedIn) {
+		grantTokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchGrantTokenComplete:)];
+		[grantTokenFetcher fetchAccessGrantForClientId:cid clientString:cs username:un password:pw];
+	} else {
+		tokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTokenComplete:)];
+		[tokenFetcher fetchAccessTokenForClientId:cid clientString:cs username:un password:pw];
+	}
+}
+
+- (void) fetchGrantTokenComplete:(AccessToken *)token {
+	//TODO, what to do if there's an error?
+	if (![token isKindOfClass:[NSError class]]) {
+		[grantTokenFetcher release]; grantTokenFetcher = nil;
+		currentGrantToken = [token retain];
+		[self saveCurrentGrantToken];
+		tokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTokenComplete:)];
+		[tokenFetcher fetchAccessTokenWithAccessGrant:token.accessToken];
+	}
+}
+
+- (void) fetchTokenComplete:(AccessToken *)token {
+	if (![token isKindOfClass:[NSError class]]) {
+		[tokenFetcher release]; tokenFetcher = nil;
+		currentAccessToken = [token retain];
+		//TODO: Determine if thread safety is a requirement, because this is not thread safe
+		NSObject *del = (NSObject *)currentAuthenticationDelegate;
+		[del performSelector:currentAuthenticationCallback];
+		currentAuthenticationCallback = nil;
+		currentAuthenticationDelegate = nil;
+	}
+}
+
+- (void) authenticateWithCurrentGrantTokenAndDelegate:(id)delegate callback:(SEL)callbackSelector {
+	
 }
 
 - (void) forgetCredentials {
-	[clientId release]; clientId = nil;
-	[clientString release]; clientString = nil;
-	[username release]; username = nil;
-	[accessToken release]; accessToken = nil;
-	[_password release]; _password = nil;
+	[currentGrantToken release]; currentGrantToken = nil;
+	[currentAccessToken release]; currentAccessToken = nil;
+	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+	[defaults setValue:nil forKey:@"currentGrantToken"];
+	[defaults synchronize];
 }
-
-#pragma mark -
-#pragma mark ASIHTTPRequest Callbacks
-
-- (void)requestFinished:(ASIHTTPRequest *)aRequest {
-	NSData *data = [[[aRequest responseData] mutableCopy] autorelease];
-	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	SBJsonParser *sbjson = [[SBJsonParser alloc] init];
-	// TODO: handle errors
-	NSDictionary *responseDictionary = (NSDictionary *)[sbjson objectWithString:jsonString error:NULL];
-	accessToken = [[responseDictionary objectForKey:@"access_token"] copy];
-
-	[authenticationRequest release]; authenticationRequest = nil;
-    [jsonString release]; jsonString = nil;
-    [sbjson release]; sbjson = nil;
-	[self.authenticationDelegate sessionDidAuthenticate:self];
-}
-
-- (void)requestFailed:(ASIHTTPRequest *)aRequest {
-	[authenticationRequest release]; authenticationRequest = nil;
-	// Handle error
-}
-
 
 @end
