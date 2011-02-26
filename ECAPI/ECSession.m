@@ -70,6 +70,12 @@ static ECSession *sharedSession = nil;
 	return (currentAccessToken != nil && ![currentAccessToken isExpired]);
 }
 
+- (void) setGrantToken:(AccessToken *)token {
+	[currentGrantToken release];
+	currentGrantToken = [token retain];
+	[self saveCurrentGrantToken];
+}
+
 - (void) loadCurrentGrantToken {
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	NSDictionary *grantKeyDictionary = [defaults objectForKey:@"currentGrantToken"];

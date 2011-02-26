@@ -16,6 +16,7 @@
 - (void) fetchAccessTokenForClientId:(NSString *)clientId clientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password;
 - (void) fetchAccessGrantForClientId:(NSString *)clientId clientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password;
 - (void) fetchAccessTokenWithAccessGrant:(NSString *)accessGrantToken;
+- (id) syncronousFetchAccessTokenWithAccessGrant:(NSString *)accessGrantToken;
 
 
 @end

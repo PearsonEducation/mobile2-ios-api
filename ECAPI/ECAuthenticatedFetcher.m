@@ -12,6 +12,7 @@
 #import "ASIFormDataRequest.h"
 #import "SBJsonParser.h"
 #import "AccessToken.h"
+#import "ECTokenFetcher.h"
 
 @interface ECAuthenticatedFetcher (PrivateMethods)
 + (void) setCommonHeadersForAuthenticatedRequest:(ASIHTTPRequest *)request;
@@ -19,7 +20,7 @@
 @end
 
 @implementation ECAuthenticatedFetcher
-@synthesize responseHeaders, responseStatusCode;
+@synthesize responseHeaders, responseStatusCode, ignoreAuthentication;
 
 #pragma mark -
 #pragma mark Request Factory Methods
@@ -92,6 +93,22 @@
 
 - (void) loadDataInBackground {
     NSAutoreleasePool *autoreleasePool = [[NSAutoreleasePool alloc] init];
+	// First, if we don't have an access token, but have an unexpired grant token
+	// get a new access token transparently
+	ECSession *session = [ECSession sharedSession];
+	if (![session hasUnexpiredAccessToken] && !ignoreAuthentication) {
+		if ([session hasUnexpiredGrantToken]) {
+			//TODO don't do this if the user shouldn't be remembered
+			ECTokenFetcher *tokenFetcher = [[ECTokenFetcher alloc] init];
+			AccessToken *accessToken = [tokenFetcher syncronousFetchAccessTokenWithAccessGrant:session.currentGrantToken.accessToken];
+			session.currentAccessToken = accessToken;
+			[ECAuthenticatedFetcher setCommonHeadersForAuthenticatedRequest:request];
+		} else {
+			// return error so caller knows to present login?
+		}
+	}
+	
+	
 	[request startSynchronous];
     NSError *error = [request error];
     id parsedData = nil;
