@@ -72,6 +72,7 @@
 	deserializeSelector = ds;
     NSURL *earl = [NSURL URLWithString:urlString];
 	request = [ECAuthenticatedFetcher newAuthenticatedGETRequestWithURL:earl];
+	NSLog(@"loading data from URL: %@", earl);
     [self performSelectorInBackground:@selector(loadDataInBackground) withObject:nil];
 }
 
@@ -85,6 +86,7 @@
 	}
 	
 	request = formRequest;
+	NSLog(@"posting params to URL: %@: %@", earl, params);
     [self performSelectorInBackground:@selector(loadDataInBackground) withObject:nil];
 }
 

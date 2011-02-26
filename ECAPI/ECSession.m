@@ -76,6 +76,7 @@ static ECSession *sharedSession = nil;
 	if (grantKeyDictionary) {
 		AccessToken *grantToken = [[AccessToken alloc] initWithDictionary:grantKeyDictionary];
 		currentGrantToken = grantToken;
+		NSLog(@"Loaded persisted access grant token: %@", grantToken);
 	}	
 }
 
@@ -85,6 +86,7 @@ static ECSession *sharedSession = nil;
 	[currentGrantToken saveInDictionary:grantKeyDictionary];
 	[defaults setObject:grantKeyDictionary forKey:@"currentGrantToken"];
 	[defaults synchronize];
+	NSLog(@"Saved persisted access grant token: %@", currentGrantToken);
 }
 
 - (BOOL) hasUnexpiredGrantToken {
@@ -120,6 +122,7 @@ static ECSession *sharedSession = nil;
 		[self loadCurrentGrantToken];
 	}
 	//TODO: return an error if there is no grant token?
+	NSLog(@"Authenticating with remembered grant token: %@", currentGrantToken);
 	currentAuthenticationDelegate = delegate;
 	currentAuthenticationCallback = callbackSelector;
 	tokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTokenComplete:)];
@@ -146,6 +149,7 @@ static ECSession *sharedSession = nil;
 		[del performSelector:currentAuthenticationCallback];
 		currentAuthenticationCallback = nil;
 		currentAuthenticationDelegate = nil;
+		NSLog(@"Fetched temporary access token: %@", currentAccessToken);
 	}
 }
 
