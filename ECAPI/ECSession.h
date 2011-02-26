@@ -27,7 +27,7 @@
 - (BOOL) hasUnexpiredAccessToken;
 - (BOOL) hasUnexpiredGrantToken;
 - (void) authenticateWithClientId:(NSString *)clientId clientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password keepUserLoggedIn:(BOOL)keepUserLoggedIn delegate:(id)delegate callback:(SEL)callbackSelector;
-- (void) authenticateWithCurrentGrantTokenAndDelegate:(id)delegate callback:(SEL)callbackSelector;
+- (void) authenticateWithRememberedCredentialsAndDelegate:(id)delegate callback:(SEL)callbackSelector;
 
 - (void) forgetCredentials;
 

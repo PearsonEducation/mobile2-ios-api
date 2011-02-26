@@ -96,6 +96,7 @@ static ECSession *sharedSession = nil;
 }
 
 - (void) authenticateWithClientId:(NSString *)cid clientString:(NSString *)cs username:(NSString *)un password:(NSString *)pw keepUserLoggedIn:(BOOL)keepUserLoggedIn delegate:(id)delegate callback:(SEL)callbackSelector {
+	//TODO: return an error if invalid credentials
 	[self forgetCredentials];
 	//TODO: Determine if thread safety is a requirement, because this is not thread safe
 	currentAuthenticationDelegate = delegate;
@@ -107,6 +108,17 @@ static ECSession *sharedSession = nil;
 		tokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTokenComplete:)];
 		[tokenFetcher fetchAccessTokenForClientId:cid clientString:cs username:un password:pw];
 	}
+}
+
+- (void) authenticateWithRememberedCredentialsAndDelegate:(id)delegate callback:(SEL)callbackSelector {
+	if (nil == currentGrantToken) {
+		[self loadCurrentGrantToken];
+	}
+	//TODO: return an error if there is no grant token?
+	currentAuthenticationDelegate = delegate;
+	currentAuthenticationCallback = callbackSelector;
+	tokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTokenComplete:)];
+	[tokenFetcher fetchAccessTokenWithAccessGrant:currentGrantToken.accessToken];
 }
 
 - (void) fetchGrantTokenComplete:(AccessToken *)token {
@@ -130,10 +142,6 @@ static ECSession *sharedSession = nil;
 		currentAuthenticationCallback = nil;
 		currentAuthenticationDelegate = nil;
 	}
-}
-
-- (void) authenticateWithCurrentGrantTokenAndDelegate:(id)delegate callback:(SEL)callbackSelector {
-	
 }
 
 - (void) forgetCredentials {
