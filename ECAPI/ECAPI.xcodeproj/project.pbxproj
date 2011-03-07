@@ -34,12 +34,14 @@
 		A27692141321715C00FDA805 /* ActivityStreamFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692101321715A00FDA805 /* ActivityStreamFetcher.m */; };
 		A276921B132186C900FDA805 /* ActivityStreamItemDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A2769217132186C800FDA805 /* ActivityStreamItemDeserializationTestCase.m */; };
 		A276921D1321A52D00FDA805 /* ActivityStreamItem.json in Resources */ = {isa = PBXBuildFile; fileRef = A276921C1321A52A00FDA805 /* ActivityStreamItem.json */; };
-		A27692211321AB4700FDA805 /* ActivityStreamDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A276921F1321AB4000FDA805 /* ActivityStreamDeserializationTestCase.m */; };
 		A27692251321ABB100FDA805 /* ActivityStreamActorDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692231321ABA700FDA805 /* ActivityStreamActorDeserializationTestCase.m */; };
 		A27692291321ABF600FDA805 /* ActivityStreamObjectDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */; };
 		A276922D1321ACF300FDA805 /* ActivityStreamTargetDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */; };
-		A276922F1321ADB200FDA805 /* ActivityStream.json in Resources */ = {isa = PBXBuildFile; fileRef = A276922E1321ADAC00FDA805 /* ActivityStream.json */; };
 		A27692311321ADCD00FDA805 /* ActivityStreamTarget.json in Resources */ = {isa = PBXBuildFile; fileRef = A27692301321ADC600FDA805 /* ActivityStreamTarget.json */; };
+		A2AC045313255D910069C90D /* ActivityStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A2AC045113255D8F0069C90D /* ActivityStream.h */; };
+		A2AC045413255D910069C90D /* ActivityStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A2AC045113255D8F0069C90D /* ActivityStream.h */; };
+		A2AC045513255D910069C90D /* ActivityStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AC045213255D8F0069C90D /* ActivityStream.m */; };
+		A2AC045613255D910069C90D /* ActivityStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AC045213255D8F0069C90D /* ActivityStream.m */; };
 		A2FC610B1321AEB300F82864 /* ActivityStreamActor.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */; };
 		A2FC610D1321AECD00F82864 /* ActivityStreamObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */; };
 		AA747D9F0F9514B9006C5449 /* ECAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */; settings = {ATTRIBUTES = (); }; };
@@ -198,12 +200,12 @@
 		A27692101321715A00FDA805 /* ActivityStreamFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamFetcher.m; sourceTree = "<group>"; };
 		A2769217132186C800FDA805 /* ActivityStreamItemDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamItemDeserializationTestCase.m; sourceTree = "<group>"; };
 		A276921C1321A52A00FDA805 /* ActivityStreamItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamItem.json; sourceTree = "<group>"; };
-		A276921F1321AB4000FDA805 /* ActivityStreamDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamDeserializationTestCase.m; sourceTree = "<group>"; };
 		A27692231321ABA700FDA805 /* ActivityStreamActorDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamActorDeserializationTestCase.m; sourceTree = "<group>"; };
 		A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamObjectDeserializationTestCase.m; sourceTree = "<group>"; };
 		A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamTargetDeserializationTestCase.m; sourceTree = "<group>"; };
-		A276922E1321ADAC00FDA805 /* ActivityStream.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStream.json; sourceTree = "<group>"; };
 		A27692301321ADC600FDA805 /* ActivityStreamTarget.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamTarget.json; sourceTree = "<group>"; };
+		A2AC045113255D8F0069C90D /* ActivityStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStream.h; sourceTree = "<group>"; };
+		A2AC045213255D8F0069C90D /* ActivityStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStream.m; sourceTree = "<group>"; };
 		A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamActor.json; sourceTree = "<group>"; };
 		A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamObject.json; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -482,8 +484,6 @@
 				EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */,
 				EAD2E00713184F3600A4D89C /* AccessTokenTestCase.m */,
 				EAD2E02E13186C6400A4D89C /* ECSessionTokenTestCase.m */,
-				A276921F1321AB4000FDA805 /* ActivityStreamDeserializationTestCase.m */,
-				A276922E1321ADAC00FDA805 /* ActivityStream.json */,
 				A2769217132186C800FDA805 /* ActivityStreamItemDeserializationTestCase.m */,
 				A276921C1321A52A00FDA805 /* ActivityStreamItem.json */,
 				A27692231321ABA700FDA805 /* ActivityStreamActorDeserializationTestCase.m */,
@@ -515,6 +515,8 @@
 				A2769204132167F700FDA805 /* ActivityStreamObject.m */,
 				A27692091321681200FDA805 /* ActivityStreamTarget.h */,
 				A276920A1321681300FDA805 /* ActivityStreamTarget.m */,
+				A2AC045113255D8F0069C90D /* ActivityStream.h */,
+				A2AC045213255D8F0069C90D /* ActivityStream.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -623,6 +625,7 @@
 				A276920B1321681400FDA805 /* ActivityStreamTarget.h in Headers */,
 				A27692111321715C00FDA805 /* ActivityStreamFetcher.h in Headers */,
 				A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */,
+				A2AC045313255D910069C90D /* ActivityStream.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +653,7 @@
 				A276920C1321681400FDA805 /* ActivityStreamTarget.h in Headers */,
 				A27692121321715C00FDA805 /* ActivityStreamFetcher.h in Headers */,
 				A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */,
+				A2AC045413255D910069C90D /* ActivityStream.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,7 +733,6 @@
 				EAD9ECBE1305FEEB00BA7297 /* GradeDeserializationTestCase.m in Resources */,
 				EAD2E02F13186C6400A4D89C /* ECSessionTokenTestCase.m in Resources */,
 				A276921D1321A52D00FDA805 /* ActivityStreamItem.json in Resources */,
-				A276922F1321ADB200FDA805 /* ActivityStream.json in Resources */,
 				A27692311321ADCD00FDA805 /* ActivityStreamTarget.json in Resources */,
 				A2FC610B1321AEB300F82864 /* ActivityStreamActor.json in Resources */,
 				A2FC610D1321AECD00F82864 /* ActivityStreamObject.json in Resources */,
@@ -795,6 +798,7 @@
 				A276920D1321681400FDA805 /* ActivityStreamTarget.m in Sources */,
 				A27692131321715C00FDA805 /* ActivityStreamFetcher.m in Sources */,
 				A251431D13251E16002D66B7 /* NSDateUtilities.m in Sources */,
+				A2AC045513255D910069C90D /* ActivityStream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -849,11 +853,11 @@
 				A276920E1321681400FDA805 /* ActivityStreamTarget.m in Sources */,
 				A27692141321715C00FDA805 /* ActivityStreamFetcher.m in Sources */,
 				A276921B132186C900FDA805 /* ActivityStreamItemDeserializationTestCase.m in Sources */,
-				A27692211321AB4700FDA805 /* ActivityStreamDeserializationTestCase.m in Sources */,
 				A27692251321ABB100FDA805 /* ActivityStreamActorDeserializationTestCase.m in Sources */,
 				A27692291321ABF600FDA805 /* ActivityStreamObjectDeserializationTestCase.m in Sources */,
 				A276922D1321ACF300FDA805 /* ActivityStreamTargetDeserializationTestCase.m in Sources */,
 				A251431E13251E16002D66B7 /* NSDateUtilities.m in Sources */,
+				A2AC045613255D910069C90D /* ActivityStream.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
