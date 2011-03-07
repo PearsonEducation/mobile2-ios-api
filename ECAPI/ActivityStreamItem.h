@@ -20,8 +20,6 @@
     ActivityStreamTarget* target;
 }
 
-+ (NSArray*) arrayFromJSONString:(NSString*)jsonString;
-
 @property (nonatomic, retain) NSString* id;
 @property (nonatomic, retain) NSDate* postedTime;
 @property (nonatomic, retain) ActivityStreamActor* actor;

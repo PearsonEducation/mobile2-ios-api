@@ -13,5 +13,10 @@ extern NSString* const ISO8601Format;
 @interface NSDate (NSDateUtilities)
 
 - (NSString*) iso8601DateString;
+- (NSDate*) nextDayLocalMidnight;
+- (BOOL) comesBefore:(NSDate*)d;
+- (BOOL) comesAfter:(NSDate*)d;
+- (NSDate*) addDays:(int)days;
+
 
 @end

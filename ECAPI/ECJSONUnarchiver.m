@@ -60,7 +60,11 @@
 	if (!val || val == [NSNull null]) {
 		return nil;
 	}
+    
+    // we expect incoming dates to be formatted as UTC.
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSTimeZone* tz = [NSTimeZone timeZoneForSecondsFromGMT:0];
+    [dateFormatter setTimeZone:tz];
     [dateFormatter setDateFormat:ISO8601Format];
     NSDate *date = [dateFormatter dateFromString:(NSString*)val];
 	[dateFormatter release];

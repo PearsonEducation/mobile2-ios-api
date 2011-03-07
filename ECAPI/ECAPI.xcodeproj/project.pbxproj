@@ -7,29 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; };
-		A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; };
+		A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A251431D13251E16002D66B7 /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A251431A13251E16002D66B7 /* NSDateUtilities.m */; };
 		A251431E13251E16002D66B7 /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A251431A13251E16002D66B7 /* NSDateUtilities.m */; };
 		A27691F51321630F00FDA805 /* ActivityStreamFetcherTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */; };
-		A27691F9132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; };
-		A27691FA132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; };
+		A27691F9132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A27691FA132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A27691FB132167CA00FDA805 /* ActivityStreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691F8132167C900FDA805 /* ActivityStreamItem.m */; };
 		A27691FC132167CA00FDA805 /* ActivityStreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691F8132167C900FDA805 /* ActivityStreamItem.m */; };
-		A27691FF132167E100FDA805 /* ActivityStreamActor.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691FD132167E000FDA805 /* ActivityStreamActor.h */; };
-		A2769200132167E100FDA805 /* ActivityStreamActor.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691FD132167E000FDA805 /* ActivityStreamActor.h */; };
+		A27691FF132167E100FDA805 /* ActivityStreamActor.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691FD132167E000FDA805 /* ActivityStreamActor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2769200132167E100FDA805 /* ActivityStreamActor.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691FD132167E000FDA805 /* ActivityStreamActor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2769201132167E100FDA805 /* ActivityStreamActor.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691FE132167E000FDA805 /* ActivityStreamActor.m */; };
 		A2769202132167E100FDA805 /* ActivityStreamActor.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691FE132167E000FDA805 /* ActivityStreamActor.m */; };
-		A2769205132167F800FDA805 /* ActivityStreamObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A2769203132167F600FDA805 /* ActivityStreamObject.h */; };
-		A2769206132167F800FDA805 /* ActivityStreamObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A2769203132167F600FDA805 /* ActivityStreamObject.h */; };
+		A2769205132167F800FDA805 /* ActivityStreamObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A2769203132167F600FDA805 /* ActivityStreamObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2769206132167F800FDA805 /* ActivityStreamObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A2769203132167F600FDA805 /* ActivityStreamObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2769207132167F800FDA805 /* ActivityStreamObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A2769204132167F700FDA805 /* ActivityStreamObject.m */; };
 		A2769208132167F800FDA805 /* ActivityStreamObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A2769204132167F700FDA805 /* ActivityStreamObject.m */; };
-		A276920B1321681400FDA805 /* ActivityStreamTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A27692091321681200FDA805 /* ActivityStreamTarget.h */; };
-		A276920C1321681400FDA805 /* ActivityStreamTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A27692091321681200FDA805 /* ActivityStreamTarget.h */; };
+		A276920B1321681400FDA805 /* ActivityStreamTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A27692091321681200FDA805 /* ActivityStreamTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A276920C1321681400FDA805 /* ActivityStreamTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A27692091321681200FDA805 /* ActivityStreamTarget.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A276920D1321681400FDA805 /* ActivityStreamTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = A276920A1321681300FDA805 /* ActivityStreamTarget.m */; };
 		A276920E1321681400FDA805 /* ActivityStreamTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = A276920A1321681300FDA805 /* ActivityStreamTarget.m */; };
-		A27692111321715C00FDA805 /* ActivityStreamFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A276920F1321715900FDA805 /* ActivityStreamFetcher.h */; };
-		A27692121321715C00FDA805 /* ActivityStreamFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A276920F1321715900FDA805 /* ActivityStreamFetcher.h */; };
+		A27692111321715C00FDA805 /* ActivityStreamFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A276920F1321715900FDA805 /* ActivityStreamFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A27692121321715C00FDA805 /* ActivityStreamFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A276920F1321715900FDA805 /* ActivityStreamFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A27692131321715C00FDA805 /* ActivityStreamFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692101321715A00FDA805 /* ActivityStreamFetcher.m */; };
 		A27692141321715C00FDA805 /* ActivityStreamFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692101321715A00FDA805 /* ActivityStreamFetcher.m */; };
 		A276921B132186C900FDA805 /* ActivityStreamItemDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A2769217132186C800FDA805 /* ActivityStreamItemDeserializationTestCase.m */; };
@@ -38,8 +38,8 @@
 		A27692291321ABF600FDA805 /* ActivityStreamObjectDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */; };
 		A276922D1321ACF300FDA805 /* ActivityStreamTargetDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */; };
 		A27692311321ADCD00FDA805 /* ActivityStreamTarget.json in Resources */ = {isa = PBXBuildFile; fileRef = A27692301321ADC600FDA805 /* ActivityStreamTarget.json */; };
-		A2AC045313255D910069C90D /* ActivityStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A2AC045113255D8F0069C90D /* ActivityStream.h */; };
-		A2AC045413255D910069C90D /* ActivityStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A2AC045113255D8F0069C90D /* ActivityStream.h */; };
+		A2AC045313255D910069C90D /* ActivityStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A2AC045113255D8F0069C90D /* ActivityStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2AC045413255D910069C90D /* ActivityStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A2AC045113255D8F0069C90D /* ActivityStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2AC045513255D910069C90D /* ActivityStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AC045213255D8F0069C90D /* ActivityStream.m */; };
 		A2AC045613255D910069C90D /* ActivityStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AC045213255D8F0069C90D /* ActivityStream.m */; };
 		A2FC610B1321AEB300F82864 /* ActivityStreamActor.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */; };
