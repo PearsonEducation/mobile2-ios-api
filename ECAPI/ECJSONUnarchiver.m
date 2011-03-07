@@ -7,7 +7,8 @@
 //
 
 #import "ECJSONUnarchiver.h"
-#import "NSDateUtilities.h"
+
+static NSString *ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss";
 
 @implementation ECJSONUnarchiver
 

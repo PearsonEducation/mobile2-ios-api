@@ -17,12 +17,10 @@
 	NSMutableData *data;
 	id delegate;
 	SEL responseCallback, deserializeSelector;
-	BOOL ignoreAuthentication;
 }
 
 @property(nonatomic,retain) NSDictionary *responseHeaders;
 @property(nonatomic,assign) NSInteger responseStatusCode;
-@property(nonatomic,assign) BOOL ignoreAuthentication;
 
 + (ASIHTTPRequest *) newAuthenticatedGETRequestWithURL:(NSURL *)earl;
 + (ASIFormDataRequest *) newAuthenticatedPOSTRequestWithURL:(NSURL *)earl;
