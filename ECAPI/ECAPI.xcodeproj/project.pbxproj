@@ -7,6 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; };
+		A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; };
+		A251431D13251E16002D66B7 /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A251431A13251E16002D66B7 /* NSDateUtilities.m */; };
+		A251431E13251E16002D66B7 /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A251431A13251E16002D66B7 /* NSDateUtilities.m */; };
+		A27691F51321630F00FDA805 /* ActivityStreamFetcherTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */; };
+		A27691F9132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; };
+		A27691FA132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; };
+		A27691FB132167CA00FDA805 /* ActivityStreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691F8132167C900FDA805 /* ActivityStreamItem.m */; };
+		A27691FC132167CA00FDA805 /* ActivityStreamItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691F8132167C900FDA805 /* ActivityStreamItem.m */; };
+		A27691FF132167E100FDA805 /* ActivityStreamActor.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691FD132167E000FDA805 /* ActivityStreamActor.h */; };
+		A2769200132167E100FDA805 /* ActivityStreamActor.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691FD132167E000FDA805 /* ActivityStreamActor.h */; };
+		A2769201132167E100FDA805 /* ActivityStreamActor.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691FE132167E000FDA805 /* ActivityStreamActor.m */; };
+		A2769202132167E100FDA805 /* ActivityStreamActor.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691FE132167E000FDA805 /* ActivityStreamActor.m */; };
+		A2769205132167F800FDA805 /* ActivityStreamObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A2769203132167F600FDA805 /* ActivityStreamObject.h */; };
+		A2769206132167F800FDA805 /* ActivityStreamObject.h in Headers */ = {isa = PBXBuildFile; fileRef = A2769203132167F600FDA805 /* ActivityStreamObject.h */; };
+		A2769207132167F800FDA805 /* ActivityStreamObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A2769204132167F700FDA805 /* ActivityStreamObject.m */; };
+		A2769208132167F800FDA805 /* ActivityStreamObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A2769204132167F700FDA805 /* ActivityStreamObject.m */; };
+		A276920B1321681400FDA805 /* ActivityStreamTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A27692091321681200FDA805 /* ActivityStreamTarget.h */; };
+		A276920C1321681400FDA805 /* ActivityStreamTarget.h in Headers */ = {isa = PBXBuildFile; fileRef = A27692091321681200FDA805 /* ActivityStreamTarget.h */; };
+		A276920D1321681400FDA805 /* ActivityStreamTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = A276920A1321681300FDA805 /* ActivityStreamTarget.m */; };
+		A276920E1321681400FDA805 /* ActivityStreamTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = A276920A1321681300FDA805 /* ActivityStreamTarget.m */; };
+		A27692111321715C00FDA805 /* ActivityStreamFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A276920F1321715900FDA805 /* ActivityStreamFetcher.h */; };
+		A27692121321715C00FDA805 /* ActivityStreamFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A276920F1321715900FDA805 /* ActivityStreamFetcher.h */; };
+		A27692131321715C00FDA805 /* ActivityStreamFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692101321715A00FDA805 /* ActivityStreamFetcher.m */; };
+		A27692141321715C00FDA805 /* ActivityStreamFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692101321715A00FDA805 /* ActivityStreamFetcher.m */; };
+		A276921B132186C900FDA805 /* ActivityStreamItemDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A2769217132186C800FDA805 /* ActivityStreamItemDeserializationTestCase.m */; };
+		A276921D1321A52D00FDA805 /* ActivityStreamItem.json in Resources */ = {isa = PBXBuildFile; fileRef = A276921C1321A52A00FDA805 /* ActivityStreamItem.json */; };
+		A27692211321AB4700FDA805 /* ActivityStreamDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A276921F1321AB4000FDA805 /* ActivityStreamDeserializationTestCase.m */; };
+		A27692251321ABB100FDA805 /* ActivityStreamActorDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692231321ABA700FDA805 /* ActivityStreamActorDeserializationTestCase.m */; };
+		A27692291321ABF600FDA805 /* ActivityStreamObjectDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */; };
+		A276922D1321ACF300FDA805 /* ActivityStreamTargetDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */; };
+		A276922F1321ADB200FDA805 /* ActivityStream.json in Resources */ = {isa = PBXBuildFile; fileRef = A276922E1321ADAC00FDA805 /* ActivityStream.json */; };
+		A27692311321ADCD00FDA805 /* ActivityStreamTarget.json in Resources */ = {isa = PBXBuildFile; fileRef = A27692301321ADC600FDA805 /* ActivityStreamTarget.json */; };
+		A2FC610B1321AEB300F82864 /* ActivityStreamActor.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */; };
+		A2FC610D1321AECD00F82864 /* ActivityStreamObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */; };
 		AA747D9F0F9514B9006C5449 /* ECAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */; settings = {ATTRIBUTES = (); }; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 		EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */; };
@@ -148,6 +183,29 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A251431913251E16002D66B7 /* NSDateUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateUtilities.h; sourceTree = "<group>"; };
+		A251431A13251E16002D66B7 /* NSDateUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateUtilities.m; sourceTree = "<group>"; };
+		A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamFetcherTestCase.m; sourceTree = "<group>"; };
+		A27691F7132167C900FDA805 /* ActivityStreamItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStreamItem.h; sourceTree = "<group>"; };
+		A27691F8132167C900FDA805 /* ActivityStreamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamItem.m; sourceTree = "<group>"; };
+		A27691FD132167E000FDA805 /* ActivityStreamActor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStreamActor.h; sourceTree = "<group>"; };
+		A27691FE132167E000FDA805 /* ActivityStreamActor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamActor.m; sourceTree = "<group>"; };
+		A2769203132167F600FDA805 /* ActivityStreamObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStreamObject.h; sourceTree = "<group>"; };
+		A2769204132167F700FDA805 /* ActivityStreamObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamObject.m; sourceTree = "<group>"; };
+		A27692091321681200FDA805 /* ActivityStreamTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStreamTarget.h; sourceTree = "<group>"; };
+		A276920A1321681300FDA805 /* ActivityStreamTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamTarget.m; sourceTree = "<group>"; };
+		A276920F1321715900FDA805 /* ActivityStreamFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStreamFetcher.h; sourceTree = "<group>"; };
+		A27692101321715A00FDA805 /* ActivityStreamFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamFetcher.m; sourceTree = "<group>"; };
+		A2769217132186C800FDA805 /* ActivityStreamItemDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamItemDeserializationTestCase.m; sourceTree = "<group>"; };
+		A276921C1321A52A00FDA805 /* ActivityStreamItem.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamItem.json; sourceTree = "<group>"; };
+		A276921F1321AB4000FDA805 /* ActivityStreamDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamDeserializationTestCase.m; sourceTree = "<group>"; };
+		A27692231321ABA700FDA805 /* ActivityStreamActorDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamActorDeserializationTestCase.m; sourceTree = "<group>"; };
+		A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamObjectDeserializationTestCase.m; sourceTree = "<group>"; };
+		A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamTargetDeserializationTestCase.m; sourceTree = "<group>"; };
+		A276922E1321ADAC00FDA805 /* ActivityStream.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStream.json; sourceTree = "<group>"; };
+		A27692301321ADC600FDA805 /* ActivityStreamTarget.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamTarget.json; sourceTree = "<group>"; };
+		A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamActor.json; sourceTree = "<group>"; };
+		A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamObject.json; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libECAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +373,7 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A251431713251DF9002D66B7 /* Utilities */,
 				EA9CF47113020E5900108C6C /* Unarchiver */,
 				EAADEE3112F9E41700899C75 /* Models */,
 				EAADEE5012F9F4E900899C75 /* Fetchers */,
@@ -335,6 +394,15 @@
 				EABEEA8212F8CBE50028857E /* Tests-Info.plist */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		A251431713251DF9002D66B7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A251431913251E16002D66B7 /* NSDateUtilities.h */,
+				A251431A13251E16002D66B7 /* NSDateUtilities.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 		EA32AC2112F871220025F080 /* asi-http-request */ = {
@@ -414,6 +482,16 @@
 				EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */,
 				EAD2E00713184F3600A4D89C /* AccessTokenTestCase.m */,
 				EAD2E02E13186C6400A4D89C /* ECSessionTokenTestCase.m */,
+				A276921F1321AB4000FDA805 /* ActivityStreamDeserializationTestCase.m */,
+				A276922E1321ADAC00FDA805 /* ActivityStream.json */,
+				A2769217132186C800FDA805 /* ActivityStreamItemDeserializationTestCase.m */,
+				A276921C1321A52A00FDA805 /* ActivityStreamItem.json */,
+				A27692231321ABA700FDA805 /* ActivityStreamActorDeserializationTestCase.m */,
+				A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */,
+				A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */,
+				A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */,
+				A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */,
+				A27692301321ADC600FDA805 /* ActivityStreamTarget.json */,
 			);
 			name = "Model Tests";
 			sourceTree = "<group>";
@@ -429,6 +507,14 @@
 				EA15EE5012FB5EF100D60A83 /* Course.m */,
 				EAD9ECBF1306007C00BA7297 /* Grade.h */,
 				EAD9ECC01306007C00BA7297 /* Grade.m */,
+				A27691F7132167C900FDA805 /* ActivityStreamItem.h */,
+				A27691F8132167C900FDA805 /* ActivityStreamItem.m */,
+				A27691FD132167E000FDA805 /* ActivityStreamActor.h */,
+				A27691FE132167E000FDA805 /* ActivityStreamActor.m */,
+				A2769203132167F600FDA805 /* ActivityStreamObject.h */,
+				A2769204132167F700FDA805 /* ActivityStreamObject.m */,
+				A27692091321681200FDA805 /* ActivityStreamTarget.h */,
+				A276920A1321681300FDA805 /* ActivityStreamTarget.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -436,6 +522,7 @@
 		EAADEE4512F9F1CE00899C75 /* Live API Tests */ = {
 			isa = PBXGroup;
 			children = (
+				A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */,
 				EABEE86812F8AA1B0028857E /* ECSessionTestCase.m */,
 				EAADEE0612F9D76C00899C75 /* UserFetcherTestCase.m */,
 				EA6E0873130467E3001016B8 /* CourseFetcherTestCase.m */,
@@ -454,6 +541,8 @@
 				EA6E087613046A69001016B8 /* CourseFetcher.m */,
 				EAD2DFFA1318239700A4D89C /* ECTokenFetcher.h */,
 				EAD2DFFB1318239700A4D89C /* ECTokenFetcher.m */,
+				A276920F1321715900FDA805 /* ActivityStreamFetcher.h */,
+				A27692101321715A00FDA805 /* ActivityStreamFetcher.m */,
 			);
 			name = Fetchers;
 			sourceTree = "<group>";
@@ -528,6 +617,12 @@
 				EABEE8DB12F8BC6F0028857E /* SBJsonStreamWriterState.h in Headers */,
 				EABEE8DD12F8BC6F0028857E /* SBJsonTokeniser.h in Headers */,
 				EABEE8DF12F8BC6F0028857E /* SBJsonWriter.h in Headers */,
+				A27691F9132167CA00FDA805 /* ActivityStreamItem.h in Headers */,
+				A27691FF132167E100FDA805 /* ActivityStreamActor.h in Headers */,
+				A2769205132167F800FDA805 /* ActivityStreamObject.h in Headers */,
+				A276920B1321681400FDA805 /* ActivityStreamTarget.h in Headers */,
+				A27692111321715C00FDA805 /* ActivityStreamFetcher.h in Headers */,
+				A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +644,12 @@
 				EAD9ECC21306007C00BA7297 /* Grade.h in Headers */,
 				EAD2DFFD1318239700A4D89C /* ECTokenFetcher.h in Headers */,
 				EAD2E00413184CFD00A4D89C /* AccessToken.h in Headers */,
+				A27691FA132167CA00FDA805 /* ActivityStreamItem.h in Headers */,
+				A2769200132167E100FDA805 /* ActivityStreamActor.h in Headers */,
+				A2769206132167F800FDA805 /* ActivityStreamObject.h in Headers */,
+				A276920C1321681400FDA805 /* ActivityStreamTarget.h in Headers */,
+				A27692121321715C00FDA805 /* ActivityStreamFetcher.h in Headers */,
+				A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,6 +728,11 @@
 			files = (
 				EAD9ECBE1305FEEB00BA7297 /* GradeDeserializationTestCase.m in Resources */,
 				EAD2E02F13186C6400A4D89C /* ECSessionTokenTestCase.m in Resources */,
+				A276921D1321A52D00FDA805 /* ActivityStreamItem.json in Resources */,
+				A276922F1321ADB200FDA805 /* ActivityStream.json in Resources */,
+				A27692311321ADCD00FDA805 /* ActivityStreamTarget.json in Resources */,
+				A2FC610B1321AEB300F82864 /* ActivityStreamActor.json in Resources */,
+				A2FC610D1321AECD00F82864 /* ActivityStreamObject.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -683,6 +789,12 @@
 				EAD9ECC31306007C00BA7297 /* Grade.m in Sources */,
 				EAD2DFFE1318239700A4D89C /* ECTokenFetcher.m in Sources */,
 				EAD2E00513184CFD00A4D89C /* AccessToken.m in Sources */,
+				A27691FB132167CA00FDA805 /* ActivityStreamItem.m in Sources */,
+				A2769201132167E100FDA805 /* ActivityStreamActor.m in Sources */,
+				A2769207132167F800FDA805 /* ActivityStreamObject.m in Sources */,
+				A276920D1321681400FDA805 /* ActivityStreamTarget.m in Sources */,
+				A27692131321715C00FDA805 /* ActivityStreamFetcher.m in Sources */,
+				A251431D13251E16002D66B7 /* NSDateUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -730,6 +842,18 @@
 				EAD2E00613184CFD00A4D89C /* AccessToken.m in Sources */,
 				EAD2E03013187F8300A4D89C /* ECSessionTokenTestCase.m in Sources */,
 				EAD2E00813184F3600A4D89C /* AccessTokenTestCase.m in Sources */,
+				A27691F51321630F00FDA805 /* ActivityStreamFetcherTestCase.m in Sources */,
+				A27691FC132167CA00FDA805 /* ActivityStreamItem.m in Sources */,
+				A2769202132167E100FDA805 /* ActivityStreamActor.m in Sources */,
+				A2769208132167F800FDA805 /* ActivityStreamObject.m in Sources */,
+				A276920E1321681400FDA805 /* ActivityStreamTarget.m in Sources */,
+				A27692141321715C00FDA805 /* ActivityStreamFetcher.m in Sources */,
+				A276921B132186C900FDA805 /* ActivityStreamItemDeserializationTestCase.m in Sources */,
+				A27692211321AB4700FDA805 /* ActivityStreamDeserializationTestCase.m in Sources */,
+				A27692251321ABB100FDA805 /* ActivityStreamActorDeserializationTestCase.m in Sources */,
+				A27692291321ABF600FDA805 /* ActivityStreamObjectDeserializationTestCase.m in Sources */,
+				A276922D1321ACF300FDA805 /* ActivityStreamTargetDeserializationTestCase.m in Sources */,
+				A251431E13251E16002D66B7 /* NSDateUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
