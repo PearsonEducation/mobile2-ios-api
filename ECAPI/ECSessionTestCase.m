@@ -8,35 +8,64 @@
 
 #import "ECSession.h"
 
-@interface ECSessionTestCase : GHAsyncTestCase<ECSessionAuthenticationDelegate> { }
+@interface ECSessionTestCase : GHAsyncTestCase { }
 @end
 
 @implementation ECSessionTestCase
 
-- (void) tearDownClass {
+- (void) setUp {
 	[[ECSession sharedSession] forgetCredentials];
 }
 
-- (void) testAuthentication {
+- (void) tearDown {
+	[[ECSession sharedSession] forgetCredentials];
+}
+
+- (void) testAuthenticationWhileNotRememberingUser {
 	[self prepare];
 	
 	ECSession *session = [ECSession sharedSession];
-	session.authenticationDelegate = self;
-	GHAssertFalse(session.isAuthenticated, @"Expected session to be unauthenticated at this point");
+	GHAssertFalse([session hasUnexpiredAccessToken], @"Expected session to be unauthenticated at this point");
 	[session authenticateWithClientId:@"30bb1d4f-2677-45d1-be13-339174404402"
 						 clientString:@"ctstate"
 							 username:@"veronicastudent3"
-							 password:@"veronicastudent3"];
-
+							 password:@"veronicastudent3"
+					 keepUserLoggedIn:NO
+							 delegate:self
+							 callback:@selector(sessionDidAuthenticateWhileNotRememberingUser)];
+	
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 
-- (void) sessionDidAuthenticate:(ECSession *)aSession {
+- (void) sessionDidAuthenticateWhileNotRememberingUser {
 	ECSession *session = [ECSession sharedSession];
-	GHAssertEqualObjects(session, aSession, @"Unexpected session reference sent to delegate method");
-	GHAssertNotNil(session.accessToken, @"Expected accessToken to be set after authentication");
-	GHAssertTrue(session.isAuthenticated, @"Expected session to be authenticated after authentication");
-	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testAuthentication)];
+	GHAssertTrue([session hasUnexpiredAccessToken], @"Expected accessToken to be set after authentication");
+	GHAssertFalse([session hasUnexpiredGrantToken], @"Expected grantToken not to be set after authentication while not remembering user");
+	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testAuthenticationWhileNotRememberingUser)];
+}
+
+- (void) testAuthenticationWhileRememberingUser {
+	[self prepare];
+	
+	ECSession *session = [ECSession sharedSession];
+	GHAssertFalse([session hasUnexpiredAccessToken], @"Expected session to be unauthenticated at this point");
+	GHAssertFalse([session hasUnexpiredGrantToken], @"Expected session to be without a grant token at this point");
+	[session authenticateWithClientId:@"30bb1d4f-2677-45d1-be13-339174404402"
+						 clientString:@"ctstate"
+							 username:@"veronicastudent3"
+							 password:@"veronicastudent3"
+					 keepUserLoggedIn:YES
+							 delegate:self
+							 callback:@selector(sessionDidAuthenticateWhileRememberingUser)];
+	
+	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
+}
+
+- (void) sessionDidAuthenticateWhileRememberingUser {
+	ECSession *session = [ECSession sharedSession];
+	GHAssertTrue([session hasUnexpiredAccessToken], @"Expected accessToken to be set after authentication");
+	GHAssertTrue([session hasUnexpiredGrantToken], @"Expected grantToken to be set after authentication while remembering user");
+	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testAuthenticationWhileRememberingUser)];
 }
 
 @end

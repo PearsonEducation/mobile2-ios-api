@@ -11,6 +11,8 @@
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
 #import "SBJsonParser.h"
+#import "AccessToken.h"
+#import "ECTokenFetcher.h"
 
 @interface ECAuthenticatedFetcher (PrivateMethods)
 + (void) setCommonHeadersForAuthenticatedRequest:(ASIHTTPRequest *)request;
@@ -18,7 +20,7 @@
 @end
 
 @implementation ECAuthenticatedFetcher
-@synthesize responseHeaders, responseStatusCode;
+@synthesize responseHeaders, responseStatusCode, ignoreAuthentication;
 
 #pragma mark -
 #pragma mark Request Factory Methods
@@ -41,7 +43,8 @@
 	
 	//TODO: Throw an error if session is not authenticated?
 	ECSession *session = [ECSession sharedSession];
-	NSString *accessTokenHeaderValue = [NSString stringWithFormat:@"Access_Token access_token=%@", session.accessToken];
+	AccessToken *token = session.currentAccessToken;
+	NSString *accessTokenHeaderValue = [NSString stringWithFormat:@"Access_Token access_token=%@", token.accessToken];
 	[request addRequestHeader:@"X-Authorization" value:accessTokenHeaderValue];
 }
 
@@ -70,6 +73,7 @@
 	deserializeSelector = ds;
     NSURL *earl = [NSURL URLWithString:urlString];
 	request = [ECAuthenticatedFetcher newAuthenticatedGETRequestWithURL:earl];
+	NSLog(@"loading data from URL: %@", earl);
     [self performSelectorInBackground:@selector(loadDataInBackground) withObject:nil];
 }
 
@@ -83,11 +87,28 @@
 	}
 	
 	request = formRequest;
+	NSLog(@"posting params to URL: %@: %@", earl, params);
     [self performSelectorInBackground:@selector(loadDataInBackground) withObject:nil];
 }
 
 - (void) loadDataInBackground {
     NSAutoreleasePool *autoreleasePool = [[NSAutoreleasePool alloc] init];
+	// First, if we don't have an access token, but have an unexpired grant token
+	// get a new access token transparently
+	ECSession *session = [ECSession sharedSession];
+	if (![session hasUnexpiredAccessToken] && !ignoreAuthentication) {
+		if ([session hasUnexpiredGrantToken]) {
+			//TODO don't do this if the user shouldn't be remembered
+			ECTokenFetcher *tokenFetcher = [[ECTokenFetcher alloc] init];
+			AccessToken *accessToken = [tokenFetcher syncronousFetchAccessTokenWithAccessGrant:session.currentGrantToken.accessToken];
+			session.currentAccessToken = accessToken;
+			[ECAuthenticatedFetcher setCommonHeadersForAuthenticatedRequest:request];
+		} else {
+			// return error so caller knows to present login?
+		}
+	}
+	
+	
 	[request startSynchronous];
     NSError *error = [request error];
     id parsedData = nil;
@@ -123,8 +144,14 @@
 	if (deserializationError) {
 		objectToReturn = deserializationError;
 	} else if ([parsedDictionary objectForKey:@"error"]) {
-		NSDictionary *targetDictionary = [parsedDictionary objectForKey:@"error"];
-		NSString *errorMessage = [targetDictionary objectForKey:@"message"];
+		id targetObject = [parsedDictionary objectForKey:@"error"];
+		NSString *errorMessage = nil;
+		if ([targetObject isKindOfClass:[NSDictionary class]]) {
+			NSDictionary *targetDictionary = (NSDictionary *)targetObject;
+			errorMessage = [targetDictionary objectForKey:@"message"];
+		} else {
+			errorMessage = (NSString *)targetObject;
+		}
 		NSDictionary *info = [NSDictionary dictionaryWithObject:errorMessage forKey:@"message"];
 		objectToReturn = [NSError errorWithDomain:EC_API_ERROR_DOMAIN code:responseStatusCode userInfo:info];
 	}

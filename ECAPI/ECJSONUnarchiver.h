@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "ECCoder.h"
 
+extern NSString* const ISO8601Format;
+
 @interface ECJSONUnarchiver : NSCoder <ECCoder> {
     NSDictionary *dictionary;
 }
@@ -20,6 +22,5 @@
 - (NSArray *) decodeArrayForKey:(NSString *)key ofType:(Class)clazz;
 - (NSDate *) decodeDateForKey:(NSString *)key;
 - (NSDecimalNumber *) decodeNumberForKey:(NSString *)key;
-
 
 @end
