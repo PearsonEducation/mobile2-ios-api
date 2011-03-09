@@ -4,7 +4,7 @@
 //
 //  Created by Brad Umbaugh on 3/4/11.
 //  Copyright 2011 EffectiveUI. All rights reserved.
-//
+//  
 
 #import "ActivityStreamItem.h"
 #import "ECCoder.h"
