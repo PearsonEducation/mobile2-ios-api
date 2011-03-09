@@ -18,7 +18,9 @@
     NSString* verb;
     ActivityStreamObject* object;
     ActivityStreamTarget* target;
+    NSString* friendlyDate;
 }
+
 
 @property (nonatomic, retain) NSString* id;
 @property (nonatomic, retain) NSDate* postedTime;
@@ -26,5 +28,6 @@
 @property (nonatomic, retain) NSString* verb;
 @property (nonatomic, retain) ActivityStreamObject* object;
 @property (nonatomic, retain) ActivityStreamTarget* target;
+@property (nonatomic, retain) NSString* friendlyDate;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "ActivityStreamItem.h"
 #import "ECCoder.h"
+#import "NSDateUtilities.h"
 
 @implementation ActivityStreamItem
 
@@ -17,6 +18,7 @@
 @synthesize verb;
 @synthesize object;
 @synthesize target;
+@synthesize friendlyDate;
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
@@ -30,7 +32,12 @@
 	return self;
 }
 
+- (NSString*) description {
+    return [NSString stringWithFormat:@"%@", [postedTime iso8601DateString]];
+}
+
 - (void) dealloc {
+    self.friendlyDate = nil;
     self.id = nil;
     self.postedTime = nil;
     self.actor = nil;

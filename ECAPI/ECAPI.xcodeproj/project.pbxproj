@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = A2140EB313281A9C001C3DFC /* DateCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2140EB613281A9C001C3DFC /* DateCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2140EB413281A9C001C3DFC /* DateCalculator.m */; };
 		A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A251431D13251E16002D66B7 /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A251431A13251E16002D66B7 /* NSDateUtilities.m */; };
@@ -185,6 +187,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A2140EB313281A9C001C3DFC /* DateCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCalculator.h; sourceTree = "<group>"; };
+		A2140EB413281A9C001C3DFC /* DateCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCalculator.m; sourceTree = "<group>"; };
 		A251431913251E16002D66B7 /* NSDateUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateUtilities.h; sourceTree = "<group>"; };
 		A251431A13251E16002D66B7 /* NSDateUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateUtilities.m; sourceTree = "<group>"; };
 		A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamFetcherTestCase.m; sourceTree = "<group>"; };
@@ -403,6 +407,8 @@
 			children = (
 				A251431913251E16002D66B7 /* NSDateUtilities.h */,
 				A251431A13251E16002D66B7 /* NSDateUtilities.m */,
+				A2140EB313281A9C001C3DFC /* DateCalculator.h */,
+				A2140EB413281A9C001C3DFC /* DateCalculator.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				A27692111321715C00FDA805 /* ActivityStreamFetcher.h in Headers */,
 				A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */,
 				A2AC045313255D910069C90D /* ActivityStream.h in Headers */,
+				A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,6 +806,7 @@
 				A27692131321715C00FDA805 /* ActivityStreamFetcher.m in Sources */,
 				A251431D13251E16002D66B7 /* NSDateUtilities.m in Sources */,
 				A2AC045513255D910069C90D /* ActivityStream.m in Sources */,
+				A2140EB613281A9C001C3DFC /* DateCalculator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
