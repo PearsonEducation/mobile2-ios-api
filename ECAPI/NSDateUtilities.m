@@ -29,7 +29,9 @@ NSString* const ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
         return NSLocalizedString(@"Yesterday", @"The word meaning 'yesterday'");
     } else {
         NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
-        [formatter setDateStyle:NSDateFormatterMediumStyle];
+        //The following format does: MMMM dd, yyyy
+        //[formatter setDateStyle:NSDateFormatterMediumStyle];
+        [formatter setDateFormat:@"MMM d"];
         return [formatter stringFromDate:self];
     }
 }
