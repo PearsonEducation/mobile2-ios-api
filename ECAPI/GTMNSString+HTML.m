@@ -401,7 +401,7 @@ static int EscapeMapCompare(const void *ucharVoid, const void *mapVoid) {
     
     if (!buffer || !data2) {
         // COV_NF_START
-//        _GTMDevLog(@"Unable to allocate buffer or data2");
+        _GTMDevLog(@"Unable to allocate buffer or data2");
         return nil;
         // COV_NF_END
     }

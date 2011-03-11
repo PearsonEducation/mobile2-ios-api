@@ -13,6 +13,7 @@
 #import "SBJsonParser.h"
 #import "AccessToken.h"
 #import "ECTokenFetcher.h"
+#import "GTMNSString+HTML.h"
 
 @interface ECAuthenticatedFetcher (PrivateMethods)
 + (void) setCommonHeadersForAuthenticatedRequest:(ASIHTTPRequest *)request;
@@ -137,7 +138,10 @@
 - (id) parseReturnedData {
 	NSError *deserializationError = nil;
 	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-	SBJsonParser *parser = [[SBJsonParser alloc] init];
+    //NSLog(@"JSONSTRING: %@",jsonString);
+    //jsonString = [jsonString gtm_stringByUnescapingFromHTML];
+	
+    SBJsonParser *parser = [[SBJsonParser alloc] init];
 	NSDictionary *parsedDictionary = (NSDictionary *)[parser objectWithString:jsonString error:&deserializationError];
 	
 	id objectToReturn = parsedDictionary;
