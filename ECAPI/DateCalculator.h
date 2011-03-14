@@ -11,11 +11,10 @@
 
 @interface DateCalculator : NSObject {
     NSCalendar* calendar;
-    NSDate* today;
     NSDateComponents* scratchComponents;
 }
 
-- (id)initWithCalendar:(NSCalendar*)cal andTodayDate:(NSDate*)todayDate;
+- (id)initWithCalendar:(NSCalendar*)cal;
 - (NSDate*)midnight:(int)num fromDate:(NSDate*)date;
 - (BOOL)date:(NSDate*)date1 comesBefore:(NSDate*)date2 inclusive:(BOOL)inclusive;
 - (BOOL)date:(NSDate*)date1 comesAfter:(NSDate*)date2 inclusive:(BOOL)inclusive;
@@ -23,6 +22,5 @@
 - (NSDate*)addDays:(int)days toDate:(NSDate*)date;
 
 @property (nonatomic, retain) NSCalendar* calendar;
-@property (nonatomic, retain) NSDate* today;
 
 @end

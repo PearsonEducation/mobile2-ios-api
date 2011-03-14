@@ -12,12 +12,10 @@
 @implementation DateCalculator
 
 @synthesize calendar;
-@synthesize today;
 
-- (id)initWithCalendar:(NSCalendar*)cal andTodayDate:(NSDate*)todayDate {
+- (id)initWithCalendar:(NSCalendar*)cal {
     if ((self = [super init])) {
         self.calendar = cal;
-        self.today = todayDate;
         scratchComponents = [[NSDateComponents alloc] init];
     }
     return self;
@@ -61,7 +59,6 @@
 
 - (void) dealloc {
     self.calendar = nil;
-    self.today = nil;
     [scratchComponents release];
     [super dealloc];
 }
