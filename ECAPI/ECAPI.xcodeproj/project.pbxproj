@@ -40,6 +40,10 @@
 		A27692291321ABF600FDA805 /* ActivityStreamObjectDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */; };
 		A276922D1321ACF300FDA805 /* ActivityStreamTargetDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */; };
 		A27692311321ADCD00FDA805 /* ActivityStreamTarget.json in Resources */ = {isa = PBXBuildFile; fileRef = A27692301321ADC600FDA805 /* ActivityStreamTarget.json */; };
+		A2A9674B132E817D00554238 /* GTMNSString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = A2A96749132E817D00554238 /* GTMNSString+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2A9674C132E817D00554238 /* GTMNSString+HTML.h in Headers */ = {isa = PBXBuildFile; fileRef = A2A96749132E817D00554238 /* GTMNSString+HTML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2A9674D132E817D00554238 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A9674A132E817D00554238 /* GTMNSString+HTML.m */; };
+		A2A9674E132E817D00554238 /* GTMNSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = A2A9674A132E817D00554238 /* GTMNSString+HTML.m */; };
 		A2AC045313255D910069C90D /* ActivityStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A2AC045113255D8F0069C90D /* ActivityStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2AC045413255D910069C90D /* ActivityStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A2AC045113255D8F0069C90D /* ActivityStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2AC045513255D910069C90D /* ActivityStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AC045213255D8F0069C90D /* ActivityStream.m */; };
@@ -208,6 +212,8 @@
 		A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamObjectDeserializationTestCase.m; sourceTree = "<group>"; };
 		A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamTargetDeserializationTestCase.m; sourceTree = "<group>"; };
 		A27692301321ADC600FDA805 /* ActivityStreamTarget.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamTarget.json; sourceTree = "<group>"; };
+		A2A96749132E817D00554238 /* GTMNSString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GTMNSString+HTML.h"; sourceTree = "<group>"; };
+		A2A9674A132E817D00554238 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		A2AC045113255D8F0069C90D /* ActivityStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStream.h; sourceTree = "<group>"; };
 		A2AC045213255D8F0069C90D /* ActivityStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStream.m; sourceTree = "<group>"; };
 		A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamActor.json; sourceTree = "<group>"; };
@@ -405,6 +411,8 @@
 		A251431713251DF9002D66B7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A2A96749132E817D00554238 /* GTMNSString+HTML.h */,
+				A2A9674A132E817D00554238 /* GTMNSString+HTML.m */,
 				A251431913251E16002D66B7 /* NSDateUtilities.h */,
 				A251431A13251E16002D66B7 /* NSDateUtilities.m */,
 				A2140EB313281A9C001C3DFC /* DateCalculator.h */,
@@ -633,6 +641,7 @@
 				A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */,
 				A2AC045313255D910069C90D /* ActivityStream.h in Headers */,
 				A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */,
+				A2A9674B132E817D00554238 /* GTMNSString+HTML.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -661,6 +670,7 @@
 				A27692121321715C00FDA805 /* ActivityStreamFetcher.h in Headers */,
 				A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */,
 				A2AC045413255D910069C90D /* ActivityStream.h in Headers */,
+				A2A9674C132E817D00554238 /* GTMNSString+HTML.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,6 +817,7 @@
 				A251431D13251E16002D66B7 /* NSDateUtilities.m in Sources */,
 				A2AC045513255D910069C90D /* ActivityStream.m in Sources */,
 				A2140EB613281A9C001C3DFC /* DateCalculator.m in Sources */,
+				A2A9674D132E817D00554238 /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,6 +877,7 @@
 				A276922D1321ACF300FDA805 /* ActivityStreamTargetDeserializationTestCase.m in Sources */,
 				A251431E13251E16002D66B7 /* NSDateUtilities.m in Sources */,
 				A2AC045613255D910069C90D /* ActivityStream.m in Sources */,
+				A2A9674E132E817D00554238 /* GTMNSString+HTML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

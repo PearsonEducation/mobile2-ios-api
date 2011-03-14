@@ -8,6 +8,7 @@
 
 #import "ECJSONUnarchiver.h"
 #import "NSDateUtilities.h"
+#import "GTMNSString+HTML.h"
 
 @implementation ECJSONUnarchiver
 
@@ -52,6 +53,10 @@
 	if (!val || val == [NSNull null]) {
 		return nil;
 	}
+    // unencode numeric HTML entities
+    if ([val isKindOfClass:[NSString class]]) {
+        val = [(NSString*)val gtm_stringByUnescapingFromHTML];
+    }
 	return val;
 }
 
