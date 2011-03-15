@@ -35,7 +35,7 @@
     
     // Test some assertions
     GHAssertEqualStrings(activityStreamItem.id,@"http://m-api.ecollege.com/courses/4282262/threadeddiscussions/100103637080/topics/4048336/responses/128179417", @"Expecting id to equal: http://m-api.ecollege.com/courses/4282262/threadeddiscussions/100103637080/topics/4048336/responses/128179417" );
-    GHAssertEqualStrings([activityStreamItem.postedTime iso8601DateString], @"2011-02-22T17:08:24Z", @"Expected date string representations to match");
+    GHAssertEqualStrings([activityStreamItem.postedTime iso8601DateString], @"2011-02-22T10:08:24Z", @"Expected date string representations to match");                          
     GHAssertNotNil(activityStreamItem.actor, @"Actor should not be nil");
     GHAssertEqualStrings(activityStreamItem.verb, @"post", @"Expected verb to be 'post'");
     GHAssertNotNil(activityStreamItem.object, @"Object should not be nil");

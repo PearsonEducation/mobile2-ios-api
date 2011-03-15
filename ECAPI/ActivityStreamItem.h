@@ -21,6 +21,7 @@
     NSString* friendlyDate;
 }
 
+- (NSString*)getType;
 
 @property (nonatomic, retain) NSString* id;
 @property (nonatomic, retain) NSDate* postedTime;

@@ -35,7 +35,7 @@
     
     // Test some assertions
     GHAssertEquals(activityStreamTarget.courseId, 4282262, @"Expected courseId to be 4282262");
-    GHAssertEquals(activityStreamTarget.referenceId, 4048336, @"Expected referenceId to be 4048336");
+    GHAssertEqualStrings(activityStreamTarget.referenceId, @"4048336", @"Expected referenceId to be '4048336'");
     GHAssertEqualStrings(activityStreamTarget.id, @"http://m-api.ecollege.com/courses/4282262/threadeddiscussions/100103637080/topics/4048336", @"Expected id to be 'http://m-api.ecollege.com/courses/4282262/threadeddiscussions/100103637080/topics/4048336'");
     GHAssertEqualStrings(activityStreamTarget.title, @"Get to Know Your Classmates", @"Expected referenceId to be 'Get to Know Your Classmates'");
     GHAssertEqualStrings(activityStreamTarget.summary, @"\r\n<p>Get to know your classmates. Please tell everyone the following things: </p>\r\n<ul>\r\n<li>Name, </li><li>Major </li><li>Year in School, </li><li>Special interests and Activities </li><li>What you want to gain from this course </li></ul>\r\n<p>Please respond to at least 5 of your classmates after posting your introduction.\r\n</p>\r\n", @"Expected referenceId to be '\r\n<p>Get to know your classmates. Please tell everyone the following things: </p>\r\n<ul>\r\n<li>Name, </li><li>Major </li><li>Year in School, </li><li>Special interests and Activities </li><li>What you want to gain from this course </li></ul>\r\n<p>Please respond to at least 5 of your classmates after posting your introduction.\r\n</p>\r\n'");

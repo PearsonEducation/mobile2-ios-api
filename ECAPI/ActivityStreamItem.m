@@ -9,6 +9,7 @@
 #import "ActivityStreamItem.h"
 #import "ECCoder.h"
 #import "NSDateUtilities.h"
+#import "ActivityStreamObject.h"
 
 @implementation ActivityStreamItem
 
@@ -34,6 +35,14 @@
 
 - (NSString*) description {
     return [NSString stringWithFormat:@"%@", [postedTime iso8601DateString]];
+}
+
+- (NSString*)getType {
+    if (self.object && ![self.object.objectType isEqualToString:@""]) {
+        return self.object.objectType;
+    } else {
+        return nil;
+    }
 }
 
 - (void) dealloc {

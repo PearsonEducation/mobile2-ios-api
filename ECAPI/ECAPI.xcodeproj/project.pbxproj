@@ -48,6 +48,14 @@
 		A2AC045413255D910069C90D /* ActivityStream.h in Headers */ = {isa = PBXBuildFile; fileRef = A2AC045113255D8F0069C90D /* ActivityStream.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2AC045513255D910069C90D /* ActivityStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AC045213255D8F0069C90D /* ActivityStream.m */; };
 		A2AC045613255D910069C90D /* ActivityStream.m in Sources */ = {isa = PBXBuildFile; fileRef = A2AC045213255D8F0069C90D /* ActivityStream.m */; };
+		A2C36373132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C36371132FCAE6007BA0BD /* GradebookItemGradeFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2C36374132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C36371132FCAE6007BA0BD /* GradebookItemGradeFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2C36375132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36372132FCAE6007BA0BD /* GradebookItemGradeFetcher.m */; };
+		A2C36376132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36372132FCAE6007BA0BD /* GradebookItemGradeFetcher.m */; };
+		A2C3637A132FD67D007BA0BD /* GradebookItemGrade.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C36378132FD676007BA0BD /* GradebookItemGrade.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2C3637B132FD67D007BA0BD /* GradebookItemGrade.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C36378132FD676007BA0BD /* GradebookItemGrade.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2C3637C132FD67D007BA0BD /* GradebookItemGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36379132FD678007BA0BD /* GradebookItemGrade.m */; };
+		A2C3637D132FD67D007BA0BD /* GradebookItemGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36379132FD678007BA0BD /* GradebookItemGrade.m */; };
 		A2FC610B1321AEB300F82864 /* ActivityStreamActor.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */; };
 		A2FC610D1321AECD00F82864 /* ActivityStreamObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */; };
 		AA747D9F0F9514B9006C5449 /* ECAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */; settings = {ATTRIBUTES = (); }; };
@@ -216,6 +224,10 @@
 		A2A9674A132E817D00554238 /* GTMNSString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "GTMNSString+HTML.m"; sourceTree = "<group>"; };
 		A2AC045113255D8F0069C90D /* ActivityStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStream.h; sourceTree = "<group>"; };
 		A2AC045213255D8F0069C90D /* ActivityStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStream.m; sourceTree = "<group>"; };
+		A2C36371132FCAE6007BA0BD /* GradebookItemGradeFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradebookItemGradeFetcher.h; sourceTree = "<group>"; };
+		A2C36372132FCAE6007BA0BD /* GradebookItemGradeFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradebookItemGradeFetcher.m; sourceTree = "<group>"; };
+		A2C36378132FD676007BA0BD /* GradebookItemGrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradebookItemGrade.h; sourceTree = "<group>"; };
+		A2C36379132FD678007BA0BD /* GradebookItemGrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradebookItemGrade.m; sourceTree = "<group>"; };
 		A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamActor.json; sourceTree = "<group>"; };
 		A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamObject.json; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -531,6 +543,8 @@
 				A276920A1321681300FDA805 /* ActivityStreamTarget.m */,
 				A2AC045113255D8F0069C90D /* ActivityStream.h */,
 				A2AC045213255D8F0069C90D /* ActivityStream.m */,
+				A2C36378132FD676007BA0BD /* GradebookItemGrade.h */,
+				A2C36379132FD678007BA0BD /* GradebookItemGrade.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -559,6 +573,8 @@
 				EAD2DFFB1318239700A4D89C /* ECTokenFetcher.m */,
 				A276920F1321715900FDA805 /* ActivityStreamFetcher.h */,
 				A27692101321715A00FDA805 /* ActivityStreamFetcher.m */,
+				A2C36371132FCAE6007BA0BD /* GradebookItemGradeFetcher.h */,
+				A2C36372132FCAE6007BA0BD /* GradebookItemGradeFetcher.m */,
 			);
 			name = Fetchers;
 			sourceTree = "<group>";
@@ -642,6 +658,8 @@
 				A2AC045313255D910069C90D /* ActivityStream.h in Headers */,
 				A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */,
 				A2A9674B132E817D00554238 /* GTMNSString+HTML.h in Headers */,
+				A2C36373132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */,
+				A2C3637A132FD67D007BA0BD /* GradebookItemGrade.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -671,6 +689,8 @@
 				A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */,
 				A2AC045413255D910069C90D /* ActivityStream.h in Headers */,
 				A2A9674C132E817D00554238 /* GTMNSString+HTML.h in Headers */,
+				A2C36374132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */,
+				A2C3637B132FD67D007BA0BD /* GradebookItemGrade.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +838,8 @@
 				A2AC045513255D910069C90D /* ActivityStream.m in Sources */,
 				A2140EB613281A9C001C3DFC /* DateCalculator.m in Sources */,
 				A2A9674D132E817D00554238 /* GTMNSString+HTML.m in Sources */,
+				A2C36375132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */,
+				A2C3637C132FD67D007BA0BD /* GradebookItemGrade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -878,6 +900,8 @@
 				A251431E13251E16002D66B7 /* NSDateUtilities.m in Sources */,
 				A2AC045613255D910069C90D /* ActivityStream.m in Sources */,
 				A2A9674E132E817D00554238 /* GTMNSString+HTML.m in Sources */,
+				A2C36376132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */,
+				A2C3637D132FD67D007BA0BD /* GradebookItemGrade.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
