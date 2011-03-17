@@ -18,11 +18,13 @@
 @synthesize title;
 @synthesize summary;
 @synthesize objectType;
+@synthesize pointsPossible;
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
         self.courseId       = [coder decodeIntegerForKey:@"courseId"];
-        self.referenceId    = [NSString stringWithFormat:@"%d", [coder decodeIntegerForKey:@"referenceId"]];
+        self.referenceId    = [coder decodeObjectForKey:@"referenceId"];
+        self.pointsPossible = [coder decodeNumberForKey:@"pointsPossible"];
         self.id             = [coder decodeObjectForKey:@"id"];
         self.title          = [coder decodeObjectForKey:@"title"];
         self.summary        = [coder decodeObjectForKey:@"summary"];
@@ -33,6 +35,7 @@
 
 - (void) dealloc {
     self.id = nil;
+    self.pointsPossible = nil;
     self.referenceId = nil;
     self.title = nil;
     self.summary = nil;
