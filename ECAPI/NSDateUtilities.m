@@ -39,7 +39,7 @@ NSString* const ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
 - (NSString*)friendlyDateWithTimeFor:(int)daysFromToday {
     NSString* day = [self friendlyDateFor:daysFromToday];
     NSDateFormatter* formatter = [[[NSDateFormatter alloc] init] autorelease];
-    [formatter setDateFormat:@"h:m a"];
+    [formatter setDateFormat:@"h:mm a"];
     NSString* time = [formatter stringFromDate:self];
     return [NSString stringWithFormat:@"%@ %@",day,time];
 }

@@ -19,6 +19,14 @@
 @synthesize author;
 @synthesize attachments;
 
+- (NSString*)nameOfSubmissionStudent {
+    if (submissionStudent && submissionStudent.firstName && submissionStudent.lastName) {
+        return [NSString stringWithFormat:@"%@ %@", submissionStudent.firstName, submissionStudent.lastName];
+    } else {
+        return NSLocalizedString(@"Unknown",nil);
+    }
+}
+
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
         self.dropboxAttachmentId    = [coder decodeIntegerForKey:@"id"];

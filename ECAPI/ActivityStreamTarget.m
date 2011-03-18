@@ -23,7 +23,7 @@
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
         self.courseId       = [coder decodeIntegerForKey:@"courseId"];
-        self.referenceId    = [coder decodeObjectForKey:@"referenceId"];
+        self.referenceId    = [NSString stringWithFormat:@"%@",[coder decodeObjectForKey:@"referenceId"]];
         self.pointsPossible = [coder decodeNumberForKey:@"pointsPossible"];
         self.id             = [coder decodeObjectForKey:@"id"];
         self.title          = [coder decodeObjectForKey:@"title"];

@@ -18,6 +18,8 @@
     NSArray* attachments;
 }
 
+- (NSString*)nameOfSubmissionStudent;
+
 @property (nonatomic, assign) NSInteger dropboxAttachmentId;
 @property (nonatomic, retain) NSDate* date;
 @property (nonatomic, retain) NSString* comments;

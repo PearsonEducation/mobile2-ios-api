@@ -8,6 +8,7 @@
 
 #import "DropboxMessageFetcher.h"
 #import "ECJSONUnarchiver.h"
+#import "DropboxMessage.h"
 
 @implementation DropboxMessageFetcher
 
@@ -18,14 +19,15 @@
 
 - (id) deserializeMe:(id)parsedData {
 	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
-//	if ([parsedDictionary objectForKey:@"activityStream"]) {
-//		NSDictionary *targetDictionary = [parsedDictionary objectForKey:@"activityStream"];
-//		ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
-//        ActivityStream* activityStream = [[[ActivityStream alloc] initWithCoder:unarchiver] autorelease];
-//        return activityStream;
-//	} else {
-//		return nil;
-//	}
+	if ([parsedDictionary objectForKey:@"messages"]) {
+        NSArray* messages = [parsedDictionary objectForKey:@"messages"];
+        NSDictionary* messageDictionary = [messages objectAtIndex:0];
+		ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:messageDictionary];
+        DropboxMessage* dropboxMessage = [[[DropboxMessage alloc] initWithCoder:unarchiver] autorelease];
+        return dropboxMessage;
+	} else {
+		return nil;
+	}
     return nil;
 }
 
