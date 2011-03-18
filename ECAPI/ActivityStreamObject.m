@@ -19,6 +19,7 @@
 @synthesize objectType;
 @synthesize letterGrade;
 @synthesize pointsAchieved;
+@synthesize attachments;
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
@@ -29,12 +30,14 @@
         self.summary        = [coder decodeObjectForKey:@"summary"];
         self.objectType     = [coder decodeObjectForKey:@"objectType"];
         self.letterGrade    = [coder decodeObjectForKey:@"letterGrade"];
+        self.attachments    = [coder decodeObjectForKey:@"attachments"];
         self.pointsAchieved = [coder decodeNumberForKey:@"pointsAchieved"];
     }
 	return self;
 }
 
 - (void) dealloc {
+    self.attachments = nil;
     self.referenceId = nil;
     self.id = nil;
     self.title = nil;

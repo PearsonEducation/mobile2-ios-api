@@ -13,7 +13,7 @@
 
 @implementation ActivityStreamItem
 
-@synthesize id;
+@synthesize activityStreamItemId;
 @synthesize postedTime;
 @synthesize actor;
 @synthesize verb;
@@ -23,12 +23,12 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.id             = [coder decodeObjectForKey:@"id"];
-        self.postedTime     = [coder decodeDateForKey:@"postedTime"];
-        self.actor          = [coder decodeObjectForKey:@"actor" ofType:[ActivityStreamActor class]];
-        self.verb           = [coder decodeObjectForKey:@"verb"];
-        self.object         = [coder decodeObjectForKey:@"object" ofType:[ActivityStreamObject class]];
-        self.target         = [coder decodeObjectForKey:@"target" ofType:[ActivityStreamTarget class]];
+        self.activityStreamItemId             = [coder decodeObjectForKey:@"id"];
+        self.postedTime                       = [coder decodeDateForKey:@"postedTime"];
+        self.actor                            = [coder decodeObjectForKey:@"actor" ofType:[ActivityStreamActor class]];
+        self.verb                             = [coder decodeObjectForKey:@"verb"];
+        self.object                           = [coder decodeObjectForKey:@"object" ofType:[ActivityStreamObject class]];
+        self.target                           = [coder decodeObjectForKey:@"target" ofType:[ActivityStreamTarget class]];
     }
 	return self;
 }
@@ -47,7 +47,7 @@
 
 - (void) dealloc {
     self.friendlyDate = nil;
-    self.id = nil;
+    self.activityStreamItemId = nil;
     self.postedTime = nil;
     self.actor = nil;
     self.verb = nil;

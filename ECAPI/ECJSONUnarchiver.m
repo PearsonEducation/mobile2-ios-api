@@ -90,6 +90,19 @@
 	return [obj autorelease];
 }
 
+- (NSArray*)decodeArrayOfStringsForKey:(NSString*)key {
+//    id val = [dictionary objectForKey:key];
+//    if( !val || val == [NSNull null]) {
+//        return nil;
+//    }
+//    NSMutableArray* m_arr = [NSMutableArray array];
+//    for (NSDictionary *dict in (NSArray*)val) {
+//        NSString* string = 
+//    }
+//    
+    return nil;
+}
+
 - (NSArray*) decodeArrayForKey:(NSString *)key ofType:(Class)clazz {
 	id val = [dictionary objectForKey:key];
 	if (!val || val == [NSNull null]) {

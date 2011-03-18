@@ -15,12 +15,12 @@ extern NSString* const ISO8601Format;
     NSDictionary *dictionary;
 }
 
-- (id) initWithDictionary:(NSDictionary*)dict;
-+ (id) unarchiverWithDictionary:(NSDictionary*)dict;
-
-- (id) decodeObjectForKey:(NSString *)key ofType:(Class)clazz;
-- (NSArray *) decodeArrayForKey:(NSString *)key ofType:(Class)clazz;
-- (NSDate *) decodeDateForKey:(NSString *)key;
-- (NSDecimalNumber *) decodeNumberForKey:(NSString *)key;
+- (id)initWithDictionary:(NSDictionary*)dict;
++ (id)unarchiverWithDictionary:(NSDictionary*)dict;
+- (id)decodeObjectForKey:(NSString*)key ofType:(Class)clazz;
+- (NSArray*)decodeArrayForKey:(NSString *)key ofType:(Class)clazz;
+- (NSArray*)decodeArrayOfStringsForKey:(NSString*)key;
+- (NSDate*)decodeDateForKey:(NSString*)key;
+- (NSDecimalNumber*)decodeNumberForKey:(NSString*)key;
 
 @end

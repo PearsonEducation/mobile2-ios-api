@@ -17,6 +17,7 @@
     NSString* summary;
     NSString* objectType;
     NSString* letterGrade;
+    NSArray* attachments;
     NSDecimalNumber* pointsAchieved;
 }
 
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) NSString* summary;
 @property (nonatomic, retain) NSString* objectType;
 @property (nonatomic, retain) NSString* letterGrade;
+@property (nonatomic, retain) NSArray* attachments;
 @property (nonatomic, retain) NSDecimalNumber* pointsAchieved;
 
 @end

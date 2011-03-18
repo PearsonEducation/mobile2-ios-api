@@ -56,6 +56,18 @@
 		A2C3637B132FD67D007BA0BD /* GradebookItemGrade.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C36378132FD676007BA0BD /* GradebookItemGrade.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2C3637C132FD67D007BA0BD /* GradebookItemGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36379132FD678007BA0BD /* GradebookItemGrade.m */; };
 		A2C3637D132FD67D007BA0BD /* GradebookItemGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36379132FD678007BA0BD /* GradebookItemGrade.m */; };
+		A2EE2B72133293290059DFAD /* DropboxAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = A2EE2B70133293240059DFAD /* DropboxAttachment.h */; };
+		A2EE2B73133293290059DFAD /* DropboxAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = A2EE2B70133293240059DFAD /* DropboxAttachment.h */; };
+		A2EE2B74133293290059DFAD /* DropboxAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE2B71133293270059DFAD /* DropboxAttachment.m */; };
+		A2EE2B75133293290059DFAD /* DropboxAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE2B71133293270059DFAD /* DropboxAttachment.m */; };
+		A2EE2B79133293400059DFAD /* DropboxMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A2EE2B771332933A0059DFAD /* DropboxMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2EE2B7A133293400059DFAD /* DropboxMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = A2EE2B771332933A0059DFAD /* DropboxMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2EE2B7B133293400059DFAD /* DropboxMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE2B781332933D0059DFAD /* DropboxMessage.m */; };
+		A2EE2B7C133293400059DFAD /* DropboxMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE2B781332933D0059DFAD /* DropboxMessage.m */; };
+		A2EE2B7F1332A30F0059DFAD /* DropboxMessageFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2EE2B7D1332A30F0059DFAD /* DropboxMessageFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2EE2B801332A30F0059DFAD /* DropboxMessageFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2EE2B7D1332A30F0059DFAD /* DropboxMessageFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2EE2B811332A30F0059DFAD /* DropboxMessageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE2B7E1332A30F0059DFAD /* DropboxMessageFetcher.m */; };
+		A2EE2B821332A30F0059DFAD /* DropboxMessageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE2B7E1332A30F0059DFAD /* DropboxMessageFetcher.m */; };
 		A2FC610B1321AEB300F82864 /* ActivityStreamActor.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */; };
 		A2FC610D1321AECD00F82864 /* ActivityStreamObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */; };
 		AA747D9F0F9514B9006C5449 /* ECAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */; settings = {ATTRIBUTES = (); }; };
@@ -228,6 +240,12 @@
 		A2C36372132FCAE6007BA0BD /* GradebookItemGradeFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradebookItemGradeFetcher.m; sourceTree = "<group>"; };
 		A2C36378132FD676007BA0BD /* GradebookItemGrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradebookItemGrade.h; sourceTree = "<group>"; };
 		A2C36379132FD678007BA0BD /* GradebookItemGrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradebookItemGrade.m; sourceTree = "<group>"; };
+		A2EE2B70133293240059DFAD /* DropboxAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxAttachment.h; sourceTree = "<group>"; };
+		A2EE2B71133293270059DFAD /* DropboxAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxAttachment.m; sourceTree = "<group>"; };
+		A2EE2B771332933A0059DFAD /* DropboxMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxMessage.h; sourceTree = "<group>"; };
+		A2EE2B781332933D0059DFAD /* DropboxMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxMessage.m; sourceTree = "<group>"; };
+		A2EE2B7D1332A30F0059DFAD /* DropboxMessageFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxMessageFetcher.h; sourceTree = "<group>"; };
+		A2EE2B7E1332A30F0059DFAD /* DropboxMessageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxMessageFetcher.m; sourceTree = "<group>"; };
 		A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamActor.json; sourceTree = "<group>"; };
 		A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamObject.json; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -545,6 +563,10 @@
 				A2AC045213255D8F0069C90D /* ActivityStream.m */,
 				A2C36378132FD676007BA0BD /* GradebookItemGrade.h */,
 				A2C36379132FD678007BA0BD /* GradebookItemGrade.m */,
+				A2EE2B70133293240059DFAD /* DropboxAttachment.h */,
+				A2EE2B71133293270059DFAD /* DropboxAttachment.m */,
+				A2EE2B771332933A0059DFAD /* DropboxMessage.h */,
+				A2EE2B781332933D0059DFAD /* DropboxMessage.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -575,6 +597,8 @@
 				A27692101321715A00FDA805 /* ActivityStreamFetcher.m */,
 				A2C36371132FCAE6007BA0BD /* GradebookItemGradeFetcher.h */,
 				A2C36372132FCAE6007BA0BD /* GradebookItemGradeFetcher.m */,
+				A2EE2B7D1332A30F0059DFAD /* DropboxMessageFetcher.h */,
+				A2EE2B7E1332A30F0059DFAD /* DropboxMessageFetcher.m */,
 			);
 			name = Fetchers;
 			sourceTree = "<group>";
@@ -660,6 +684,9 @@
 				A2A9674B132E817D00554238 /* GTMNSString+HTML.h in Headers */,
 				A2C36373132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */,
 				A2C3637A132FD67D007BA0BD /* GradebookItemGrade.h in Headers */,
+				A2EE2B72133293290059DFAD /* DropboxAttachment.h in Headers */,
+				A2EE2B79133293400059DFAD /* DropboxMessage.h in Headers */,
+				A2EE2B7F1332A30F0059DFAD /* DropboxMessageFetcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +718,9 @@
 				A2A9674C132E817D00554238 /* GTMNSString+HTML.h in Headers */,
 				A2C36374132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */,
 				A2C3637B132FD67D007BA0BD /* GradebookItemGrade.h in Headers */,
+				A2EE2B73133293290059DFAD /* DropboxAttachment.h in Headers */,
+				A2EE2B7A133293400059DFAD /* DropboxMessage.h in Headers */,
+				A2EE2B801332A30F0059DFAD /* DropboxMessageFetcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,6 +870,9 @@
 				A2A9674D132E817D00554238 /* GTMNSString+HTML.m in Sources */,
 				A2C36375132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */,
 				A2C3637C132FD67D007BA0BD /* GradebookItemGrade.m in Sources */,
+				A2EE2B74133293290059DFAD /* DropboxAttachment.m in Sources */,
+				A2EE2B7B133293400059DFAD /* DropboxMessage.m in Sources */,
+				A2EE2B811332A30F0059DFAD /* DropboxMessageFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +935,9 @@
 				A2A9674E132E817D00554238 /* GTMNSString+HTML.m in Sources */,
 				A2C36376132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */,
 				A2C3637D132FD67D007BA0BD /* GradebookItemGrade.m in Sources */,
+				A2EE2B75133293290059DFAD /* DropboxAttachment.m in Sources */,
+				A2EE2B7C133293400059DFAD /* DropboxMessage.m in Sources */,
+				A2EE2B821332A30F0059DFAD /* DropboxMessageFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

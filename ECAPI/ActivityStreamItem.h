@@ -12,7 +12,7 @@
 #import "ActivityStreamTarget.h"
 
 @interface ActivityStreamItem : NSObject {
-    NSString* id;
+    NSString* activityStreamItemId;
     NSDate* postedTime;
     ActivityStreamActor* actor;
     NSString* verb;
@@ -23,7 +23,7 @@
 
 - (NSString*)getType;
 
-@property (nonatomic, retain) NSString* id;
+@property (nonatomic, retain) NSString* activityStreamItemId;
 @property (nonatomic, retain) NSDate* postedTime;
 @property (nonatomic, retain) ActivityStreamActor* actor;
 @property (nonatomic, retain) NSString* verb;
