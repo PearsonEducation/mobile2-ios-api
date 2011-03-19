@@ -40,6 +40,10 @@
 		A27692291321ABF600FDA805 /* ActivityStreamObjectDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */; };
 		A276922D1321ACF300FDA805 /* ActivityStreamTargetDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */; };
 		A27692311321ADCD00FDA805 /* ActivityStreamTarget.json in Resources */ = {isa = PBXBuildFile; fileRef = A27692301321ADC600FDA805 /* ActivityStreamTarget.json */; };
+		A2800EFE1335725B003EA22C /* ContainerInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800EFC1335725B003EA22C /* ContainerInfo.h */; };
+		A2800EFF1335725B003EA22C /* ContainerInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800EFC1335725B003EA22C /* ContainerInfo.h */; };
+		A2800F001335725B003EA22C /* ContainerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800EFD1335725B003EA22C /* ContainerInfo.m */; };
+		A2800F011335725B003EA22C /* ContainerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800EFD1335725B003EA22C /* ContainerInfo.m */; };
 		A29ACDC413340B7000BD08CA /* DropboxBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = A29ACDC213340B6E00BD08CA /* DropboxBasket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A29ACDC513340B7000BD08CA /* DropboxBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = A29ACDC213340B6E00BD08CA /* DropboxBasket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A29ACDC613340B7000BD08CA /* DropboxBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = A29ACDC313340B6F00BD08CA /* DropboxBasket.m */; };
@@ -244,6 +248,8 @@
 		A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamObjectDeserializationTestCase.m; sourceTree = "<group>"; };
 		A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamTargetDeserializationTestCase.m; sourceTree = "<group>"; };
 		A27692301321ADC600FDA805 /* ActivityStreamTarget.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamTarget.json; sourceTree = "<group>"; };
+		A2800EFC1335725B003EA22C /* ContainerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerInfo.h; sourceTree = "<group>"; };
+		A2800EFD1335725B003EA22C /* ContainerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerInfo.m; sourceTree = "<group>"; };
 		A29ACDC213340B6E00BD08CA /* DropboxBasket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxBasket.h; sourceTree = "<group>"; };
 		A29ACDC313340B6F00BD08CA /* DropboxBasket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxBasket.m; sourceTree = "<group>"; };
 		A29ACDC813340CF900BD08CA /* Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
@@ -589,6 +595,8 @@
 				A29ACDC313340B6F00BD08CA /* DropboxBasket.m */,
 				A29ACDC813340CF900BD08CA /* Link.h */,
 				A29ACDC913340CFA00BD08CA /* Link.m */,
+				A2800EFC1335725B003EA22C /* ContainerInfo.h */,
+				A2800EFD1335725B003EA22C /* ContainerInfo.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -714,6 +722,7 @@
 				A29ACDC413340B7000BD08CA /* DropboxBasket.h in Headers */,
 				A29ACDCA13340CFC00BD08CA /* Link.h in Headers */,
 				A29ACDD013340D9100BD08CA /* DropboxBasketFetcher.h in Headers */,
+				A2800EFE1335725B003EA22C /* ContainerInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,6 +760,7 @@
 				A29ACDC513340B7000BD08CA /* DropboxBasket.h in Headers */,
 				A29ACDCB13340CFC00BD08CA /* Link.h in Headers */,
 				A29ACDD113340D9100BD08CA /* DropboxBasketFetcher.h in Headers */,
+				A2800EFF1335725B003EA22C /* ContainerInfo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -906,6 +916,7 @@
 				A29ACDC613340B7000BD08CA /* DropboxBasket.m in Sources */,
 				A29ACDCC13340CFC00BD08CA /* Link.m in Sources */,
 				A29ACDD213340D9100BD08CA /* DropboxBasketFetcher.m in Sources */,
+				A2800F001335725B003EA22C /* ContainerInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -974,6 +985,7 @@
 				A29ACDC713340B7000BD08CA /* DropboxBasket.m in Sources */,
 				A29ACDCD13340CFC00BD08CA /* Link.m in Sources */,
 				A29ACDD313340D9100BD08CA /* DropboxBasketFetcher.m in Sources */,
+				A2800F011335725B003EA22C /* ContainerInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
