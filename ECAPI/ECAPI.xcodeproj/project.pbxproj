@@ -48,6 +48,10 @@
 		A2800F0613357484003EA22C /* DiscussionResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F0313357483003EA22C /* DiscussionResponse.h */; };
 		A2800F0713357484003EA22C /* DiscussionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F0413357484003EA22C /* DiscussionResponse.m */; };
 		A2800F0813357484003EA22C /* DiscussionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F0413357484003EA22C /* DiscussionResponse.m */; };
+		A2800F0B133575FF003EA22C /* DiscussionTopic.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F09133575FD003EA22C /* DiscussionTopic.h */; };
+		A2800F0C133575FF003EA22C /* DiscussionTopic.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F09133575FD003EA22C /* DiscussionTopic.h */; };
+		A2800F0D133575FF003EA22C /* DiscussionTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F0A133575FD003EA22C /* DiscussionTopic.m */; };
+		A2800F0E133575FF003EA22C /* DiscussionTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F0A133575FD003EA22C /* DiscussionTopic.m */; };
 		A29ACDC413340B7000BD08CA /* DropboxBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = A29ACDC213340B6E00BD08CA /* DropboxBasket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A29ACDC513340B7000BD08CA /* DropboxBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = A29ACDC213340B6E00BD08CA /* DropboxBasket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A29ACDC613340B7000BD08CA /* DropboxBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = A29ACDC313340B6F00BD08CA /* DropboxBasket.m */; };
@@ -256,6 +260,8 @@
 		A2800EFD1335725B003EA22C /* ContainerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerInfo.m; sourceTree = "<group>"; };
 		A2800F0313357483003EA22C /* DiscussionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionResponse.h; sourceTree = "<group>"; };
 		A2800F0413357484003EA22C /* DiscussionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscussionResponse.m; sourceTree = "<group>"; };
+		A2800F09133575FD003EA22C /* DiscussionTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionTopic.h; sourceTree = "<group>"; };
+		A2800F0A133575FD003EA22C /* DiscussionTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscussionTopic.m; sourceTree = "<group>"; };
 		A29ACDC213340B6E00BD08CA /* DropboxBasket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxBasket.h; sourceTree = "<group>"; };
 		A29ACDC313340B6F00BD08CA /* DropboxBasket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxBasket.m; sourceTree = "<group>"; };
 		A29ACDC813340CF900BD08CA /* Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
@@ -605,6 +611,8 @@
 				A2800EFD1335725B003EA22C /* ContainerInfo.m */,
 				A2800F0313357483003EA22C /* DiscussionResponse.h */,
 				A2800F0413357484003EA22C /* DiscussionResponse.m */,
+				A2800F09133575FD003EA22C /* DiscussionTopic.h */,
+				A2800F0A133575FD003EA22C /* DiscussionTopic.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -732,6 +740,7 @@
 				A29ACDD013340D9100BD08CA /* DropboxBasketFetcher.h in Headers */,
 				A2800EFE1335725B003EA22C /* ContainerInfo.h in Headers */,
 				A2800F0513357484003EA22C /* DiscussionResponse.h in Headers */,
+				A2800F0B133575FF003EA22C /* DiscussionTopic.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,6 +780,7 @@
 				A29ACDD113340D9100BD08CA /* DropboxBasketFetcher.h in Headers */,
 				A2800EFF1335725B003EA22C /* ContainerInfo.h in Headers */,
 				A2800F0613357484003EA22C /* DiscussionResponse.h in Headers */,
+				A2800F0C133575FF003EA22C /* DiscussionTopic.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,6 +938,7 @@
 				A29ACDD213340D9100BD08CA /* DropboxBasketFetcher.m in Sources */,
 				A2800F001335725B003EA22C /* ContainerInfo.m in Sources */,
 				A2800F0713357484003EA22C /* DiscussionResponse.m in Sources */,
+				A2800F0D133575FF003EA22C /* DiscussionTopic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -998,6 +1009,7 @@
 				A29ACDD313340D9100BD08CA /* DropboxBasketFetcher.m in Sources */,
 				A2800F011335725B003EA22C /* ContainerInfo.m in Sources */,
 				A2800F0813357484003EA22C /* DiscussionResponse.m in Sources */,
+				A2800F0E133575FF003EA22C /* DiscussionTopic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
