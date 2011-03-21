@@ -19,5 +19,7 @@
 - (void)fetchUserDiscussionResponseByUserResponseId:(NSString*)userResponseId;
 - (void)fetchDiscussionResponsesForResponse:(UserDiscussionResponse*)userDiscussionResponse;
 - (void)fetchUserDiscussionResponseForTopic:(UserDiscussionTopic*)userDiscussionTopic;
+- (void)postResponseToResponseId:(NSInteger)responseId andTitle:(NSString*)title andText:(NSString*)text;
+- (void)postResponseToTopicId:(NSInteger)topicId andTitle:(NSString*)title andText:(NSString*)text;
 
 @end

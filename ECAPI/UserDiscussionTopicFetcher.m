@@ -15,12 +15,12 @@
 # pragma mark fetch methods
 
 - (void)fetchDiscussionTopicById:(NSInteger)userId andTopicId:(NSInteger)topicId {
-    NSString* url = [NSString stringWithFormat:@"/me/usertopics/%d-%d"];
+    NSString* url = [NSString stringWithFormat:@"%@/me/usertopics/%d-%d", M_API_URL, userId, topicId ];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeUserDiscussionTopicFromArray:)];
 }
 
 - (void)fetchDiscussionTopicById:(NSString*)userTopicId {
-    NSString* url = [NSString stringWithFormat:@"/me/usertopics/%@",userTopicId];
+    NSString* url = [NSString stringWithFormat:@"%@/me/usertopics/%@", M_API_URL, userTopicId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeUserDiscussionTopicFromArray:)];
 }
 
@@ -29,7 +29,7 @@
     for (int i=1; i < [courseIds count]; i += 1) {
         formattedCourseIds = [NSString stringWithFormat:@"%@;%@",formattedCourseIds,[courseIds objectAtIndex:i]];
     }
-    NSString* url = [NSString stringWithFormat:@"/me/userTopics?courses=%@",formattedCourseIds];
+    NSString* url = [NSString stringWithFormat:@"%@/me/userTopics?courses=%@",M_API_URL, formattedCourseIds];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeUserDiscussionTopics:)];
 }
 
