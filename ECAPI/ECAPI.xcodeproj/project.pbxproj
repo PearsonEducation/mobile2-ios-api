@@ -64,12 +64,12 @@
 		A2800F1E133579C4003EA22C /* UserDiscussionTopic.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F1B133579BF003EA22C /* UserDiscussionTopic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2800F1F133579C4003EA22C /* UserDiscussionTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F1C133579C1003EA22C /* UserDiscussionTopic.m */; };
 		A2800F20133579C4003EA22C /* UserDiscussionTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F1C133579C1003EA22C /* UserDiscussionTopic.m */; };
-		A2800F231336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F211336F0F8003EA22C /* UserDiscussionResponseFetcher.h */; };
-		A2800F241336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F211336F0F8003EA22C /* UserDiscussionResponseFetcher.h */; };
+		A2800F231336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F211336F0F8003EA22C /* UserDiscussionResponseFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2800F241336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F211336F0F8003EA22C /* UserDiscussionResponseFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2800F251336F0F9003EA22C /* UserDiscussionResponseFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F221336F0F8003EA22C /* UserDiscussionResponseFetcher.m */; };
 		A2800F261336F0F9003EA22C /* UserDiscussionResponseFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F221336F0F8003EA22C /* UserDiscussionResponseFetcher.m */; };
-		A2800F2F1336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */; };
-		A2800F301336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */; };
+		A2800F2F1336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2800F301336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2800F311336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */; };
 		A2800F321336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */; };
 		A29ACDC413340B7000BD08CA /* DropboxBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = A29ACDC213340B6E00BD08CA /* DropboxBasket.h */; settings = {ATTRIBUTES = (Public, ); }; };
