@@ -64,6 +64,14 @@
 		A2800F1E133579C4003EA22C /* UserDiscussionTopic.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F1B133579BF003EA22C /* UserDiscussionTopic.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2800F1F133579C4003EA22C /* UserDiscussionTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F1C133579C1003EA22C /* UserDiscussionTopic.m */; };
 		A2800F20133579C4003EA22C /* UserDiscussionTopic.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F1C133579C1003EA22C /* UserDiscussionTopic.m */; };
+		A2800F231336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F211336F0F8003EA22C /* UserDiscussionResponseFetcher.h */; };
+		A2800F241336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F211336F0F8003EA22C /* UserDiscussionResponseFetcher.h */; };
+		A2800F251336F0F9003EA22C /* UserDiscussionResponseFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F221336F0F8003EA22C /* UserDiscussionResponseFetcher.m */; };
+		A2800F261336F0F9003EA22C /* UserDiscussionResponseFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F221336F0F8003EA22C /* UserDiscussionResponseFetcher.m */; };
+		A2800F2F1336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */; };
+		A2800F301336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */; };
+		A2800F311336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */; };
+		A2800F321336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */; };
 		A29ACDC413340B7000BD08CA /* DropboxBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = A29ACDC213340B6E00BD08CA /* DropboxBasket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A29ACDC513340B7000BD08CA /* DropboxBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = A29ACDC213340B6E00BD08CA /* DropboxBasket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A29ACDC613340B7000BD08CA /* DropboxBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = A29ACDC313340B6F00BD08CA /* DropboxBasket.m */; };
@@ -280,6 +288,10 @@
 		A2800F16133579AA003EA22C /* UserDiscussionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDiscussionResponse.m; sourceTree = "<group>"; };
 		A2800F1B133579BF003EA22C /* UserDiscussionTopic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDiscussionTopic.h; sourceTree = "<group>"; };
 		A2800F1C133579C1003EA22C /* UserDiscussionTopic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDiscussionTopic.m; sourceTree = "<group>"; };
+		A2800F211336F0F8003EA22C /* UserDiscussionResponseFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDiscussionResponseFetcher.h; sourceTree = "<group>"; };
+		A2800F221336F0F8003EA22C /* UserDiscussionResponseFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDiscussionResponseFetcher.m; sourceTree = "<group>"; };
+		A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDiscussionTopicFetcher.h; sourceTree = "<group>"; };
+		A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDiscussionTopicFetcher.m; sourceTree = "<group>"; };
 		A29ACDC213340B6E00BD08CA /* DropboxBasket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxBasket.h; sourceTree = "<group>"; };
 		A29ACDC313340B6F00BD08CA /* DropboxBasket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxBasket.m; sourceTree = "<group>"; };
 		A29ACDC813340CF900BD08CA /* Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
@@ -671,6 +683,10 @@
 				A2EE2B7E1332A30F0059DFAD /* DropboxMessageFetcher.m */,
 				A29ACDCE13340D9100BD08CA /* DropboxBasketFetcher.h */,
 				A29ACDCF13340D9100BD08CA /* DropboxBasketFetcher.m */,
+				A2800F211336F0F8003EA22C /* UserDiscussionResponseFetcher.h */,
+				A2800F221336F0F8003EA22C /* UserDiscussionResponseFetcher.m */,
+				A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */,
+				A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */,
 			);
 			name = Fetchers;
 			sourceTree = "<group>";
@@ -768,6 +784,8 @@
 				A2800F111335774E003EA22C /* ResponseCount.h in Headers */,
 				A2800F17133579AC003EA22C /* UserDiscussionResponse.h in Headers */,
 				A2800F1D133579C4003EA22C /* UserDiscussionTopic.h in Headers */,
+				A2800F231336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */,
+				A2800F2F1336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -811,6 +829,8 @@
 				A2800F121335774E003EA22C /* ResponseCount.h in Headers */,
 				A2800F18133579AC003EA22C /* UserDiscussionResponse.h in Headers */,
 				A2800F1E133579C4003EA22C /* UserDiscussionTopic.h in Headers */,
+				A2800F241336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */,
+				A2800F301336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -972,6 +992,8 @@
 				A2800F131335774E003EA22C /* ResponseCount.m in Sources */,
 				A2800F19133579AC003EA22C /* UserDiscussionResponse.m in Sources */,
 				A2800F1F133579C4003EA22C /* UserDiscussionTopic.m in Sources */,
+				A2800F251336F0F9003EA22C /* UserDiscussionResponseFetcher.m in Sources */,
+				A2800F311336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1046,6 +1068,8 @@
 				A2800F141335774E003EA22C /* ResponseCount.m in Sources */,
 				A2800F1A133579AC003EA22C /* UserDiscussionResponse.m in Sources */,
 				A2800F20133579C4003EA22C /* UserDiscussionTopic.m in Sources */,
+				A2800F261336F0F9003EA22C /* UserDiscussionResponseFetcher.m in Sources */,
+				A2800F321336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
