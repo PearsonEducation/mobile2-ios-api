@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = A2140EB313281A9C001C3DFC /* DateCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2140EB613281A9C001C3DFC /* DateCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2140EB413281A9C001C3DFC /* DateCalculator.m */; };
-		A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		A251431D13251E16002D66B7 /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A251431A13251E16002D66B7 /* NSDateUtilities.m */; };
 		A251431E13251E16002D66B7 /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A251431A13251E16002D66B7 /* NSDateUtilities.m */; };
 		A27691F51321630F00FDA805 /* ActivityStreamFetcherTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */; };
