@@ -26,7 +26,7 @@
         self.contentItemId              = [coder decodeIntegerForKey:@"contentItemId"];
         self.contentItemOrderNumber     = [coder decodeIntegerForKey:@"contentItemOrderNumber"];
         self.unitNumber                 = [coder decodeIntegerForKey:@"unitNumber"];
-        self.courseId                   = [coder decodeIntegerForKey:@"courseId"];
+        self.courseId                   = [coder decodeIntegerForKey:@"courseID"];
         self.courseTitle                = [coder decodeObjectForKey:@"courseTitle"];
         self.contentItemTitle           = [coder decodeObjectForKey:@"contentItemTitle"];
         self.unitTitle                  = [coder decodeObjectForKey:@"unitTitle"];
