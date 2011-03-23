@@ -8,6 +8,8 @@
 
 #import "UserDiscussionResponseFetcher.h"
 #import "ECJSONUnarchiver.h"
+#import "UserDiscussionResponse.h"
+#import "UserDiscussionTopic.h"
 
 @implementation UserDiscussionResponseFetcher
 
@@ -50,21 +52,21 @@
     }
 }
 
-- (void)fetchDiscussionResponsesForResponse:(UserDiscussionResponse*)userDiscussionResponse {
-    if (userDiscussionResponse && userDiscussionResponse.userDiscussionResponseId > 0) {
-        NSString* url = [NSString stringWithFormat:@"%@/me/responses/%d/userresponses", M_API_URL, userDiscussionResponse.userDiscussionResponseId];
+- (void)fetchDiscussionResponsesForResponseId:(NSString*)userDiscussionResponseId {
+    if (userDiscussionResponseId && ![userDiscussionResponseId isEqualToString:@""]) {
+        NSString* url = [NSString stringWithFormat:@"%@/me/responses/%@/userresponses", M_API_URL,userDiscussionResponseId];
         [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeUserDiscussionResponses:)];
     } else {
-        NSLog(@"Invalid user discussion response (%@) or id (%d) when loading user discussion responses for response", userDiscussionResponse, userDiscussionResponse.userDiscussionResponseId);
+        NSLog(@"Invalid user discussion response (%@) when loading user discussion responses for response", userDiscussionResponseId);
     }
 }
 
-- (void)fetchUserDiscussionResponseForTopic:(UserDiscussionTopic*)userDiscussionTopic {
-    if (userDiscussionTopic && userDiscussionTopic.userDiscussionTopicId > 0) {
-        NSString* url = [NSString stringWithFormat:@"%@/me/topics/%d/userresponses", M_API_URL, userDiscussionTopic.userDiscussionTopicId];
+- (void)fetchUserDiscussionResponsesForTopicId:(NSString*)userDiscussionTopicId {
+    if (userDiscussionTopicId && ![userDiscussionTopicId isEqualToString:@""]) {
+        NSString* url = [NSString stringWithFormat:@"%@/me/topics/%@/userresponses", M_API_URL, userDiscussionTopicId];
         [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeUserDiscussionResponses:)];
     } else {
-        NSLog(@"Invalid user discussion topic (%@) or id (%@) when loading user discussion responses for topic", userDiscussionTopic, userDiscussionTopic.userDiscussionTopicId);
+        NSLog(@"Invalid user discussion topic (%@) when loading user discussion responses for topic", userDiscussionTopicId);
     }
 }
 
