@@ -17,7 +17,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.userDiscussionTopicId          = [NSString stringWithFormat:@"%@",[coder decodeObjectForKey:@"topic"]];
+        self.userDiscussionTopicId          = [NSString stringWithFormat:@"%@",[coder decodeObjectForKey:@"id"]];
         self.topic                          = [coder decodeObjectForKey:@"topic" ofType:[DiscussionTopic class]];
         self.childResponseCounts            = [coder decodeObjectForKey:@"childResponseCounts" ofType:[ResponseCount class]];
     }
