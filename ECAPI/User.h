@@ -18,6 +18,8 @@
 	NSString *clientString;
 }
 
+- (NSString*)fullName;
+
 @property(nonatomic, assign) NSInteger userId;
 @property(nonatomic, copy) NSString *userName;
 @property(nonatomic, copy) NSString *firstName;

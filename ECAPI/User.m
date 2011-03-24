@@ -24,6 +24,10 @@
 	return self;
 }
 
+- (NSString*)fullName {
+    return [NSString stringWithFormat:@"%@ %@",self.firstName,self.lastName];
+}
+
 - (void) dealloc {
     self.userName = nil;
     self.firstName = nil;
