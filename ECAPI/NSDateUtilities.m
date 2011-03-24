@@ -20,6 +20,27 @@ NSString* const ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
     return dateString;
 }
 
+- (NSString*)dateString:(NSString*)formatString {
+    NSDateFormatter *dateFormat = [[[NSDateFormatter alloc] init] autorelease];
+    [dateFormat setDateFormat:formatString];
+    NSString *dateString = [dateFormat stringFromDate:self];
+    return dateString;
+}
+
+- (NSInteger)year {
+    NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    [gregorian setTimeZone:[NSTimeZone defaultTimeZone]];
+    return [[gregorian components:NSDayCalendarUnit|NSMonthCalendarUnit|NSYearCalendarUnit fromDate:self] year];
+}
+
+- (NSDate*)addDays:(NSInteger)numDays {
+    NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    [gregorian setTimeZone:[NSTimeZone defaultTimeZone]];
+    NSDateComponents* components = [[[NSDateComponents alloc] init] autorelease];
+    components.day = numDays;
+    return [gregorian dateByAddingComponents:components toDate:self options:0];
+}
+
 - (NSString*)friendlyDateFor:(int)daysFromToday {
     if (daysFromToday == 0) {
         return NSLocalizedString(@"Today", @"The word meaning 'today'");
@@ -75,6 +96,23 @@ NSString* const ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
     } else {
         return @"";
     }   
+}
+
+- (NSString*)friendlyString {
+    NSString* dtstr = [self dateString:@"MMM d yyyy"];
+    NSDate* now = [NSDate date];
+    if ([[now dateString:@"MMM d yyyy"] isEqualToString:dtstr]) {
+        return NSLocalizedString(@"Today", nil);
+    } 
+    if ([[[now addDays:-1] dateString:@"MMM d yyyy"] isEqualToString:dtstr]) {
+        return NSLocalizedString(@"Yesterday",nil);
+    }
+    if ([self year] != [now year]) {
+        return dtstr;
+    } else {
+        return [self dateString:@"MMM d"];
+    }
+    return nil;
 }
 
 @end

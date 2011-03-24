@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = A2140EB313281A9C001C3DFC /* DateCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2140EB613281A9C001C3DFC /* DateCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2140EB413281A9C001C3DFC /* DateCalculator.m */; };
-		A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A251431913251E16002D66B7 /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		A251431D13251E16002D66B7 /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A251431A13251E16002D66B7 /* NSDateUtilities.m */; };
-		A251431E13251E16002D66B7 /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A251431A13251E16002D66B7 /* NSDateUtilities.m */; };
 		A27691F51321630F00FDA805 /* ActivityStreamFetcherTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */; };
 		A27691F9132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A27691FA132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -72,6 +68,10 @@
 		A2800F301336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2800F311336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */; };
 		A2800F321336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */; };
+		A293E30B133B0794003D3E7F /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A293E309133B0794003D3E7F /* NSDateUtilities.h */; };
+		A293E30C133B0794003D3E7F /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A293E309133B0794003D3E7F /* NSDateUtilities.h */; };
+		A293E30D133B0794003D3E7F /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A293E30A133B0794003D3E7F /* NSDateUtilities.m */; };
+		A293E30E133B0794003D3E7F /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A293E30A133B0794003D3E7F /* NSDateUtilities.m */; };
 		A29ACDC413340B7000BD08CA /* DropboxBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = A29ACDC213340B6E00BD08CA /* DropboxBasket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A29ACDC513340B7000BD08CA /* DropboxBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = A29ACDC213340B6E00BD08CA /* DropboxBasket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A29ACDC613340B7000BD08CA /* DropboxBasket.m in Sources */ = {isa = PBXBuildFile; fileRef = A29ACDC313340B6F00BD08CA /* DropboxBasket.m */; };
@@ -257,8 +257,6 @@
 /* Begin PBXFileReference section */
 		A2140EB313281A9C001C3DFC /* DateCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCalculator.h; sourceTree = "<group>"; };
 		A2140EB413281A9C001C3DFC /* DateCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCalculator.m; sourceTree = "<group>"; };
-		A251431913251E16002D66B7 /* NSDateUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateUtilities.h; sourceTree = "<group>"; };
-		A251431A13251E16002D66B7 /* NSDateUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateUtilities.m; sourceTree = "<group>"; };
 		A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamFetcherTestCase.m; sourceTree = "<group>"; };
 		A27691F7132167C900FDA805 /* ActivityStreamItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStreamItem.h; sourceTree = "<group>"; };
 		A27691F8132167C900FDA805 /* ActivityStreamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamItem.m; sourceTree = "<group>"; };
@@ -292,6 +290,8 @@
 		A2800F221336F0F8003EA22C /* UserDiscussionResponseFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDiscussionResponseFetcher.m; sourceTree = "<group>"; };
 		A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDiscussionTopicFetcher.h; sourceTree = "<group>"; };
 		A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDiscussionTopicFetcher.m; sourceTree = "<group>"; };
+		A293E309133B0794003D3E7F /* NSDateUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateUtilities.h; sourceTree = "<group>"; };
+		A293E30A133B0794003D3E7F /* NSDateUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateUtilities.m; sourceTree = "<group>"; };
 		A29ACDC213340B6E00BD08CA /* DropboxBasket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxBasket.h; sourceTree = "<group>"; };
 		A29ACDC313340B6F00BD08CA /* DropboxBasket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxBasket.m; sourceTree = "<group>"; };
 		A29ACDC813340CF900BD08CA /* Link.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Link.h; sourceTree = "<group>"; };
@@ -507,10 +507,10 @@
 		A251431713251DF9002D66B7 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				A293E309133B0794003D3E7F /* NSDateUtilities.h */,
+				A293E30A133B0794003D3E7F /* NSDateUtilities.m */,
 				A2A96749132E817D00554238 /* GTMNSString+HTML.h */,
 				A2A9674A132E817D00554238 /* GTMNSString+HTML.m */,
-				A251431913251E16002D66B7 /* NSDateUtilities.h */,
-				A251431A13251E16002D66B7 /* NSDateUtilities.m */,
 				A2140EB313281A9C001C3DFC /* DateCalculator.h */,
 				A2140EB413281A9C001C3DFC /* DateCalculator.m */,
 			);
@@ -766,7 +766,6 @@
 				A2769205132167F800FDA805 /* ActivityStreamObject.h in Headers */,
 				A276920B1321681400FDA805 /* ActivityStreamTarget.h in Headers */,
 				A27692111321715C00FDA805 /* ActivityStreamFetcher.h in Headers */,
-				A251431B13251E16002D66B7 /* NSDateUtilities.h in Headers */,
 				A2AC045313255D910069C90D /* ActivityStream.h in Headers */,
 				A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */,
 				A2A9674B132E817D00554238 /* GTMNSString+HTML.h in Headers */,
@@ -786,6 +785,7 @@
 				A2800F1D133579C4003EA22C /* UserDiscussionTopic.h in Headers */,
 				A2800F231336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */,
 				A2800F2F1336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */,
+				A293E30B133B0794003D3E7F /* NSDateUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -812,7 +812,6 @@
 				A2769206132167F800FDA805 /* ActivityStreamObject.h in Headers */,
 				A276920C1321681400FDA805 /* ActivityStreamTarget.h in Headers */,
 				A27692121321715C00FDA805 /* ActivityStreamFetcher.h in Headers */,
-				A251431C13251E16002D66B7 /* NSDateUtilities.h in Headers */,
 				A2AC045413255D910069C90D /* ActivityStream.h in Headers */,
 				A2A9674C132E817D00554238 /* GTMNSString+HTML.h in Headers */,
 				A2C36374132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */,
@@ -831,6 +830,7 @@
 				A2800F1E133579C4003EA22C /* UserDiscussionTopic.h in Headers */,
 				A2800F241336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */,
 				A2800F301336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */,
+				A293E30C133B0794003D3E7F /* NSDateUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -974,7 +974,6 @@
 				A2769207132167F800FDA805 /* ActivityStreamObject.m in Sources */,
 				A276920D1321681400FDA805 /* ActivityStreamTarget.m in Sources */,
 				A27692131321715C00FDA805 /* ActivityStreamFetcher.m in Sources */,
-				A251431D13251E16002D66B7 /* NSDateUtilities.m in Sources */,
 				A2AC045513255D910069C90D /* ActivityStream.m in Sources */,
 				A2140EB613281A9C001C3DFC /* DateCalculator.m in Sources */,
 				A2A9674D132E817D00554238 /* GTMNSString+HTML.m in Sources */,
@@ -994,6 +993,7 @@
 				A2800F1F133579C4003EA22C /* UserDiscussionTopic.m in Sources */,
 				A2800F251336F0F9003EA22C /* UserDiscussionResponseFetcher.m in Sources */,
 				A2800F311336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */,
+				A293E30D133B0794003D3E7F /* NSDateUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,7 +1051,6 @@
 				A27692251321ABB100FDA805 /* ActivityStreamActorDeserializationTestCase.m in Sources */,
 				A27692291321ABF600FDA805 /* ActivityStreamObjectDeserializationTestCase.m in Sources */,
 				A276922D1321ACF300FDA805 /* ActivityStreamTargetDeserializationTestCase.m in Sources */,
-				A251431E13251E16002D66B7 /* NSDateUtilities.m in Sources */,
 				A2AC045613255D910069C90D /* ActivityStream.m in Sources */,
 				A2A9674E132E817D00554238 /* GTMNSString+HTML.m in Sources */,
 				A2C36376132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */,
@@ -1070,6 +1069,7 @@
 				A2800F20133579C4003EA22C /* UserDiscussionTopic.m in Sources */,
 				A2800F261336F0F9003EA22C /* UserDiscussionResponseFetcher.m in Sources */,
 				A2800F321336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */,
+				A293E30E133B0794003D3E7F /* NSDateUtilities.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
