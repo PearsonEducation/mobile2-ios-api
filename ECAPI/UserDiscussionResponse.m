@@ -18,7 +18,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.userDiscussionResponseId         = [coder decodeIntegerForKey:@"id"];
+        self.userDiscussionResponseId         = [coder decodeObjectForKey:@"id"];
         self.markedAsRead                     = [coder decodeBoolForKey:@"markedAsRead"];
         self.response                         = [coder decodeObjectForKey:@"response" ofType:[DiscussionResponse class]];
         self.childResponseCounts              = [coder decodeObjectForKey:@"childResponseCounts" ofType:[ResponseCount class]];

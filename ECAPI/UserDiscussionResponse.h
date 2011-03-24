@@ -12,13 +12,13 @@
 #import "ResponseCount.h"
 
 @interface UserDiscussionResponse : NSObject {
-    NSInteger userDiscussionResponseId;
+    NSString* userDiscussionResponseId;
     BOOL markedAsRead;
     DiscussionResponse* response;
     ResponseCount* childResponseCounts;
 }
 
-@property (nonatomic, assign) NSInteger userDiscussionResponseId;
+@property (nonatomic, retain) NSString* userDiscussionResponseId;
 @property (nonatomic, assign) BOOL markedAsRead;
 @property (nonatomic, retain) DiscussionResponse* response;
 @property (nonatomic, retain) ResponseCount* childResponseCounts;
