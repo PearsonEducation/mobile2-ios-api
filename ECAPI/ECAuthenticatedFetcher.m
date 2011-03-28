@@ -19,13 +19,15 @@
 @interface ECAuthenticatedFetcher (PrivateMethods)
 + (void) setCommonHeadersForAuthenticatedRequest:(ASIHTTPRequest *)request;
 - (void) loadDataInBackground;
+- (void) finishWithObject:(id)obj;
 @end
 
 @implementation ECAuthenticatedFetcher
+
 @synthesize responseHeaders, responseStatusCode, ignoreAuthentication;
 
-static SEL errorSelector;
-static id errorDelegate;
+static SEL generalSelector;
+static id generalDelegate;
 
 #pragma mark -
 #pragma mark Request Factory Methods
@@ -53,12 +55,12 @@ static id errorDelegate;
 	[request addRequestHeader:@"X-Authorization" value:accessTokenHeaderValue];
 }
 
-+ (void)setErrorDelegate:(id)delegateValue andSelector:(SEL)selectorValue {
-    if (errorDelegate != delegateValue) {
-        [errorDelegate release];
-        errorDelegate = [delegateValue retain];
++ (void)setGeneralDelegate:(id)delegateValue andSelector:(SEL)selectorValue {
+    if (generalDelegate != delegateValue) {
+        [generalDelegate release];
+        generalDelegate = [delegateValue retain];
     }
-    errorSelector = selectorValue;
+    generalSelector = selectorValue;
 }
 
 #pragma mark -
@@ -82,6 +84,15 @@ static id errorDelegate;
 
 #pragma mark -
 #pragma mark Git R Dun
+
+- (void) finishWithObject:(id)obj {
+    // if there's a general delegate, call out to that first
+    if (generalDelegate) {
+        [generalDelegate performSelector:generalSelector withObject:obj];
+    }    
+    // even if the error handler was called, we still need to call back to the main thread, too.
+    [delegate performSelectorOnMainThread:responseCallback withObject:obj waitUntilDone:NO];                            
+}
 
 - (void) loadDataFromURLString:(NSString *)urlString withDeserializationSelector:(SEL)ds {
 	deserializeSelector = ds;
@@ -107,56 +118,52 @@ static id errorDelegate;
 
 - (void) loadDataInBackground {
     NSAutoreleasePool *autoreleasePool = [[NSAutoreleasePool alloc] init];
+
 	// First, if we don't have an access token, but have an unexpired grant token
 	// get a new access token transparently
 	ECSession *session = [ECSession sharedSession];
-	if (![session hasUnexpiredAccessToken] && !ignoreAuthentication) {
-        if ([session hasUnexpiredGrantToken]) {
-			//TODO don't do this if the user shouldn't be remembered
+	if (![session hasActiveAccessToken] && !ignoreAuthentication) {
+        if ([session hasActiveGrantToken]) {
+			NSLog(@"Have a grant token; fetching an access token");
 			ECTokenFetcher *tokenFetcher = [[ECTokenFetcher alloc] init];
 			AccessToken *accessToken = [tokenFetcher syncronousFetchAccessTokenWithAccessGrant:session.currentGrantToken.accessToken];
 			session.currentAccessToken = accessToken;
 			[ECAuthenticatedFetcher setCommonHeadersForAuthenticatedRequest:request];
 		} else {
             NSDictionary* dict = [[[NSMutableDictionary alloc] initWithCapacity:1] autorelease];
-            [dict setValue:GRANT_TOKEN_EXPIRED forKey:ERROR];
+            [dict setValue:ACCESS_DENIED forKey:ERROR];
             NSError* error = [[NSError alloc] initWithDomain:EC_API_ERROR_DOMAIN code:AUTHENTICATION_ERROR userInfo:dict];
-            
-            // if an explicit error handler has been provided, send the NSError to that.
-            if (errorDelegate) {
-                [errorDelegate performSelector:errorSelector withObject:error];
-            }
-            
-            // even if the error handler was called, we still need to call back to the main thread, too.
-            [delegate performSelectorOnMainThread:responseCallback withObject:error waitUntilDone:NO];                            
-            
+            [self finishWithObject:error];
             [error release];
             return;
 		}
 	}
 	
-	
+    // run the synchronous request
 	[request startSynchronous];
+    
+    // check for errors
     NSError *error = [request error];
     id parsedData = nil;
+    id objectToReturn;
     if (error) {
-        if ([request responseStatusCode] == 401 && [delegate respondsToSelector:@selector(authenticationFailed)]) {
-            [delegate performSelectorOnMainThread:@selector(authenticationFailed) withObject:error waitUntilDone:NO];
-        } else {
-            [delegate performSelectorOnMainThread:responseCallback withObject:error waitUntilDone:NO];
-        }
+        objectToReturn = error;
     } else {
         [data release]; [responseHeaders release];
         data = [[request responseData] mutableCopy]; // retain count of +1
         responseStatusCode = [request responseStatusCode];
         responseHeaders = [[request responseHeaders] copy];
         parsedData = [self parseReturnedData];
-		id objectToReturn = parsedData;
+		objectToReturn = parsedData;
 		if (!([parsedData isKindOfClass:[NSError class]])) {
 			objectToReturn = [self performSelector:deserializeSelector withObject:parsedData];
 		}
-        [delegate performSelectorOnMainThread:responseCallback withObject:objectToReturn waitUntilDone:NO];
-    }
+    }    
+    
+    // return the object to all delegates
+    [self finishWithObject:objectToReturn];
+    
+    // cleanup
     [request release]; request = nil;
     [autoreleasePool release];
 }

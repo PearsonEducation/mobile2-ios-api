@@ -25,7 +25,7 @@
 	[self prepare];
 	
 	ECSession *session = [ECSession sharedSession];
-	GHAssertFalse([session hasUnexpiredAccessToken], @"Expected session to be unauthenticated at this point");
+	GHAssertFalse([session hasActiveAccessToken], @"Expected session to be unauthenticated at this point");
 	[session authenticateWithClientId:@"30bb1d4f-2677-45d1-be13-339174404402"
 						 clientString:@"ctstate"
 							 username:@"veronicastudent3"
@@ -39,8 +39,8 @@
 
 - (void) sessionDidAuthenticateWhileNotRememberingUser {
 	ECSession *session = [ECSession sharedSession];
-	GHAssertTrue([session hasUnexpiredAccessToken], @"Expected accessToken to be set after authentication");
-	GHAssertFalse([session hasUnexpiredGrantToken], @"Expected grantToken not to be set after authentication while not remembering user");
+	GHAssertTrue([session hasActiveAccessToken], @"Expected accessToken to be set after authentication");
+	GHAssertFalse([session hasActiveGrantToken], @"Expected grantToken not to be set after authentication while not remembering user");
 	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testAuthenticationWhileNotRememberingUser)];
 }
 
@@ -48,8 +48,8 @@
 	[self prepare];
 	
 	ECSession *session = [ECSession sharedSession];
-	GHAssertFalse([session hasUnexpiredAccessToken], @"Expected session to be unauthenticated at this point");
-	GHAssertFalse([session hasUnexpiredGrantToken], @"Expected session to be without a grant token at this point");
+	GHAssertFalse([session hasActiveAccessToken], @"Expected session to be unauthenticated at this point");
+	GHAssertFalse([session hasActiveGrantToken], @"Expected session to be without a grant token at this point");
 	[session authenticateWithClientId:@"30bb1d4f-2677-45d1-be13-339174404402"
 						 clientString:@"ctstate"
 							 username:@"veronicastudent3"
@@ -63,8 +63,8 @@
 
 - (void) sessionDidAuthenticateWhileRememberingUser {
 	ECSession *session = [ECSession sharedSession];
-	GHAssertTrue([session hasUnexpiredAccessToken], @"Expected accessToken to be set after authentication");
-	GHAssertTrue([session hasUnexpiredGrantToken], @"Expected grantToken to be set after authentication while remembering user");
+	GHAssertTrue([session hasActiveAccessToken], @"Expected accessToken to be set after authentication");
+	GHAssertTrue([session hasActiveGrantToken], @"Expected grantToken to be set after authentication while remembering user");
 	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testAuthenticationWhileRememberingUser)];
 }
 

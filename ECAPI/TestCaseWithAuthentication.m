@@ -14,7 +14,7 @@
 	[self prepare];
 	
 	ECSession *session = [ECSession sharedSession];
-	GHAssertFalse([session hasUnexpiredAccessToken], @"Expected session to be unauthenticated at this point");
+	GHAssertFalse([session hasActiveAccessToken], @"Expected session to be unauthenticated at this point");
 	[session authenticateWithClientId:@"30bb1d4f-2677-45d1-be13-339174404402"
 						 clientString:@"ctstate"
 							 username:@"veronicastudent3"
@@ -31,7 +31,7 @@
 }
 
 - (void) setUp {
-	GHAssertTrue([[ECSession sharedSession] hasUnexpiredAccessToken], @"Expected session to be authenticated");
+	GHAssertTrue([[ECSession sharedSession] hasActiveAccessToken], @"Expected session to be authenticated");
 }
 
 - (void) sessionDidAuthenticate:(ECSession *)aSession {

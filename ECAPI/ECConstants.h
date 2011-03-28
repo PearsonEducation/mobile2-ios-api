@@ -14,4 +14,4 @@
 #define AUTHENTICATION_ERROR 1
 
 // Specific errors
-#define GRANT_TOKEN_EXPIRED @"Grant token expired"
+#define ACCESS_DENIED @"ACCESS DENIED"

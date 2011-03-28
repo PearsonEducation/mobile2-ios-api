@@ -66,7 +66,7 @@ static ECSession *sharedSession = nil;
 	[super dealloc];
 }
 
-- (BOOL) hasUnexpiredAccessToken {
+- (BOOL) hasActiveAccessToken {
 	return (currentAccessToken != nil && ![currentAccessToken isExpired]);
 }
 
@@ -95,7 +95,7 @@ static ECSession *sharedSession = nil;
 	NSLog(@"Saved persisted access grant token: %@", currentGrantToken);
 }
 
-- (BOOL) hasUnexpiredGrantToken {
+- (BOOL) hasActiveGrantToken {
 	if (currentGrantToken == nil) {
 		[self loadCurrentGrantToken];
 	}
@@ -122,28 +122,31 @@ static ECSession *sharedSession = nil;
 	}
 }
 
-- (void) authenticateWithRememberedCredentialsAndDelegate:(id)delegate callback:(SEL)callbackSelector {
-	[currentAccessToken release]; currentAccessToken = nil;
-	if (nil == currentGrantToken) {
-		[self loadCurrentGrantToken];
-	}
-	//TODO: return an error if there is no grant token?
-	NSLog(@"Authenticating with remembered grant token: %@", currentGrantToken);
-	currentAuthenticationDelegate = delegate;
-	currentAuthenticationCallback = callbackSelector;
-	tokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTokenComplete:)];
-	[tokenFetcher fetchAccessTokenWithAccessGrant:currentGrantToken.accessToken];
-}
+//- (void) authenticateWithRememberedCredentialsAndDelegate:(id)delegate callback:(SEL)callbackSelector {
+//	[currentAccessToken release]; currentAccessToken = nil;
+//	if (nil == currentGrantToken) {
+//		[self loadCurrentGrantToken];
+//	}
+//	//TODO: return an error if there is no grant token?
+//	NSLog(@"Authenticating with remembered grant token: %@", currentGrantToken);
+//	currentAuthenticationDelegate = delegate;
+//	currentAuthenticationCallback = callbackSelector;
+//	tokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTokenComplete:)];
+//	[tokenFetcher fetchAccessTokenWithAccessGrant:currentGrantToken.accessToken];
+//}
 
 - (void) fetchGrantTokenComplete:(AccessToken *)token {
-	//TODO, what to do if there's an error?
 	if (![token isKindOfClass:[NSError class]]) {
 		[grantTokenFetcher release]; grantTokenFetcher = nil;
 		currentGrantToken = [token retain];
 		[self saveCurrentGrantToken];
 		tokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTokenComplete:)];
 		[tokenFetcher fetchAccessTokenWithAccessGrant:token.accessToken];
-	}
+	} else {
+        // pass the error back to the delegate
+        NSObject *del = (NSObject *)currentAuthenticationDelegate;
+        [del performSelector:currentAuthenticationCallback withObject:token];        
+    }
 }
 
 - (void) fetchTokenComplete:(AccessToken *)token {
@@ -151,6 +154,7 @@ static ECSession *sharedSession = nil;
     currentAccessToken = [token retain];
     //TODO: Determine if thread safety is a requirement, because this is not thread safe
     NSObject *del = (NSObject *)currentAuthenticationDelegate;
+    // even if it's an error, pass it back
     [del performSelector:currentAuthenticationCallback withObject:token];
     currentAuthenticationCallback = nil;
     currentAuthenticationDelegate = nil;
@@ -158,8 +162,16 @@ static ECSession *sharedSession = nil;
 }
 
 - (void) forgetCredentials {
+    [self forgetAccessToken];
+    [self forgetGrantToken];
+}
+
+- (void) forgetAccessToken {
+	[currentAccessToken release]; currentAccessToken = nil;    
+}
+
+- (void) forgetGrantToken {
 	[currentGrantToken release]; currentGrantToken = nil;
-	[currentAccessToken release]; currentAccessToken = nil;
 	NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 	[defaults setValue:nil forKey:@"currentGrantToken"];
 	[defaults synchronize];

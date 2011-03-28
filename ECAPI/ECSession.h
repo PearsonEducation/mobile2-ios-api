@@ -24,12 +24,14 @@
 
 + (ECSession *) sharedSession;
 
-- (BOOL) hasUnexpiredAccessToken;
-- (BOOL) hasUnexpiredGrantToken;
+- (BOOL) hasActiveAccessToken;
+- (BOOL) hasActiveGrantToken;
 - (void) authenticateWithClientId:(NSString *)clientId clientString:(NSString *)clientString username:(NSString *)username password:(NSString *)password keepUserLoggedIn:(BOOL)keepUserLoggedIn delegate:(id)delegate callback:(SEL)callbackSelector;
-- (void) authenticateWithRememberedCredentialsAndDelegate:(id)delegate callback:(SEL)callbackSelector;
+// - (void) authenticateWithRememberedCredentialsAndDelegate:(id)delegate callback:(SEL)callbackSelector;
 - (void) setGrantToken:(AccessToken *)token;
 
 - (void) forgetCredentials;
+- (void) forgetAccessToken;
+- (void) forgetGrantToken;
 
 @end
