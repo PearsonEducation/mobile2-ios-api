@@ -68,8 +68,8 @@
 		A2800F301336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2800F311336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */; };
 		A2800F321336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */; };
-		A293E30B133B0794003D3E7F /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A293E309133B0794003D3E7F /* NSDateUtilities.h */; };
-		A293E30C133B0794003D3E7F /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A293E309133B0794003D3E7F /* NSDateUtilities.h */; };
+		A293E30B133B0794003D3E7F /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A293E309133B0794003D3E7F /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A293E30C133B0794003D3E7F /* NSDateUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = A293E309133B0794003D3E7F /* NSDateUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A293E30D133B0794003D3E7F /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A293E30A133B0794003D3E7F /* NSDateUtilities.m */; };
 		A293E30E133B0794003D3E7F /* NSDateUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = A293E30A133B0794003D3E7F /* NSDateUtilities.m */; };
 		A29ACDC413340B7000BD08CA /* DropboxBasket.h in Headers */ = {isa = PBXBuildFile; fileRef = A29ACDC213340B6E00BD08CA /* DropboxBasket.h */; settings = {ATTRIBUTES = (Public, ); }; };
