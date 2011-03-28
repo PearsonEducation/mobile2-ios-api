@@ -147,16 +147,14 @@ static ECSession *sharedSession = nil;
 }
 
 - (void) fetchTokenComplete:(AccessToken *)token {
-	if (![token isKindOfClass:[NSError class]]) {
-		[tokenFetcher release]; tokenFetcher = nil;
-		currentAccessToken = [token retain];
-		//TODO: Determine if thread safety is a requirement, because this is not thread safe
-		NSObject *del = (NSObject *)currentAuthenticationDelegate;
-		[del performSelector:currentAuthenticationCallback];
-		currentAuthenticationCallback = nil;
-		currentAuthenticationDelegate = nil;
-		NSLog(@"Fetched temporary access token: %@", currentAccessToken);
-	}
+    [tokenFetcher release]; tokenFetcher = nil;
+    currentAccessToken = [token retain];
+    //TODO: Determine if thread safety is a requirement, because this is not thread safe
+    NSObject *del = (NSObject *)currentAuthenticationDelegate;
+    [del performSelector:currentAuthenticationCallback withObject:token];
+    currentAuthenticationCallback = nil;
+    currentAuthenticationDelegate = nil;
+    NSLog(@"Fetched temporary access token: %@", currentAccessToken);
 }
 
 - (void) forgetCredentials {

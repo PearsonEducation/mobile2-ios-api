@@ -234,7 +234,7 @@
 		EABEEACB12F8D09C0028857E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = EA32AC5112F8715E0025F080 /* Reachability.m */; };
 		EABEEAD612F8D12D0028857E /* GHUnitIOSTestMain.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEEAD512F8D12D0028857E /* GHUnitIOSTestMain.m */; };
 		EABEEAF712F8D3410028857E /* ECSession.m in Sources */ = {isa = PBXBuildFile; fileRef = EABEE87712F8AFB50028857E /* ECSession.m */; };
-		EABEEAF812F8D34B0028857E /* ECConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE89912F8B9450028857E /* ECConstants.h */; };
+		EABEEAF812F8D34B0028857E /* ECConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE89912F8B9450028857E /* ECConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAD2DFFC1318239700A4D89C /* ECTokenFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD2DFFA1318239700A4D89C /* ECTokenFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAD2DFFD1318239700A4D89C /* ECTokenFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD2DFFA1318239700A4D89C /* ECTokenFetcher.h */; };
 		EAD2DFFE1318239700A4D89C /* ECTokenFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD2DFFB1318239700A4D89C /* ECTokenFetcher.m */; };

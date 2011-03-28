@@ -8,3 +8,10 @@
 
 #define M_API_URL @"http://m-api.ecollege.com"
 #define EC_API_ERROR_DOMAIN @"com.ecollege.errors.api"
+#define ERROR @"error"
+
+// Error codes
+#define AUTHENTICATION_ERROR 1
+
+// Specific errors
+#define GRANT_TOKEN_EXPIRED @"Grant token expired"

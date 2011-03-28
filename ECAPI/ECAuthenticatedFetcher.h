@@ -26,11 +26,11 @@
 
 + (ASIHTTPRequest *) newAuthenticatedGETRequestWithURL:(NSURL *)earl;
 + (ASIFormDataRequest *) newAuthenticatedPOSTRequestWithURL:(NSURL *)earl;
++ (void)setErrorDelegate:(id)delegateValue andSelector:(SEL)selectorValue;
 
-- (id) initWithDelegate:(id)delegate responseSelector:(SEL)responseCallback;
-- (void) loadDataFromURLString:(NSString *)urlString withDeserializationSelector:(SEL)deserializationSelector;
-- (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString withDeserializationSelector:(SEL)deserializationSelector;
-- (id) parseReturnedData;
-- (void) cancel;
-
+- (id)initWithDelegate:(id)delegate responseSelector:(SEL)responseCallback;
+- (void)loadDataFromURLString:(NSString *)urlString withDeserializationSelector:(SEL)deserializationSelector;
+- (void)postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString withDeserializationSelector:(SEL)deserializationSelector;
+- (id)parseReturnedData;
+- (void)cancel;
 @end

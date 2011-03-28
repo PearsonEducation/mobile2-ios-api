@@ -1,3 +1,4 @@
+
 //
 //  ECAuthenticatedFetcher.m
 //  ECAPI
@@ -13,6 +14,7 @@
 #import "SBJsonParser.h"
 #import "AccessToken.h"
 #import "ECTokenFetcher.h"
+#import "ECConstants.h"
 
 @interface ECAuthenticatedFetcher (PrivateMethods)
 + (void) setCommonHeadersForAuthenticatedRequest:(ASIHTTPRequest *)request;
@@ -21,6 +23,9 @@
 
 @implementation ECAuthenticatedFetcher
 @synthesize responseHeaders, responseStatusCode, ignoreAuthentication;
+
+static SEL errorSelector;
+static id errorDelegate;
 
 #pragma mark -
 #pragma mark Request Factory Methods
@@ -48,6 +53,14 @@
 	[request addRequestHeader:@"X-Authorization" value:accessTokenHeaderValue];
 }
 
++ (void)setErrorDelegate:(id)delegateValue andSelector:(SEL)selectorValue {
+    if (errorDelegate != delegateValue) {
+        [errorDelegate release];
+        errorDelegate = [delegateValue retain];
+    }
+    errorSelector = selectorValue;
+}
+
 #pragma mark -
 #pragma mark Setup and Teardown
 
@@ -58,6 +71,7 @@
 	}
 	return self;
 }
+
 
 -(void) dealloc {
 	self.responseHeaders = nil;
@@ -97,14 +111,27 @@
 	// get a new access token transparently
 	ECSession *session = [ECSession sharedSession];
 	if (![session hasUnexpiredAccessToken] && !ignoreAuthentication) {
-		if ([session hasUnexpiredGrantToken]) {
+        if ([session hasUnexpiredGrantToken]) {
 			//TODO don't do this if the user shouldn't be remembered
 			ECTokenFetcher *tokenFetcher = [[ECTokenFetcher alloc] init];
 			AccessToken *accessToken = [tokenFetcher syncronousFetchAccessTokenWithAccessGrant:session.currentGrantToken.accessToken];
 			session.currentAccessToken = accessToken;
 			[ECAuthenticatedFetcher setCommonHeadersForAuthenticatedRequest:request];
 		} else {
-			// return error so caller knows to present login?
+            NSDictionary* dict = [[[NSMutableDictionary alloc] initWithCapacity:1] autorelease];
+            [dict setValue:GRANT_TOKEN_EXPIRED forKey:ERROR];
+            NSError* error = [[NSError alloc] initWithDomain:EC_API_ERROR_DOMAIN code:AUTHENTICATION_ERROR userInfo:dict];
+            
+            // if an explicit error handler has been provided, send the NSError to that.
+            if (errorDelegate) {
+                [errorDelegate performSelector:errorSelector withObject:error];
+            }
+            
+            // even if the error handler was called, we still need to call back to the main thread, too.
+            [delegate performSelectorOnMainThread:responseCallback withObject:error waitUntilDone:NO];                            
+            
+            [error release];
+            return;
 		}
 	}
 	
