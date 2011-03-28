@@ -35,7 +35,7 @@
 
 # pragma mark deserialization methods
 
-- (id)deserializeUserDiscussionTopicFromArray:(id)parsedData {
+- (id)deserializeUserDiscussionTopicFromArray:(id)parsedData {    
 	NSDictionary *parsedDictionary = (NSDictionary*)parsedData;
 	if ([parsedDictionary objectForKey:@"userTopics"]) {
         NSArray* userDiscussionTopics = [parsedDictionary objectForKey:@"userTopics"];
@@ -49,7 +49,7 @@
 	}
 }
 
-- (id)deserializeUserDiscussionTopics:(id)parsedData {
+- (id)deserializeUserDiscussionTopics:(id)parsedData {    
     NSDictionary *parsedDictionary = (NSDictionary*)parsedData;
     if ([parsedDictionary objectForKey:@"userTopics"]) {
         ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:parsedDictionary];
