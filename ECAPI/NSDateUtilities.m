@@ -115,11 +115,15 @@ NSString* const ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
 //    return nil;
 //}
 
+- (BOOL)isToday {
+    return [[[NSDate date] dateString:@"MMM d yyyy"] isEqualToString:[self dateString:@"MMM d yyyy"]];
+}
+
 - (NSString*)friendlyString {
     NSString* dtstr = [self dateString:@"MMM d yyyy"];
     NSDate* now = [NSDate date];
     if ([[now dateString:@"MMM d yyyy"] isEqualToString:dtstr]) {
-        return [NSString stringWithFormat:@"%@, %@", NSLocalizedString(@"Today",  nil), [now dateString:@"h:mm a"]];
+        return [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Today",  nil), [now dateString:@"h:mm a"]];
     } 
     if ([[[now addDays:-1] dateString:@"MMM d yyyy"] isEqualToString:dtstr]) {
         return NSLocalizedString(@"Yesterday",  nil);

@@ -20,5 +20,6 @@ extern NSString* const ISO8601Format;
 - (NSString*)dateString:(NSString*)formatString;
 - (NSInteger)year;
 - (NSDate*)addDays:(NSInteger)numDays;
+- (BOOL)isToday;
 
 @end
