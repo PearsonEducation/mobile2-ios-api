@@ -13,12 +13,12 @@
     
 }
 
+- (void)postResponseToTopicWithId:(NSString*)topicId andTitle:(NSString*)title andText:(NSString*)text;
 - (void)fetchUserDiscussionResponseByUserId:(NSInteger)userId andResponseId:(NSInteger)responseId;
 - (void)fetchUserDiscussionResponseByUserResponseId:(NSString*)userResponseId;
 - (void)fetchDiscussionResponsesForResponseId:(NSString*)userDiscussionResponseId;
 - (void)fetchUserDiscussionResponsesForTopicId:(NSString*)userDiscussionTopicId;
-
-- (void)postResponseToResponseId:(NSInteger)responseId andTitle:(NSString*)title andText:(NSString*)text;
-- (void)postResponseToTopicId:(NSInteger)topicId andTitle:(NSString*)title andText:(NSString*)text;
+- (void)postResponseToResponseWithId:(NSString*)topicId andTitle:(NSString*)title andText:(NSString*)text;
+- (void)postResponseToTopicWithId:(NSString*)topicId andTitle:(NSString*)title andText:(NSString*)text;
 
 @end

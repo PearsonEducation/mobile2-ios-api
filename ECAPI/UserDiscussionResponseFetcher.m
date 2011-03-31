@@ -70,6 +70,26 @@
     }
 }
 
+- (void)postResponseToTopicWithId:(NSString*)topicId andTitle:(NSString*)title andText:(NSString*)text {
+    NSString* url = [NSString stringWithFormat:@"%@/me/topics/%@/responses", M_API_URL, topicId];
+    NSMutableDictionary* inner = [[[NSMutableDictionary alloc] initWithCapacity:2] autorelease];
+    [inner setValue:title forKey:@"title"];
+    [inner setValue:text forKey:@"description"];
+    NSMutableDictionary* outer = [[[NSMutableDictionary alloc] initWithCapacity:1] autorelease];
+    [outer setValue:inner forKey:@"response"];
+    [self postBody:outer toURL:url withDeserializationSelector:@selector(deserializePostResponse:)];
+}
+
+- (void)postResponseToResponseWithId:(NSString*)topicId andTitle:(NSString*)title andText:(NSString*)text {
+    NSString* url = [NSString stringWithFormat:@"%@/me/responses/%@/responses", M_API_URL, topicId];
+    NSMutableDictionary* inner = [[[NSMutableDictionary alloc] initWithCapacity:2] autorelease];
+    [inner setValue:title forKey:@"title"];
+    [inner setValue:text forKey:@"description"];
+    NSMutableDictionary* outer = [[[NSMutableDictionary alloc] initWithCapacity:1] autorelease];
+    [outer setValue:inner forKey:@"response"];
+    [self postBody:outer toURL:url withDeserializationSelector:@selector(deserializePostResponse:)];
+}
+
 # pragma mark deserialization methods
 
 - (id)deserializeUserDiscussionResponses:(id)parsedData {
@@ -98,14 +118,12 @@
 	}
 }
 
-- (id)deserializePostResponseToResponse:(id)parsedData {
-    NSLog(@"Received parsedData from posting response to response");
-    return nil;
-}
-
-- (id)deserializePostResponseToTopic:(id)parsedData {
-    NSLog(@"Received parsedData from posting response to topic");
-    return nil;
+- (id)deserializePostResponse:(id)parsedData {
+    NSLog(@"Got some data: %@", parsedData);
+    // currently we don't do anything with the data returned from
+    // a post, so just pass it through
+    // TODO: parse this into a model object
+    return parsedData;
 }
 
 @end

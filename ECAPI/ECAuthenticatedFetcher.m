@@ -15,6 +15,7 @@
 #import "AccessToken.h"
 #import "ECTokenFetcher.h"
 #import "ECConstants.h"
+#import "SBJsonWriter.h"
 
 @interface ECAuthenticatedFetcher (PrivateMethods)
 + (void) setCommonHeadersForAuthenticatedRequest:(ASIHTTPRequest *)request;
@@ -102,11 +103,28 @@ static id generalDelegate;
     [self performSelectorInBackground:@selector(loadDataInBackground) withObject:nil];
 }
 
+- (void) postBody:(NSDictionary*)body toURL:(NSString*)urlString withDeserializationSelector:(SEL)ds {
+    SBJsonWriter* writer = [[SBJsonWriter alloc] init];
+    NSString* jsonString = [writer stringWithObject:body];
+    [writer release];
+    
+    deserializeSelector = ds;
+    NSURL *earl = [NSURL URLWithString:urlString];
+    request = [ECAuthenticatedFetcher newAuthenticatedGETRequestWithURL:earl];
+    [request appendPostData:[jsonString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setRequestMethod:@"POST"];
+    
+    NSLog(@"Posting string: %@ to url: %@", jsonString, earl);
+    
+    [self performSelectorInBackground:@selector(loadDataInBackground) withObject:nil];
+}
+
 - (void) postParams:(NSDictionary *)params toURLFromString:(NSString *)urlString withDeserializationSelector:(SEL)ds {
 	deserializeSelector = ds;
 	NSURL *earl = [NSURL URLWithString:urlString];
+    
 	ASIFormDataRequest *formRequest = [ECAuthenticatedFetcher newAuthenticatedPOSTRequestWithURL:earl];
-	
+    
 	for (id key in params) {
 		[formRequest setPostValue:[params objectForKey:key] forKey:key];
 	}
