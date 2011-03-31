@@ -20,5 +20,6 @@
 - (void)fetchUserDiscussionResponsesForTopicId:(NSString*)userDiscussionTopicId;
 - (void)postResponseToResponseWithId:(NSString*)topicId andTitle:(NSString*)title andText:(NSString*)text;
 - (void)postResponseToTopicWithId:(NSString*)topicId andTitle:(NSString*)title andText:(NSString*)text;
+- (void)markResponseId:(NSString*)responseId asRead:(BOOL)readStatus;
 
 @end

@@ -171,7 +171,12 @@ static id generalDelegate;
         data = [[request responseData] mutableCopy]; // retain count of +1
         responseStatusCode = [request responseStatusCode];
         responseHeaders = [[request responseHeaders] copy];
-        parsedData = [self parseReturnedData];
+        // 204 means success, but no reason for the server to return anything
+        if (responseStatusCode == 204) {
+            parsedData = nil;
+        } else {
+            parsedData = [self parseReturnedData];            
+        }
 		objectToReturn = parsedData;
 		if (!([parsedData isKindOfClass:[NSError class]])) {
 			objectToReturn = [self performSelector:deserializeSelector withObject:parsedData];

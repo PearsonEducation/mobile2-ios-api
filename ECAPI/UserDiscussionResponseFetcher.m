@@ -90,6 +90,15 @@
     [self postBody:outer toURL:url withDeserializationSelector:@selector(deserializePostResponse:)];
 }
 
+- (void)markResponseId:(NSString*)responseId asRead:(BOOL)readStatus {
+    NSString* url = [NSString stringWithFormat:@"%@/me/responses/%@/readStatus", M_API_URL, responseId];
+    NSMutableDictionary* inner = [[[NSMutableDictionary alloc] initWithCapacity:1] autorelease];
+    [inner setValue:[[[NSNumber alloc] initWithBool:readStatus] autorelease] forKey:@"markedAsRead"];
+    NSMutableDictionary* outer = [[[NSMutableDictionary alloc] initWithCapacity:1] autorelease];
+    [outer setValue:inner forKey:@"readStatus"];
+    [self postBody:outer toURL:url withDeserializationSelector:@selector(deserializeMarkResponseAsRead:)];
+}
+
 # pragma mark deserialization methods
 
 - (id)deserializeUserDiscussionResponses:(id)parsedData {
@@ -122,6 +131,14 @@
     NSLog(@"Got some data: %@", parsedData);
     // currently we don't do anything with the data returned from
     // a post, so just pass it through
+    // TODO: parse this into a model object
+    return parsedData;
+}
+
+- (id)deserializeMarkResponseAsRead:(id)parsedData {
+    NSLog(@"Got some data for marking response as read: %@", parsedData);
+    // currently we don't do anything with the data returned from
+    // a mark-as-read operation, so just pass it through
     // TODO: parse this into a model object
     return parsedData;
 }
