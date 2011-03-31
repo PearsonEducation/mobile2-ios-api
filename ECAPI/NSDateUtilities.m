@@ -120,12 +120,13 @@ NSString* const ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
 }
 
 - (NSString*)friendlyString {
-    NSString* dtstr = [self dateString:@"MMM d yyyy"];
+    NSString* format = @"MMM d, yyyy";
+    NSString* dtstr = [self dateString:format];
     NSDate* now = [NSDate date];
-    if ([[now dateString:@"MMM d yyyy"] isEqualToString:dtstr]) {
+    if ([[now dateString:format] isEqualToString:dtstr]) {
         return [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Today",  nil), [now dateString:@"h:mm a"]];
     } 
-    if ([[[now addDays:-1] dateString:@"MMM d yyyy"] isEqualToString:dtstr]) {
+    if ([[[now addDays:-1] dateString:format] isEqualToString:dtstr]) {
         return NSLocalizedString(@"Yesterday",  nil);
 
     }
