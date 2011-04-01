@@ -14,4 +14,7 @@
     
 }
 
+- (void) fetchAnnouncementsForCourseWithId:(NSInteger)courseId;
+- (void) fetchAnnouncementWithId:(NSInteger)announcementId forCourseId:(NSInteger)courseId;
+
 @end

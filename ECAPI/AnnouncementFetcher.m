@@ -10,11 +10,22 @@
 #import "AnnouncementFetcher.h"
 #import "Announcement.h"
 
+@interface AnnouncementFetcher ()
+
+- (id) deserializeListOfAnnouncements:(id)parsedData;
+
+@end
+
 @implementation AnnouncementFetcher
 
 - (void) fetchAnnouncementsForCourseWithId:(NSInteger)courseId {
     NSString *url = [NSString stringWithFormat:@"%@/courses/%d/announcements", M_API_URL, courseId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeListOfAnnouncements:)];
+}
+
+- (void) fetchAnnouncementWithId:(NSInteger)announcementId forCourseId:(NSInteger)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%d/announcements/%d", M_API_URL, courseId, announcementId];
+    [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeAnnouncementFromArray:)];
 }
 
 - (id) deserializeListOfAnnouncements:(id)parsedData {
@@ -26,6 +37,15 @@
 	} else {
 		return nil;
 	}
+}
+
+- (id) deserializeAnnouncementFromArray:(id)parsedData {
+    id result = [self deserializeListOfAnnouncements:parsedData];
+    if ([result isKindOfClass:[NSArray class]] && [(NSArray*)result count] > 0) {
+        return [(NSArray*)result objectAtIndex:0];
+    } else {
+        return nil;
+    }
 }
 
 @end
