@@ -24,9 +24,9 @@
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeSingleUserFromArray:)];
 }
 
-- (void) fetchUsersEnrolledInCourseWithId:(NSInteger)courseId {
-    NSString *url = [NSString stringWithFormat:@"%@/courses/%d/enrolledUsers", M_API_URL, courseId];
-    [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeEnrolledUsers:)];
+- (void) fetchRosterForCourseWithId:(NSInteger)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%d/roster", M_API_URL, courseId];
+    [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeRoster:)];
 }
 
 - (id) deserializeMe:(id)parsedData {
@@ -52,11 +52,11 @@
 	}
 }
 
-- (id) deserializeEnrolledUsers:(id)parsedData {
+- (id) deserializeRoster:(id)parsedData {
 	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
-	if ([parsedDictionary objectForKey:@"enrolledUsers"]) {
+	if ([parsedDictionary objectForKey:@"roster"]) {
 		ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:parsedDictionary];
-        NSArray *users = [unarchiver decodeArrayForKey:@"enrolledUsers" ofType:[User class]];
+        NSArray *users = [unarchiver decodeArrayForKey:@"roster" ofType:[User class]];
         return users;
 	} else {
 		return nil;
