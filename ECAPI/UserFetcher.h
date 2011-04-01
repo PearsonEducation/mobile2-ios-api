@@ -15,5 +15,6 @@
 
 - (void) fetchMe;
 - (void) fetchUserById:(NSInteger)userId;
+- (void) fetchUsersEnrolledInCourseWithId:(NSInteger)courseId;
 
 @end

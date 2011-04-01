@@ -24,6 +24,11 @@
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeSingleUserFromArray:)];
 }
 
+- (void) fetchUsersEnrolledInCourseWithId:(NSInteger)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%d/enrolledUsers", M_API_URL, courseId];
+    [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeEnrolledUsers:)];
+}
+
 - (id) deserializeMe:(id)parsedData {
 	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
 	if ([parsedDictionary objectForKey:@"me"]) {
@@ -42,6 +47,17 @@
 		NSDictionary *targetDictionary = [array objectAtIndex:0];
 		ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
 		return [[[User alloc] initWithCoder:unarchiver] autorelease];
+	} else {
+		return nil;
+	}
+}
+
+- (id) deserializeEnrolledUsers:(id)parsedData {
+	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
+	if ([parsedDictionary objectForKey:@"enrolledUsers"]) {
+		ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:parsedDictionary];
+        NSArray *users = [unarchiver decodeArrayForKey:@"enrolledUsers" ofType:[User class]];
+        return users;
 	} else {
 		return nil;
 	}
