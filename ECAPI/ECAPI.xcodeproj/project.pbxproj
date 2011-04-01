@@ -9,6 +9,26 @@
 /* Begin PBXBuildFile section */
 		A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = A2140EB313281A9C001C3DFC /* DateCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2140EB613281A9C001C3DFC /* DateCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2140EB413281A9C001C3DFC /* DateCalculator.m */; };
+		A22ACA9B1346454E00990A9A /* AnnouncementFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACA991346454E00990A9A /* AnnouncementFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A22ACA9C1346454E00990A9A /* AnnouncementFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACA991346454E00990A9A /* AnnouncementFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A22ACA9D1346454E00990A9A /* AnnouncementFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACA9A1346454E00990A9A /* AnnouncementFetcher.m */; };
+		A22ACA9E1346454E00990A9A /* AnnouncementFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACA9A1346454E00990A9A /* AnnouncementFetcher.m */; };
+		A22ACAA21346465D00990A9A /* Announcement.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAA01346465D00990A9A /* Announcement.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A22ACAA31346465D00990A9A /* Announcement.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAA11346465D00990A9A /* Announcement.m */; };
+		A22ACAA613464BA300990A9A /* EnrolledUser.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAA413464BA200990A9A /* EnrolledUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A22ACAA713464BA300990A9A /* EnrolledUser.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAA413464BA200990A9A /* EnrolledUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A22ACAA813464BA300990A9A /* EnrolledUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAA513464BA200990A9A /* EnrolledUser.m */; };
+		A22ACAA913464BA300990A9A /* EnrolledUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAA513464BA200990A9A /* EnrolledUser.m */; };
+		A22ACAAC13464DE400990A9A /* Role.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAAA13464DE300990A9A /* Role.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A22ACAAD13464DE400990A9A /* Role.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAAA13464DE300990A9A /* Role.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A22ACAAE13464DE400990A9A /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAAB13464DE300990A9A /* Role.m */; };
+		A22ACAAF13464DE400990A9A /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAAB13464DE300990A9A /* Role.m */; };
+		A22ACAB213464F7A00990A9A /* UserGradebookItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAB013464F7900990A9A /* UserGradebookItem.h */; };
+		A22ACAB313464F7A00990A9A /* UserGradebookItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAB013464F7900990A9A /* UserGradebookItem.h */; };
+		A22ACAB413464F7A00990A9A /* UserGradebookItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAB113464F7A00990A9A /* UserGradebookItem.m */; };
+		A22ACAB513464F7A00990A9A /* UserGradebookItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAB113464F7A00990A9A /* UserGradebookItem.m */; };
+		A22ACABE134650F100990A9A /* GradebookItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACABC134650EF00990A9A /* GradebookItem.h */; };
+		A22ACABF134650F100990A9A /* GradebookItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACABD134650F000990A9A /* GradebookItem.m */; };
 		A27691F51321630F00FDA805 /* ActivityStreamFetcherTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */; };
 		A27691F9132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A27691FA132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -257,6 +277,18 @@
 /* Begin PBXFileReference section */
 		A2140EB313281A9C001C3DFC /* DateCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCalculator.h; sourceTree = "<group>"; };
 		A2140EB413281A9C001C3DFC /* DateCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCalculator.m; sourceTree = "<group>"; };
+		A22ACA991346454E00990A9A /* AnnouncementFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementFetcher.h; sourceTree = "<group>"; };
+		A22ACA9A1346454E00990A9A /* AnnouncementFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementFetcher.m; sourceTree = "<group>"; };
+		A22ACAA01346465D00990A9A /* Announcement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Announcement.h; sourceTree = "<group>"; };
+		A22ACAA11346465D00990A9A /* Announcement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Announcement.m; sourceTree = "<group>"; };
+		A22ACAA413464BA200990A9A /* EnrolledUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnrolledUser.h; sourceTree = "<group>"; };
+		A22ACAA513464BA200990A9A /* EnrolledUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnrolledUser.m; sourceTree = "<group>"; };
+		A22ACAAA13464DE300990A9A /* Role.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Role.h; sourceTree = "<group>"; };
+		A22ACAAB13464DE300990A9A /* Role.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Role.m; sourceTree = "<group>"; };
+		A22ACAB013464F7900990A9A /* UserGradebookItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserGradebookItem.h; sourceTree = "<group>"; };
+		A22ACAB113464F7A00990A9A /* UserGradebookItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserGradebookItem.m; sourceTree = "<group>"; };
+		A22ACABC134650EF00990A9A /* GradebookItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradebookItem.h; sourceTree = "<group>"; };
+		A22ACABD134650F000990A9A /* GradebookItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradebookItem.m; sourceTree = "<group>"; };
 		A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamFetcherTestCase.m; sourceTree = "<group>"; };
 		A27691F7132167C900FDA805 /* ActivityStreamItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityStreamItem.h; sourceTree = "<group>"; };
 		A27691F8132167C900FDA805 /* ActivityStreamItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamItem.m; sourceTree = "<group>"; };
@@ -649,6 +681,16 @@
 				A2800F16133579AA003EA22C /* UserDiscussionResponse.m */,
 				A2800F1B133579BF003EA22C /* UserDiscussionTopic.h */,
 				A2800F1C133579C1003EA22C /* UserDiscussionTopic.m */,
+				A22ACAA01346465D00990A9A /* Announcement.h */,
+				A22ACAA11346465D00990A9A /* Announcement.m */,
+				A22ACAA413464BA200990A9A /* EnrolledUser.h */,
+				A22ACAA513464BA200990A9A /* EnrolledUser.m */,
+				A22ACAAA13464DE300990A9A /* Role.h */,
+				A22ACAAB13464DE300990A9A /* Role.m */,
+				A22ACAB013464F7900990A9A /* UserGradebookItem.h */,
+				A22ACAB113464F7A00990A9A /* UserGradebookItem.m */,
+				A22ACABC134650EF00990A9A /* GradebookItem.h */,
+				A22ACABD134650F000990A9A /* GradebookItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -687,6 +729,8 @@
 				A2800F221336F0F8003EA22C /* UserDiscussionResponseFetcher.m */,
 				A2800F2D1336F192003EA22C /* UserDiscussionTopicFetcher.h */,
 				A2800F2E1336F193003EA22C /* UserDiscussionTopicFetcher.m */,
+				A22ACA991346454E00990A9A /* AnnouncementFetcher.h */,
+				A22ACA9A1346454E00990A9A /* AnnouncementFetcher.m */,
 			);
 			name = Fetchers;
 			sourceTree = "<group>";
@@ -786,6 +830,12 @@
 				A2800F231336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */,
 				A2800F2F1336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */,
 				A293E30B133B0794003D3E7F /* NSDateUtilities.h in Headers */,
+				A22ACA9B1346454E00990A9A /* AnnouncementFetcher.h in Headers */,
+				A22ACAA21346465D00990A9A /* Announcement.h in Headers */,
+				A22ACAA613464BA300990A9A /* EnrolledUser.h in Headers */,
+				A22ACAAC13464DE400990A9A /* Role.h in Headers */,
+				A22ACAB213464F7A00990A9A /* UserGradebookItem.h in Headers */,
+				A22ACABE134650F100990A9A /* GradebookItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -831,6 +881,10 @@
 				A2800F241336F0F9003EA22C /* UserDiscussionResponseFetcher.h in Headers */,
 				A2800F301336F195003EA22C /* UserDiscussionTopicFetcher.h in Headers */,
 				A293E30C133B0794003D3E7F /* NSDateUtilities.h in Headers */,
+				A22ACA9C1346454E00990A9A /* AnnouncementFetcher.h in Headers */,
+				A22ACAA713464BA300990A9A /* EnrolledUser.h in Headers */,
+				A22ACAAD13464DE400990A9A /* Role.h in Headers */,
+				A22ACAB313464F7A00990A9A /* UserGradebookItem.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -994,6 +1048,12 @@
 				A2800F251336F0F9003EA22C /* UserDiscussionResponseFetcher.m in Sources */,
 				A2800F311336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */,
 				A293E30D133B0794003D3E7F /* NSDateUtilities.m in Sources */,
+				A22ACA9D1346454E00990A9A /* AnnouncementFetcher.m in Sources */,
+				A22ACAA31346465D00990A9A /* Announcement.m in Sources */,
+				A22ACAA813464BA300990A9A /* EnrolledUser.m in Sources */,
+				A22ACAAE13464DE400990A9A /* Role.m in Sources */,
+				A22ACAB413464F7A00990A9A /* UserGradebookItem.m in Sources */,
+				A22ACABF134650F100990A9A /* GradebookItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1070,6 +1130,10 @@
 				A2800F261336F0F9003EA22C /* UserDiscussionResponseFetcher.m in Sources */,
 				A2800F321336F195003EA22C /* UserDiscussionTopicFetcher.m in Sources */,
 				A293E30E133B0794003D3E7F /* NSDateUtilities.m in Sources */,
+				A22ACA9E1346454E00990A9A /* AnnouncementFetcher.m in Sources */,
+				A22ACAA913464BA300990A9A /* EnrolledUser.m in Sources */,
+				A22ACAAF13464DE400990A9A /* Role.m in Sources */,
+				A22ACAB513464F7A00990A9A /* UserGradebookItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
