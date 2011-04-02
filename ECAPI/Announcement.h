@@ -9,7 +9,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface Announcement : NSObject {
     NSInteger announcementId;
     NSString* subject;
