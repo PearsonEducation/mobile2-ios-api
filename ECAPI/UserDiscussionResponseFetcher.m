@@ -17,6 +17,7 @@
 
 
 - (void)postResponseToResponseId:(NSInteger)responseId andTitle:(NSString*)title andText:(NSString*)text {
+    
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
     [dict setValue:title forKey:@"title"];
     [dict setValue:text forKey:@"description"];
@@ -25,6 +26,7 @@
 }
 
 - (void)postResponseToTopicId:(NSInteger)topicId andTitle:(NSString*)title andText:(NSString*)text {
+    
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
     [dict setValue:title forKey:@"title"];
     [dict setValue:text forKey:@"description"];
@@ -81,6 +83,7 @@
 }
 
 - (void)postResponseToResponseWithId:(NSString*)topicId andTitle:(NSString*)title andText:(NSString*)text {
+    
     NSString* url = [NSString stringWithFormat:@"%@/me/responses/%@/responses", M_API_URL, topicId];
     NSMutableDictionary* inner = [[[NSMutableDictionary alloc] initWithCapacity:2] autorelease];
     [inner setValue:title forKey:@"title"];
@@ -128,7 +131,7 @@
 }
 
 - (id)deserializePostResponse:(id)parsedData {
-    NSLog(@"Got some data: %@", parsedData);
+     NSLog(@"Got some data: %@", parsedData);
     // currently we don't do anything with the data returned from
     // a post, so just pass it through
     // TODO: parse this into a model object
