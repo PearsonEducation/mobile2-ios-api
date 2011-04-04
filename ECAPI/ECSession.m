@@ -122,19 +122,6 @@ static ECSession *sharedSession = nil;
 	}
 }
 
-//- (void) authenticateWithRememberedCredentialsAndDelegate:(id)delegate callback:(SEL)callbackSelector {
-//	[currentAccessToken release]; currentAccessToken = nil;
-//	if (nil == currentGrantToken) {
-//		[self loadCurrentGrantToken];
-//	}
-//	//TODO: return an error if there is no grant token?
-//	NSLog(@"Authenticating with remembered grant token: %@", currentGrantToken);
-//	currentAuthenticationDelegate = delegate;
-//	currentAuthenticationCallback = callbackSelector;
-//	tokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTokenComplete:)];
-//	[tokenFetcher fetchAccessTokenWithAccessGrant:currentGrantToken.accessToken];
-//}
-
 - (void) fetchGrantTokenComplete:(AccessToken *)token {
 	if (![token isKindOfClass:[NSError class]]) {
 		[grantTokenFetcher release]; grantTokenFetcher = nil;
