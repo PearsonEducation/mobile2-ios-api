@@ -9,13 +9,18 @@
 
 #import <Foundation/Foundation.h>
 #import "GradebookItem.h"
+#import "Grade.h"
 
 @interface UserGradebookItem : NSObject {
     NSInteger userGradebookItemId;
-    GradebookItem* gradebookItem;
+	NSArray *gradeLinks;
+    GradebookItem *gradebookItem;
 }
 
 @property (nonatomic, assign) NSInteger userGradebookItemId;
-@property (nonatomic, retain) GradebookItem* gradebookItem;
+@property (nonatomic, retain) GradebookItem *gradebookItem;
+@property (nonatomic, retain) NSArray *gradeLinks;
+
+- (Grade *) grade;
 
 @end

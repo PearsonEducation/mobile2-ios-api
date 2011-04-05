@@ -7,14 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ECCoder.h"
 
 @interface Link : NSObject {
-    NSString* href;
-    NSString* rel;
+    NSString *href;
+    NSString *rel;
+	NSString *title;
 }
 
-@property (nonatomic, retain) NSString* href;
-@property (nonatomic, retain) NSString* rel;
+- (id) initWithCoder:(NSCoder<ECCoder> *)coder;
+
+@property (nonatomic, copy) NSString* href;
+@property (nonatomic, copy) NSString* rel;
+@property (nonatomic, copy) NSString* title;
 
 @end

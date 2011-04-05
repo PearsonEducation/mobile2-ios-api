@@ -14,7 +14,7 @@
     
 }
 
-- (void)fetchMyGradebookItemsForCourseId:(NSInteger)courseId;
+- (void)fetchMyUserGradebookItemsForCourseId:(NSInteger)courseId;
 - (void)fetchGradebookItemByGuid:(NSString*)guid forCourseId:(NSInteger)courseId;
 
 @end

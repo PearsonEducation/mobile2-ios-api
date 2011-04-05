@@ -7,21 +7,22 @@
 //
 
 #import "GradebookItemFetcher.h"
+#import "UserGradebookItem.h"
 #import "GradebookItem.h"
 #import "ECJSONUnarchiver.h"
 
 @interface GradebookItemFetcher ()
 
-- (id)deserializeGradebookItems:(id)parsedData;
+- (id)deserializeUserGradebookItems:(id)parsedData;
 - (id)deserializeGradebookItemFromArray:(id)parsedData;
 
 @end
 
 @implementation GradebookItemFetcher
 
-- (void)fetchMyGradebookItemsForCourseId:(NSInteger)courseId {
+- (void)fetchMyUserGradebookItemsForCourseId:(NSInteger)courseId {
     NSString* url = [NSString stringWithFormat:@"%@/me/courses/%d/userGradebookItems?expand=grade", M_API_URL, courseId];
-    [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeGradebookItems:)];    
+    [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeUserGradebookItems:)];    
 }
 
 - (void)fetchGradebookItemByGuid:(NSString*)guid forCourseId:(NSInteger)courseId {
@@ -29,11 +30,11 @@
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeGradebookItemFromArray:)];
 }
 
-- (id)deserializeGradebookItems:(id)parsedData {
+- (id)deserializeUserGradebookItems:(id)parsedData {
     NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
 	if ([parsedDictionary objectForKey:@"userGradebookItems"]) {
         ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:parsedDictionary];
-        NSArray* gradebookItems = [unarchiver decodeArrayForKey:@"userGradebookItems" ofType:[GradebookItem class]];
+        NSArray* gradebookItems = [unarchiver decodeArrayForKey:@"userGradebookItems" ofType:[UserGradebookItem class]];
         return gradebookItems;
 	} else {
 		return nil;
@@ -41,7 +42,7 @@
 }
 
 - (id)deserializeGradebookItemFromArray:(id)parsedData {
-    id result = [self deserializeGradebookItems:parsedData];
+    id result = [self deserializeUserGradebookItems:parsedData];
     if ([result isKindOfClass:[NSArray class]] && [(NSArray*)result count] > 0) {
         return [(NSArray*)result objectAtIndex:0];
     } else {

@@ -23,13 +23,13 @@
 		A22ACAAD13464DE400990A9A /* Role.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAAA13464DE300990A9A /* Role.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A22ACAAE13464DE400990A9A /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAAB13464DE300990A9A /* Role.m */; };
 		A22ACAAF13464DE400990A9A /* Role.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAAB13464DE300990A9A /* Role.m */; };
-		A22ACAB213464F7A00990A9A /* UserGradebookItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAB013464F7900990A9A /* UserGradebookItem.h */; };
+		A22ACAB213464F7A00990A9A /* UserGradebookItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAB013464F7900990A9A /* UserGradebookItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A22ACAB313464F7A00990A9A /* UserGradebookItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAB013464F7900990A9A /* UserGradebookItem.h */; };
 		A22ACAB413464F7A00990A9A /* UserGradebookItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAB113464F7A00990A9A /* UserGradebookItem.m */; };
 		A22ACAB513464F7A00990A9A /* UserGradebookItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAB113464F7A00990A9A /* UserGradebookItem.m */; };
-		A22ACABE134650F100990A9A /* GradebookItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACABC134650EF00990A9A /* GradebookItem.h */; };
+		A22ACABE134650F100990A9A /* GradebookItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACABC134650EF00990A9A /* GradebookItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A22ACABF134650F100990A9A /* GradebookItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACABD134650F000990A9A /* GradebookItem.m */; };
-		A22ACAC21346695B00990A9A /* GradebookItemFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAC01346695800990A9A /* GradebookItemFetcher.h */; };
+		A22ACAC21346695B00990A9A /* GradebookItemFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAC01346695800990A9A /* GradebookItemFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A22ACAC31346695B00990A9A /* GradebookItemFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAC01346695800990A9A /* GradebookItemFetcher.h */; };
 		A22ACAC41346695B00990A9A /* GradebookItemFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAC11346695900990A9A /* GradebookItemFetcher.m */; };
 		A22ACAC51346695B00990A9A /* GradebookItemFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAC11346695900990A9A /* GradebookItemFetcher.m */; };
@@ -142,6 +142,10 @@
 		A2FC610D1321AECD00F82864 /* ActivityStreamObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */; };
 		AA747D9F0F9514B9006C5449 /* ECAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */; settings = {ATTRIBUTES = (); }; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+		EA014E62134B8B7100353897 /* GradeLink.h in Headers */ = {isa = PBXBuildFile; fileRef = EA014E60134B8B7100353897 /* GradeLink.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA014E63134B8B7100353897 /* GradeLink.h in Headers */ = {isa = PBXBuildFile; fileRef = EA014E60134B8B7100353897 /* GradeLink.h */; };
+		EA014E64134B8B7100353897 /* GradeLink.m in Sources */ = {isa = PBXBuildFile; fileRef = EA014E61134B8B7100353897 /* GradeLink.m */; };
+		EA014E65134B8B7100353897 /* GradeLink.m in Sources */ = {isa = PBXBuildFile; fileRef = EA014E61134B8B7100353897 /* GradeLink.m */; };
 		EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */; };
 		EA15EE5112FB5EF100D60A83 /* Course.h in Headers */ = {isa = PBXBuildFile; fileRef = EA15EE4F12FB5EF100D60A83 /* Course.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA15EE5212FB5EF100D60A83 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = EA15EE5012FB5EF100D60A83 /* Course.m */; };
@@ -353,6 +357,8 @@
 		AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libECAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libECAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA014E60134B8B7100353897 /* GradeLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradeLink.h; sourceTree = "<group>"; };
+		EA014E61134B8B7100353897 /* GradeLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeLink.m; sourceTree = "<group>"; };
 		EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseDeserializationTestCase.m; sourceTree = "<group>"; };
 		EA15EE4F12FB5EF100D60A83 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		EA15EE5012FB5EF100D60A83 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
@@ -691,6 +697,8 @@
 				A22ACABD134650F000990A9A /* GradebookItem.m */,
 				A2F267C9134AB69F00605AF0 /* RosterUser.h */,
 				A2F267CA134AB69F00605AF0 /* RosterUser.m */,
+				EA014E60134B8B7100353897 /* GradeLink.h */,
+				EA014E61134B8B7100353897 /* GradeLink.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -812,6 +820,10 @@
 				A276920B1321681400FDA805 /* ActivityStreamTarget.h in Headers */,
 				A27692111321715C00FDA805 /* ActivityStreamFetcher.h in Headers */,
 				A2AC045313255D910069C90D /* ActivityStream.h in Headers */,
+				A22ACAB213464F7A00990A9A /* UserGradebookItem.h in Headers */,
+				A22ACABE134650F100990A9A /* GradebookItem.h in Headers */,
+				A22ACAC21346695B00990A9A /* GradebookItemFetcher.h in Headers */,
+				EA014E62134B8B7100353897 /* GradeLink.h in Headers */,
 				A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */,
 				A2A9674B132E817D00554238 /* GTMNSString+HTML.h in Headers */,
 				A2C36373132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */,
@@ -835,9 +847,6 @@
 				A22ACAA21346465D00990A9A /* Announcement.h in Headers */,
 				A22ACAA613464BA300990A9A /* EnrolledUser.h in Headers */,
 				A22ACAAC13464DE400990A9A /* Role.h in Headers */,
-				A22ACAB213464F7A00990A9A /* UserGradebookItem.h in Headers */,
-				A22ACABE134650F100990A9A /* GradebookItem.h in Headers */,
-				A22ACAC21346695B00990A9A /* GradebookItemFetcher.h in Headers */,
 				A2F267CB134AB69F00605AF0 /* RosterUser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -888,6 +897,7 @@
 				A22ACAAD13464DE400990A9A /* Role.h in Headers */,
 				A22ACAB313464F7A00990A9A /* UserGradebookItem.h in Headers */,
 				A22ACAC31346695B00990A9A /* GradebookItemFetcher.h in Headers */,
+				EA014E63134B8B7100353897 /* GradeLink.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1057,6 +1067,7 @@
 				A22ACABF134650F100990A9A /* GradebookItem.m in Sources */,
 				A22ACAC41346695B00990A9A /* GradebookItemFetcher.m in Sources */,
 				A2F267CC134AB69F00605AF0 /* RosterUser.m in Sources */,
+				EA014E64134B8B7100353897 /* GradeLink.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1136,6 +1147,7 @@
 				A22ACAAF13464DE400990A9A /* Role.m in Sources */,
 				A22ACAB513464F7A00990A9A /* UserGradebookItem.m in Sources */,
 				A22ACAC51346695B00990A9A /* GradebookItemFetcher.m in Sources */,
+				EA014E65134B8B7100353897 /* GradeLink.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

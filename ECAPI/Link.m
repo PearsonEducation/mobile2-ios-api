@@ -10,14 +10,13 @@
 #import "ECCoder.h"
 
 @implementation Link
-
-@synthesize href;
-@synthesize rel;
+@synthesize href, rel, title;
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.href              = [coder decodeObjectForKey:@"href"];
-        self.rel               = [coder decodeObjectForKey:@"rel"];
+        self.href		= [coder decodeObjectForKey:@"href"];
+        self.rel        = [coder decodeObjectForKey:@"rel"];
+		self.title		= [coder decodeObjectForKey:@"title"];
     }
     return self;
 }
@@ -25,6 +24,7 @@
 - (void)dealloc {
     self.href = nil;
     self.rel = nil;
+	self.title = nil;
 }
 
 @end
