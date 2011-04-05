@@ -1,8 +1,8 @@
 //
-//  Grade.m
+//  GradebookItemGrade.m
 //  ECAPI
 //
-//  Created by Tony Hillerson on 2/11/11.
+//  Created by Brad Umbaugh on 3/15/11.
 //  Copyright 2011 EffectiveUI. All rights reserved.
 //
 
@@ -10,25 +10,30 @@
 #import "ECCoder.h"
 
 @implementation Grade
-@synthesize average, earned, possible, extraCredit, isWeightingOn, shareWithStudent, letterGrade, letterGradeComments;
+
+@synthesize gradeId;
+@synthesize points;
+@synthesize letterGrade;
+@synthesize comments;
+@synthesize updatedDate;
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
-	if ((self = [super init])) {
-		self.average = [[coder decodeNumberForKey:@"average"] floatValue];
-		self.earned = [[coder decodeNumberForKey:@"earned"] floatValue];
-		self.possible = [[coder decodeNumberForKey:@"possible"] floatValue];
-		self.extraCredit = [[coder decodeNumberForKey:@"extraCredit"] floatValue];
-		self.isWeightingOn = [coder decodeBoolForKey:@"isWeightingOn"];
-		self.shareWithStudent = [coder decodeBoolForKey:@"shareWithStudent"];
-		NSDictionary *letterGradeDictionary = [coder decodeObjectForKey:@"letterGrade"];
-		self.letterGrade = [letterGradeDictionary objectForKey:@"letterGrade"];
-		self.letterGradeComments = [letterGradeDictionary objectForKey:@"letterGradeComments"];
-	}
+	if ((self == [super init])) {
+        self.gradeId       = [coder decodeIntegerForKey:@"id"];
+        self.points                 = [coder decodeNumberForKey:@"points"];
+        self.letterGrade            = [coder decodeObjectForKey:@"letterGrade"];
+        self.comments               = [coder decodeObjectForKey:@"comments"];
+        self.updatedDate            = [coder decodeDateForKey:@"updatedDate"];
+    }
 	return self;
 }
 
-- (void) dealloc {
-	self.letterGrade = nil;
-	self.letterGradeComments = nil;
+- (void)dealloc {
+    self.points = nil;
+    self.letterGrade = nil;
+    self.comments = nil;
+    self.updatedDate = nil;
+    [super dealloc];
 }
+
 @end

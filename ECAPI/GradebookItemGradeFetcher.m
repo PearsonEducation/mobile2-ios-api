@@ -7,7 +7,7 @@
 //
 
 #import "GradebookItemGradeFetcher.h"
-#import "GradebookItemGrade.h"
+#import "Grade.h"
 #import "ECJSONUnarchiver.h"
 
 @implementation GradebookItemGradeFetcher
@@ -31,7 +31,7 @@
 	if ([parsedDictionary objectForKey:@"grade"]) {
 		NSDictionary *targetDictionary = [parsedDictionary objectForKey:@"grade"];
 		ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:targetDictionary];
-        GradebookItemGrade* gradebookItemGrade = [[[GradebookItemGrade alloc] initWithCoder:unarchiver] autorelease];
+        Grade* gradebookItemGrade = [[[Grade alloc] initWithCoder:unarchiver] autorelease];
         return gradebookItemGrade;
 	} else {
         NSLog(@"ERROR: expected dictionary key 'grade' to reference valid grade data");

@@ -120,10 +120,10 @@
 		A2C36374132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C36371132FCAE6007BA0BD /* GradebookItemGradeFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2C36375132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36372132FCAE6007BA0BD /* GradebookItemGradeFetcher.m */; };
 		A2C36376132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36372132FCAE6007BA0BD /* GradebookItemGradeFetcher.m */; };
-		A2C3637A132FD67D007BA0BD /* GradebookItemGrade.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C36378132FD676007BA0BD /* GradebookItemGrade.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2C3637B132FD67D007BA0BD /* GradebookItemGrade.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C36378132FD676007BA0BD /* GradebookItemGrade.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2C3637C132FD67D007BA0BD /* GradebookItemGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36379132FD678007BA0BD /* GradebookItemGrade.m */; };
-		A2C3637D132FD67D007BA0BD /* GradebookItemGrade.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36379132FD678007BA0BD /* GradebookItemGrade.m */; };
+		A2C3637A132FD67D007BA0BD /* Grade.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C36378132FD676007BA0BD /* Grade.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2C3637B132FD67D007BA0BD /* Grade.h in Headers */ = {isa = PBXBuildFile; fileRef = A2C36378132FD676007BA0BD /* Grade.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2C3637C132FD67D007BA0BD /* Grade.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36379132FD678007BA0BD /* Grade.m */; };
+		A2C3637D132FD67D007BA0BD /* Grade.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C36379132FD678007BA0BD /* Grade.m */; };
 		A2EE2B72133293290059DFAD /* DropboxAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = A2EE2B70133293240059DFAD /* DropboxAttachment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2EE2B73133293290059DFAD /* DropboxAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = A2EE2B70133293240059DFAD /* DropboxAttachment.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2EE2B74133293290059DFAD /* DropboxAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE2B71133293270059DFAD /* DropboxAttachment.m */; };
@@ -272,12 +272,6 @@
 		EAD2E00813184F3600A4D89C /* AccessTokenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD2E00713184F3600A4D89C /* AccessTokenTestCase.m */; };
 		EAD2E02F13186C6400A4D89C /* ECSessionTokenTestCase.m in Resources */ = {isa = PBXBuildFile; fileRef = EAD2E02E13186C6400A4D89C /* ECSessionTokenTestCase.m */; };
 		EAD2E03013187F8300A4D89C /* ECSessionTokenTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD2E02E13186C6400A4D89C /* ECSessionTokenTestCase.m */; };
-		EAD9ECBE1305FEEB00BA7297 /* GradeDeserializationTestCase.m in Resources */ = {isa = PBXBuildFile; fileRef = EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */; };
-		EAD9ECC11306007C00BA7297 /* Grade.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD9ECBF1306007C00BA7297 /* Grade.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EAD9ECC21306007C00BA7297 /* Grade.h in Headers */ = {isa = PBXBuildFile; fileRef = EAD9ECBF1306007C00BA7297 /* Grade.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EAD9ECC31306007C00BA7297 /* Grade.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD9ECC01306007C00BA7297 /* Grade.m */; };
-		EAD9ECC41306007C00BA7297 /* Grade.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD9ECC01306007C00BA7297 /* Grade.m */; };
-		EAD9ECC51306037C00BA7297 /* GradeDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -344,8 +338,8 @@
 		A2AC045213255D8F0069C90D /* ActivityStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStream.m; sourceTree = "<group>"; };
 		A2C36371132FCAE6007BA0BD /* GradebookItemGradeFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradebookItemGradeFetcher.h; sourceTree = "<group>"; };
 		A2C36372132FCAE6007BA0BD /* GradebookItemGradeFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradebookItemGradeFetcher.m; sourceTree = "<group>"; };
-		A2C36378132FD676007BA0BD /* GradebookItemGrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GradebookItemGrade.h; sourceTree = "<group>"; };
-		A2C36379132FD678007BA0BD /* GradebookItemGrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradebookItemGrade.m; sourceTree = "<group>"; };
+		A2C36378132FD676007BA0BD /* Grade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grade.h; sourceTree = "<group>"; };
+		A2C36379132FD678007BA0BD /* Grade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grade.m; sourceTree = "<group>"; };
 		A2EE2B70133293240059DFAD /* DropboxAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxAttachment.h; sourceTree = "<group>"; };
 		A2EE2B71133293270059DFAD /* DropboxAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxAttachment.m; sourceTree = "<group>"; };
 		A2EE2B771332933A0059DFAD /* DropboxMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxMessage.h; sourceTree = "<group>"; };
@@ -443,9 +437,6 @@
 		EAD2E00213184CFD00A4D89C /* AccessToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessToken.m; sourceTree = "<group>"; };
 		EAD2E00713184F3600A4D89C /* AccessTokenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccessTokenTestCase.m; sourceTree = "<group>"; };
 		EAD2E02E13186C6400A4D89C /* ECSessionTokenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECSessionTokenTestCase.m; sourceTree = "<group>"; };
-		EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GradeDeserializationTestCase.m; sourceTree = "<group>"; };
-		EAD9ECBF1306007C00BA7297 /* Grade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Grade.h; sourceTree = "<group>"; };
-		EAD9ECC01306007C00BA7297 /* Grade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Grade.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -633,7 +624,6 @@
 				EAADEE2F12F9E37400899C75 /* UserDeserializationTestCase.m */,
 				EA15EE0012FB17AC00D60A83 /* CourseDeserializationTestCase.m */,
 				EA9FC08F12FC6224009AA1FF /* CourseItemDeserializationTestCase.m */,
-				EAD9ECBD1305FEEB00BA7297 /* GradeDeserializationTestCase.m */,
 				EAD2E00713184F3600A4D89C /* AccessTokenTestCase.m */,
 				EAD2E02E13186C6400A4D89C /* ECSessionTokenTestCase.m */,
 				A2769217132186C800FDA805 /* ActivityStreamItemDeserializationTestCase.m */,
@@ -657,8 +647,6 @@
 				EAADEE3312F9E43A00899C75 /* User.m */,
 				EA15EE4F12FB5EF100D60A83 /* Course.h */,
 				EA15EE5012FB5EF100D60A83 /* Course.m */,
-				EAD9ECBF1306007C00BA7297 /* Grade.h */,
-				EAD9ECC01306007C00BA7297 /* Grade.m */,
 				A27691F7132167C900FDA805 /* ActivityStreamItem.h */,
 				A27691F8132167C900FDA805 /* ActivityStreamItem.m */,
 				A27691FD132167E000FDA805 /* ActivityStreamActor.h */,
@@ -669,8 +657,8 @@
 				A276920A1321681300FDA805 /* ActivityStreamTarget.m */,
 				A2AC045113255D8F0069C90D /* ActivityStream.h */,
 				A2AC045213255D8F0069C90D /* ActivityStream.m */,
-				A2C36378132FD676007BA0BD /* GradebookItemGrade.h */,
-				A2C36379132FD678007BA0BD /* GradebookItemGrade.m */,
+				A2C36378132FD676007BA0BD /* Grade.h */,
+				A2C36379132FD678007BA0BD /* Grade.m */,
 				A2EE2B70133293240059DFAD /* DropboxAttachment.h */,
 				A2EE2B71133293270059DFAD /* DropboxAttachment.m */,
 				A2EE2B771332933A0059DFAD /* DropboxMessage.h */,
@@ -790,7 +778,6 @@
 				EA9CF47413020E8E00108C6C /* ECCoder.h in Headers */,
 				EA9CF47A13020EF300108C6C /* ECJSONUnarchiver.h in Headers */,
 				EA6E087713046A69001016B8 /* CourseFetcher.h in Headers */,
-				EAD9ECC11306007C00BA7297 /* Grade.h in Headers */,
 				EA7A9F63131470AD00D9EC6A /* ECSession.h in Headers */,
 				EAD2DFFC1318239700A4D89C /* ECTokenFetcher.h in Headers */,
 				EAD2E00313184CFD00A4D89C /* AccessToken.h in Headers */,
@@ -828,7 +815,7 @@
 				A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */,
 				A2A9674B132E817D00554238 /* GTMNSString+HTML.h in Headers */,
 				A2C36373132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */,
-				A2C3637A132FD67D007BA0BD /* GradebookItemGrade.h in Headers */,
+				A2C3637A132FD67D007BA0BD /* Grade.h in Headers */,
 				A2EE2B72133293290059DFAD /* DropboxAttachment.h in Headers */,
 				A2EE2B79133293400059DFAD /* DropboxMessage.h in Headers */,
 				A2EE2B7F1332A30F0059DFAD /* DropboxMessageFetcher.h in Headers */,
@@ -870,7 +857,6 @@
 				EA9CF47513020E8E00108C6C /* ECCoder.h in Headers */,
 				EA9CF47B13020EF300108C6C /* ECJSONUnarchiver.h in Headers */,
 				EA6E087813046A69001016B8 /* CourseFetcher.h in Headers */,
-				EAD9ECC21306007C00BA7297 /* Grade.h in Headers */,
 				EAD2DFFD1318239700A4D89C /* ECTokenFetcher.h in Headers */,
 				EAD2E00413184CFD00A4D89C /* AccessToken.h in Headers */,
 				A27691FA132167CA00FDA805 /* ActivityStreamItem.h in Headers */,
@@ -881,7 +867,7 @@
 				A2AC045413255D910069C90D /* ActivityStream.h in Headers */,
 				A2A9674C132E817D00554238 /* GTMNSString+HTML.h in Headers */,
 				A2C36374132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */,
-				A2C3637B132FD67D007BA0BD /* GradebookItemGrade.h in Headers */,
+				A2C3637B132FD67D007BA0BD /* Grade.h in Headers */,
 				A2EE2B73133293290059DFAD /* DropboxAttachment.h in Headers */,
 				A2EE2B7A133293400059DFAD /* DropboxMessage.h in Headers */,
 				A2EE2B801332A30F0059DFAD /* DropboxMessageFetcher.h in Headers */,
@@ -978,7 +964,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAD9ECBE1305FEEB00BA7297 /* GradeDeserializationTestCase.m in Resources */,
 				EAD2E02F13186C6400A4D89C /* ECSessionTokenTestCase.m in Resources */,
 				A276921D1321A52D00FDA805 /* ActivityStreamItem.json in Resources */,
 				A27692311321ADCD00FDA805 /* ActivityStreamTarget.json in Resources */,
@@ -1037,7 +1022,6 @@
 				EA15EE5412FB5EF100D60A83 /* Course.m in Sources */,
 				EA9CF47C13020EF300108C6C /* ECJSONUnarchiver.m in Sources */,
 				EA6E087913046A69001016B8 /* CourseFetcher.m in Sources */,
-				EAD9ECC31306007C00BA7297 /* Grade.m in Sources */,
 				EAD2DFFE1318239700A4D89C /* ECTokenFetcher.m in Sources */,
 				EAD2E00513184CFD00A4D89C /* AccessToken.m in Sources */,
 				A27691FB132167CA00FDA805 /* ActivityStreamItem.m in Sources */,
@@ -1049,7 +1033,7 @@
 				A2140EB613281A9C001C3DFC /* DateCalculator.m in Sources */,
 				A2A9674D132E817D00554238 /* GTMNSString+HTML.m in Sources */,
 				A2C36375132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */,
-				A2C3637C132FD67D007BA0BD /* GradebookItemGrade.m in Sources */,
+				A2C3637C132FD67D007BA0BD /* Grade.m in Sources */,
 				A2EE2B74133293290059DFAD /* DropboxAttachment.m in Sources */,
 				A2EE2B7B133293400059DFAD /* DropboxMessage.m in Sources */,
 				A2EE2B811332A30F0059DFAD /* DropboxMessageFetcher.m in Sources */,
@@ -1109,13 +1093,11 @@
 				EAADEE5A12F9F8EA00899C75 /* ECAuthenticatedFetcher.m in Sources */,
 				EAADEEA512FA1CC800899C75 /* ECUtils.m in Sources */,
 				EA15EE0112FB17AC00D60A83 /* CourseDeserializationTestCase.m in Sources */,
-				EAD9ECC51306037C00BA7297 /* GradeDeserializationTestCase.m in Sources */,
 				EA15EE5212FB5EF100D60A83 /* Course.m in Sources */,
 				EA9FC09012FC6224009AA1FF /* CourseItemDeserializationTestCase.m in Sources */,
 				EA9CF47D13020EF300108C6C /* ECJSONUnarchiver.m in Sources */,
 				EA6E0874130467E3001016B8 /* CourseFetcherTestCase.m in Sources */,
 				EA6E087A13046A69001016B8 /* CourseFetcher.m in Sources */,
-				EAD9ECC41306007C00BA7297 /* Grade.m in Sources */,
 				EAD2DFFF1318239700A4D89C /* ECTokenFetcher.m in Sources */,
 				EAD2E00613184CFD00A4D89C /* AccessToken.m in Sources */,
 				EAD2E03013187F8300A4D89C /* ECSessionTokenTestCase.m in Sources */,
@@ -1133,7 +1115,7 @@
 				A2AC045613255D910069C90D /* ActivityStream.m in Sources */,
 				A2A9674E132E817D00554238 /* GTMNSString+HTML.m in Sources */,
 				A2C36376132FCAE6007BA0BD /* GradebookItemGradeFetcher.m in Sources */,
-				A2C3637D132FD67D007BA0BD /* GradebookItemGrade.m in Sources */,
+				A2C3637D132FD67D007BA0BD /* Grade.m in Sources */,
 				A2EE2B75133293290059DFAD /* DropboxAttachment.m in Sources */,
 				A2EE2B7C133293400059DFAD /* DropboxMessage.m in Sources */,
 				A2EE2B821332A30F0059DFAD /* DropboxMessageFetcher.m in Sources */,

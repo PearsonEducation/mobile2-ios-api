@@ -10,7 +10,6 @@
 #import "Course.h"
 #import "CourseFetcher.h"
 #import "User.h"
-#import "Grade.h"
 
 @interface CourseFetcherTestCase : TestCaseWithAuthentication {
 	CourseFetcher *courseFetcher;
@@ -94,24 +93,6 @@
 	NSString *message = (NSString *)[error.userInfo objectForKey:@"message"];
 	GHAssertEqualStrings(message, @"Access to the requested resource is denied.", @"Expecting error message to be 'Access to the requested resource is denied.'");
 	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchStudentsForCourseFailureDueToUnauthorized)];
-}
-
-- (void) testFetchCourseGradeToDateSuccess {
-	courseFetcher = [[CourseFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchCourseGradeToDateResponse:)];
-	[self prepare];
-	[courseFetcher fetchMyGradeToDateForCourseWithId:2809780];
-	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
-}
-
-- (void) fetchCourseGradeToDateResponse:(Grade *)grade {
-	GHAssertEqualsWithAccuracy(0.0f, grade.average, 0.0f, @"Expecting average grade to be 0.0");
-	GHAssertEqualsWithAccuracy(0.0f, grade.earned, 0.0f, @"Expecting earned to be 0.0");
-	GHAssertEqualsWithAccuracy(0.0f, grade.possible, 0.0f, @"Expecting possible to be 0.0");
-	GHAssertEqualsWithAccuracy(0.0f, grade.extraCredit, 0.0f, @"Expecting extra credit to be 0.0");
-	GHAssertFalse(grade.isWeightingOn, @"Expecting weighting to be off");
-	GHAssertEqualStrings(@"", grade.letterGrade, @"Expecting letter grade to be nil");
-	GHAssertEqualObjects(nil, grade.letterGradeComments, @"Expecting letter grade comments to be nil");
-	[self notify:kGHUnitWaitStatusSuccess forSelector:@selector(testFetchCourseGradeToDateSuccess)];
 }
 
 @end

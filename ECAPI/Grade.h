@@ -1,8 +1,8 @@
 //
-//  Grade.h
+//  GradebookItemGrade.h
 //  ECAPI
 //
-//  Created by Tony Hillerson on 2/11/11.
+//  Created by Brad Umbaugh on 3/15/11.
 //  Copyright 2011 EffectiveUI. All rights reserved.
 //
 
@@ -10,23 +10,17 @@
 
 
 @interface Grade : NSObject {
-    float average;
-	float earned;
-	float possible;
-	float extraCredit;
-	BOOL isWeightingOn;
-	BOOL shareWithStudent;
-	NSString *letterGrade;
-	NSString *letterGradeComments;
+    NSInteger gradeId;
+    NSDecimalNumber* points;
+    NSString* letterGrade;
+    NSString* comments;
+    NSDate* updatedDate;
 }
 
-@property(nonatomic, assign) float average;
-@property(nonatomic, assign) float earned;
-@property(nonatomic, assign) float possible;
-@property(nonatomic, assign) float extraCredit;
-@property(nonatomic, assign) BOOL isWeightingOn;
-@property(nonatomic, assign) BOOL shareWithStudent;
-@property(nonatomic, copy) NSString *letterGrade;
-@property(nonatomic, copy) NSString *letterGradeComments;
+@property (nonatomic, assign) NSInteger gradeId;
+@property (nonatomic, retain) NSDecimalNumber* points;
+@property (nonatomic, retain) NSString* letterGrade;
+@property (nonatomic, retain) NSString* comments;
+@property (nonatomic, retain) NSDate* updatedDate;
 
 @end
