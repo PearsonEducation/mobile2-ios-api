@@ -28,6 +28,10 @@
 	return self;
 }
 
+- (BOOL) isGraded {
+	return (self.updatedDate != nil);
+}
+
 - (void)dealloc {
     self.points = nil;
     self.letterGrade = nil;

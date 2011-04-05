@@ -23,4 +23,6 @@
 @property (nonatomic, retain) NSString* comments;
 @property (nonatomic, retain) NSDate* updatedDate;
 
+- (BOOL) isGraded;
+
 @end
