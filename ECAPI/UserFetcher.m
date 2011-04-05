@@ -11,6 +11,7 @@
 #import "ECConstants.h"
 #import "SBJsonParser.h"
 #import "ECJSONUnarchiver.h"
+#import "RosterUser.h"
 
 @implementation UserFetcher
 
@@ -56,7 +57,7 @@
 	NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
 	if ([parsedDictionary objectForKey:@"roster"]) {
 		ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:parsedDictionary];
-        NSArray *users = [unarchiver decodeArrayForKey:@"roster" ofType:[User class]];
+        NSArray *users = [unarchiver decodeArrayForKey:@"roster" ofType:[RosterUser class]];
         return users;
 	} else {
 		return nil;

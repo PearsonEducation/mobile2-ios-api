@@ -136,6 +136,8 @@
 		A2EE2B801332A30F0059DFAD /* DropboxMessageFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A2EE2B7D1332A30F0059DFAD /* DropboxMessageFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2EE2B811332A30F0059DFAD /* DropboxMessageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE2B7E1332A30F0059DFAD /* DropboxMessageFetcher.m */; };
 		A2EE2B821332A30F0059DFAD /* DropboxMessageFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EE2B7E1332A30F0059DFAD /* DropboxMessageFetcher.m */; };
+		A2F267CB134AB69F00605AF0 /* RosterUser.h in Headers */ = {isa = PBXBuildFile; fileRef = A2F267C9134AB69F00605AF0 /* RosterUser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2F267CC134AB69F00605AF0 /* RosterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = A2F267CA134AB69F00605AF0 /* RosterUser.m */; };
 		A2FC610B1321AEB300F82864 /* ActivityStreamActor.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */; };
 		A2FC610D1321AECD00F82864 /* ActivityStreamObject.json in Resources */ = {isa = PBXBuildFile; fileRef = A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */; };
 		AA747D9F0F9514B9006C5449 /* ECAPI_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */; settings = {ATTRIBUTES = (); }; };
@@ -350,6 +352,8 @@
 		A2EE2B781332933D0059DFAD /* DropboxMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxMessage.m; sourceTree = "<group>"; };
 		A2EE2B7D1332A30F0059DFAD /* DropboxMessageFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropboxMessageFetcher.h; sourceTree = "<group>"; };
 		A2EE2B7E1332A30F0059DFAD /* DropboxMessageFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropboxMessageFetcher.m; sourceTree = "<group>"; };
+		A2F267C9134AB69F00605AF0 /* RosterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RosterUser.h; sourceTree = "<group>"; };
+		A2F267CA134AB69F00605AF0 /* RosterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RosterUser.m; sourceTree = "<group>"; };
 		A2FC610A1321AEB200F82864 /* ActivityStreamActor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamActor.json; sourceTree = "<group>"; };
 		A2FC610C1321AECD00F82864 /* ActivityStreamObject.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamObject.json; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ECAPI_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECAPI_Prefix.pch; sourceTree = SOURCE_ROOT; };
@@ -697,6 +701,8 @@
 				A22ACAB113464F7A00990A9A /* UserGradebookItem.m */,
 				A22ACABC134650EF00990A9A /* GradebookItem.h */,
 				A22ACABD134650F000990A9A /* GradebookItem.m */,
+				A2F267C9134AB69F00605AF0 /* RosterUser.h */,
+				A2F267CA134AB69F00605AF0 /* RosterUser.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -845,6 +851,7 @@
 				A22ACAB213464F7A00990A9A /* UserGradebookItem.h in Headers */,
 				A22ACABE134650F100990A9A /* GradebookItem.h in Headers */,
 				A22ACAC21346695B00990A9A /* GradebookItemFetcher.h in Headers */,
+				A2F267CB134AB69F00605AF0 /* RosterUser.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1065,6 +1072,7 @@
 				A22ACAB413464F7A00990A9A /* UserGradebookItem.m in Sources */,
 				A22ACABF134650F100990A9A /* GradebookItem.m in Sources */,
 				A22ACAC41346695B00990A9A /* GradebookItemFetcher.m in Sources */,
+				A2F267CC134AB69F00605AF0 /* RosterUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
