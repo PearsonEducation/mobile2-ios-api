@@ -20,7 +20,8 @@
 
 - (NSString*) fullName;
 - (NSString*) friendlyRole;
-
+- (BOOL)isInstructor;
+- (BOOL)isStudent;
 
 @property (nonatomic, assign) NSInteger rosterUserId;
 @property (nonatomic, retain) NSString* roleType;
