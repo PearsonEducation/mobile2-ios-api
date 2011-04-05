@@ -59,6 +59,14 @@
     return nil;
 }
 
+- (BOOL)isInstructor {
+    return roleType && [[roleType lowercaseString] isEqualToString:@"prof"];
+}
+
+- (BOOL)isStudent {
+    return roleType && [[roleType lowercaseString] isEqualToString:@"stud"];
+}
+
 - (void)dealloc {
     self.fullNameString = nil;
     self.roleType = nil;
