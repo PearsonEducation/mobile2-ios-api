@@ -146,6 +146,7 @@ static id generalDelegate;
 			ECTokenFetcher *tokenFetcher = [[ECTokenFetcher alloc] init];
 			AccessToken *accessToken = [tokenFetcher syncronousFetchAccessTokenWithAccessGrant:session.currentGrantToken.accessToken];
 			session.currentAccessToken = accessToken;
+			[tokenFetcher release];
 			[ECAuthenticatedFetcher setCommonHeadersForAuthenticatedRequest:request];
 		} else {
             NSDictionary* dict = [[[NSMutableDictionary alloc] initWithCapacity:1] autorelease];

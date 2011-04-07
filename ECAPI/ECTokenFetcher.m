@@ -39,6 +39,7 @@
 																					   (CFStringRef)@"!*'();:@&=+$,/?%#[]",
 																					   kCFStringEncodingUTF8);
 	[super loadDataFromURLString:[NSString stringWithFormat:@"%@/authorize/token/?access_grant=%@", M_API_URL, encodedGrantString] withDeserializationSelector:@selector(deserializeToken:)];
+	[encodedGrantString release];
 }
 
 - (id) syncronousFetchAccessTokenWithAccessGrant:(NSString *)accessGrantToken {
@@ -49,6 +50,7 @@
 																					   (CFStringRef)@"!*'();:@&=+$,/?%#[]",
 																					   kCFStringEncodingUTF8);
 	NSString *earl = [NSString stringWithFormat:@"%@/authorize/token/?access_grant=%@", M_API_URL, encodedGrantString];
+	[encodedGrantString release];
 	NSURL *url = [NSURL URLWithString:earl];
 	ASIHTTPRequest *tokenRequest = [[ASIHTTPRequest alloc] initWithURL:url];
 	
