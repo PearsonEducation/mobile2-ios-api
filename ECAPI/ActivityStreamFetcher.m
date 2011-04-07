@@ -13,7 +13,7 @@
 @implementation ActivityStreamFetcher
 
 - (void) fetchMyActivityStream {
-	NSString *url = [NSString stringWithFormat:@"%@/me/whatshappeningfeed.json", M_API_URL];
+	NSString *url = [NSString stringWithFormat:@"%@/me/whatshappeningfeed.json?types=dropbox-submission", M_API_URL];
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeMe:)];
 }
 
