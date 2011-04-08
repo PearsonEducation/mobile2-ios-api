@@ -37,6 +37,53 @@
     return [NSString stringWithFormat:@"%@", [postedTime iso8601DateString]];
 }
 
+- (NSString*)getTitle {
+    NSString* type = [self getType];
+    if ([type isEqualToString:@"grade"] || [type isEqualToString:@"dropbox-submission"]) {
+        if (self.target && self.target.title) {
+            return self.target.title;
+        }
+    } else {
+        if (self.object && self.object.title) {
+            return self.object.title;
+        }
+    }
+    return nil;
+}
+
+- (NSString*)getDescription {
+    NSString* type = [self getType];
+    if ([type isEqualToString:@"grade"]) {
+        NSString* letterGrade = nil;
+        NSDecimalNumber* pointsAchieved = nil;
+        NSDecimalNumber* pointsPossible = nil;
+        
+        // first, attempt to get points...
+        if (self.object && self.object.pointsAchieved) {
+            pointsAchieved = self.object.pointsAchieved;
+        }
+        if (self.target && self.target.pointsPossible) {
+            pointsPossible = self.target.pointsPossible;
+        }
+        if (pointsAchieved && pointsPossible) {
+            return [NSString stringWithFormat:@"%@/%@", pointsAchieved, pointsPossible];
+        }
+        
+        // second, attempt to get letter grade
+        if (self.object && self.object.letterGrade) {
+            letterGrade = self.object.letterGrade;
+        }
+        
+        // may still be nil
+        return letterGrade;
+    } else {
+        if (self.object && self.object.summary) {
+            return self.object.summary;
+        }
+    }
+    return nil;
+}
+
 - (NSString*)getType {
     if (self.object && ![self.object.objectType isEqualToString:@""]) {
         return self.object.objectType;

@@ -22,6 +22,8 @@
 }
 
 - (NSString*)getType;
+- (NSString*)getTitle;
+- (NSString*)getDescription;
 
 @property (nonatomic, retain) NSString* activityStreamItemId;
 @property (nonatomic, retain) NSDate* postedTime;
