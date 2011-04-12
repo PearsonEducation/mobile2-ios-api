@@ -16,6 +16,8 @@
     ResponseCount* childResponseCounts;
 }
 
+- (BOOL)isActive;
+
 @property (nonatomic, retain) NSString* userDiscussionTopicId;
 @property (nonatomic, retain) DiscussionTopic* topic;
 @property (nonatomic, retain) ResponseCount* childResponseCounts;

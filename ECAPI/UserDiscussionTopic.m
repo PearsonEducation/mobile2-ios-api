@@ -24,6 +24,11 @@
 	return self;
 }
 
+- (BOOL)isActive {
+    return (childResponseCounts && (childResponseCounts.last24HourResponseCount > 0 || childResponseCounts.unreadResponseCount > 0));
+}
+
+
 - (void)dealloc {
     self.userDiscussionTopicId = nil;
     self.topic = nil;
