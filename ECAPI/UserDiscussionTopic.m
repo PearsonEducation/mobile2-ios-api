@@ -24,6 +24,17 @@
 	return self;
 }
 
+- (NSString*)getUnitTitle {
+    if (topic) {
+        ContainerInfo* ci = topic.containerInfo;
+        if (ci) {
+            return [NSString stringWithFormat:@"%@ %d: %@", ci.unitHeader, ci.unitNumber, ci.unitTitle];
+        }
+    }
+    return nil;
+}
+
+
 - (BOOL)isActive {
     return (childResponseCounts && (childResponseCounts.last24HourResponseCount > 0 || childResponseCounts.unreadResponseCount > 0));
 }

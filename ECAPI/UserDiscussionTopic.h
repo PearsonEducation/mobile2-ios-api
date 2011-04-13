@@ -17,6 +17,7 @@
 }
 
 - (BOOL)isActive;
+- (NSString*)getUnitTitle;
 
 @property (nonatomic, retain) NSString* userDiscussionTopicId;
 @property (nonatomic, retain) DiscussionTopic* topic;
