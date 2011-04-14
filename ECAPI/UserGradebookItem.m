@@ -47,6 +47,7 @@
 - (void)dealloc {
     self.gradebookItem = nil;
 	self.gradeLinks = nil;
+	[super dealloc];
 }
 
 @end

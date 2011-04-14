@@ -25,6 +25,7 @@
     self.href = nil;
     self.rel = nil;
 	self.title = nil;
+	[super dealloc];
 }
 
 @end

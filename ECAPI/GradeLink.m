@@ -22,6 +22,7 @@
 
 - (void)dealloc {
     self.grade = nil;
+	[super dealloc];
 }
 
 

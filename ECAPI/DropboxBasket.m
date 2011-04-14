@@ -28,6 +28,7 @@
 - (void)dealloc {
     self.title = nil;
     self.links = nil;
+	[super dealloc];
 }
 
 @end

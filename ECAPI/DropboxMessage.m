@@ -45,6 +45,7 @@
     self.submissionStudent = nil;
     self.author = nil;
     self.attachments = nil;
+	[super dealloc];
 }
 
 @end

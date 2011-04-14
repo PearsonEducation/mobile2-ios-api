@@ -40,6 +40,7 @@
     self.title = nil;
     self.summary = nil;
     self.objectType = nil;
+	[super dealloc];
 }
 
 
