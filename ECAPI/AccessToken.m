@@ -31,6 +31,13 @@
 	return self;
 }
 
+- (void) dealloc {
+	self.accessToken = nil;
+	self.refreshToken = nil;
+	self.expiresAt = nil;
+	[super dealloc];
+}
+
 - (void) saveInDictionary:(NSMutableDictionary *)dictionary {
 	[dictionary setObject:self.accessToken forKey:@"accessToken"];
 	if (self.refreshToken) {
