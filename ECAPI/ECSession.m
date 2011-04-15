@@ -123,8 +123,8 @@ static ECSession *sharedSession = nil;
 }
 
 - (void) fetchGrantTokenComplete:(AccessToken *)token {
+	[grantTokenFetcher release]; grantTokenFetcher = nil;
 	if (![token isKindOfClass:[NSError class]]) {
-		[grantTokenFetcher release]; grantTokenFetcher = nil;
 		currentGrantToken = [token retain];
 		[self saveCurrentGrantToken];
 		tokenFetcher = [[ECTokenFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTokenComplete:)];
