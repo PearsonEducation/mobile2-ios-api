@@ -52,15 +52,15 @@
 }
 
 - (NSString*)getNumericGrade {
-    NSDecimalNumber *pointsAchieved;
-    NSDecimalNumber *pointsPossible;
-    if (self.object && self.object.pointsAchieved) {
+    NSDecimalNumber *pointsAchieved = nil;
+    NSDecimalNumber *pointsPossible = nil;
+    if (self.object && (self.object.pointsAchieved != nil)) {
         pointsAchieved = self.object.pointsAchieved;
     }
-    if (self.target && self.target.pointsPossible) {
+    if (self.target && (self.target.pointsPossible != nil)) {
         pointsPossible = self.target.pointsPossible;
     }
-    if (pointsAchieved && pointsPossible) {
+    if (pointsAchieved != nil && pointsPossible != nil) {
         return [NSString stringWithFormat:@"%@/%@", pointsAchieved, pointsPossible];
     }
     return nil;
