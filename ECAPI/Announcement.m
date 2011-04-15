@@ -39,6 +39,7 @@
     self.startDisplayDate = nil;
     self.endDisplayDate = nil;
     self.rawText = nil;
+	[super dealloc];
 }
 
 @end

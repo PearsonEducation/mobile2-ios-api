@@ -30,6 +30,7 @@
     self.enrollmentDate = nil;
     self.user = nil;
     self.role = nil;
+	[super dealloc];
 }
 
 @end

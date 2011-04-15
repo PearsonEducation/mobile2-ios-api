@@ -45,6 +45,7 @@
     self.objectType = nil;
     self.letterGrade = nil;
     self.pointsAchieved = nil;
+	[super dealloc];
 }
 
 @end

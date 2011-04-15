@@ -27,6 +27,7 @@
 - (void)dealloc {
     self.type = nil;
     self.name = nil;
+	[super dealloc];
 }
 
 @end

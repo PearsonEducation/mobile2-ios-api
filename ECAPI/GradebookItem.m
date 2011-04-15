@@ -30,6 +30,7 @@
     self.type = nil;
     self.title = nil;
     self.pointsPossible = nil;
+	[super dealloc];
 }
 
 @end
