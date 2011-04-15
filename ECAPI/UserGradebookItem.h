@@ -21,7 +21,9 @@
 @property (nonatomic, retain) GradebookItem *gradebookItem;
 @property (nonatomic, retain) NSArray *gradeLinks;
 
-- (NSString *) displayedGrade;
-- (Grade *) grade;
+- (NSString*)numericGradeString;
+- (NSString*)letterGradeString;
+- (NSString*)displayedGrade;
+- (Grade*)grade;
 
 @end

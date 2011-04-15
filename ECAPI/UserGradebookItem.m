@@ -30,6 +30,25 @@
 	return nil;
 }
 
+- (NSString*)numericGradeString {
+	Grade *grade = [self grade];
+	if (grade) {
+		NSNumber *pointsPossible = self.gradebookItem.pointsPossible;
+		NSNumber *points = grade.points;
+		if (points && pointsPossible) {
+			return [NSString stringWithFormat:@"%@/%@", points, pointsPossible];
+		}
+	}
+	return nil;    
+}
+
+- (NSString*)letterGradeString {
+	if (self.grade && self.grade.letterGrade) {
+        return self.grade.letterGrade;
+	}
+	return nil;        
+}
+
 - (NSString *) displayedGrade {
 	Grade *grade = [self grade];
 	if (grade) {

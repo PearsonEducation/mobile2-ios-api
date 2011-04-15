@@ -24,6 +24,9 @@
 - (NSString*)getType;
 - (NSString*)getTitle;
 - (NSString*)getDescription;
+- (NSString*)getNumericGrade;
+- (NSString*)getLetterGrade;
+- (NSString*)getBothGrades;
 
 @property (nonatomic, retain) NSString* activityStreamItemId;
 @property (nonatomic, retain) NSDate* postedTime;

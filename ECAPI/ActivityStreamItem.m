@@ -51,31 +51,51 @@
     return nil;
 }
 
+- (NSString*)getNumericGrade {
+    NSDecimalNumber *pointsAchieved;
+    NSDecimalNumber *pointsPossible;
+    if (self.object && self.object.pointsAchieved) {
+        pointsAchieved = self.object.pointsAchieved;
+    }
+    if (self.target && self.target.pointsPossible) {
+        pointsPossible = self.target.pointsPossible;
+    }
+    if (pointsAchieved && pointsPossible) {
+        return [NSString stringWithFormat:@"%@/%@", pointsAchieved, pointsPossible];
+    }
+    return nil;
+}
+
+- (NSString*)getLetterGrade {
+    // second, attempt to get letter grade
+    if (self.object && self.object.letterGrade) {
+        return self.object.letterGrade;
+    }
+    return nil;
+}
+
+- (NSString*)getBothGrades {
+    NSString* numericGrade = [self getNumericGrade];
+    NSString* letterGrade = [self getLetterGrade];
+    if (numericGrade) {
+        if (letterGrade) {
+            return [NSString stringWithFormat:@"%@ (%@)", letterGrade, numericGrade];
+        } else {
+            return numericGrade;
+        }
+    } else {
+        if (letterGrade) {
+            return letterGrade;
+        } else {
+            return nil;
+        }
+    }    
+}
+
 - (NSString*)getDescription {
     NSString* type = [self getType];
     if ([type isEqualToString:@"grade"]) {
-        NSString* letterGrade = nil;
-        NSDecimalNumber* pointsAchieved = nil;
-        NSDecimalNumber* pointsPossible = nil;
-        
-        // first, attempt to get points...
-        if (self.object && self.object.pointsAchieved) {
-            pointsAchieved = self.object.pointsAchieved;
-        }
-        if (self.target && self.target.pointsPossible) {
-            pointsPossible = self.target.pointsPossible;
-        }
-        if (pointsAchieved && pointsPossible) {
-            return [NSString stringWithFormat:@"%@/%@", pointsAchieved, pointsPossible];
-        }
-        
-        // second, attempt to get letter grade
-        if (self.object && self.object.letterGrade) {
-            letterGrade = self.object.letterGrade;
-        }
-        
-        // may still be nil
-        return letterGrade;
+        return [self getBothGrades];
     } else {
         if (self.object && self.object.summary) {
             return self.object.summary;
@@ -91,6 +111,8 @@
         return nil;
     }
 }
+
+
 
 - (void) dealloc {
     self.friendlyDate = nil;
