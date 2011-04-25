@@ -98,25 +98,48 @@ NSString* const ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
     }   
 }
 
-//- (NSString*)friendlyString {
-//    NSString* dtstr = [self dateString:@"MMM d yyyy"];
-//    NSDate* now = [NSDate date];
-//    if ([[now dateString:@"MMM d yyyy"] isEqualToString:dtstr]) {
-//        return NSLocalizedString(@"Today", nil);
-//    } 
-//    if ([[[now addDays:-1] dateString:@"MMM d yyyy"] isEqualToString:dtstr]) {
-//        return NSLocalizedString(@"Yesterday",nil);
-//    }
-//    if ([self year] != [now year]) {
-//        return dtstr;
-//    } else {
-//        return [self dateString:@"MMM d"];
-//    }
-//    return nil;
-//}
+- (NSDate*)midnight:(int)num {
+    // We'll need a calendar and some components
+    NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    [gregorian setTimeZone:[NSTimeZone defaultTimeZone]];
+    NSDateComponents* components = [[[NSDateComponents alloc] init] autorelease];
+    
+    // Note the number of days we want to move from the current day 
+    components.day = num;
+    
+    // Add the number of days to the current date
+    NSDate *otherDate = [gregorian dateByAddingComponents:components toDate:self options:0];    
+    
+    // Grab the components from otherDate, set them back to midnight
+    NSUInteger unitFlags = NSYearCalendarUnit | NSMonthCalendarUnit |  NSDayCalendarUnit;
+    components = [gregorian components:unitFlags fromDate:otherDate];
+    components.hour = 0;
+    components.minute = 0;
+    
+    // Get a date from those components
+    return [gregorian dateFromComponents:components];
+}
+
+- (int)datesUntil:(NSDate*)otherDate {    
+    NSCalendar *gregorian = [[[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar] autorelease];
+    [gregorian setTimeZone:[NSTimeZone defaultTimeZone]];
+    NSUInteger unitFlags = NSDayCalendarUnit;
+    NSDate* selfMidnight = [self midnight:0];
+    NSDate* otherDateMidnight = [otherDate midnight:0];
+    NSDateComponents* components = [gregorian components:unitFlags fromDate:selfMidnight toDate:otherDateMidnight options:0];
+    return components.day;
+}
 
 - (BOOL)isToday {
     return [[[NSDate date] dateString:@"MMM d yyyy"] isEqualToString:[self dateString:@"MMM d yyyy"]];
+}
+
+- (BOOL)isTomorrow {
+    return [[[[NSDate date] addDays:1] dateString:@"MMM d yyyy"] isEqualToString:[self dateString:@"MMM d yyyy"]];
+}
+
+- (BOOL)isYesterday {
+    return [[[[NSDate date] addDays:-1] dateString:@"MMM d yyyy"] isEqualToString:[self dateString:@"MMM d yyyy"]];    
 }
 
 - (NSString*)friendlyString {
@@ -138,5 +161,25 @@ NSString* const ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
     return nil;
 }
 
+- (NSString*)basicDateTimeString {
+    NSString* format = @"MMM d, yyyy";
+    NSString* dtstr = [self dateString:format];
+    NSDate* now = [NSDate date];
+    if ([[now dateString:format] isEqualToString:dtstr]) {
+        return [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Today",  nil), [now dateString:@"h:mm a"]];
+    } 
+    if ([[[now addDays:1] dateString:format] isEqualToString:dtstr]) {
+        return [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Tomorrow",  nil), [now dateString:@"h:mm a"]];
+    }    
+    if ([[[now addDays:-1] dateString:format] isEqualToString:dtstr]) {
+        return [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Yesterday",  nil), [now dateString:@"h:mm a"]];
+    }
+    if ([self year] != [now year]) {
+        return [self dateString:@"MMM d yyyy, h:mm a"];
+    } else {
+        return [self dateString:@"MMM d h:mm a"];
+    }
+    return nil;
+}
 
 @end

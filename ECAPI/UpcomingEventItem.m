@@ -17,9 +17,9 @@
 @synthesize upcomingEventItemId;
 @synthesize type;
 @synthesize title;
+@synthesize dateString;
 @synthesize category;
 @synthesize links;
-@synthesize courseId;
 @synthesize threadId;
 @synthesize multimediaId;
 @synthesize categoryType;
@@ -28,7 +28,7 @@
 - (id) initWithCoder:(NSCoder<ECCoder>*)coder {
     self = [super init];
 
-    courseId = -1; 
+    _courseId = -1; 
     _cat = -1;
     _uet = -1;
     
@@ -43,7 +43,7 @@
     return self;
 }
 
-- (NSInteger)getCourseId {
+- (NSInteger)courseId {
     if (_courseId == -1) {
         for (Link* link in links) {
             if (link.href) {
@@ -61,15 +61,15 @@
     return _courseId;
 }
 
-- (NSInteger)getThreadId {
+- (NSInteger)threadId {
     return upcomingEventItemId;
 }
 
-- (NSInteger)getMultimediaId {
+- (NSInteger)multimediaId {
     return upcomingEventItemId;
 }
 
-- (CategoryType)getCategoryType {
+- (CategoryType)categoryType {
     if (_cat == -1) {
         NSString* ucCat = [self.category uppercaseString];
         if ([@"START" isEqualToString:ucCat]) {
@@ -83,7 +83,7 @@
     return _cat;
 }
 
-- (UpcomingEventType)getEventType {
+- (UpcomingEventType)eventType {
     if (_uet == -1) {
         NSString* ucType = [type uppercaseString];
         if ([@"HTML" isEqualToString:ucType] || [@"MANAGED_OD" isEqualToString:ucType] || [@"MANAGED_HTML" isEqualToString:ucType]) {
@@ -100,6 +100,7 @@
 }
 
 - (void)dealloc {
+    self.dateString = nil;
     self.when = nil;
     self.type = nil;
     self.title = nil;

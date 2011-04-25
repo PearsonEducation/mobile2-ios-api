@@ -19,13 +19,12 @@
 
 - (id)deserializeUpcomingEventItems:(id)parsedData {
     NSDictionary *parsedDictionary = (NSDictionary *)parsedData;
+    id returnValue = nil;
 	if ([parsedDictionary objectForKey:@"upcomingEvents"]) {
         ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:parsedDictionary];
-        NSArray* UpcomingEventItems = [unarchiver decodeArrayForKey:@"upcomingEvents" ofType:[UpcomingEventItem class]];
-        return UpcomingEventItems;
-	} else {
-		return nil;
+        returnValue = [unarchiver decodeArrayForKey:@"upcomingEvents" ofType:[UpcomingEventItem class]];
 	}
+    return returnValue;
 }
 
 @end

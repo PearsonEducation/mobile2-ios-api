@@ -23,13 +23,15 @@ typedef enum {
 } CategoryType;
 
 @interface UpcomingEventItem : NSObject {
+    NSString* dateString;
+    
     WhenWrapper* when;
     NSInteger upcomingEventItemId;
     NSString* type;
     NSString* title;
     NSString* category;
     NSArray* links;
-
+    
     NSInteger _courseId;
     CategoryType _cat;
     UpcomingEventType _uet;
@@ -39,6 +41,7 @@ typedef enum {
 @property (nonatomic, assign) NSInteger upcomingEventItemId;
 @property (nonatomic, retain) NSString* type;
 @property (nonatomic, retain) NSString* title;
+@property (nonatomic, retain) NSString* dateString;
 @property (nonatomic, retain) NSString* category;
 @property (nonatomic, retain) NSArray* links;
 @property (nonatomic, readonly) NSInteger courseId;

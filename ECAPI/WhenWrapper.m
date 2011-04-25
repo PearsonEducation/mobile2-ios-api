@@ -16,7 +16,7 @@
 - (id) initWithCoder:(NSCoder<ECCoder>*)coder {
     self = [super init];
 	if (self) {
-        self.time = [coder decodeObjectForKey:@"time"];
+        self.time = [coder decodeDateForKey:@"time"];
     }
     return self;
 }
