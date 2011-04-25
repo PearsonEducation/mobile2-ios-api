@@ -16,10 +16,15 @@ extern NSString* const ISO8601Format;
 - (NSString*)friendlyDateFor:(int)daysFromToday;
 - (NSString*)niceAndConcise;
 - (NSString*)friendlyDateWithTimeFor:(int)daysFromToday;
+- (int)datesUntil:(NSDate*)otherDate;
 - (NSString*)friendlyString;
 - (NSString*)dateString:(NSString*)formatString;
 - (NSInteger)year;
 - (NSDate*)addDays:(NSInteger)numDays;
 - (BOOL)isToday;
+- (NSDate*)midnight:(int)num;
+- (BOOL)isTomorrow;
+- (BOOL)isYesterday;
+- (NSString*)basicDateTimeString;
 
 @end

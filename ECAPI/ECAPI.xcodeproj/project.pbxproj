@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */ = {isa = PBXBuildFile; fileRef = A2140EB313281A9C001C3DFC /* DateCalculator.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2140EB613281A9C001C3DFC /* DateCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = A2140EB413281A9C001C3DFC /* DateCalculator.m */; };
+		A228D8BC1361E4C000D75F80 /* WhenWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A228D8BA1361E4C000D75F80 /* WhenWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A228D8BD1361E4C000D75F80 /* WhenWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = A228D8BB1361E4C000D75F80 /* WhenWrapper.m */; };
+		A228D8BE1361E63B00D75F80 /* WhenWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = A228D8BA1361E4C000D75F80 /* WhenWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A22ACA9B1346454E00990A9A /* AnnouncementFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACA991346454E00990A9A /* AnnouncementFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A22ACA9C1346454E00990A9A /* AnnouncementFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACA991346454E00990A9A /* AnnouncementFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A22ACA9D1346454E00990A9A /* AnnouncementFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACA9A1346454E00990A9A /* AnnouncementFetcher.m */; };
@@ -33,6 +36,7 @@
 		A22ACAC31346695B00990A9A /* GradebookItemFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A22ACAC01346695800990A9A /* GradebookItemFetcher.h */; };
 		A22ACAC41346695B00990A9A /* GradebookItemFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAC11346695900990A9A /* GradebookItemFetcher.m */; };
 		A22ACAC51346695B00990A9A /* GradebookItemFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A22ACAC11346695900990A9A /* GradebookItemFetcher.m */; };
+		A25F9EF71364A36B00C3F294 /* UpcomingEventItemsFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A277C13F1360ABCC001731A6 /* UpcomingEventItemsFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A27691F51321630F00FDA805 /* ActivityStreamFetcherTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27691F11321630F00FDA805 /* ActivityStreamFetcherTestCase.m */; };
 		A27691F9132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A27691FA132167CA00FDA805 /* ActivityStreamItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A27691F7132167C900FDA805 /* ActivityStreamItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -60,6 +64,12 @@
 		A27692291321ABF600FDA805 /* ActivityStreamObjectDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */; };
 		A276922D1321ACF300FDA805 /* ActivityStreamTargetDeserializationTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */; };
 		A27692311321ADCD00FDA805 /* ActivityStreamTarget.json in Resources */ = {isa = PBXBuildFile; fileRef = A27692301321ADC600FDA805 /* ActivityStreamTarget.json */; };
+		A277C13A1360ABA8001731A6 /* UpcomingEventItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A277C1381360ABA8001731A6 /* UpcomingEventItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A277C13B1360ABA8001731A6 /* UpcomingEventItem.h in Headers */ = {isa = PBXBuildFile; fileRef = A277C1381360ABA8001731A6 /* UpcomingEventItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A277C13C1360ABA8001731A6 /* UpcomingEventItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C1391360ABA8001731A6 /* UpcomingEventItem.m */; };
+		A277C13D1360ABA8001731A6 /* UpcomingEventItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C1391360ABA8001731A6 /* UpcomingEventItem.m */; };
+		A277C1411360ABCC001731A6 /* UpcomingEventItemsFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = A277C13F1360ABCC001731A6 /* UpcomingEventItemsFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A277C1421360ABCC001731A6 /* UpcomingEventItemsFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = A277C1401360ABCC001731A6 /* UpcomingEventItemsFetcher.m */; };
 		A2800EFE1335725B003EA22C /* ContainerInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800EFC1335725B003EA22C /* ContainerInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2800EFF1335725B003EA22C /* ContainerInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = A2800EFC1335725B003EA22C /* ContainerInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2800F001335725B003EA22C /* ContainerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = A2800EFD1335725B003EA22C /* ContainerInfo.m */; };
@@ -281,6 +291,8 @@
 /* Begin PBXFileReference section */
 		A2140EB313281A9C001C3DFC /* DateCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateCalculator.h; sourceTree = "<group>"; };
 		A2140EB413281A9C001C3DFC /* DateCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateCalculator.m; sourceTree = "<group>"; };
+		A228D8BA1361E4C000D75F80 /* WhenWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhenWrapper.h; sourceTree = "<group>"; };
+		A228D8BB1361E4C000D75F80 /* WhenWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WhenWrapper.m; sourceTree = "<group>"; };
 		A22ACA991346454E00990A9A /* AnnouncementFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnouncementFetcher.h; sourceTree = "<group>"; };
 		A22ACA9A1346454E00990A9A /* AnnouncementFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnouncementFetcher.m; sourceTree = "<group>"; };
 		A22ACAA01346465D00990A9A /* Announcement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Announcement.h; sourceTree = "<group>"; };
@@ -312,6 +324,10 @@
 		A27692271321ABE900FDA805 /* ActivityStreamObjectDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamObjectDeserializationTestCase.m; sourceTree = "<group>"; };
 		A276922B1321ACE700FDA805 /* ActivityStreamTargetDeserializationTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityStreamTargetDeserializationTestCase.m; sourceTree = "<group>"; };
 		A27692301321ADC600FDA805 /* ActivityStreamTarget.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ActivityStreamTarget.json; sourceTree = "<group>"; };
+		A277C1381360ABA8001731A6 /* UpcomingEventItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingEventItem.h; sourceTree = "<group>"; };
+		A277C1391360ABA8001731A6 /* UpcomingEventItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingEventItem.m; sourceTree = "<group>"; };
+		A277C13F1360ABCC001731A6 /* UpcomingEventItemsFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpcomingEventItemsFetcher.h; sourceTree = "<group>"; };
+		A277C1401360ABCC001731A6 /* UpcomingEventItemsFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpcomingEventItemsFetcher.m; sourceTree = "<group>"; };
 		A2800EFC1335725B003EA22C /* ContainerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerInfo.h; sourceTree = "<group>"; };
 		A2800EFD1335725B003EA22C /* ContainerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerInfo.m; sourceTree = "<group>"; };
 		A2800F0313357483003EA22C /* DiscussionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussionResponse.h; sourceTree = "<group>"; };
@@ -699,6 +715,10 @@
 				A2F267CA134AB69F00605AF0 /* RosterUser.m */,
 				EA014E60134B8B7100353897 /* GradeLink.h */,
 				EA014E61134B8B7100353897 /* GradeLink.m */,
+				A277C1381360ABA8001731A6 /* UpcomingEventItem.h */,
+				A277C1391360ABA8001731A6 /* UpcomingEventItem.m */,
+				A228D8BA1361E4C000D75F80 /* WhenWrapper.h */,
+				A228D8BB1361E4C000D75F80 /* WhenWrapper.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -741,6 +761,8 @@
 				A22ACA9A1346454E00990A9A /* AnnouncementFetcher.m */,
 				A22ACAC01346695800990A9A /* GradebookItemFetcher.h */,
 				A22ACAC11346695900990A9A /* GradebookItemFetcher.m */,
+				A277C13F1360ABCC001731A6 /* UpcomingEventItemsFetcher.h */,
+				A277C1401360ABCC001731A6 /* UpcomingEventItemsFetcher.m */,
 			);
 			name = Fetchers;
 			sourceTree = "<group>";
@@ -848,6 +870,9 @@
 				A22ACAA613464BA300990A9A /* EnrolledUser.h in Headers */,
 				A22ACAAC13464DE400990A9A /* Role.h in Headers */,
 				A2F267CB134AB69F00605AF0 /* RosterUser.h in Headers */,
+				A277C13A1360ABA8001731A6 /* UpcomingEventItem.h in Headers */,
+				A277C1411360ABCC001731A6 /* UpcomingEventItemsFetcher.h in Headers */,
+				A228D8BC1361E4C000D75F80 /* WhenWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -898,6 +923,9 @@
 				A22ACAB313464F7A00990A9A /* UserGradebookItem.h in Headers */,
 				A22ACAC31346695B00990A9A /* GradebookItemFetcher.h in Headers */,
 				EA014E63134B8B7100353897 /* GradeLink.h in Headers */,
+				A277C13B1360ABA8001731A6 /* UpcomingEventItem.h in Headers */,
+				A228D8BE1361E63B00D75F80 /* WhenWrapper.h in Headers */,
+				A25F9EF71364A36B00C3F294 /* UpcomingEventItemsFetcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1068,6 +1096,9 @@
 				A22ACAC41346695B00990A9A /* GradebookItemFetcher.m in Sources */,
 				A2F267CC134AB69F00605AF0 /* RosterUser.m in Sources */,
 				EA014E64134B8B7100353897 /* GradeLink.m in Sources */,
+				A277C13C1360ABA8001731A6 /* UpcomingEventItem.m in Sources */,
+				A277C1421360ABCC001731A6 /* UpcomingEventItemsFetcher.m in Sources */,
+				A228D8BD1361E4C000D75F80 /* WhenWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1148,6 +1179,7 @@
 				A22ACAB513464F7A00990A9A /* UserGradebookItem.m in Sources */,
 				A22ACAC51346695B00990A9A /* GradebookItemFetcher.m in Sources */,
 				EA014E65134B8B7100353897 /* GradeLink.m in Sources */,
+				A277C13D1360ABA8001731A6 /* UpcomingEventItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
