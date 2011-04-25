@@ -31,6 +31,25 @@
 	return self;
 }
 
+- (id) initWithQueryString:(NSString *)queryString {
+	if ((self == [super init])) {
+		NSArray *components = [queryString componentsSeparatedByString:@"&"];
+		NSMutableDictionary *params = [NSMutableDictionary dictionaryWithCapacity:2];
+		for (NSString *queryComponent in components) {
+			NSArray *keyvalues = [queryComponent componentsSeparatedByString:@"="];
+			[params setObject:[keyvalues objectAtIndex:1] forKey:[keyvalues objectAtIndex:0]];
+		}
+		
+		NSString *encodedGrantToken = (NSString *)[params objectForKey:@"grant_token"];
+		NSString *grantToken = [encodedGrantToken stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+		self.accessToken = grantToken;
+		NSString *expiresInParam = [params objectForKey:@"expires_in"];
+		NSDate *expiresAtDate = [NSDate dateWithTimeInterval:[expiresInParam integerValue] sinceDate:[NSDate date]];
+		self.expiresAt = expiresAtDate;
+	}
+	return self;
+}
+
 - (void) dealloc {
 	self.accessToken = nil;
 	self.refreshToken = nil;

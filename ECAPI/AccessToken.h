@@ -19,6 +19,7 @@
 @property(nonatomic, copy) NSString *refreshToken;
 @property(nonatomic, retain) NSDate *expiresAt;
 
+- (id) initWithQueryString:(NSString *)queryString;
 - (id) initWithDictionary:(NSMutableDictionary *)dictionary;
 - (void) saveInDictionary:(NSMutableDictionary *)dictionary;
 - (BOOL) isExpired;
