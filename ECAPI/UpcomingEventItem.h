@@ -26,7 +26,7 @@ typedef enum {
     NSString* dateString;
     
     WhenWrapper* when;
-    NSInteger upcomingEventItemId;
+    NSNumber *upcomingEventItemId;
     NSString* type;
     NSString* title;
     NSString* category;
@@ -38,15 +38,15 @@ typedef enum {
 }
 
 @property (nonatomic, retain) WhenWrapper* when;
-@property (nonatomic, assign) NSInteger upcomingEventItemId;
+@property (nonatomic, retain) NSNumber *upcomingEventItemId;
 @property (nonatomic, retain) NSString* type;
 @property (nonatomic, retain) NSString* title;
 @property (nonatomic, retain) NSString* dateString;
 @property (nonatomic, retain) NSString* category;
 @property (nonatomic, retain) NSArray* links;
 @property (nonatomic, readonly) NSInteger courseId;
-@property (nonatomic, readonly) NSInteger threadId;
-@property (nonatomic, readonly) NSInteger multimediaId;
+@property (nonatomic, readonly) NSNumber *threadId;
+@property (nonatomic, readonly) NSNumber *multimediaId;
 @property (nonatomic, readonly) CategoryType categoryType;
 @property (nonatomic, readonly) UpcomingEventType eventType;
 

@@ -34,7 +34,7 @@
     
     if (self) {
         self.when = [coder decodeObjectForKey:@"when" ofType:[WhenWrapper class]];
-        self.upcomingEventItemId = [coder decodeIntegerForKey:@"id"];
+        self.upcomingEventItemId = [coder decodeNumberForKey:@"id"];
         self.type = [coder decodeObjectForKey:@"type"];
         self.title = [coder decodeObjectForKey:@"title"];
         self.category = [coder decodeObjectForKey:@"category"];
@@ -61,11 +61,11 @@
     return _courseId;
 }
 
-- (NSInteger)threadId {
+- (NSNumber *)threadId {
     return upcomingEventItemId;
 }
 
-- (NSInteger)multimediaId {
+- (NSNumber *)multimediaId {
     return upcomingEventItemId;
 }
 

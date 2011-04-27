@@ -23,7 +23,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.contentItemId              = [coder decodeIntegerForKey:@"contentItemId"];
+        self.contentItemId              = [coder decodeObjectForKey:@"contentItemID"];
         self.contentItemOrderNumber     = [coder decodeIntegerForKey:@"contentItemOrderNumber"];
         self.unitNumber                 = [coder decodeIntegerForKey:@"unitNumber"];
         self.courseId                   = [coder decodeIntegerForKey:@"courseID"];

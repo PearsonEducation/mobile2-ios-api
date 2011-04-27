@@ -9,18 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
-@interface ContainerInfo : NSObject {
-    NSInteger contentItemId;
-    NSInteger contentItemOrderNumber;
-    NSInteger unitNumber;
-    NSInteger courseId;
-    NSString* courseTitle;
-    NSString* contentItemTitle;
-    NSString* unitTitle;
-    NSString* unitHeader;
-}
+@interface ContainerInfo : NSObject
 
-@property (nonatomic, assign) NSInteger contentItemId;
+@property (nonatomic, assign) NSNumber *contentItemId;
 @property (nonatomic, assign) NSInteger contentItemOrderNumber;
 @property (nonatomic, assign) NSInteger unitNumber;
 @property (nonatomic, assign) NSInteger courseId;
