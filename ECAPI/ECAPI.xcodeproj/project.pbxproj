@@ -194,6 +194,10 @@
 		EA6E087813046A69001016B8 /* CourseFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EA6E087513046A69001016B8 /* CourseFetcher.h */; };
 		EA6E087913046A69001016B8 /* CourseFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E087613046A69001016B8 /* CourseFetcher.m */; };
 		EA6E087A13046A69001016B8 /* CourseFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6E087613046A69001016B8 /* CourseFetcher.m */; };
+		EA7667C8136768CC00F362FB /* ThreadTopicFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EA7667C6136768CC00F362FB /* ThreadTopicFetcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA7667C9136768CC00F362FB /* ThreadTopicFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = EA7667C6136768CC00F362FB /* ThreadTopicFetcher.h */; };
+		EA7667CA136768CC00F362FB /* ThreadTopicFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7667C7136768CC00F362FB /* ThreadTopicFetcher.m */; };
+		EA7667CB136768CC00F362FB /* ThreadTopicFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = EA7667C7136768CC00F362FB /* ThreadTopicFetcher.m */; };
 		EA7A9F63131470AD00D9EC6A /* ECSession.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE87612F8AFB50028857E /* ECSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA7A9F65131470D600D9EC6A /* ECConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = EABEE89912F8B9450028857E /* ECConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA9CF47413020E8E00108C6C /* ECCoder.h in Headers */ = {isa = PBXBuildFile; fileRef = EA9CF47213020E8E00108C6C /* ECCoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -409,6 +413,8 @@
 		EA6E0873130467E3001016B8 /* CourseFetcherTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseFetcherTestCase.m; sourceTree = "<group>"; };
 		EA6E087513046A69001016B8 /* CourseFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourseFetcher.h; sourceTree = "<group>"; };
 		EA6E087613046A69001016B8 /* CourseFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CourseFetcher.m; sourceTree = "<group>"; };
+		EA7667C6136768CC00F362FB /* ThreadTopicFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadTopicFetcher.h; sourceTree = "<group>"; };
+		EA7667C7136768CC00F362FB /* ThreadTopicFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadTopicFetcher.m; sourceTree = "<group>"; };
 		EA9CF47213020E8E00108C6C /* ECCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCoder.h; sourceTree = "<group>"; };
 		EA9CF47813020EF300108C6C /* ECJSONUnarchiver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECJSONUnarchiver.h; sourceTree = "<group>"; };
 		EA9CF47913020EF300108C6C /* ECJSONUnarchiver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECJSONUnarchiver.m; sourceTree = "<group>"; };
@@ -763,6 +769,8 @@
 				A22ACAC11346695900990A9A /* GradebookItemFetcher.m */,
 				A277C13F1360ABCC001731A6 /* UpcomingEventItemsFetcher.h */,
 				A277C1401360ABCC001731A6 /* UpcomingEventItemsFetcher.m */,
+				EA7667C6136768CC00F362FB /* ThreadTopicFetcher.h */,
+				EA7667C7136768CC00F362FB /* ThreadTopicFetcher.m */,
 			);
 			name = Fetchers;
 			sourceTree = "<group>";
@@ -848,6 +856,7 @@
 				EA014E62134B8B7100353897 /* GradeLink.h in Headers */,
 				A2140EB513281A9C001C3DFC /* DateCalculator.h in Headers */,
 				A2A9674B132E817D00554238 /* GTMNSString+HTML.h in Headers */,
+				EA7667C8136768CC00F362FB /* ThreadTopicFetcher.h in Headers */,
 				A2C36373132FCAE6007BA0BD /* GradebookItemGradeFetcher.h in Headers */,
 				A2C3637A132FD67D007BA0BD /* Grade.h in Headers */,
 				A2EE2B72133293290059DFAD /* DropboxAttachment.h in Headers */,
@@ -926,6 +935,7 @@
 				A277C13B1360ABA8001731A6 /* UpcomingEventItem.h in Headers */,
 				A228D8BE1361E63B00D75F80 /* WhenWrapper.h in Headers */,
 				A25F9EF71364A36B00C3F294 /* UpcomingEventItemsFetcher.h in Headers */,
+				EA7667C9136768CC00F362FB /* ThreadTopicFetcher.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1099,6 +1109,7 @@
 				A277C13C1360ABA8001731A6 /* UpcomingEventItem.m in Sources */,
 				A277C1421360ABCC001731A6 /* UpcomingEventItemsFetcher.m in Sources */,
 				A228D8BD1361E4C000D75F80 /* WhenWrapper.m in Sources */,
+				EA7667CA136768CC00F362FB /* ThreadTopicFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1180,6 +1191,7 @@
 				A22ACAC51346695B00990A9A /* GradebookItemFetcher.m in Sources */,
 				EA014E65134B8B7100353897 /* GradeLink.m in Sources */,
 				A277C13D1360ABA8001731A6 /* UpcomingEventItem.m in Sources */,
+				EA7667CB136768CC00F362FB /* ThreadTopicFetcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
