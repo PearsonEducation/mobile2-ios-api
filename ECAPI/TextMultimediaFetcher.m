@@ -11,6 +11,7 @@
 @implementation TextMultimediaFetcher
 
 - (void) fetchHTMLContentForCourseId:(NSInteger)courseId contentId:(NSNumber *)contentId {
+	self.returnRawResponse = YES;
 	NSString *url = [NSString stringWithFormat:@"%@/courses/%d/textMultimedias/%qu/content.html", M_API_URL, courseId, [contentId longLongValue]];
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeHTML:)];
 }
