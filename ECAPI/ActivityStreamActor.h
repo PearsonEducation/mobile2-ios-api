@@ -11,14 +11,14 @@
 
 @interface ActivityStreamActor : NSObject {
     NSString* role;
-    NSInteger referenceId;
+    NSNumber* referenceId;
     NSString* id;
     NSString* title;
     NSString* objectType;
 }
 
 @property (nonatomic, retain) NSString* role;
-@property (nonatomic, assign) NSInteger referenceId;
+@property (nonatomic, retain) NSNumber* referenceId;
 @property (nonatomic, retain) NSString* id;
 @property (nonatomic, retain) NSString* title;
 @property (nonatomic, retain) NSString* objectType;

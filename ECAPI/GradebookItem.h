@@ -10,13 +10,13 @@
 #import <Foundation/Foundation.h>
 
 @interface GradebookItem : NSObject {
-    NSInteger gradebookItemId;
+    NSNumber* gradebookItemId;
     NSString* type;
     NSString* title;
     NSDecimalNumber* pointsPossible;
 }
 
-@property (nonatomic, assign) NSInteger gradebookItemId;
+@property (nonatomic, retain) NSNumber* gradebookItemId;
 @property (nonatomic, retain) NSString* type;
 @property (nonatomic, retain) NSString* title;
 @property (nonatomic, retain) NSDecimalNumber* pointsPossible;

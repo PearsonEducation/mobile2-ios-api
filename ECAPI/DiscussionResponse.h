@@ -10,14 +10,14 @@
 #import "User.h"
 
 @interface DiscussionResponse : NSObject {
-    NSInteger discussionResponseId;
+    NSNumber* discussionResponseId;
     NSString* title;
     NSString* description;
     User* author;
     NSDate* postedDate;
 }
 
-@property (nonatomic, assign) NSInteger discussionResponseId;
+@property (nonatomic, retain) NSNumber* discussionResponseId;
 @property (nonatomic, retain) NSString* title;
 @property (nonatomic, retain) NSString* description;
 @property (nonatomic, retain) User* author;

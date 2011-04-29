@@ -34,7 +34,7 @@
     ActivityStreamTarget* activityStreamTarget = [[[ActivityStreamTarget alloc] initWithCoder:unarchiver] autorelease];
     
     // Test some assertions
-    GHAssertEquals(activityStreamTarget.courseId, 4282262, @"Expected courseId to be 4282262");
+    GHAssertEquals([activityStreamTarget.courseId intValue], 4282262, @"Expected courseId to be 4282262");
     GHAssertEqualStrings(activityStreamTarget.referenceId, @"4048336", @"Expected referenceId to be '4048336'");
     GHAssertEqualStrings(activityStreamTarget.id, @"http://m-api.ecollege.com/courses/4282262/threadeddiscussions/100103637080/topics/4048336", @"Expected id to be 'http://m-api.ecollege.com/courses/4282262/threadeddiscussions/100103637080/topics/4048336'");
     GHAssertEqualStrings(activityStreamTarget.title, @"Get to Know Your Classmates", @"Expected referenceId to be 'Get to Know Your Classmates'");

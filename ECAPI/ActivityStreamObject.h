@@ -10,7 +10,7 @@
 
 
 @interface ActivityStreamObject : NSObject {
-    NSInteger courseId;
+    NSNumber* courseId;
     NSString* referenceId;
     NSString* id;
     NSString* title;
@@ -21,7 +21,7 @@
     NSDecimalNumber* pointsAchieved;
 }
 
-@property (nonatomic, assign) NSInteger courseId;
+@property (nonatomic, retain) NSNumber* courseId;
 @property (nonatomic, retain) NSString* referenceId;
 @property (nonatomic, retain) NSString* id;
 @property (nonatomic, retain) NSString* title;

@@ -18,13 +18,13 @@
 
 @implementation AnnouncementFetcher
 
-- (void) fetchAnnouncementsForCourseWithId:(NSInteger)courseId {
-    NSString *url = [NSString stringWithFormat:@"%@/courses/%d/announcements", M_API_URL, courseId];
+- (void) fetchAnnouncementsForCourseWithId:(NSNumber *)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%@/announcements", M_API_URL, courseId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeListOfAnnouncements:)];
 }
 
-- (void) fetchAnnouncementWithId:(NSInteger)announcementId forCourseId:(NSInteger)courseId {
-    NSString *url = [NSString stringWithFormat:@"%@/courses/%d/announcements/%d", M_API_URL, courseId, announcementId];
+- (void) fetchAnnouncementWithId:(NSNumber *)announcementId forCourseId:(NSNumber *)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%@/announcements/%@", M_API_URL, courseId, announcementId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeAnnouncementFromArray:)];
 }
 

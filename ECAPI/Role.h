@@ -10,12 +10,12 @@
 #import <Foundation/Foundation.h>
 
 @interface Role : NSObject {
-    NSInteger roleId;
+    NSNumber* roleId;
     NSString* type;
     NSString* name;
 }
 
-@property (nonatomic, assign) NSInteger roleId;
+@property (nonatomic, retain) NSNumber* roleId;
 @property (nonatomic, retain) NSString* type;
 @property (nonatomic, retain) NSString* name;
 

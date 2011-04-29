@@ -25,8 +25,8 @@
 	if ((self == [super init])) {
         self.contentItemId              = [coder decodeObjectForKey:@"contentItemID"];
         self.contentItemOrderNumber     = [coder decodeIntegerForKey:@"contentItemOrderNumber"];
-        self.unitNumber                 = [coder decodeIntegerForKey:@"unitNumber"];
-        self.courseId                   = [coder decodeIntegerForKey:@"courseID"];
+        self.unitNumber                 = [coder decodeNumberForKey:@"unitNumber"];
+        self.courseId                   = [coder decodeNumberForKey:@"courseID"];
         self.courseTitle                = [coder decodeObjectForKey:@"courseTitle"];
         self.contentItemTitle           = [coder decodeObjectForKey:@"contentItemTitle"];
         self.unitTitle                  = [coder decodeObjectForKey:@"unitTitle"];
@@ -36,6 +36,9 @@
 }
 
 - (void)dealloc {
+	self.contentItemId = nil;
+	self.courseId = nil;
+	self.unitNumber = nil;
     self.courseTitle = nil;
     self.contentItemTitle = nil;
     self.unitTitle = nil;

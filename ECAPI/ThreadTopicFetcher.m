@@ -15,9 +15,9 @@
 
 @implementation ThreadTopicFetcher
 
-- (void) fetchDiscussionTopicsForCourseId:(NSInteger)courseId threadId:(NSNumber *)tid {
+- (void) fetchDiscussionTopicsForCourseId:(NSNumber *)courseId threadId:(NSNumber *)tid {
 	threadId = tid;
-	NSString *url = [NSString stringWithFormat:@"%@/me/userTopics.json?courses=%d", M_API_URL, courseId];
+	NSString *url = [NSString stringWithFormat:@"%@/me/userTopics.json?courses=%@", M_API_URL, courseId];
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeAndFilterTopics:)];
 }
 

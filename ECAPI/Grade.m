@@ -19,7 +19,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.gradeId       = [coder decodeIntegerForKey:@"id"];
+        self.gradeId				= [coder decodeNumberForKey:@"id"];
         self.points                 = [coder decodeNumberForKey:@"points"];
         self.letterGrade            = [coder decodeObjectForKey:@"letterGrade"];
         self.comments               = [coder decodeObjectForKey:@"comments"];
@@ -33,6 +33,7 @@
 }
 
 - (void)dealloc {
+	self.gradeId = nil;
     self.points = nil;
     self.letterGrade = nil;
     self.comments = nil;

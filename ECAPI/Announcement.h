@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 
 @interface Announcement : NSObject {
-    NSInteger announcementId;
+    NSNumber* announcementId;
     NSString* subject;
     NSString* text;
     NSString* submitter;
@@ -19,7 +19,7 @@
     NSString* rawText;
 }
 
-@property (nonatomic, assign) NSInteger announcementId;
+@property (nonatomic, retain) NSNumber* announcementId;
 @property (nonatomic, retain) NSString* subject;
 @property (nonatomic, retain) NSString* text;
 @property (nonatomic, retain) NSString* submitter;

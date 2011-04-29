@@ -13,6 +13,6 @@
     
 }
 
-- (void) fetchHTMLContentForCourseId:(NSInteger)courseId contentId:(NSNumber *)contentId;
+- (void) fetchHTMLContentForCourseId:(NSNumber *)courseId contentId:(NSNumber *)contentId;
 
 @end

@@ -15,7 +15,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self = [super init])) {
-		self.courseId = [coder decodeIntegerForKey:@"id"];
+		self.courseId = [coder decodeNumberForKey:@"id"];
 		self.displayCourseCode = [coder decodeObjectForKey:@"displayCourseCode"];
 		self.title = [coder decodeObjectForKey:@"title"];
 	}
@@ -23,6 +23,7 @@
 }
 
 - (void) dealloc {
+	self.courseId = nil;
 	self.displayCourseCode = nil;
 	self.title = nil;
 	self.callNumbers = nil;

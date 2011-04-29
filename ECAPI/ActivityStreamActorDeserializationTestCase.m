@@ -34,7 +34,7 @@
     
     // Test some assertions
     GHAssertEqualStrings(activityStreamActor.role, @"STUD", @"Expected role to be 'STUD'");
-    GHAssertEquals(activityStreamActor.referenceId, 4822785, @"Expected referenced ID to be 4822785");
+    GHAssertEquals([activityStreamActor.referenceId intValue], 4822785, @"Expected referenced ID to be 4822785");
     GHAssertEqualStrings(activityStreamActor.id, @"http://m-api.ecollege.com/users/4822785", @"Expected id to be 'http://m-api.ecollege.com/users/4822785'");
     GHAssertEqualStrings(activityStreamActor.title, @"Kai Johnson", @"Expecting title to be 'Kai Johnson'");
     GHAssertEqualStrings(activityStreamActor.objectType, @"enrolled-user", @"Expecting objectType to be 'enrolled-user'");

@@ -12,13 +12,13 @@
 #import "Role.h"
 
 @interface EnrolledUser : NSObject {
-    NSInteger enrolledUserId;
+    NSNumber* enrolledUserId;
     NSDate* enrollmentDate;
     User* user;
     Role* role;
 }
 
-@property (nonatomic, assign) NSInteger enrolledUserId;
+@property (nonatomic, retain) NSNumber* enrolledUserId;
 @property (nonatomic, retain) NSDate* enrollmentDate;
 @property (nonatomic, retain) User* user;
 @property (nonatomic, retain) Role* role;

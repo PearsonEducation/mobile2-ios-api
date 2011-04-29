@@ -11,10 +11,10 @@
 
 @interface ContainerInfo : NSObject
 
-@property (nonatomic, assign) NSNumber *contentItemId;
+@property (nonatomic, retain) NSNumber *contentItemId;
 @property (nonatomic, assign) NSInteger contentItemOrderNumber;
-@property (nonatomic, assign) NSInteger unitNumber;
-@property (nonatomic, assign) NSInteger courseId;
+@property (nonatomic, retain) NSNumber* unitNumber;
+@property (nonatomic, retain) NSNumber* courseId;
 @property (nonatomic, retain) NSString* courseTitle;
 @property (nonatomic, retain) NSString* contentItemTitle;
 @property (nonatomic, retain) NSString* unitTitle;

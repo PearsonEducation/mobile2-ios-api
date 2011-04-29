@@ -21,7 +21,7 @@
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
     [dict setValue:title forKey:@"title"];
     [dict setValue:text forKey:@"description"];
-    NSString* url = [NSString stringWithFormat:@"%@/me/responses/%d/responses", M_API_URL, responseId];
+    NSString* url = [NSString stringWithFormat:@"%@/me/responses/%@/responses", M_API_URL, responseId];
     [self postParams:dict toURLFromString:url withDeserializationSelector:@selector(deserializePostResponseToResponse:)];
 }
 
@@ -30,18 +30,18 @@
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
     [dict setValue:title forKey:@"title"];
     [dict setValue:text forKey:@"description"];
-    NSString* url = [NSString stringWithFormat:@"%@/me/topics/%d/responses", M_API_URL, topicId];
+    NSString* url = [NSString stringWithFormat:@"%@/me/topics/%@/responses", M_API_URL, topicId];
     [self postParams:dict toURLFromString:url withDeserializationSelector:@selector(deserializePostResponseToTopic:)];    
 }
 
 #pragma mark fetcher functions
 
-- (void)fetchUserDiscussionResponseByUserId:(NSInteger)userId andResponseId:(NSInteger)responseId {
+- (void)fetchUserDiscussionResponseByUserId:(NSNumber *)userId andResponseId:(NSNumber *)responseId {
     if (userId > 0 && responseId > 0) {
-        NSString* url = [NSString stringWithFormat:@"%@/me/userresponses/%d-%d", M_API_URL, userId, responseId];
+        NSString* url = [NSString stringWithFormat:@"%@/me/userresponses/%@-%@", M_API_URL, userId, responseId];
         [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeUserDiscussionResponseFromArray:)];
     } else {
-        NSLog(@"Invalid userId (%d) or responseId (%d) when loading user discussion response",userId,responseId);
+        NSLog(@"Invalid userId (%@) or responseId (%@) when loading user discussion response",userId,responseId);
     }
 }
 

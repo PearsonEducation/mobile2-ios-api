@@ -14,7 +14,7 @@
 }
 
 - (void)postResponseToTopicWithId:(NSString*)topicId andTitle:(NSString*)title andText:(NSString*)text;
-- (void)fetchUserDiscussionResponseByUserId:(NSInteger)userId andResponseId:(NSInteger)responseId;
+- (void)fetchUserDiscussionResponseByUserId:(NSNumber *)userId andResponseId:(NSNumber *)responseId;
 - (void)fetchUserDiscussionResponseByUserResponseId:(NSString*)userResponseId;
 - (void)fetchDiscussionResponsesForResponseId:(NSString*)userDiscussionResponseId;
 - (void)fetchUserDiscussionResponsesForTopicId:(NSString*)userDiscussionTopicId;

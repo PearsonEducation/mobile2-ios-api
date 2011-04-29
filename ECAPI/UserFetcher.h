@@ -14,7 +14,7 @@
 }
 
 - (void) fetchMe;
-- (void) fetchUserById:(NSInteger)userId;
-- (void) fetchRosterForCourseWithId:(NSInteger)courseId;
+- (void) fetchUserById:(NSNumber *)userId;
+- (void) fetchRosterForCourseWithId:(NSNumber *)courseId;
 
 @end

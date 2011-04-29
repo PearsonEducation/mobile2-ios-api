@@ -20,8 +20,8 @@
 
 @implementation CourseFetcher
 
-- (void) fetchCourseById:(NSInteger)courseId {
-    NSString *url = [NSString stringWithFormat:@"%@/courses/%d.json", M_API_URL, courseId];
+- (void) fetchCourseById:(NSNumber *)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%@.json", M_API_URL, courseId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeSingleCourseFromArray:)];
 }
 
@@ -58,8 +58,8 @@
 	}
 }
 
-- (void) fetchInstructorsForCourseWithId:(NSInteger)courseId {
-    NSString *url = [NSString stringWithFormat:@"%@/courses/%d/instructors.json", M_API_URL, courseId];
+- (void) fetchInstructorsForCourseWithId:(NSNumber *)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%@/instructors.json", M_API_URL, courseId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeListOfInstructors:)];
 }
 
@@ -73,8 +73,8 @@
 	}
 }
 
-- (void) fetchTeachingAssistantsForCourseWithId:(NSInteger)courseId {
-    NSString *url = [NSString stringWithFormat:@"%@/courses/%d/teachingAssistants.json", M_API_URL, courseId];
+- (void) fetchTeachingAssistantsForCourseWithId:(NSNumber *)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%@/teachingAssistants.json", M_API_URL, courseId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeListOfTeachingAssistants:)];
 }
 
@@ -88,8 +88,8 @@
 	}
 }
 
-- (void) fetchStudentsForCourseWithId:(NSInteger)courseId {
-    NSString *url = [NSString stringWithFormat:@"%@/courses/%d/students.json", M_API_URL, courseId];
+- (void) fetchStudentsForCourseWithId:(NSNumber *)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%@/students.json", M_API_URL, courseId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeListOfStudents:)];
 }
 
@@ -103,8 +103,8 @@
 	}
 }
 
-- (void) fetchMyGradeToDateForCourseWithId:(NSInteger)courseId {
-    NSString *url = [NSString stringWithFormat:@"%@/me/courses/%d/coursegradetodate.json", M_API_URL, courseId];
+- (void) fetchMyGradeToDateForCourseWithId:(NSNumber *)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/me/courses/%@/coursegradetodate.json", M_API_URL, courseId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeGradeToDate:)];
 }
 

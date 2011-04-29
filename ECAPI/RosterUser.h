@@ -10,7 +10,7 @@
 
 
 @interface RosterUser : NSObject {
-    NSInteger rosterUserId;
+    NSNumber* rosterUserId;
     NSString* roleType;
     NSString* firstName;
     NSString* lastName;
@@ -23,7 +23,7 @@
 - (BOOL)isInstructor;
 - (BOOL)isStudent;
 
-@property (nonatomic, assign) NSInteger rosterUserId;
+@property (nonatomic, retain) NSNumber* rosterUserId;
 @property (nonatomic, retain) NSString* roleType;
 @property (nonatomic, retain) NSString* firstName;
 @property (nonatomic, retain) NSString* lastName;

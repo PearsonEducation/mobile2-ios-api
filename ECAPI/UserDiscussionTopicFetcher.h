@@ -14,7 +14,7 @@
     
 }
 
-- (void)fetchDiscussionTopicById:(NSInteger)userId andTopicId:(NSInteger)topicId;
+- (void)fetchDiscussionTopicById:(NSNumber *)userId andTopicId:(NSNumber *)topicId;
 - (void)fetchDiscussionTopicById:(NSString*)userTopicId;
 - (void)fetchDiscussionTopicsForCourseIds:(NSArray*)courseIds;
 

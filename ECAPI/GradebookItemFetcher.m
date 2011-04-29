@@ -20,13 +20,13 @@
 
 @implementation GradebookItemFetcher
 
-- (void)fetchMyUserGradebookItemsForCourseId:(NSInteger)courseId {
-    NSString* url = [NSString stringWithFormat:@"%@/me/courses/%d/userGradebookItems?expand=grade", M_API_URL, courseId];
+- (void)fetchMyUserGradebookItemsForCourseId:(NSNumber *)courseId {
+    NSString* url = [NSString stringWithFormat:@"%@/me/courses/%@/userGradebookItems?expand=grade", M_API_URL, courseId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeUserGradebookItems:)];    
 }
 
-- (void)fetchGradebookItemByGuid:(NSString*)guid forCourseId:(NSInteger)courseId {
-    NSString* url = [NSString stringWithFormat:@"%@/courses/%d/gradebookItems/%@", M_API_URL, courseId, guid];
+- (void)fetchGradebookItemByGuid:(NSString*)guid forCourseId:(NSNumber *)courseId {
+    NSString* url = [NSString stringWithFormat:@"%@/courses/%@/gradebookItems/%@", M_API_URL, courseId, guid];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeGradebookItemFromArray:)];
 }
 

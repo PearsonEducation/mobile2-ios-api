@@ -13,6 +13,6 @@
 	NSNumber *threadId;
 }
 
-- (void) fetchDiscussionTopicsForCourseId:(NSInteger)courseId threadId:(NSNumber *)threadId;
+- (void) fetchDiscussionTopicsForCourseId:(NSNumber *)courseId threadId:(NSNumber *)threadId;
 
 @end

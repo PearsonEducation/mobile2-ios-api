@@ -15,7 +15,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.userGradebookItemId    = [coder decodeIntegerForKey:@"id"];
+        self.userGradebookItemId    = [coder decodeNumberForKey:@"id"];
         self.gradebookItem          = [coder decodeObjectForKey:@"gradebookItem" ofType:[GradebookItem class]];
 		self.gradeLinks				= [coder decodeArrayForKey:@"links" ofType:[GradeLink class]];
     }
@@ -64,6 +64,7 @@
 }
 
 - (void)dealloc {
+	self.userGradebookItemId = nil;
     self.gradebookItem = nil;
 	self.gradeLinks = nil;
 	[super dealloc];

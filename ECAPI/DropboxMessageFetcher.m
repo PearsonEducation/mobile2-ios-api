@@ -12,8 +12,8 @@
 
 @implementation DropboxMessageFetcher
 
-- (void)fetchDropboxMessageForCourseId:(NSInteger)courseId andBasketId:(NSString*)basketId andMessageId:(NSString*)messageId {
-    NSString* url = [NSString stringWithFormat:@"%@/courses/%d/dropboxbaskets/%@/messages/%@", M_API_URL, courseId, basketId, messageId];
+- (void)fetchDropboxMessageForCourseId:(NSNumber *)courseId andBasketId:(NSString*)basketId andMessageId:(NSString*)messageId {
+    NSString* url = [NSString stringWithFormat:@"%@/courses/%@/dropboxbaskets/%@/messages/%@", M_API_URL, courseId, basketId, messageId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeMe:)];
 }
 

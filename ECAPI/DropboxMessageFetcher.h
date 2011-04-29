@@ -14,6 +14,6 @@
     
 }
 
-- (void)fetchDropboxMessageForCourseId:(NSInteger)courseId andBasketId:(NSString*)basketId andMessageId:(NSString*)messageId;
+- (void)fetchDropboxMessageForCourseId:(NSNumber *)courseId andBasketId:(NSString*)basketId andMessageId:(NSString*)messageId;
 
 @end

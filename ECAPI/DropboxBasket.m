@@ -18,7 +18,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.dropboxBasketId    = [coder decodeIntegerForKey:@"id"];
+        self.dropboxBasketId    = [coder decodeNumberForKey:@"id"];
         self.title              = [coder decodeObjectForKey:@"title"];
         self.links              = [coder decodeArrayForKey:@"links" ofType:[Link class]];
     }
@@ -26,6 +26,7 @@
 }
 
 - (void)dealloc {
+	self.dropboxBasketId = nil;
     self.title = nil;
     self.links = nil;
 	[super dealloc];

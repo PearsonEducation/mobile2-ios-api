@@ -12,6 +12,6 @@
 @interface GradebookItemGradeFetcher : ECAuthenticatedFetcher {
 }
 
-- (void)loadGradebookItemGradeForCourseId:(NSInteger)courseId andGradebookGuid:(NSString*)gradebookGuid;
+- (void)loadGradebookItemGradeForCourseId:(NSNumber *)courseId andGradebookGuid:(NSString*)gradebookGuid;
 
 @end

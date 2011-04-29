@@ -16,9 +16,9 @@
     [super dealloc];
 }
 
-- (void)loadGradebookItemGradeForCourseId:(NSInteger)courseId andGradebookGuid:(NSString*)gradebookGuid {
-    if (courseId > 0 && gradebookGuid && ![gradebookGuid isEqualToString:@""]) {
-        NSString *url = [NSString stringWithFormat:@"%@/me/courses/%d/gradebookItems/%@/grade", M_API_URL, courseId, gradebookGuid];
+- (void)loadGradebookItemGradeForCourseId:(NSNumber *)courseId andGradebookGuid:(NSString*)gradebookGuid {
+    if ([courseId intValue] > 0 && gradebookGuid && ![gradebookGuid isEqualToString:@""]) {
+        NSString *url = [NSString stringWithFormat:@"%@/me/courses/%@/gradebookItems/%@/grade", M_API_URL, courseId, gradebookGuid];
         [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeGradebookItemGrade:)];    
     } else {
         NSLog(@"ERROR: cannot load grade without course id and gradebook guid.");

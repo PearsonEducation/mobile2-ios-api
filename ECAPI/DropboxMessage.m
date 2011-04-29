@@ -29,7 +29,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.dropboxAttachmentId    = [coder decodeIntegerForKey:@"id"];
+        self.dropboxAttachmentId    = [coder decodeNumberForKey:@"id"];
         self.date                   = [coder decodeDateForKey:@"date"];
         self.comments               = [coder decodeObjectForKey:@"comments"];
         self.submissionStudent      = [coder decodeObjectForKey:@"submissionStudent" ofType:[User class]];
@@ -40,6 +40,7 @@
 }
 
 - (void) dealloc {
+	self.dropboxAttachmentId = nil;
     self.date = nil;
     self.comments = nil;
     self.submissionStudent = nil;

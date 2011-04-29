@@ -10,7 +10,7 @@
 
 
 @interface User : NSObject {
-	NSInteger userId;
+	NSNumber *userId;
 	NSString *userName;
 	NSString *firstName;
 	NSString *lastName;
@@ -20,7 +20,7 @@
 
 - (NSString*)fullName;
 
-@property(nonatomic, assign) NSInteger userId;
+@property(nonatomic, retain) NSNumber *userId;
 @property(nonatomic, copy) NSString *userName;
 @property(nonatomic, copy) NSString *firstName;
 @property(nonatomic, copy) NSString *lastName;

@@ -14,8 +14,8 @@
 
 # pragma mark fetch methods
 
-- (void)fetchDiscussionTopicById:(NSInteger)userId andTopicId:(NSInteger)topicId {
-    NSString* url = [NSString stringWithFormat:@"%@/me/usertopics/%d-%d", M_API_URL, userId, topicId ];
+- (void)fetchDiscussionTopicById:(NSNumber *)userId andTopicId:(NSNumber *)topicId {
+    NSString* url = [NSString stringWithFormat:@"%@/me/usertopics/%@-%@", M_API_URL, userId, topicId ];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeUserDiscussionTopicFromArray:)];
 }
 

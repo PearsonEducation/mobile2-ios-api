@@ -10,14 +10,14 @@
 
 
 @interface Grade : NSObject {
-    NSInteger gradeId;
+    NSNumber* gradeId;
     NSDecimalNumber* points;
     NSString* letterGrade;
     NSString* comments;
     NSDate* updatedDate;
 }
 
-@property (nonatomic, assign) NSInteger gradeId;
+@property (nonatomic, retain) NSNumber* gradeId;
 @property (nonatomic, retain) NSDecimalNumber* points;
 @property (nonatomic, retain) NSString* letterGrade;
 @property (nonatomic, retain) NSString* comments;

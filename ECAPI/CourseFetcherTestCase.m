@@ -25,7 +25,7 @@
 - (void) testFetchCourseByIdSuccess {
     courseFetcher = [[CourseFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchCourseSuccess:)];
     [self prepare];
-    [courseFetcher fetchCourseById:2809780];
+    [courseFetcher fetchCourseById:[NSNumber numberWithInt:2809780]];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 
@@ -55,7 +55,7 @@
 - (void) testFetchInstructorsForCourseSuccess {
 	courseFetcher = [[CourseFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchInstructorsForCourseResponse:)];
 	[self prepare];
-	[courseFetcher fetchInstructorsForCourseWithId:2809780];
+	[courseFetcher fetchInstructorsForCourseWithId:[NSNumber numberWithInt:2809780]];
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 
@@ -70,7 +70,7 @@
 - (void) testFetchTeachingAssistantsForCourseSuccess {
 	courseFetcher = [[CourseFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchTeachingAssistantsForCourseResponse:)];
 	[self prepare];
-	[courseFetcher fetchTeachingAssistantsForCourseWithId:2809780];
+	[courseFetcher fetchTeachingAssistantsForCourseWithId:[NSNumber numberWithInt:2809780]];
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 
@@ -83,7 +83,7 @@
 - (void) testFetchStudentsForCourseFailureDueToUnauthorized {
 	courseFetcher = [[CourseFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchStudentsForCourseResponse:)];
 	[self prepare];
-	[courseFetcher fetchStudentsForCourseWithId:2809780];
+	[courseFetcher fetchStudentsForCourseWithId:[NSNumber numberWithInt:2809780]];
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 

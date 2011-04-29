@@ -12,12 +12,12 @@
 #import "Grade.h"
 
 @interface UserGradebookItem : NSObject {
-    NSInteger userGradebookItemId;
+    NSNumber *userGradebookItemId;
 	NSArray *gradeLinks;
     GradebookItem *gradebookItem;
 }
 
-@property (nonatomic, assign) NSInteger userGradebookItemId;
+@property (nonatomic, retain) NSNumber *userGradebookItemId;
 @property (nonatomic, retain) GradebookItem *gradebookItem;
 @property (nonatomic, retain) NSArray *gradeLinks;
 

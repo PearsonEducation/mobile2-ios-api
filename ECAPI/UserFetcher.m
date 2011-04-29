@@ -20,13 +20,13 @@
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeMe:)];
 }
 
-- (void) fetchUserById:(NSInteger)userId {
-	NSString *url = [NSString stringWithFormat:@"%@/users/%d.json", M_API_URL, userId];
+- (void) fetchUserById:(NSNumber *)userId {
+	NSString *url = [NSString stringWithFormat:@"%@/users/%@.json", M_API_URL, userId];
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeSingleUserFromArray:)];
 }
 
-- (void) fetchRosterForCourseWithId:(NSInteger)courseId {
-    NSString *url = [NSString stringWithFormat:@"%@/courses/%d/roster", M_API_URL, courseId];
+- (void) fetchRosterForCourseWithId:(NSNumber *)courseId {
+    NSString *url = [NSString stringWithFormat:@"%@/courses/%@/roster", M_API_URL, courseId];
     [self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeRoster:)];
 }
 

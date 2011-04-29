@@ -17,7 +17,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
     if ((self == [super init])) {
-        self.dropboxMessageId       = [coder decodeIntegerForKey:@"id"];
+        self.dropboxMessageId       = [coder decodeNumberForKey:@"id"];
         self.name                   = [coder decodeObjectForKey:@"name"];
         self.contentUrl             = [coder decodeObjectForKey:@"contentUrl"];
     }
@@ -25,6 +25,7 @@
 }
 
 - (void)dealloc {
+	self.dropboxMessageId = nil;
     self.name = nil;
     self.contentUrl = nil;
     [super dealloc];

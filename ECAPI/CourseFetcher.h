@@ -13,11 +13,11 @@
     
 }
 
-- (void) fetchCourseById:(NSInteger)courseId;
+- (void) fetchCourseById:(NSNumber *)courseId;
 - (void) fetchMyCurrentCourses;
-- (void) fetchInstructorsForCourseWithId:(NSInteger)courseId;
-- (void) fetchTeachingAssistantsForCourseWithId:(NSInteger)courseId;
-- (void) fetchStudentsForCourseWithId:(NSInteger)courseId;
-- (void) fetchMyGradeToDateForCourseWithId:(NSInteger)courseId;
+- (void) fetchInstructorsForCourseWithId:(NSNumber *)courseId;
+- (void) fetchTeachingAssistantsForCourseWithId:(NSNumber *)courseId;
+- (void) fetchStudentsForCourseWithId:(NSNumber *)courseId;
+- (void) fetchMyGradeToDateForCourseWithId:(NSNumber *)courseId;
 
 @end

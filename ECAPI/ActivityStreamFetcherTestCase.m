@@ -46,7 +46,7 @@
                              initWithDelegate:self 
                              responseSelector:@selector(getActivityStreamForUserSuccessHandler:)];        
     [self prepare];
-    [activityStreamFetcher fetchActivityStreamForUserId:4822784];
+    [activityStreamFetcher fetchActivityStreamForUserId:[NSNumber numberWithInt:4822784]];
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];    
 }
 
@@ -60,7 +60,7 @@
                              initWithDelegate:self 
                              responseSelector:@selector(getActivityStreamForUserFailureHandler:)];    
     [self prepare];
-    [activityStreamFetcher fetchActivityStreamForUserId:0]; // <-- should cause an error
+    [activityStreamFetcher fetchActivityStreamForUserId:[NSNumber numberWithInt:0]]; // <-- should cause an error
     [self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];    
 }
 

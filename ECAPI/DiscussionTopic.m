@@ -19,7 +19,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.discussionTopicId   = [coder decodeIntegerForKey:@"id"];
+        self.discussionTopicId   = [coder decodeNumberForKey:@"id"];
         self.title               = [coder decodeObjectForKey:@"title"];
         self.description         = [coder decodeObjectForKey:@"description"];
         self.orderNumber         = [coder decodeIntegerForKey:@"orderNumber"];
@@ -29,6 +29,7 @@
 }
 
 - (void)dealloc {
+	self.discussionTopicId = nil;
     self.title = nil;
     self.description = nil;
     self.containerInfo = nil;

@@ -14,6 +14,6 @@
 }
 
 - (void) fetchMyActivityStream;
-- (void) fetchActivityStreamForUserId:(NSInteger)userId;
+- (void) fetchActivityStreamForUserId:(NSNumber *)userId;
 
 @end

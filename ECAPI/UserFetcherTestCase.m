@@ -37,7 +37,7 @@
 - (void) testGetUserResourceSuccess {
 	userFetcher = [[UserFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchUserByIdResponse:)];
 	[self prepare];
-	[userFetcher fetchUserById:4822784];
+	[userFetcher fetchUserById:[NSNumber numberWithInt:4822784]];
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 
@@ -50,7 +50,7 @@
 - (void) testGetUserResourceFailure {
 	userFetcher = [[UserFetcher alloc] initWithDelegate:self responseSelector:@selector(fetchUserByIdFailureResponse:)];
 	[self prepare];
-	[userFetcher fetchUserById:0]; // <- should be "not found"
+	[userFetcher fetchUserById:[NSNumber numberWithInt:0]]; // <- should be "not found"
 	[self waitForStatus:kGHUnitWaitStatusSuccess timeout:10.0];
 }
 

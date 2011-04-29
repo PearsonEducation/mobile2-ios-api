@@ -10,14 +10,14 @@
 #import "ContainerInfo.h"
 
 @interface DiscussionTopic : NSObject {
-    NSInteger discussionTopicId;
+    NSNumber* discussionTopicId;
     NSString* title;
     NSString* description;
     NSInteger orderNumber;
     ContainerInfo* containerInfo;
 }
 
-@property (nonatomic, assign) NSInteger discussionTopicId;
+@property (nonatomic, retain) NSNumber* discussionTopicId;
 @property (nonatomic, retain) NSString* title;
 @property (nonatomic, retain) NSString* description;
 @property (nonatomic, assign) NSInteger orderNumber;

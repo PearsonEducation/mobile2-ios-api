@@ -28,7 +28,7 @@
 - (id) initWithCoder:(NSCoder<ECCoder>*)coder {
     self = [super init];
 
-    _courseId = -1; 
+    _courseId = [[NSNumber numberWithInt:-1] retain];
     _cat = -1;
     _uet = -1;
     
@@ -43,8 +43,8 @@
     return self;
 }
 
-- (NSInteger)courseId {
-    if (_courseId == -1) {
+- (NSNumber *)courseId {
+    if ([_courseId isEqualToNumber:[NSNumber numberWithInt:-1]]) {
         for (Link* link in links) {
             if (link.href) {
                 NSRange coursesRange = [link.href rangeOfString:@"courses/"];
@@ -52,7 +52,7 @@
                     NSString* stringAfterCourses = [link.href substringFromIndex:(coursesRange.location + coursesRange.length)];
                     NSRange slashRange = [stringAfterCourses rangeOfString:@"/"];
                     if (slashRange.location != NSNotFound) {
-                        _courseId = [[stringAfterCourses substringToIndex:slashRange.location] integerValue];
+                        _courseId = [[NSNumber numberWithInt:[[stringAfterCourses substringToIndex:slashRange.location] integerValue]] retain];
                     }
                 }
             }
@@ -100,6 +100,8 @@
 }
 
 - (void)dealloc {
+	[_courseId release]; _courseId = nil;
+	self.upcomingEventItemId = nil;
     self.dateString = nil;
     self.when = nil;
     self.type = nil;

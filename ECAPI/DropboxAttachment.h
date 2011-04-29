@@ -10,12 +10,12 @@
 
 
 @interface DropboxAttachment : NSObject {
-    NSInteger dropboxMessageId;
+    NSNumber* dropboxMessageId;
     NSString* name;
     NSString* contentUrl;
 }
 
-@property (nonatomic, assign) NSInteger dropboxMessageId;
+@property (nonatomic, assign) NSNumber* dropboxMessageId;
 @property (nonatomic, retain) NSString* name;
 @property (nonatomic, retain) NSString* contentUrl;
 

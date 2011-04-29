@@ -10,12 +10,12 @@
 
 
 @interface DropboxBasket : NSObject {
-    NSInteger dropboxBasketId;
+    NSNumber* dropboxBasketId;
     NSString* title;
     NSArray* links;
 }
 
-@property (nonatomic, assign) NSInteger dropboxBasketId;
+@property (nonatomic, retain) NSNumber* dropboxBasketId;
 @property (nonatomic, retain) NSString* title;
 @property (nonatomic, retain) NSArray* links;
 

@@ -10,7 +10,7 @@
 #import "User.h"
 
 @interface DropboxMessage : NSObject {
-    NSInteger dropboxAttachmentId;
+    NSNumber* dropboxAttachmentId;
     NSDate* date;
     NSString* comments;
     User* submissionStudent;
@@ -20,7 +20,7 @@
 
 - (NSString*)nameOfSubmissionStudent;
 
-@property (nonatomic, assign) NSInteger dropboxAttachmentId;
+@property (nonatomic, retain) NSNumber* dropboxAttachmentId;
 @property (nonatomic, retain) NSDate* date;
 @property (nonatomic, retain) NSString* comments;
 @property (nonatomic, retain) User* submissionStudent;

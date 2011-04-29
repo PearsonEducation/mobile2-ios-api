@@ -21,7 +21,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.announcementId         = [coder decodeIntegerForKey:@"id"];
+        self.announcementId         = [coder decodeNumberForKey:@"id"];
         self.subject                = [coder decodeObjectForKey:@"subject"];
         self.text                   = [coder decodeObjectForKey:@"text"];
         self.submitter              = [coder decodeObjectForKey:@"submitter"];
@@ -33,6 +33,7 @@
 }
 
 - (void)dealloc {
+	self.announcementId = nil;
     self.subject = nil;
     self.text = nil;
     self.submitter = nil;

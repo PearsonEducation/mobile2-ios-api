@@ -32,7 +32,7 @@ typedef enum {
     NSString* category;
     NSArray* links;
     
-    NSInteger _courseId;
+    NSNumber *_courseId;
     CategoryType _cat;
     UpcomingEventType _uet;
 }
@@ -44,7 +44,7 @@ typedef enum {
 @property (nonatomic, retain) NSString* dateString;
 @property (nonatomic, retain) NSString* category;
 @property (nonatomic, retain) NSArray* links;
-@property (nonatomic, readonly) NSInteger courseId;
+@property (nonatomic, readonly) NSNumber *courseId;
 @property (nonatomic, readonly) NSNumber *threadId;
 @property (nonatomic, readonly) NSNumber *multimediaId;
 @property (nonatomic, readonly) CategoryType categoryType;

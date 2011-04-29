@@ -23,7 +23,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.courseId       = [coder decodeIntegerForKey:@"courseId"];
+        self.courseId       = [coder decodeNumberForKey:@"courseId"];
         self.referenceId    = [NSString stringWithFormat:@"%d", [coder decodeIntegerForKey:@"referenceId"]];
         self.id             = [coder decodeObjectForKey:@"id"];
         self.title          = [coder decodeObjectForKey:@"title"];
@@ -37,6 +37,7 @@
 }
 
 - (void) dealloc {
+	self.courseId = nil;
     self.attachments = nil;
     self.referenceId = nil;
     self.id = nil;

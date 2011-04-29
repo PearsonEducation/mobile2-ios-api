@@ -22,7 +22,7 @@
 	ECJSONUnarchiver *unarchiver = [ECJSONUnarchiver unarchiverWithDictionary:[userDictionary objectForKey:@"me"]];
     
 	User *user = [[[User alloc] initWithCoder:unarchiver] autorelease];
-	GHAssertEquals(user.userId, 7520378, @"Expected user id to equal 7520378");
+	GHAssertEquals([user.userId intValue], 7520378, @"Expected user id to equal 7520378");
 	GHAssertEqualObjects(user.userName, @"manderson", @"Expected userName to equal manderson");
 	GHAssertEqualObjects(user.firstName, @"Mary", @"Expected firstName to equal Mary");
 	GHAssertEqualObjects(user.lastName, @"Anderson", @"Expected lastName to equal Anderson");

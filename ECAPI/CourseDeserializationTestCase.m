@@ -25,7 +25,7 @@
 	
 	// TODO: Add tests for the unexpanded link properties
 	Course *course = [[[Course alloc] initWithCoder:unarchiver] autorelease];
-	GHAssertEquals(course.courseId, 3433672, @"Expected course id to equal 3433672");
+	GHAssertEquals([course.courseId intValue], 3433672, @"Expected course id to equal 3433672");
 	GHAssertEqualObjects(course.displayCourseCode, @"SOT", @"Expected course displayCourseCode to equal SOT");
 	GHAssertEqualObjects(course.title, @"Student Orientation Tutorial", @"Expected course title to equal Student Orientation Tutorial");
 	[coursesDictionary release];

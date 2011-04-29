@@ -17,7 +17,7 @@
 
 - (id) initWithCoder:(NSCoder<ECCoder> *)coder {
 	if ((self == [super init])) {
-        self.roleId                 = [coder decodeIntegerForKey:@"id"];
+        self.roleId                 = [coder decodeNumberForKey:@"id"];
         self.type                   = [coder decodeObjectForKey:@"type"];
         self.name                   = [coder decodeObjectForKey:@"name"];
     }
@@ -25,6 +25,7 @@
 }
 
 - (void)dealloc {
+	self.roleId = nil;
     self.type = nil;
     self.name = nil;
 	[super dealloc];

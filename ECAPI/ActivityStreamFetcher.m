@@ -17,8 +17,8 @@
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeMe:)];
 }
 
-- (void) fetchActivityStreamForUserId:(NSInteger)userId {
-	NSString *url = [NSString stringWithFormat:@"%@/users/%d/whatshappeningfeed.json", M_API_URL, userId];
+- (void) fetchActivityStreamForUserId:(NSNumber *)userId {
+	NSString *url = [NSString stringWithFormat:@"%@/users/%@/whatshappeningfeed.json", M_API_URL, userId];
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeMe:)];    
 }
 
