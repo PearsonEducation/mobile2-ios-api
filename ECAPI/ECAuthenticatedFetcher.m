@@ -25,7 +25,7 @@
 
 @implementation ECAuthenticatedFetcher
 
-@synthesize responseHeaders, responseStatusCode, ignoreAuthentication;
+@synthesize responseHeaders, responseStatusCode, ignoreAuthentication, returnRawResponse;
 
 static SEL generalSelector;
 static id generalDelegate;
@@ -194,29 +194,35 @@ static id generalDelegate;
 
 - (id) parseReturnedData {
 	NSError *deserializationError = nil;
-	NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+	id objectToReturn = nil;
+	NSString *responseString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 	
-    SBJsonParser *parser = [[SBJsonParser alloc] init];
-	NSDictionary *parsedDictionary = (NSDictionary *)[parser objectWithString:jsonString error:&deserializationError];
-	
-	id objectToReturn = parsedDictionary;
-	if (deserializationError) {
-		objectToReturn = deserializationError;
-	} else if ([parsedDictionary objectForKey:@"error"]) {
-		id targetObject = [parsedDictionary objectForKey:@"error"];
-		NSString *errorMessage = nil;
-		if ([targetObject isKindOfClass:[NSDictionary class]]) {
-			NSDictionary *targetDictionary = (NSDictionary *)targetObject;
-			errorMessage = [targetDictionary objectForKey:@"message"];
-		} else {
-			errorMessage = (NSString *)targetObject;
+	if (self.returnRawResponse) {
+		return [responseString autorelease];
+	} else {
+		SBJsonParser *parser = [[SBJsonParser alloc] init];
+		NSDictionary *parsedDictionary = (NSDictionary *)[parser objectWithString:responseString error:&deserializationError];
+		
+		objectToReturn = parsedDictionary;
+		if (deserializationError) {
+			objectToReturn = deserializationError;
+		} else if ([parsedDictionary objectForKey:@"error"]) {
+			id targetObject = [parsedDictionary objectForKey:@"error"];
+			NSString *errorMessage = nil;
+			if ([targetObject isKindOfClass:[NSDictionary class]]) {
+				NSDictionary *targetDictionary = (NSDictionary *)targetObject;
+				errorMessage = [targetDictionary objectForKey:@"message"];
+			} else {
+				errorMessage = (NSString *)targetObject;
+			}
+			NSDictionary *info = [NSDictionary dictionaryWithObject:errorMessage forKey:@"message"];
+			objectToReturn = [NSError errorWithDomain:EC_API_ERROR_DOMAIN code:responseStatusCode userInfo:info];
 		}
-		NSDictionary *info = [NSDictionary dictionaryWithObject:errorMessage forKey:@"message"];
-		objectToReturn = [NSError errorWithDomain:EC_API_ERROR_DOMAIN code:responseStatusCode userInfo:info];
+		
+		[parser release];
+		[responseString release];
 	}
-    
-	[parser release];
-	[jsonString release];
+	
 	return objectToReturn;
 }
 

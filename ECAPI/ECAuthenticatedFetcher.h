@@ -23,6 +23,7 @@
 @property(nonatomic,retain) NSDictionary *responseHeaders;
 @property(nonatomic,assign) NSInteger responseStatusCode;
 @property(nonatomic,assign) BOOL ignoreAuthentication;
+@property(nonatomic,assign) BOOL returnRawResponse;
 
 + (ASIHTTPRequest *) newAuthenticatedGETRequestWithURL:(NSURL *)earl;
 + (ASIFormDataRequest *) newAuthenticatedPOSTRequestWithURL:(NSURL *)earl;
