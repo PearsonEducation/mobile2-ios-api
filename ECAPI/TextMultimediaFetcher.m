@@ -12,7 +12,7 @@
 
 - (void) fetchHTMLContentForCourseId:(NSNumber *)courseId contentId:(NSNumber *)contentId {
 	self.returnRawResponse = YES;
-	NSString *url = [NSString stringWithFormat:@"%@/courses/%@/textMultimedias/%@/content.html", M_API_URL, courseId, [contentId longLongValue]];
+	NSString *url = [NSString stringWithFormat:@"%@/courses/%@/textMultimedias/%@/content.html", M_API_URL, courseId, contentId];
 	[self loadDataFromURLString:url withDeserializationSelector:@selector(deserializeHTML:)];
 }
 	
