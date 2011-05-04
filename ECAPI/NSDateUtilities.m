@@ -151,7 +151,7 @@ NSString* const ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
     } 
     if ([[[now addDays:-1] dateString:format] isEqualToString:dtstr]) {
         return NSLocalizedString(@"Yesterday",  nil);
-
+		
     }
     if ([self year] != [now year]) {
         return dtstr;
@@ -159,6 +159,19 @@ NSString* const ISO8601Format = @"yyyy-MM-dd'T'HH:mm:ss'Z'";
         return [self dateString:@"MMM d"];
     }
     return nil;
+}
+
+- (NSString*)friendlyDateTimeString {
+    NSString* format = @"MMM d, h:mm a";
+    NSString* dtstr = [self dateString:format];
+    NSDate* now = [NSDate date];
+    if ([[now dateString:format] isEqualToString:dtstr]) {
+        return [NSString stringWithFormat:@"%@ %@", NSLocalizedString(@"Today",  nil), [now dateString:@"h:mm a"]];
+    } 
+    if ([[[now addDays:-1] dateString:format] isEqualToString:dtstr]) {
+        return NSLocalizedString(@"Yesterday",  nil);
+    }
+    return dtstr;
 }
 
 - (NSString*)basicDateTimeString {

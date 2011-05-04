@@ -17,6 +17,7 @@ extern NSString* const ISO8601Format;
 - (NSString*)niceAndConcise;
 - (NSString*)friendlyDateWithTimeFor:(int)daysFromToday;
 - (int)datesUntil:(NSDate*)otherDate;
+- (NSString *)friendlyDateTimeString;
 - (NSString*)friendlyString;
 - (NSString*)dateString:(NSString*)formatString;
 - (NSInteger)year;
